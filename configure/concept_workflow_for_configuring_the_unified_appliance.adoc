@@ -1,0 +1,16 @@
+---
+permalink: configure/concept_workflow_for_configuring_the_unified_appliance.html 
+sidebar: sidebar 
+keywords:  
+summary: 設定ONTAP 支援功能包括設定儲存系統、建立儲存功能設定檔、配置資料存放區、以及選擇性地設定SRA以進行災難恢復。 
+---
+= 設定ONTAP 功能的工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定ONTAP 支援功能包括設定儲存系統、建立儲存功能設定檔、配置資料存放區、以及選擇性地設定SRA以進行災難恢復。
+
+image::../media/use_case_vsc_users.gif[設定ONTAP 功能的工作流程]

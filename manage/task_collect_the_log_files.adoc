@@ -1,0 +1,34 @@
+---
+permalink: manage/task_collect_the_log_files.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以從ONTAP VSC圖形化使用者介面（GUI）中的選項、收集VMware vSphere的Sethere®工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。 
+---
+= 收集記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從ONTAP VSC圖形使用者介面（GUI）中的選項收集VMware vSphere的各種資訊工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。
+
+*關於此工作*
+
+如果您需要VASA Provider記錄檔、可以從「廠商供應商供應商控制台」畫面產生支援服務包。此頁面是VASA Provider維護功能表的一部分、可從虛擬應用裝置的主控台存取。
+
+https://vm_ip:9083`
+
+您可以使用VSC GUI中的「Export VSC Logs」（匯出VSC記錄）功能來收集VSC記錄檔。當您在啟用VASA Provider的情況下收集VSC記錄套件時、VSC記錄套件組合也會有VP記錄。下列步驟說明如何收集VSC記錄檔：
+
+*步驟*
+
+. 從「VMware Tools」首頁、按一下ONTAP 「*組態*>*匯出VSC記錄*」。
++
+此作業可能需要數分鐘的時間。
+
+. 出現提示時、請將檔案儲存至本機電腦。
++
+然後、您可以將_.Zip檔案傳送給技術支援部門。
+
+

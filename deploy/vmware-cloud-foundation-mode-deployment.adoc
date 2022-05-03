@@ -1,0 +1,246 @@
+---
+permalink: deploy/vmware_cloud_foundation_mode_deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。ONTAP 
+---
+= VMware Cloud Foundation ONTAP 部署功能、適用於各種VMware工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境中。ONTAPVCF部署的主要目標是在ONTAP 雲端設定中使用VMware工具、並在不使用vCenter Server的情況下建立容器。
+
+VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。
+
+適用於VCF部署模式的API包括：
+
+|===
+
+
+| * API* | * HTTP方法* | *新增/修改* | *章節標題* 
+
+
+ a| 
+/1.0/admin/container
+ a| 
+取得
+ a| 
+新功能
+ a| 
+容器
+
+
+
+ a| 
+/1.0/admin/container
+ a| 
+貼文
+ a| 
+新功能
+ a| 
+容器
+
+
+
+ a| 
+/1.0/vcf/使用者/登入
+ a| 
+貼文
+ a| 
+新功能
+ a| 
+使用者驗證
+
+
+
+ a| 
+/1.0/admin/storage系統
+ a| 
+取得
+ a| 
+已修改
+ a| 
+儲存系統
+
+
+
+ a| 
+/1.0/admin/storage系統
+ a| 
+貼文
+ a| 
+已修改
+ a| 
+儲存系統
+
+
+
+ a| 
+/2.0/storage /叢集/探索
+ a| 
+貼文
+ a| 
+已修改
+ a| 
+儲存系統
+
+
+
+ a| 
+/2.0/storage /容量設定檔
+ a| 
+取得
+ a| 
+已修改
+ a| 
+儲存功能設定檔
+
+
+
+ a| 
+/2.0/tases/｛id｝
+ a| 
+取得
+ a| 
+已修改
+ a| 
+工作
+
+|===
+您只能在VCF部署模式中使用vVols資料存放區。若要建立容器、您必須使用專為VCF部署而自訂的REST API。部署完成後、即可從Swagger介面存取REST API。以VCF模式建立容器時、您需要提供儲存VM、Aggregate和Volume的名稱。您需要使用ONTAP VMware API來取得這些詳細資料、因為ONTAP 這些資源的VMware工具取得API並未更新。
+
+|===
+
+
+| *儲存物件* | * API* 
+
+
+ a| 
+儲存VM
+ a| 
+API/SVM/svms
+
+
+
+ a| 
+Aggregate
+ a| 
+儲存/集合體
+
+
+
+ a| 
+Volume
+ a| 
+儲存設備/磁碟區
+
+|===
+執行Container create API時、您可以將現有的Volume新增至容器。但您應該確保現有磁碟區的壓縮和重複資料刪除值符合容器的儲存功能。當值不相符時、虛擬機器建立失敗。下表提供現有磁碟區對應儲存功能設定檔應有的值詳細資料。
+
+|===
+
+
+| * Container Storage功能設定檔* | *重複資料刪除* | *壓縮* 
+
+
+ a| 
+白金級
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Thick
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Default
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Tiering
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Tiering
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Min50
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+FAS預設值
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
+FAS _最大20
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
+銅級
+ a| 
+無
+ a| 
+無
+
+|===
+您可以使用ONTAP 修補程式API來設定適當的值。
+
+https://<machine_IP>/api/storage/volumes/{uuid}`
+
+利用VCF部署ONTAP 的支援功能、只能建立容器工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應ONTAP 使用Register.html頁面向vCenter Server註冊各種VMware工具。VCF模式中的靜態工具限制ONTAP 是您無法設定SRA進行災難恢復。
+
+image::../media/VCF_deployment.png[VMware Cloud Foundation部署工作流程]
+
+link:../deploy/task_deploy_ontap_tools.html["如何部署ONTAP 資訊工具"]

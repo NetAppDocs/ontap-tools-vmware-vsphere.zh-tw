@@ -1,0 +1,119 @@
+---
+permalink: deploy/reference_considerations_for_deploying_virtual_appliance_for_vsc_vasa_provider_and_sra.html 
+sidebar: sidebar 
+keywords: Virtual Storage Console,Storage Replication Adapter 
+summary: 在部署ONTAP VMware vSphere的VMware vCenter工具之前、最好先規劃部署、然後決定如何在ONTAP 環境中設定這些VMware工具。 
+---
+= 部署ONTAP 資訊工具的考量事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署ONTAP VMware vSphere的VMware vCenter工具之前、最好先規劃部署、然後決定如何在ONTAP 環境中設定這些VMware工具。
+
+下表概述部署ONTAP VMware工具之前應考量的事項。
+
+|===
+
+
+| *考量事項* | *說明* 
+
+
+ a| 
+首次部署ONTAP 各種功能
+ a| 
+部署這些功能可自動安裝VSC功能。ONTAP
+
+link:../deploy/concept_deploy_or_upgrade_ontap_tools.html["部署或升級ONTAP VMware vSphere的功能"]
+
+link:../deploy/concept_installation_workflow_for_new_users.html["VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程"]
+
+
+
+ a| 
+從現有的VSC部署升級
+ a| 
+從現有的VSC部署升級至ONTAP VMware Tools的程序、取決於VSC版本、以及您是否已部署ONTAP VMware工具。部署工作流程與升級區段有更多資訊。
+
+link:concept_installation_workflow_for_existing_users_of_vsc.html["針對現有使用者的部署工作流程ONTAP"]
+
+升級前的最佳實務做法：
+
+* 您應該記錄正在使用的儲存系統及其認證資訊。
++
+升級之後、您應該確認所有的儲存系統都已自動探索、而且擁有正確的認證資料。
+
+* 如果您修改了任何標準VSC角色、則應複製這些角色以儲存變更。
++
+VSC會在每次重新啟動VSC服務時、以目前的預設值覆寫標準角色。
+
+
+
+
+
+ a| 
+重新產生VSC的SSL憑證
+ a| 
+當您部署ONTAP 完這些功能時、SSL憑證會自動產生。您可能必須重新產生SSL憑證、才能建立站台專屬的憑證。
+
+link:../configure/task_regenerate_an_ssl_certificate_for_vsc.html["為虛擬儲存主控台重新產生SSL憑證"]
+
+
+
+ a| 
+設定ESXi伺服器值
+ a| 
+雖然ESXi伺服器的大部分值都是預設設定、但最好還是檢查這些值。這些值是以內部測試為基礎。視您的環境而定、您可能必須變更部分值、才能提升效能。
+
+* link:../configure/task_configure_esx_server_multipathing_and_timeout_settings.html["設定ESXi伺服器多重路徑和逾時設定"]
+* link:../configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html["ESXi主機值是使用ONTAP VMware vSphere的VMware VMware vSphere的VMware支援工具設定的"]
+
+
+
+
+ a| 
+客體作業系統逾時值
+ a| 
+客體作業系統（客體作業系統）逾時指令碼會針對支援的Linux、Solaris和Windows客體作業系統、設定SCSI I/O逾時值、以提供正確的容錯移轉行為。
+
+|===
+下表概述設定ONTAP VMware工具所需的功能。
+
+|===
+
+
+| *考量事項* | *說明* 
+
+
+ a| 
+角色型存取控制（RBAC）需求
+ a| 
+VSC同時支援vCenter Server RBAC和ONTAP RBAC。用於登錄VSC至vCenter Server（「https://<appliance_ip>:8143/Register.html`」）的帳戶必須是vCenter Server管理員（指派給vCenter Server管理員或管理員角色）。如果您打算以系統管理員身分執行VSC、則必須擁有所有必要的權限和權限才能執行所有工作。
+
+如果貴公司要求您限制vSphere物件的存取、您可以建立標準VSC角色並指派給使用者、以符合vCenter Server的需求。
+
+您可以ONTAP 使用隨附於VMware工具的Json檔案、使用ONTAP VMware的功能來建立建議的功能。ONTAP
+
+如果使用者嘗試在沒有正確權限和權限的情況下執行工作、工作選項會呈現灰色。
+
+* link:../concepts/concept_standard_roles_packaged_with_virtual_appliance_for_vsc_vp_and_sra.html["標準角色隨ONTAP 附於整套的功能"]
+* link:../concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html["適用於VMware的權限ONTAP"]
+
+
+
+
+ a| 
+版本ONTAP
+ a| 
+您的儲存系統必須執行ONTAP 的是NetApp 9.3、9.5、9.6、9.7、9.8P1或更新版本。
+
+
+
+ a| 
+儲存功能設定檔
+ a| 
+若要使用儲存功能設定檔或設定警示、您必須啟用VASA Provider for ONTAP啟用VASA Provider之後、您可以設定VMware虛擬Volume（vVols）資料存放區、也可以建立及管理儲存功能設定檔和警示。當磁碟區或Aggregate幾乎已滿容量、或資料存放區不再符合相關的儲存功能設定檔時、警示會發出警示。
+
+|===

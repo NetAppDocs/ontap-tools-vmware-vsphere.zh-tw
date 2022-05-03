@@ -1,0 +1,78 @@
+---
+permalink: deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords: Virtual Storage Console, Storage Replication Adapter 
+summary: 您可以ONTAP 依照此處提供的指示、從現有的9.7.1或更新版本安裝程式、就地升級至最新版的VMware Tools。 
+---
+= 升級至ONTAP 最新版的VMware工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以ONTAP 依照此處提供的指示、從現有的9.7P1或更新版本、就地升級至最新版的VMware工具。
+
+*您需要的是什麼*
+
+* 您必須下載_.iso_檔案、才能取得ONTAP 最新版的版的VMware®工具。
+* 您必須保留至少12 GB的RAM、ONTAP 才能讓升級後的VMware Tools發揮最佳效能。
+* 您必須清除vSphere Client瀏覽器快取。
++
+link:../deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html["清除vSphere快取下載的外掛程式套件"]
+
+
+
+升級後、會保留現有部署中VASA Provider的狀態。您應該根據升級後的需求、手動啟用或停用VASA Provider。不過、即使VMware虛擬磁碟區（vVols）未在使用中、還是最好啟用VASA Provider、因為它能為傳統的資料存放區資源配置和儲存警示啟用儲存功能設定檔。
+
+
+NOTE: 您只能ONTAP 從現有的9.7P1或更新版本執行就地升級至最新版的VMware工具。當您升級至9.7.1版ONTAP 的VMware Tools、並想要使用vVols複寫時、您需要在ONTAP 安裝Site Recovery Manager（SRM）的情況下、再設定一個vCenter Server搭配使用各種VMware工具。
+
+*步驟*
+
+. 將下載的_.ISO_檔案掛載ONTAP 到下列支援工具：
++
+.. 按一下*編輯設定*>* DVD/CD-ROM磁碟機*。
+.. 從下拉式清單中選取*資料存放區ISO*檔案。
+.. 瀏覽並選取下載的_.ISO_檔案、然後選取「*在開機時連線*」核取方塊。
+
+
+. 存取已部署ONTAP 之VMware工具的「摘要」索引標籤。
+. 按一下*image:../media/launch_maintenance_console.gif[""]*啟動維護主控台。
+. 在「主功能表」提示下、輸入選項「2」作為*系統組態*、然後輸入選項「8」作為*升級*。
++
+升級完成後ONTAP 、即可重新啟動此功能。將VMware vCenter Server的IP位址登錄至升級前的相同IP位址。ONTAP
+
+. 如果您想ONTAP 要在vCenter Server上以IPv6位址登錄使用VMware vCenter工具、則必須執行下列步驟：
++
+.. 取消登錄ONTAP VMware Tools。
+.. 使用「* Register *」（*登錄*）頁面、將ONTAP 「IPv6」工具位址登錄至vCenter Server。
+.. 登錄後重新產生VSC和VASA Provider憑證。
+
+
++
+
+IMPORTANT: 僅vCenter Server 6.7及更新版本才支援IPv6。
+
+. 登出再重新登入vSphere Client、即可檢視部署ONTAP 的功能表工具。
++
+.. 從現有的vSphere Web用戶端或vSphere Client登出、然後關閉視窗。
+.. 登入vSphere Client。
++
+在vSphere Client中更新外掛程式可能需要幾分鐘的時間。
+
+
+
+
+
+[NOTE]
+====
+* 如果從7.0版ONTAP 的VMware Tools升級至ONTAP 最新版的VMware Tools、您必須先建立儲存功能設定檔、才能嘗試編輯現有的VM儲存原則、否則可能會發生錯誤、指出值不正確或遺失。
+* 如果從舊版升級至ONTAP 最新版的支援工具、在「vvol.properties」檔案中發現「VVOL.reBalance.threshold」屬性遺失。
++
+屬性的預設值設為85%。
+
+* 升級至已啟用FIPS的最新OTV（9.10）版本、但不支援FIPS的舊版vCenter之後、部署仍會繼續運作。但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。
+
+
+====

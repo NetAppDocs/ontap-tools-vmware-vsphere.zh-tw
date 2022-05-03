@@ -1,0 +1,74 @@
+---
+permalink: concepts/concept_virtual_storage_console_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理vCenter Server內的儲存設備、進而簡化VMware環境的儲存與資料管理。 
+---
+= VMware工具總覽ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理vCenter Server內的儲存設備、進而簡化VMware環境的儲存與資料管理。
+
+有了vSphere 6.5、VMware推出了一款名為vSphere Client的全新HTML5用戶端。9.6版ONTAP 及更新版本的支援功能僅支援vSphere Client。此功能可與vSphere Client整合、讓您使用單一登入（SSO）服務。ONTAP在具有多個vCenter Server執行個體的環境中、您要管理的每個vCenter Server執行個體都必須擁有自己的VSC登錄執行個體。
+
+每個ONTAP 元件均提供功能、協助您更有效率地管理儲存設備。
+
+
+
+== 虛擬儲存主控台（VSC）
+
+VSC可讓您執行下列工作：
+
+* 新增儲存控制器、指派認證資料、以及設定VSC儲存控制器的權限、讓SRA和VASA供應商都能善用這些控制器
+* 配置資料存放區
+* 監控vCenter Server環境中資料存放區和虛擬機器的效能
+* 在兩個層級使用角色型存取控制（RBAC）來控制管理員對vCenter Server物件的存取：
++
+** vSphere物件、例如虛擬機器和資料存放區
++
+這些物件是使用vCenter Server RBAC來管理。
+
+** 儲存ONTAP
++
+儲存系統是使用ONTAP RBAC來管理。
+
+
+
+* 檢視並更新連接至NetApp儲存設備之ESXi主機的主機設定
+
+
+VSC資源配置作業可從使用NFS外掛程式for VMware vStorage API進行陣列整合（VAAI）獲益。適用於VAAI的NFS外掛程式是一個軟體程式庫、可整合ESXi主機上安裝的VMware虛擬磁碟庫。VMware VAAI套件可將特定工作從實體主機卸載到儲存陣列。您可以在陣列層級執行精簡配置和硬體加速等工作、以減少ESXi主機上的工作負載。複本卸載功能和空間保留功能可提升VSC作業的效能。
+
+VSC未隨附適用於VAAI的NetApp NFS外掛程式。但您可以下載外掛程式安裝套件、並從NetApp支援網站取得安裝外掛程式的指示。
+
+
+
+== VASA供應商
+
+VASA Provider for ONTAP VMware vSphere API for Storage感知（VASA）可將VMware vSphere所使用儲存設備的相關資訊傳送至vCenter Server。包含VASA Provider與VSC整合的各種工具。ONTAPVASA Provider可讓您執行下列工作：
+
+* 配置VMware虛擬磁碟區（vVols）資料存放區
+* 建立並使用儲存功能設定檔、為您的環境定義不同的儲存服務層級目標（SLO）
+* 確認資料存放區與儲存功能設定檔之間是否符合法規要求
+* 設定警示以在磁碟區和集合體接近臨界值時發出警示
+* 監控虛擬機器磁碟（VMDK）和虛擬機器在vVols資料存放區上建立的效能
+
+
+如果您使用ONTAP 的是32個以上版本的版本、則VASA Provider會使用VASA API與vCenter Server通訊、ONTAP 並使用稱為ZAPI的NetApp API與VMware通訊。若要檢視ONTAP 適用於VMware 9.6及更早版本的vVols儀表板、您必須在OnCommand vCenter Server上安裝並註冊了VMware API服務。如果您使用ONTAP 的是更新版本的版本、則不需要OnCommand 向VASA Provider註冊才能檢視vVols儀表板。
+
+
+NOTE: 對於僅適用於支援支援支援支援的支援、VASA Provider需要專門的支援範例來執行某些應用程式。ONTAP OnCommand無法與多個VASA Provider執行個體共用一個不支援的API服務執行個體OnCommand 。
+
+
+
+== 儲存複寫介面卡（SRA）
+
+當SRA啟用並搭配VMware Site Recovery Manager（SRM）使用時、您可以在發生故障時恢復vCenter Server資料存放區和虛擬機器。SRA可讓您針對受保護的站台和恢復站台使用陣列型複寫（ABR）、以便在發生故障時進行災難恢復。
+
+*相關資訊*
+
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]

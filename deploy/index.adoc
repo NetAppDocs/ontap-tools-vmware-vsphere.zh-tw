@@ -1,0 +1,12 @@
+---
+permalink: deploy/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= 部署與設定指南
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

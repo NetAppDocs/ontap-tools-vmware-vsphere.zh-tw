@@ -1,0 +1,49 @@
+---
+permalink: protect/task_configure_network_mappings.html 
+sidebar: sidebar 
+keywords:  
+summary: 您必須在受保護的網站和恢復網站上對應網路、才能在它們之間進行通訊。 
+---
+= 設定網路對應
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在兩個站台上設定VM網路、ESXi主機和資料夾等資源對應、才能將每個資源從受保護站台對應到恢復站台上的適當資源。
+
+您必須完成下列資源組態：
+
+* 網路對應
+* 資料夾對應
+* 資源對應
+* 預留位置資料存放區
+
+
+*您需要的是什麼*
+
+您必須連線到受保護和恢復站台。
+
+*步驟*
+
+. 登入vCenter Server、然後按一下*站台恢復*>*站台*。
+. 選取您的受保護網站、然後按一下*管理*。
+. 在Manage（管理）選項卡中，選擇* Network Mappings（網絡映射）*。
+. 按一下 image:../media/new_network_mappings.gif[""] 圖示以建立新的網路對應。
++
+「Create Network Mapping」（建立網路對應）精靈隨即出現。
+
+. 在Create Network MappingWizard（建立網路對應精靈）中、執行下列步驟：
++
+.. 選擇*自動準備名稱相符的網路對應*、然後按*下一步*。
+.. 選取受保護和恢復站台所需的資料中心物件、然後按一下*「Add Mappings」（新增對應）*。
+.. 成功建立對應後、請按一下*「下一步*」。
+.. 選取先前用來建立反轉對應的物件、然後按一下「*完成*」。
+
+
+
+
+* 結果 *
+
+「網路對應」頁面會顯示受保護的站台資源和恢復站台資源。您可以針對環境中的其他網路執行相同的步驟。

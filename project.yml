@@ -1,0 +1,68 @@
+---
+settings:
+  name: ONTAP tools for VMware vSphere 9.10
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: VMware vSphere 9.10文件適用的工具ONTAP
+    url: "/index.html"
+  - title: 版本資訊
+    url: "/release_notes.html"
+  - section: concepts
+  - section: deploy
+  - section: configure
+  - section: protect
+  - section: manage
+  - title: 法律聲明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 版本資訊
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2881273
+    - title: 深入瞭ONTAP 解VMware vSphere的各種功能
+      url: "/concepts/concept_virtual_storage_console_overview.html"
+    - title: VMware工具快速入門ONTAP
+      url: "/qsg.html"
+    - title: 部署ONTAP 各種工具
+      url: "/deploy/task_deploy_ontap_tools.html"
+    - title: 升級ONTAP 功能
+      url: "/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html"
+  - title: 使用ONTAP VMware工具
+    links:
+    - title: 配置傳統資料存放區
+      url: "/configure/task_provision_datastores.html"
+    - title: 配置vVols資料存放區
+      url: "/configure/task_provision_vvols_datastores.html"
+    - title: 設定角色型存取控制
+      url: "/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html"
+    - title: 設定遠端診斷
+      url: "/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html"
+    - title: 設定高可用度
+      url: "/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html"
+  - title: 保護及管理資料存放區
+    links:
+    - title: 保護資料存放區
+      url: "/protect/task_enable_storage_replication_adapter.html"
+    - title: 保護虛擬機器
+      url: "/protect/concept_configure_replication_for_vvols_datastore.html"
+    - title: 監控傳統的資料存放區和虛擬機器
+      url: "/manage/task_monitor_datastores_using_the_traditional_dashboard.html"
+    - title: 監控vVols資料存放區和虛擬機器
+      url: "/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html"
+  - title: 更多資源
+    links:
+    - title: 適用於ONTAP VMware的舊版VMware版資訊工具文件
+      url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=63792
+    - title: NetApp知識庫ONTAP -資訊工具
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/VSC_and_VASA_Provider
+    - title: NetApp匯入公用程式-影片
+      url: https://www.youtube.com/watch?v=CEQmIEzNVfA
+    - title: NetApp社群ONTAP -功能強大的工具
+      url: https://community.netapp.com/t5/VMware-Solutions-Discussions/bd-p/vmware-solutions-discussions

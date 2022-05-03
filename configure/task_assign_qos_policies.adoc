@@ -1,0 +1,28 @@
+---
+permalink: configure/task_assign_qos_policies.html 
+sidebar: sidebar 
+keywords:  
+summary: 供應不支援將儲存功能設定檔指派給資料存放區。FlexGroup但您可以將QoS原則指派給FlexGroup 在支援的資料存放區上建立的虛擬機器。 
+---
+= 指派QoS原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+供應不支援將儲存功能設定檔指派給資料存放區。FlexGroup但您可以將QoS原則指派給FlexGroup 在支援的資料存放區上建立的虛擬機器。
+
+*關於此工作*
+
+QoS原則可在虛擬機器層級或資料存放區層級套用。資料存放區需要QoS原則來設定處理量（最大和最小IOPS）臨界值。當您在資料存放區上設定QoS時、它會套用到位於資料存放區上的虛擬機器、而非FlexGroup 位於該磁碟區上。但是、如果您在資料存放區中的所有虛擬機器上設定QoS、則會覆寫虛擬機器的任何個別QoS設定。這僅適用於資料存放區中可用的虛擬機器、不適用於任何移轉或新增的虛擬機器。如果您想要將QoS套用至特定資料存放區的新增或移轉虛擬機器、則必須手動設定QoS值。
+
+
+NOTE: 您無法在資料存放區或虛擬機器層級套用QoS設定、以供直接儲存VM上配置的資料存放區使用、因為ONTAP 在儲存VM管理層級、無法支援QoS。
+
+*步驟*
+
+. 在「VMware Tools」首頁上、按一下ONTAP 「*功能表*」>「*主機與叢集*」。
+. 在所需的資料存放區或虛擬機器上按一下滑鼠右鍵、然後按一下「* NetApp ONTAP 物件工具*」>「*指派QoS *」。
+. 在「指派QoS」對話方塊中、輸入所需的IOPS值、然後按一下「*套用*」。
+

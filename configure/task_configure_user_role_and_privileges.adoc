@@ -1,0 +1,45 @@
+---
+permalink: configure/task_configure_user_role_and_privileges.html 
+sidebar: sidebar 
+keywords: user roles 
+summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式》來設定新的使用者角色、以管理儲存系統。 
+---
+= 設定使用者角色和權限
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式》來設定新的使用者角色、以管理儲存系統。
+
+*您需要的是什麼*
+
+* 您應該ONTAP 已經使用\https://{virtual_appliance_IP}:9083/vsc/config/VSC_ONTAP_User_Privileges.zip從ONTAP 資訊工具下載了《Esenter各項 功能》檔案。
+* 您應該已經設定ONTAP 好了更新版本的儲存設備。
+* 您應該已以系統管理員權限登入儲存系統。
+
+
+*步驟*
+
+. 解壓縮下載的「https://{virtual_appliance_IP}:9083/vsc/config/VSC_ONTAP_User_Privileges.zip`」檔案。
+. 存取ONTAP 《系統管理程式》。
+. 按一下*叢集*>*設定*>*使用者與角色*。
+. 按一下*新增使用者*。
+. 在「新增使用者」對話方塊中、選取*虛擬化產品*。
+. 按一下「*瀏覽*」以選取並上傳ONTAP 「恢復能力Json」檔案。
++
+產品欄位會自動填入。
+
+. 從產品功能下拉式功能表中選取所需的功能。
++
+「*角色*」欄位會根據所選的產品功能自動填入。
+
+. 輸入所需的使用者名稱和密碼。
+. 選取使用者所需的權限（探索、建立儲存設備、修改儲存設備、銷毀儲存設備）、然後按一下*新增*。
+
+
+新的角色和使用者隨即新增、您可以在已設定的角色下查看詳細權限。
+
+
+NOTE: 解除安裝作業不會移除VSC角色、而是移除VSC專屬權限的本地化名稱、並將前置字元附加至「'XXX遺失權限」。發生此行為的原因是vCenter Server未提供移除權限的選項。當您重新安裝VSC或升級至較新版本的VSC時、所有標準VSC角色和VSC專屬權限都會還原。

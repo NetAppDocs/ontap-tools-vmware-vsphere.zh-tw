@@ -1,0 +1,20 @@
+---
+permalink: deploy/concept_configure_storage_replication_adapter_for_disaster_recovery.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您要設定vCenter Server進行災難恢復、則必須在部署之後啟用儲存複寫介面卡（SRA\）。根據預設、ONTAP 部署這些功能會安裝VSC。部署ONTAP 完各種VMware工具之後、您必須為vCenter Server啟用SRA。 
+---
+= 設定儲存複寫介面卡以進行災難恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要設定vCenter Server進行災難恢復、則必須在部署之後啟用儲存複寫介面卡（SRA）。根據預設、ONTAP 部署這些功能會安裝VSC。部署ONTAP 完各種VMware工具之後、您必須為vCenter Server啟用SRA。
+
+*相關資訊*
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Storage_Replication_Adapter_for_Data_ONTAP/SRA_4.0P1_client_plugin_(netapp_sra_4.0P1_ontap_64bit.msi)_hangs_at_the_server_IP["安裝SRA 4.0P1用戶端外掛程式（NetApp_SRA_4.0P1_ONTAP_64bit）時、會在伺服器的IP and password（IP和密碼）畫面掛起"]
+
+link:../protect/task_enable_storage_replication_adapter.html["啟用儲存複寫介面卡"]

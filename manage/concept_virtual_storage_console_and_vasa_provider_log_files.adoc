@@ -1,0 +1,36 @@
+---
+permalink: manage/concept_virtual_storage_console_and_vasa_provider_log_files.html 
+sidebar: sidebar 
+keywords:  
+summary: 當您遇到錯誤時、可以檢查/opp/NetApp/vscserver/log目錄和/opp/NetApp/vpserver/log目錄中的記錄檔。 
+---
+= 虛擬儲存主控台和VASA Provider記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您遇到錯誤時、可以檢查「/opt/NetApp/vscserver/log」目錄和「/opt/NetApp/vpserver/log」目錄中的記錄檔。
+
+下列三個記錄檔有助於識別問題：
+
+* 「CXf.log」、內含進出VASA Provider *「kaminoPrefs.xml」的API流量相關資訊、其中包含VSC設定的相關資訊
+* 「vvolvp.log」、包含VASA Provider的所有記錄資訊
+
+
+VMware vSphere的支援功能表可讓您針對需求設定不同的記錄層級。ONTAP可用的記錄層級如下：
+
+* 資訊
+* 偵錯
+* 錯誤
+* 追蹤
+
+
+當您設定記錄層級時、下列檔案會更新：
+
+* VSC伺服器：「kamin.log」和「vvolvp.log」
+* Vasa Provider伺服器：「vvolvp.log」、「error.log」和「NetApp.log」
+
+
+此外、VASA Provider Web命令列介面（CLI）頁面也包含所發出的API呼叫、傳回的錯誤、以及數個效能相關的計數器。Web CLI頁面位於「https://<IP_address_or_hostname>:9083/stats`」。

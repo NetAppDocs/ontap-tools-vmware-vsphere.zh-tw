@@ -1,0 +1,59 @@
+---
+permalink: deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html 
+sidebar: sidebar 
+keywords:  
+summary: 9.x版ONTAP VMware vSphere支援的VMware vSphere支援將就地升級至最新版本。 
+---
+= 針對現有使用者的部署工作流程ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+9.x版ONTAP VMware vSphere支援的VMware vSphere支援將就地升級至最新版本。
+
+較早版本的個別應用程式（例如Virtual Storage Console 6.x、Storage Replication Adapter 2.x、3.x、4.x及VASA Provider 6.x）使用不同的升級程序。如果您的設定中已安裝這些舊版VSC、VASA Provider或SRA、則應執行下列作業：
+
+. 部署ONTAP 最新版的VMware工具。
+. 移轉任何現有的組態資料。
++
+組態資料包括儲存系統認證、以及「kaminoprefs.xml」和「vscpreferences.xml」檔案中的偏好設定。
+
+
+
+link:../configure/reference_set_ipv4_or_ipv6.html["使用喜好設定檔設定IPV4或IPV6"]
+
+在許多情況下、您可能不需要移轉組態資料。不過、如果您先前已自訂偏好設定檔案、您可能會想要檢閱這些檔案、並對新部署ONTAP 的VMware Tools進行類似變更。您可以執行下列其中一項：
+
+* 使用 https://mysupport.netapp.com/tools/index.html["適用於SnapCenter VMware及Virtual Storage Console的NetApp匯入公用程式"] 將儲存系統認證資料從VSC 6.X和SRA 4.X移轉至新部署。
+* 將儲存系統新增至新部署ONTAP 的功能區工具、並在新增時指定認證資料。
+
+
+如果您要從VASA Provider 6.X升級、則應在升級之前先取消登錄VASA Provider。如需詳細資料、請參閱目前版本的文件。
+
+如果您也要從SRA 4.0或更早版本升級：
+
+* 如果您使用的是SRA 4.0P1、則必須先升級至SRA9.6、然後執行SRA 9.6版本的就地升級。您可以稍後升級ONTAP 至最新版的VMware工具。
++
+link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升級至ONTAP 最新版的VMware工具"]
+
+* 如果您使用的是SRA 2.1或3.0、請先記下現有的站台組態詳細資料。
++
+_《儲存複寫介面卡4.0 ONTAP for ESUR__安裝與設定指南》中有「升級總覽」一節的詳細說明。這些SRA版本也使用VASA Provider、因此您必須先取消登錄VASA Provider、然後再部署ONTAP 最新版本的版的VMware工具。升級完成後、可移除舊版伺服器（`.ova'）。
+
+
+
+對於任何SRA升級、SRA軟體（Site Recovery Manager伺服器上的介面卡、由「.msi」檔案安裝）應從Site Recovery Manager伺服器移除。您可以使用Windows系統控制面板來解除安裝軟體、然後使用「. msi」檔案在SRA伺服器上安裝最新的SRA軟體。
+
+如果您有VASA Provider部署、則在從現有設定升級後、您必須使用ONTAP 「Edit Settings」（編輯設定）選項、將您的VMware Tools記憶體大小設定為12GB。您也必須修改虛擬記憶體保留。必須關閉虛擬機器、才能修改記憶體大小。
+
+如果您的VSC、VASA Provider和SRA使用7.2或7.2.1版虛擬應用裝置、則無法直接升級至9.7P1或更新版本的統一應用裝置。您必須先將現有的設定升級至9.7版虛擬應用裝置、然後再升級至最新版本。
+
+若要升級ONTAP 至VMware Tools 9.10、您應該執行虛擬應用裝置9.7P1或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。
+
+如果您要部署ONTAP 最新版的VMware Tools、您必須看到「需求」ONTAP 主題 「升級ONTAP 至最新版的VMware工具」主題提供執行就地升級的相關資訊。
+
+*相關資訊*
+
+https://mysupport.netapp.com/site/tools[]

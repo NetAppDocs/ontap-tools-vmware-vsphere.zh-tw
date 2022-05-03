@@ -1,0 +1,44 @@
+---
+permalink: manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以設定ONTAP 支援診斷使用者SSH存取的支援工具。 
+---
+= 設定遠端診斷存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定ONTAP 支援診斷使用者SSH存取的支援工具。
+
+*您需要的是什麼*
+
+您的vCenter Server執行個體必須啟用VASA Provider擴充功能。
+
+*關於此工作*
+
+使用SSH存取診斷使用者帳戶具有下列限制：
+
+* 每次啟動SSH時、您只能有一個登入帳戶。
+* 發生下列其中一種情況時、會停用對診斷使用者帳戶的SSH存取：
++
+** 時間到了。
++
+登入工作階段僅在隔天午夜之前有效。
+
+** 您可以使用SSH再次以診斷使用者身分登入。
+
+
+
+
+*步驟*
+
+. 從vCenter Server開啟主控台至VASA Provider。
+. 以維護使用者身分登入。
+. 輸入「4」以選取「Support and Diagnostics（支援與診斷）」。
+. 輸入「3」以選取「啟用遠端診斷存取」。
+. 在「確認」對話方塊中輸入「y」以啟用遠端診斷存取。
+. 輸入遠端診斷存取密碼。
+

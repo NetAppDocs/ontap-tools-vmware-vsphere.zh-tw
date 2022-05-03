@@ -1,0 +1,23 @@
+---
+permalink: concepts/concept_manage_disaster_recovery_setup_using_srm.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以在vCenter Server中建立及管理災難恢復設定、以及VMware的Site Recovery Manager（SRM）。 
+---
+= 設定災難恢復設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在vCenter Server中建立及管理災難恢復設定、以及VMware的Site Recovery Manager（SRM）。
+
+VASA Provider現在內建儲存複寫介面卡（SRA）功能。如果您已在資料中心中設定vVols資料存放區、然後針對vVols資料存放區進行還原、則不需要另外安裝SRA來進行災難恢復。在Site Recovery Manager（SRM）中、您必須配對受保護和恢復站台。站台配對完成後、SRM組態的下一部分即是設定陣列配對、讓SRM與儲存系統通訊、以探索裝置和裝置複寫。您必須先在SRM中建立站台配對、才能設定陣列配對。
+
+此版本ONTAP 的支援功能可讓您選擇使用同步SnapMirror組態進行災難恢復。
+
+
+NOTE: VMware Site Recovery Manager（SRM）不使用SRA來管理vVols資料存放區的災難恢復。VASA Provider則用於ONTAP 複寫及容錯移轉、以控制VVols資料存放區在更新版本的叢集上。
+
+link:../protect/task_enable_storage_replication_adapter.html["啟用儲存複寫介面卡"]

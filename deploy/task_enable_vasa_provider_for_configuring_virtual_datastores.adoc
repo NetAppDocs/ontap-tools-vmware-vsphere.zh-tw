@@ -1,0 +1,79 @@
+---
+permalink: deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬Volume（vVols）資料存放區。 
+---
+= 啟用VASA Provider以設定虛擬資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬磁碟區（vVols）資料存放區。
+
+*您需要的是什麼*
+
+* 您必須設定vCenter Server執行個體並設定ESXi。
+* 您必須已部署ONTAP 各種VMware工具。
+
+
+*關於此工作*
+
+如果VASA Provider功能在升級ONTAP 至9.7.1版的版的版次之前停用、則VASA Provider功能在升級後仍會停用。此版本可讓您為vVols資料存放區啟用vVols複寫功能。
+
+*步驟*
+
+. 登入VMware vSphere的網路使用者介面。
+. 在vSphere Client中、按一下*功能表*>* ONTAP 功能表工具主控台*。
+. 按一下 * 設定 * 。
+. 按一下「管理設定」索引標籤中的「*管理功能*」。
+. 在「管理功能」對話方塊中、選取要啟用的VASA Provider副檔名。
+. 如果您要使用vVols資料存放區的複寫功能、請使用*啟用vVols複寫*切換按鈕。
+. 輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。
++
+
+NOTE: 如果VASA Provider狀態在啟用VASA Provider副檔名後仍顯示為「離線」、請檢查「/var/log/VMware/VMware-sps/sps.log」檔案、查看VASA Provider是否有任何連線錯誤、或重新啟動「VMware-sps」服務。
+
+
+
+
+
+== 使用OnCommand 支援更新版本的支援功能、註冊使用ONTAP 支援功能的支援功能
+
+如果您使用ONTAP 的是VMware Virtual Volumes（vVols）9.6或更早版本、則vVols儀表板只有在您註冊OnCommand 了適用於VASA Provider的《for VASA API Services for VASA Provider》（適用於VASA供應商的英文版API服務）以取得VVols VM和資料存放區報告的資料時、才能顯示VMware Virtual Volumes（vVols）和
+
+*您需要的是什麼*
+
+您必須已從OnCommand NetApp支援網站下載《21：NetApp API Services 2.1或更新版本」。
+
+
+NOTE: vVols儀表板只有在SAN vVols資料存放區和虛擬機器使用ONTAP VMware 9.3或更新版本進行設定時、才會顯示效能指標。
+
+*步驟*
+
+. 從「VMware Tools」首頁、按一下ONTAP 「*設定*」。
+. 按一下「管理設定」索引標籤中的*管理擴充功能*。
+. 使用「Register OnCommand API Services」（登錄支援API服務）滑桿來啟用OnCommand 「支援不支援的API服務」。
+. 輸入OnCommand 適用於《介紹API服務的IP位址、服務連接埠和認證資料。
++
+您也可以使用「管理VASA提供者延伸」對話方塊進行下列修改：
+
++
+** 在OnCommand 認證資料有任何變更時、更新《程式驗證API服務註冊表（英文）：
+** 當OnCommand 您不再需要vVols儀表板時、可取消登錄《程式設計API服務（英文）」。
++
+您必須清除「Register OnCommand MorvedAPI Services」（登錄不景點API服務）核取方塊、才能移除OnCommand VASA Provider的「不景點API服務」登錄。
+
+
+
+. 按一下「 * 套用 * 」。
++
+vVols儀表板只會在ONTAP 完成對錶板API服務的登錄OnCommand 之後、才會顯示有關支援功能不全的資料儲存區的指標、以供參考9.6或更早版本的SAN vVols資料儲存區。
+
+
+
+*相關資訊*
+
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]

@@ -1,0 +1,39 @@
+---
+permalink: manage/task_edit_a_vvols_datastore.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以編輯現有的VMware虛擬磁碟區（vVols）資料存放區、以變更預設的儲存功能設定檔。預設的儲存功能設定檔主要用於交換vVols。 
+---
+= 編輯vVols資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以編輯現有的VMware虛擬磁碟區（vVols）資料存放區、以變更預設的儲存功能設定檔。預設的儲存功能設定檔主要用於交換vVols。
+
+*步驟*
+
+. 在vSphere Client頁面中、按一下*主機與叢集*。
+. 在資料存放區上按一下滑鼠右鍵、然後選取「* NetApp ONTAP 功能介紹*>*編輯vVols Datastor*的內容」。
++
+隨即顯示Edit Properties of vVols Datastore（編輯vVols資料存放區的內容）對話方塊。
+
+. 進行必要的變更。
++
+您可以從「編輯vVols Datastore」對話方塊的下拉式清單中選取新的設定檔、以變更vVols資料存放區的預設儲存功能設定檔。您也可以變更vVols資料存放區名稱和說明。
+
++
+
+NOTE: 您無法變更vVols資料存放區所在的vCenter Server。
+
+. 完成變更後、請按一下*確定*。
++
+會出現訊息方塊詢問您是否要更新vVols資料存放區。
+
+. 按一下「*確定*」以套用您的變更。
++
+此時會出現一則成功訊息、通知vVols資料存放區已更新。
+
+

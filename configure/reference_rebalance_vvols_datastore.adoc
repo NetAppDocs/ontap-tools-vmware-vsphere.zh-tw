@@ -1,0 +1,41 @@
+---
+permalink: configure/reference_rebalance_vvols_datastore.html 
+sidebar: sidebar 
+keywords: vVols datastore,rebalancing 
+summary: 支援指令來重新平衡資料中心內的各種資料。ONTAP FlexVol主要目標是讓FlexVol 各個不景區之間的空間使用率達到同樣的效果。根據空間使用量、精簡配置、LUN數量和儲存功能設定檔、使用VMware Tools可在現有磁碟區之間重新分配vVols。ONTAP 
+---
+= 重新平衡vVols資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援指令來重新平衡資料中心內的各種資料。ONTAP FlexVol主要目標是讓FlexVol 各個不景區之間的空間使用率達到同樣的效果。根據空間使用量、精簡配置、LUN數量和儲存功能設定檔、使用VMware Tools可在現有磁碟區之間重新分配vVols。ONTAP
+
+vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的準則為：
+
+* 現有FlexVol 的版本不需調整大小、FlexVol 也不會新增新的版本
+* 只有FlexVol 具有相同儲存功能或Volume屬性的部分Volume才會重新平衡
+* 空間使用率最高的VMware磁碟區可用於重新平衡FlexVol
+* 所有與虛擬機器相關的vVols都會移至相同FlexVol 的Vol
+* 保留LUN和檔案數限制
+* 如果無法在FlexVol 使用率為10%的情況下、重新平衡將不會執行
+
+
+ReBalance命令會移除空FlexVol 的等量資料區、為其他資料存放區提供空間。因此、此命令可讓您移除不想要FlexVol 的功能區、以便從資料存放區中移除這些功能區。此命令旨在將與虛擬機器相關的所有vVols移至相同FlexVol 的Sflexvolume。在重新平衡開始之前、命令會先執行預先檢查、以將故障降至最低。但即使預先檢查成功、一或多個vVols的重新平衡作業也可能失敗。發生這種情況時、就不會復原重新平衡作業。因此、與虛擬機器相關聯的vVols可能會放置在不同FlexVol 的版本上、並會產生警告記錄。
+
+[NOTE]
+====
+* 不支援平行資料存放區和虛擬機器作業。
+* 您必須在每個vVols重新平衡作業完成後、執行叢集重新探索作業。
+* 在vVols重新平衡作業期間、如果識別出大量vVols資料存放區、則傳輸作業會在設定的預設值之後逾時。
++
+** 如果發生這種情況、您應該修改「vvol.properties`檔案」、將值設為「offtap.operation.timeout.period.seconds=29700`」、然後重新啟動VASA Provider服務。
+
+
+* 如果FlexVol 某個不穩定磁碟區有Snapshot快照、則vVols在重新平衡作業期間、由於空間使用率的詳細資料不足、vVols無法正確重新平衡。
+* 您可以將VASA Provider屬性_enable、update、VVOL、Through、Discovery設為true、ONTAP 以便在ONTAP 容器重新平衡作業期間發生逾時時時、在VMware工具和VMware之間取得一致的資料。
+
+
+====

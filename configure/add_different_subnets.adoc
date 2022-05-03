@@ -1,0 +1,24 @@
+---
+permalink: configure/add_different_subnets.html 
+sidebar: sidebar 
+keywords:  
+summary: 您現在可以使用ONTAP 「VMware工具」介面新增不同的子網路來安裝資料存放區。 
+---
+= 新增不同的子網路
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP VMware Tools介面或REST API來新增ESXi主機的不同子網路。這可讓您在資源配置儲存系統之後、允許或限制用於資料存放區掛載作業的子網路。如果您未新增ESXi主機的子網路、ONTAP 那麼使用者可利用VMware工具來封鎖這些子網路的資料存放區掛載作業。
+
+*步驟*
+
+. 登入vCenter Server執行個體並存取ONTAP VMware vCenter工具。
+. 在首頁上、按一下*設定*>*管理子網路存取*。
+. 在「管理子網路存取」對話方塊中、按一下「NFS子網路存取允許的子網路」中的*所選*選項。
+. 輸入所需子網路的值、然後按一下*新增*。
+. 選擇*無*或*所選*作為受限子網路。
+. 對iSCSI子網路存取重複上述步驟、然後按一下*套用*。
+

@@ -1,0 +1,40 @@
+---
+section: deploy
+title: 部署及升級ONTAP 功能
+entries:
+- title: VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程
+  url: "/deploy/concept_installation_workflow_for_new_users.html"
+- title: 針對現有使用者的部署工作流程ONTAP
+  url: "/deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html"
+- title: VMware Cloud Foundation ONTAP 部署功能、適用於各種VMware工具
+  url: "/deploy/vmware_cloud_foundation_mode_deployment.html"
+- title: VMware工具快速入門ONTAP
+  url: "/qsg.html"
+- title: 部署ONTAP 這些功能的需求
+  entries:
+  - title: VSC的連接埠需求
+    url: "/deploy/reference_port_requirements_for_vsc.html"
+  - title: 空間與規模需求ONTAP 、滿足各種需求
+    url: "/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html"
+  - title: 支援的儲存系統、授權及應用ONTAP 程式、適用於各種功能
+    url: "/deploy/concept_supported_storage_system_and_applications.html"
+  - title: 部署ONTAP 資訊工具的考量事項
+    url: "/deploy/reference_considerations_for_deploying_ontap_tools_for_vmware_vsphere.html"
+- title: 部署ONTAP 各種工具
+  entries:
+  - title: 如何下載ONTAP 功能介紹工具
+    url: "/deploy/concept_how_to_download_ontap_tools.html"
+  - title: 如何部署ONTAP 資訊工具
+    url: "/deploy/task_deploy_ontap_tools.html"
+  - title: 啟用VASA Provider以設定虛擬資料存放區
+    url: "/deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html"
+  - title: 安裝NFS VAAI外掛程式
+    url: "/deploy/task_install_the_nfs_vaai_plug_in.html"
+  - title: 清除vSphere快取下載的外掛程式套件
+    url: "/deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html"
+- title: 升級ONTAP 功能
+  entries:
+  - title: 升級至ONTAP 最新版的VMware工具
+    url: "/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html"
+  - title: 升級儲存複寫介面卡
+    url: "/deploy/task_upgrade_storage_replication_adapter.html"

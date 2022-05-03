@@ -1,0 +1,76 @@
+---
+permalink: deploy/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html 
+sidebar: sidebar 
+keywords:  
+summary: 您必須根據儲存複寫介面卡（SRA）的建議設定來設定儲存逾時時間間隔、才能在高度擴充的環境中以最佳方式執行。 
+---
+= 針對高度擴充的環境設定儲存複寫介面卡
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須根據儲存複寫介面卡（SRA）的建議設定來設定儲存逾時時間間隔、以在高度擴充的環境中達到最佳效能。
+
+
+
+== 儲存供應商設定
+
+您應該在SRM上為擴充環境設定下列逾時值：
+
+|===
+
+
+| 進階設定 | 逾時值 
+
+
+ a| 
+StorageProvider.重新 簽名逾時
+ a| 
+將設定值從900秒增加至12000秒。
+
+
+
+ a| 
+storageProvider.hostRescanDelaySec
+ a| 
+60
+
+
+
+ a| 
+storageProvider.hostRescanRepeatCnt
+ a| 
+20
+
+
+
+ a| 
+storageProvider.hostRescanTimoutSec
+ a| 
+設定高值（例如：99999）
+
+|===
+您也應該啟用StorageProvider.autoResignatureMode選項。
+
+如需修改儲存供應商設定的詳細資訊、請參閱VMware文件。
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-E4060824-E3C2-4869-BC39-76E88E2FF9A0.html["VMware vSphere文件：變更儲存供應商設定"]
+
+
+
+== 儲存設定
+
+您必須將高度擴充環境的storage.commandTimeout和storage值。最大目前CommandCnt.timeout時間間隔設為99999秒。
+
+
+NOTE: 指定的逾時時間間隔為最大值。您不需要等待達到最大逾時時間。大多數命令都會在設定的最大逾時時間間隔內完成。
+
+您也應該設定SRA在vvol.properties檔案：offtap.operation.timeout.period.seconds=86400中執行單一作業的最長時間。
+
+https://kb.netapp.com/app/answers/answer_view/a_id/1001111["NetApp知識庫答案100111111：《ONTAP NetApp儲存複寫介面卡4.0/7.X for VMware Sizing Guide》"]
+
+有關修改SAN Provider設定的VMware文件有更多資訊。
+
+https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-711FD223-50DB-414C-A2A7-3BEB8FAFDBD9.html["VMware Site Recovery Manager文件：變更儲存設定"]

@@ -1,0 +1,48 @@
+---
+section: protect
+title: 保護資料存放區和虛擬機器
+entries:
+- title: 啟用儲存複寫介面卡來保護資料存放區
+  url: "/protect/task_enable_storage_replication_adapter.html"
+- title: 設定儲存系統以進行災難恢復
+  entries:
+  - title: 設定SAN和NAS的儲存系統
+    url: "/protect/task_configure_storage_replication_adapter_for_san_environment.html"
+  - title: 針對高度擴充的環境設定儲存設備
+    url: "/protect/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html"
+- title: 在SRM設備上設定SRA
+  url: "/protect/task_configure_sra_on_srm_appliance.html"
+- title: 更新SRA認證資料
+  url: "/protect/task_update_sra_credentials.html"
+- title: 將Windows SRM移轉至SRM設備
+  url: "/protect/concept_migration_of_disaster_recovery_setup_from_windows_to_appliance.html"
+- title: 設定vVols資料存放區的複寫、以保護虛擬機器
+  url: "/protect/concept_configure_replication_for_vvols_datastore.html"
+- title: 設定現有資料存放區的vVols複寫
+  url: "/protect/configure_vvols_replication_existing_datastore.html"
+- title: 保護未受保護的虛擬機器
+  url: "/protect/task_protect_non_protected_virtual_machines.html"
+- title: 設定受保護和恢復站台
+  entries:
+  - title: 設定VM儲存原則
+    url: "/protect/task_configure_vm_storage_policies.html"
+  - title: 設定保護群組
+    url: "/protect/task_configure_protection_groups.html"
+  - title: 配對受保護和恢復站台
+    url: "/protect/task_pair_protected_and_recovery_sites.html"
+  - title: 設定受保護和恢復站台資源
+    entries:
+    - title: 設定網路對應
+      url: "/protect/task_configure_network_mappings.html"
+    - title: 設定資料夾對應
+      url: "/protect/task_configure_folder_mappings.html"
+    - title: 設定資源對應
+      url: "/protect/task_configure_resource_mappings.html"
+    - title: 對應儲存原則
+      url: "/protect/task_map_storage_policies.html"
+    - title: 設定預留位置資料存放區
+      url: "/protect/task_configure_placeholder_datastores.html"
+    - title: 使用Array Manager設定SRA
+      url: "/protect/task_configure_array_manager.html"
+  - title: 驗證複寫的儲存系統
+    url: "/protect/task_verify_the_replicated_storage_environment.html"

@@ -1,0 +1,38 @@
+---
+permalink: deploy/concept_supported_storage_system_and_applications.html 
+sidebar: sidebar 
+keywords:  
+summary: 在開始部署ONTAP VMware vSphere的VMware vCenter工具之前、您應該先瞭解基本的儲存系統需求、應用程式需求和授權需求。 
+---
+= 支援的儲存系統、授權及應用ONTAP 程式、適用於各種功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在開始部署ONTAP VMware vSphere的VMware vCenter工具之前、您應該先瞭解基本的儲存系統需求、應用程式需求和授權需求。
+
+互通性對照表工具IMT （英文）包含ONTAP 有關支援版本的最新資訊、包括支援版本的VMware、vCenter Server、ESXi主機、外掛應用程式和Site Recovery Manager（SRM）。
+
+https://imt.netapp.com/matrix/imt.jsp?components=103229;&solution=1777&isHWU&src=IMT["互通性對照表工具"]
+
+您必須啟用FlexClone授權、才能針對VMware虛擬Volume（vVols）資料存放區執行虛擬機器快照作業和複製作業。
+
+儲存複寫介面卡（SRA）需要下列授權：
+
+* SnapMirror授權
++
+您必須啟用SnapMirror授權、才能執行SRA的容錯移轉作業。
+
+* FlexClone授權
++
+您必須啟用FlexClone授權、才能執行SRA的測試容錯移轉作業。
+
+
+
+若要檢視資料存放區的IOPS、您必須啟用儲存I/O控制、或取消核取儲存I/O控制組態中的停用儲存I/O統計資料收集核取方塊。只有在擁有VMware的Enterprise Plus授權時、才能啟用儲存I/O控制。
+
+* https://kb.vmware.com/s/article/1022091["儲存I/O控制疑難排解"]
+* https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-37CC0E44-7BC7-479C-81DC-FFFC21C1C4E3.html["儲存I/O控制需求"]
+

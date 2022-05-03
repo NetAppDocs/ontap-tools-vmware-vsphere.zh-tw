@@ -1,0 +1,32 @@
+---
+permalink: configure/task_configure_esx_server_multipathing_and_timeout_settings.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的VMware®工具可檢查及設定ESXi主機多重路徑設定、以及最適合搭配NetApp儲存系統使用的HBA逾時設定。ONTAP 
+---
+= 設定ESXi伺服器多重路徑和逾時設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援VMware vSphere工具可檢查及設定ESXi主機多重路徑設定、以及最適合搭配NetApp儲存系統使用的HBA逾時設定。ONTAP
+
+*關於此工作*
+
+視組態和系統負載而定、此程序可能需要很長時間。工作進度會顯示在「近期工作」面板中。工作完成時、主機狀態警示圖示會以正常圖示或「等待重新開機」圖示取代。
+
+*步驟*
+
+. 在VMware vSphere Web Client首頁中、按一下* vCenter*>* hostes*。
+. 在主機上按一下滑鼠右鍵、然後選取「*動作*>* NetApp VSC*>*設定建議值*」。
+. 在「NetApp建議設定」對話方塊中、選取最適合您系統的值。
++
+預設會設定建議的標準值。
+
++
+image::../media/vsc_recommended_hosts_settings.gif[VSC建議的主機設定]
+
+. 按一下「*確定*」。
+

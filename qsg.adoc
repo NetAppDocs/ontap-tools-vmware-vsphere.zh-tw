@@ -1,0 +1,192 @@
+---
+sidebar: sidebar 
+permalink: qsg.html 
+keywords: QSG, ONTAP tools for VMware vSphere, Quick start guide, Installing 
+summary: 提供VMware ONTAP vSphere的部署和初始化功能。 
+---
+= VMware vSphere快速入門工具ONTAP
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+VMware vSphere的VMware vSphere工具是單一vCenter Server外掛程式、包含VSC、VASA Provider和Storage Replication Adapter（SRA）擴充功能。ONTAP建議所有ONTAP 的VMware vSphere環境都使用VSC、因為它會使用ONTAP 最佳實務做法來設定ESXi主機設定及配置不完整的儲存資源。虛擬磁碟區（vVols）支援需要VASA Provider、SRA則需搭配VMware Site Recovery Manager一起運作。
+
+
+
+== 準備安裝
+
+您將外掛程式部署為虛擬應用裝置、可減少在vCenter Server上個別安裝及註冊每個產品的工作。
+
+
+
+=== 部署需求
+
+可搭配Windows vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）使用的VMware vCenter工具。ONTAP您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。
+
+最小空間和主機規模調整需求為：
+
+[cols="25,75"]
+|===
+| *系統* | *最低要求* 
+
+
+| 空間 | 2.1 GB適用於精簡配置安裝、54.0 GB適用於完整配置的安裝 
+
+
+| 主機規模調整 | 建議記憶體：12 GB、建議CPU：2. 
+|===
+您應該注意下列授權：
+
+[cols="25,75"]
+|===
+| *授權* | *說明* 
+
+
+| SnapMirror | （選用）如果使用vVols複寫、則需要執行SRA和VASA Provider的容錯移轉作業。 
+
+
+| FlexClone | （選用）執行SRA的測試容錯移轉作業、以及VASA Provider的vVols作業所需的測試容錯移轉作業。 
+|===
+使用下列預設雙向TCP連接埠的VMware Tools：ONTAP
+
+|===
+| *額外需求* | *說明欄* 
+
+
+| 9083. | 啟用時、VASA Provider和SRA都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。 
+
+
+| 443.. | 根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。 
+
+
+| 8143. | VSC會偵聽此連接埠上的安全通訊。 
+
+
+| 7. | VSC會傳送回應要求給ONTAP Sing、以驗證可連線性、而且只有在新增儲存系統時才需要、之後才能停用。 
+|===
+最低儲存與應用程式需求：
+
+|===
+| *儲存設備、主機及應用程式* | *版本要求* 
+
+
+| ONTAP | S299.3、9.5、9.6、9.7、9.8P1或更新版本。ONTAP 
+
+
+| VMware vSphere、vCenter伺服器、ESXi主機、Site Recovery Manager（SRM）、外掛應用程式及資料庫欄1 | 請參閱 https://imt.netapp.com/matrix/imt.jsp?components=103229;&solution=1777&isHWU&src=IMT["互通性對照表工具：OTV 9.10"] 
+|===
+
+
+=== VMware工具需求ONTAP
+
+* 設定及設定vCenter Server環境。
+* 下載.ova檔案。
+* vCenter Server執行個體的登入認證。
+* 刪除瀏覽器快取、以避免在部署ONTAP VMware工具期間發生任何瀏覽器快取問題。
+* 設定虛擬應用裝置用來回應ICMP Ping的預設閘道。
+* 虛擬應用裝置的有效DNS主機名稱。
+* 如果OnCommand 您想要檢視vVols儀表板、請下載並安裝ONTAP 適用於32個以上版本的《適用於32個以上版本的應用程式》API服務。如果您使用的是NetApp的版本、則不需要向OnCommand VASA Provider註冊此功能。ONTAP
+
+
+
+
+=== SRA的選用需求
+
+如果您要部署虛擬應用裝置以搭配VMware Site Recovery Manager使用、則必須：*下載SRA外掛程式的「.msi」檔案、前提是您要設定Site Recovery Manager（SRM）災難恢復解決方案。第1欄*下載SRA的「.tar.gz」檔案（如果您使用的是SRM應用裝置）。
+
+
+
+== 部署ONTAP 各種功能
+
+.步驟
+. 從下載「.ova」檔案 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支援網站"^] 至vSphere Client系統以部署ONTAP 這些功能。
++
+如果要部署SRA、您必須在來源和目的地站台上部署「.ova」檔案。
+
+. 登入vSphere Web Client、選取*首頁*>*主機與叢集*。
+. 以滑鼠右鍵按一下所需的資料中心、然後按一下*部署OVF範本*。
+. 您可以輸入.ova檔案的URL、或瀏覽至儲存.ova檔案的資料夾、然後按一下*「下一步*」。
+. 輸入完成部署所需的詳細資料。
++
+
+NOTE: （選用）如果您想要在不登錄vCenter Server的情況下建立容器、請選取「Configure vCenter（設定vCenter）」或「Enable VCF（啟用VCF）」區段中的「Enable VMware Cloud Foundation（VCF）（啟用VMware Cloud Foundation（VCF））」核取方
+
+
+
+您可以從*工作*索引標籤檢視部署進度、然後等待部署完成。
+
+
+
+=== 在SRM上部署SRA
+
+您可以在Windows SRM伺服器或8.2 SRM設備上部署SRA。
+
+
+
+==== 在Windows SRM伺服器上安裝SRA
+
+.步驟
+. 從NetApp支援網站下載SRA外掛程式的「.msi-」安裝程式。
+. 按兩下下載的SRA外掛程式「.msi-」安裝程式、然後依照螢幕上的指示操作。
+. 輸入已部署虛擬應用裝置的IP位址和密碼、以完成在SRM伺服器上安裝SRA外掛程式。
+
+
+
+
+==== 在SRM設備上上傳及設定SRA
+
+.步驟
+. 從下載「.tar.gz」檔案 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支援網站"^]。
+. 在「SRM應用裝置」畫面上、按一下「*儲存複寫介面卡*」>「*新介面卡*」。
+. 將「.tar.gz」檔案上傳至SRM。
+. 重新掃描介面卡、確認「SRM儲存複寫介面卡」頁面中的詳細資料已更新。
+. 使用管理員帳戶登入SRM設備、並使用該工具登入。
+. 切換至root使用者：「u root」
+. 在記錄位置輸入命令以取得SRA泊塢視窗所使用的Docker ID：「Docker ps -l」
+. 登入容器ID：「Docker執行-it -u SRM <container id> sh」
+. 使用ONTAP 下列功能設定SRM：「Perl command.pl -I <VA-IP>系統管理員<VA-password>」。畫面會顯示一則成功訊息、確認儲存認證資料已儲存。
+
+
+
+
+==== 正在更新SRA認證
+
+.步驟
+. 使用下列方法刪除/SRM/SRA/confDirectory的內容：
++
+.. "CD /SRM/SRA/conf"
+.. 「rm -RF *」
+
+
+. 執行perl命令以新認證設定SRA：
++
+.. 「CD /SRM/SRA/」
+.. 「perl command.pl -I <VA-IP>系統管理員<VA-password>」
+
+
+
+
+
+
+==== 啟用VASA Provider和SRA
+
+.步驟
+. 使用您在部署期間指定的IP位址登入vSphere Web用戶端。
+. 按一下「* OTV*」圖示、然後輸入部署期間指定的使用者名稱和密碼、再按一下「*登入*」。
+. 在OTV的左窗格中、*設定>管理設定>管理功能*、並啟用所需的功能。
++
+
+NOTE: 預設會啟用Vasa Provider。如果您想要使用vVols資料存放區的複寫功能、請使用「啟用vVols複寫切換」按鈕。
+
+. 輸入ONTAP 資訊工具的IP位址和管理員密碼、然後按一下「*套用*」。
+

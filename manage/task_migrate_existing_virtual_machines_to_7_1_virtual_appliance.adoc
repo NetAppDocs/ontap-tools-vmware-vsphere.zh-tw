@@ -1,0 +1,30 @@
+---
+permalink: manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您使用ONTAP VMware vSphere最新版的VMware vSphere功能、 接著您應該將使用「MaxThroued MBps」或「MaxThroued IOPS」QoS指標配置的虛擬機器移轉至新的VVOL資料存放區、這些資料存放區會以最新版ONTAP 的更新版支援工具的「最大IOPS」QoS指標進行配置。 
+---
+= 移轉具有舊版儲存功能設定檔的虛擬機器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用ONTAP VMware vSphere最新版的VMware vSphere功能、 接著、您應該將使用「MaxThrop MBps」或「Maxthrop IOPS」QoS指標配置的虛擬機器移轉至新的VVOL資料存放區、這些資料存放區會以最新版ONTAP 的「Max IOPS」QoS指標來配置。
+
+*關於此工作*
+
+有了ONTAP 最新版的VMware Tools、您就能為每個虛擬機器或虛擬機器磁碟（VMDK）設定QoS指標。QoS指標較早時已套用ONTAP FlexVol 到S161Volume層級、並由該FlexVol 個供應到該S161Volume上的所有虛擬機器或VMDK共享。
+
+從7.2版ONTAP 的VMware Tools開始、一個虛擬機器的QoS指標不會與其他虛擬機器共享。
+
+
+NOTE: 您不得修改現有的VM儲存原則、因為虛擬機器可能不相容。
+
+*步驟*
+
+. 使用具有所需「最大IOPS」值的新儲存功能設定檔來建立vVols資料存放區。
+. 建立VM儲存原則、然後使用新的儲存功能設定檔來對應新的VM儲存原則。
+. 使用新的VM儲存原則、將現有虛擬機器移轉至新建立的VVOL資料存放區。
+

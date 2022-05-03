@@ -1,0 +1,54 @@
+---
+permalink: protect/configure_vvols_replication_existing_datastore.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以使用Site Recovery Manager（SRM）的Array Manager精靈來設定儲存複寫介面卡（SRA）、以啟用SRM與儲存虛擬機器（SVMs）之間的互動。 
+---
+= 設定現有資料存放區的vVols複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vVols複寫功能經過強化、可針對在SRM設定之前建立的現有虛擬機器、提供vVols複寫功能。這可讓您還原現有的虛擬機器、並在恢復站台上加以保護。
+
+*您需要的是什麼*
+
+* 叢集和SVM都會執行。
+* 資料存放區和FlexVol 供應區是在來源和目標站台上建立。
+* 來源與目標站台具有相同的儲存功能設定檔。
+* 不只是個資料區、SnapMirror排程也一樣。FlexVol
+* vVols複寫已啟用。
+
+
+現有的資料存放區並未建立複寫群組。
+
+*步驟*
+
+. 存取Swagger介面。
+. 執行REST API以設定現有資料存放區的複寫群組。
++
+API：/3.0/admin/｛datastore｝/複寫群組
+
+. 使用用來建立資料存放區的儲存功能設定檔、為現有vVols資料存放區建立VM儲存原則。
++
+從可用清單新增複寫原則、複寫排程和相容的資料存放區。
+
+
+
+
+NOTE: 如果您使用System Manager來保護FlexVol 支援的是「不」、而「不」儲存功能設定檔的QoS原則則請確認「*強制效能限制*」選項未核取、災難恢復才會成功。
+
+. 存取未受保護的虛擬機器、並編輯VM儲存原則。
+. 選取VM儲存原則和資料存放區。
+. 將複寫群組新增至未受保護的虛擬機器。
+
+
+image::../media/vvols_replication_existing_datastore.png[vvols複寫現有的資料存放區]
+
+*附註：*
+
+* 將虛擬機器設定為啟用現有資料存放區的複寫時、請務必確認FlexVol 包含Config vVols的流通量。
+* 當現有虛擬機器的vVols分散在多個資料存放區時、您應該使用vMotion將該虛擬機器的所有vVols移至單一資料存放區、然後再啟用複寫。
+

@@ -1,0 +1,59 @@
+---
+permalink: manage/concept_what_vasa_provider_reports_do.html 
+sidebar: sidebar 
+keywords: VSC, VASA Provider, and SRA 
+summary: vVols報告會顯示有關VMware虛擬磁碟區（vVols）資料存放區和這些資料存放區上所建立之虛擬機器的詳細資訊。vVols儀表板可讓您檢閱及識別vCenter Server中vVols資料存放區和虛擬機器的潛在問題。 
+---
+= vVols報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vVols報告會顯示有關VMware虛擬磁碟區（vVols）資料存放區和這些資料存放區上所建立之虛擬機器的詳細資訊。vVols儀表板可讓您檢閱及識別vCenter Server中vVols資料存放區和虛擬機器的潛在問題。
+
+您可以檢視、組織及匯出報告。vVols資料存放區和虛擬機器的資料報告是ONTAP 由VMware提供、並搭配OnCommand 使用VMware API Services。
+
+VVols提供下列預製報告：
+
+* VVols資料存放區報告
+* VVols VM報告
+
+
+* vVols資料存放區報告*
+
++ vVols Datastore Report功能表提供下列資料存放區參數的相關資訊：
+
+* vVols資料存放區名稱
+* 可用空間
+* 已用空間
+* 總空間
+* 使用空間百分比
+* 可用空間百分比
+* IOPS
+* 延遲效能指標可用於ONTAP 以NFS為基礎的vVols資料存放區、位於更新版本的Sv9.8。您也可以確認產生報告的時間。vVols Datastore Report功能表可讓您根據需求來組織報告、然後使用* Export to CSV*按鈕來匯出組織報告。報告中的每個SAN vVols資料存放區名稱都是導覽至所選SAN vVols資料存放區的「監控」索引標籤的連結、您可以使用該索引標籤來檢視效能指標。
+
+
+* vVols虛擬機器報告*
+
++ vVols虛擬機器摘要報告功能表提供所有使用SAN vVols資料存放區的虛擬機器效能指標、這些虛擬機器是由VASA Provider針對ONTAP 所選vCenter Server進行資源配置。VM報告中顯示的虛擬機器度量為虛擬機器vVols資料存放區上每10分鐘收集一次的歷史資料。表格中會新增「上次重新整理時間」和「下次重新整理時間」、以提供資料收集時間和下次資料收集時間的相關資訊。
+
+* 虛擬機器名稱
+* 承諾容量
+* 正常運作時間
+* IOPS
+* 處理量
++
+報告會顯示虛擬機器是開啟還是關閉。
+
+* 邏輯空間
+* 主機
+* 電源狀態
+* 延遲
++
+報告會顯示與虛擬機器相關聯之所有vVols資料存放區中的虛擬機器延遲。
+
+
+
+報告中的每個虛擬機器名稱都是指向所選虛擬機器之「監控」索引標籤的連結。您可以根據需求來組織虛擬機器報告、以.CSV格式匯出報告、然後將報告儲存在本機系統上。報告的時間戳記會附加至儲存的報告。

@@ -1,0 +1,29 @@
+---
+permalink: deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords: Virtual Storage Console,Storage Replication Adapter 
+summary: 在部署ONTAP VMware vSphere的支援功能之前、您應該先熟悉部署套件的空間需求、以及一些基本的主機系統需求。 
+---
+= 空間與規模需求ONTAP 、滿足各種需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署ONTAP VMware vSphere的支援功能之前、您應該先熟悉部署套件的空間需求、以及一些基本的主機系統需求。
+
+* *安裝套件空間需求*
++
+** 2.1 GB、適用於精簡配置的安裝
+** 54.0 GB、適用於完整配置的安裝
+
+
+* *主機系統規模調整需求*
++
+** ESXi 6.5U3或更新版本
+** 建議記憶體：12 GB RAM
+** 建議的CPU：2.
+
+
+

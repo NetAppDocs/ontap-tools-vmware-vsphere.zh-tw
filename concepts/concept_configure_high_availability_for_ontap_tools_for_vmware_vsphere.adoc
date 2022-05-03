@@ -1,0 +1,59 @@
+---
+permalink: concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 支援高可用度（HA）組態的支援功能、有助於在故障時提供不中斷的功能。ONTAP ONTAP 
+---
+= 設定ONTAP 高可用度的功能以供使用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援高可用度（HA）組態的支援功能、可在故障時提供不中斷的功能。ONTAP ONTAP
+
+利用VMware vSphere高可用度（HA）功能和vSphere容錯能力（FT）功能來提供高可用度。ONTAP高可用度（HA）解決方案可讓您從下列原因造成的停機中快速恢復：
+
+* 主機故障
+* 網路故障
+* 虛擬機器故障（客體作業系統故障）
+* 應用程式ONTAP （VMware工具）當機
+
+
+不需要額外的組態ONTAP 設定即可提供高可用度的VMware Tools。只有vCenter Server和ESXi主機必須根據需求、設定VMware vSphere HA功能或vSphere FT功能。HA和FT都需要叢集式主機搭配共用儲存設備。FT有額外的要求和限制。
+
+除了VMware vSphere HA解決方案和vSphere FT解決方案之外、ONTAP VMware®工具也能協助ONTAP 確保各項VMware工具服務隨時都能正常運作。此功能可定期監控這三項服務、並在偵測到任何故障時自動重新啟動。ONTAP這有助於預防應用程式故障。
+
+
+NOTE: vCenter HA不受ONTAP 支援。
+
+
+
+== VMware vSphere HA
+
+您可以設定vSphere環境、以便ONTAP 部署VMware vSphere的VMware vSphere for VMware vSphere for High Availability（HA）。VMware HA功能可提供容錯移轉保護、避免虛擬環境中的硬體故障和作業系統故障。
+
+VMware HA功能可監控虛擬機器、以偵測作業系統故障和硬體故障。偵測到故障時、VMware HA功能會在資源池中的其他實體伺服器上重新啟動虛擬機器。偵測到伺服器故障時、不需要手動介入。
+
+設定VMware HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定VMware HA的步驟。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["VMware vSphere文件：建立及使用vSphere HA叢集"]
+
+
+
+== VMware vSphere容錯能力
+
+VMware vSphere容錯（FT）功能可提供更高層級的高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。
+
+確保您的vSphere授權支援FT、並提供ONTAP 環境中使用VMware工具所需的vCPU數量（至少2個vCPU；大型環境需要4個vCPU）。
+
+vSphere FT可讓虛擬機器在伺服器故障期間持續運作。在虛擬機器上啟用vSphere FT時、會自動在其他由Distributed Resource Scheduler（DRS）選取的主機（次要虛擬機器）上建立主要虛擬機器的複本。如果未啟用DRS、則會從可用的主機中選取目標主機。vSphere FT會以鎖步模式操作主要虛擬機器和次要虛擬機器、每個虛擬機器都會將主要虛擬機器的執行狀態鏡射至次要虛擬機器。
+
+當發生硬體故障導致主要虛擬機器故障時、次要虛擬機器會立即接收主要虛擬機器停止的位置。次要虛擬機器會繼續執行、不會遺失任何網路連線、交易或資料。
+
+您的系統必須符合CPU需求、虛擬機器限制需求、以及設定vCenter Server執行個體vSphere FT的授權需求。
+
+設定HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定HA的步驟。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-57929CF0-DA9B-407A-BF2E-E7B72708D825.html["VMware vSphere文件：容錯要求、限制及授權"]

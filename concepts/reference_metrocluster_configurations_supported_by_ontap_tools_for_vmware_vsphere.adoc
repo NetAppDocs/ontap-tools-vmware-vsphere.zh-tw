@@ -1,0 +1,39 @@
+---
+permalink: concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的支援VMware vSphere的支援環境、這些環境使用的是VMware vSphere的支援功能。ONTAP MetroCluster ONTAP大部分支援都是自動的。不過MetroCluster 、當您搭配VSC和VASA Provider使用時、可能會注意到一些差異。 
+---
+= 支援的支援支援VMware的組態MetroCluster ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援VMware vSphere的支援環境、這些環境使用的是VMware vSphere的支援功能。ONTAP MetroCluster ONTAP大部分支援都是自動的。不過MetroCluster 、當您搭配VSC和VASA Provider使用時、可能會注意到一些差異。
+
+
+NOTE: SRA不支援MetroCluster 不支援的不支援的組態。
+
+
+
+== 包含各種組態和VSC MetroCluster
+
+您必須確保VSC在主要站台和次要站台上探索儲存系統控制器。通常、VSC會自動探索儲存控制器。如果您使用叢集管理LIF、則最好驗證VSC是否已在兩個站台上探索叢集。否則、您可以手動將儲存控制器新增至VSC。您也可以修改VSC用來連線至儲存控制器的使用者名稱和密碼配對。
+
+發生切換時、次要站台上的SVM會接管。這些SVM的名稱後面會加上「-MC」字尾。如果在執行資源存放區資源配置等作業時發生切換作業、則資料存放區所在的SVM名稱會變更為包含「`-MC」字尾。當發生切換時、此後置會捨棄、而且主要站台上的SVM會恢復控制權。
+
+
+NOTE: 如果您在MetroCluster VSC中新增了具有支援功能的直接SVM、則在切換後、SVM名稱的變更（加上「`-MC」字尾）將不會反映出來。所有其他切換作業仍會正常執行。
+
+當發生切換或切換時、VSC可能需要幾分鐘時間來自動偵測及探索叢集。如果在執行VSC作業（例如資源存放區資源配置）時發生此情況、可能會發生延遲。
+
+
+
+== 提供者MetroCluster
+
+VASA Provider會自動支援使用MetroCluster 不完整組態的環境。在VASA Provider環境中、切換是透明的。您無法將直接SVM新增至VASA Provider。
+
+
+NOTE: VASA Provider在切換後、不會在次要站台上的SVM名稱加上「-MC」字尾。

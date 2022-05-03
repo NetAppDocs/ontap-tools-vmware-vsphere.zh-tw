@@ -1,0 +1,53 @@
+---
+permalink: manage/task_monitor_datastores_using_the_traditional_dashboard.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以使用ONTAP 傳統的VMware工具儀表板來監控傳統的資料存放區和虛擬機器。儀表板資料可讓您分析資料存放區使用量、並採取修正行動、防止虛擬機器在空間相關限制條件下執行。 
+---
+= 使用傳統儀表板分析效能資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 傳統的VMware工具儀表板來監控傳統的資料存放區和虛擬機器。儀表板資料可讓您分析資料存放區使用量、並採取修正行動、防止虛擬機器在空間相關限制條件下執行。
+
+*您需要的是什麼*
+
+您應該在「設定儲存I/O控制」對話方塊中選取「啟用儲存I/O控制與統計資料收集*」或「停用儲存I/O控制但啟用統計資料收集*」選項。只有在擁有VMware的Enterprise Plus授權時、才能啟用「儲存I/O控制」。
+
+https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-BB5D9BAB-9E0E-4204-A76A-54634CD8AD51.html["VMware vSphere文件：啟用儲存I/O控制"]
+
+傳統儀表板會顯示從vCenter Server取得的IOPS、空間使用量、延遲和已認可容量度量。可將節省空間的集合體數據提供給傳統儀表板。ONTAP您可以檢視特定Aggregate的空間節約效益。這些效能參數可讓您識別虛擬環境中的效能瓶頸、並採取修正行動來解決問題。
+
+
+NOTE: 不支援檔案監控FlexGroup 功能、以利在直接儲存虛擬機器（SVM）上設定的資料存放區。
+
+利用傳統的「支援資訊」工具儀表板ONTAP 、您可以檢視NFS資料存放區或VMFS資料存放區。您可以按一下資料存放區、導覽至vCenter Server執行個體提供的資料存放區詳細資料檢視、以檢視及修正vCenter Server中資料存放區的任何問題。
+
+*步驟*
+
+. 在vSphere Client首頁中、按一下* ONTAP 《VMware vSpher*適用的*功能性工具》。
+. 使用vCenter Server下拉式功能表選取所需的vCenter Server、以檢視資料存放區。
+. 按一下*傳統儀表板*。
++
+資料存放區入口小程序提供下列詳細資料：
+
++
+** 在vCenter Server執行個體中、由VSC管理的傳統資料存放區數量及其效能指標
+** 前五大資料存放區是根據可修改的資源使用量和效能參數、如果需要、您可以根據使用空間、IOPS或延遲、以及所需的順序來變更資料存放區清單。
+
+
++
+虛擬機器入口小程序提供下列詳細資料：
+
++
+** 在vCenter Server中使用NetApp資料存放區的虛擬機器數量
+** 前五大虛擬機器是根據承諾的容量、延遲、IOPS、處理量和正常運作時間
++
+虛擬機器入口小程序中的IOPS和處理量資料僅適用於FlexGroup 在支援VMware的磁碟區上建立的資料存放區。
+
+
+
+

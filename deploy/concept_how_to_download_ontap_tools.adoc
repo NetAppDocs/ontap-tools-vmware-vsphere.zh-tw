@@ -1,0 +1,20 @@
+---
+permalink: deploy/concept_how_to_download_ontap_tools.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以ONTAP 從NetApp支援網站下載適用於VMware vSphere的.ova檔案。 
+---
+= 如何下載ONTAP 功能介紹工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以ONTAP 從NetApp支援網站下載適用於VMware vSphere的_.ova_檔案。
+
+_.ova_檔案包含ONTAP 了一些不實的工具。部署完成後、這三種產品都會安裝在您的環境中。根據預設、一旦您決定後續部署模式、VSC就會立即開始運作、並根據您的需求選擇是否啟用VASA Provider和SRA。
+
+您可以從下載ONTAP 這些功能 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支援網站"] 使用軟體下載頁面。
+
+如果您想要在部署ONTAP VMware vCenter工具時啟用SRA、則必須在Site Recovery Manager（SRM）伺服器上安裝SRA外掛程式。您可以從「ONTAP 軟體下載」區段的「*儲存複寫介面卡for Rise*」功能表下載SRA外掛程式的安裝檔案。

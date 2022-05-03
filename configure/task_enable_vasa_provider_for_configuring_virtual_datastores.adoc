@@ -1,0 +1,41 @@
+---
+permalink: configure/task_enable_vasa_provider_for_configuring_virtual_datastores.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬Volume（vVols）資料存放區。 
+---
+= 啟用VASA Provider以設定虛擬資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬磁碟區（vVols）資料存放區。
+
+*您需要的是什麼*
+
+* 您必須設定vCenter Server執行個體並設定ESXi。
+* 您必須已部署ONTAP 各種VMware工具。
+
+
+*關於此工作*
+
+如果VASA Provider功能在升級ONTAP 至9.7.1版的版的版次之前停用、則VASA Provider功能在升級後仍會停用。此版本可讓您為vVols資料存放區啟用vVols複寫功能。
+
+*步驟*
+
+. 登入VMware vSphere的網路使用者介面。
+. 在vSphere Client中、按一下*功能表*>* ONTAP 功能表工具主控台*。
+. 按一下 * 設定 * 。
+. 按一下「管理設定」索引標籤中的「*管理功能*」。
+. 在「管理功能」對話方塊中、選取要啟用的VASA Provider副檔名。
+. 如果您要使用vVols資料存放區的複寫功能、請使用*啟用vVols複寫*切換按鈕。
+. 輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。
++
+
+NOTE: 如果VASA Provider狀態顯示為「離線」、即使在啟用VASA Provider externsion之後、請檢查/var/log/VMware/VMware-spS/sps.log檔案、查看VASA Provider是否有任何連線錯誤、或重新啟動「'VMware-sps'」服務。
+
+
+
+如果您使用ONTAP 的是32個以上的叢集、則必須向OnCommand VASA Provider註冊支援API服務、以取得VVols資料存放區和SAN vVols VM和SAN vVols資料存放區報告中使用的虛擬機器詳細資料。但如果您使用ONTAP 的是更新版本的版本、則不需要向OnCommand VASA Provider註冊《介紹》API服務。

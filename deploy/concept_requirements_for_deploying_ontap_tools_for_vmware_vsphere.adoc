@@ -1,0 +1,14 @@
+---
+permalink: deploy/concept_requirements_for_deploying_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 在部署ONTAP 完VMware開發工具之前、您應該先瞭解部署需求、並決定要執行的工作。根據您的工作、您可以選擇部署模式來部署ONTAP 各種VMware工具 
+---
+= 部署ONTAP 這些功能的需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在部署ONTAP 完VMware開發工具之前、您應該先瞭解部署需求、並決定要執行的工作。根據您的工作、您可以選擇部署模式來部署ONTAP 各種VMware工具

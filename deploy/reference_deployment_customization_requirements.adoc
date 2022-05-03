@@ -1,0 +1,58 @@
+---
+permalink: deploy/reference_deployment_customization_requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: 您必須考量幾點限制、才能自訂部署ONTAP 功能。 
+---
+= 部署自訂考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須考量幾點限制、才能自訂部署ONTAP 功能。
+
+
+
+== 應用裝置管理員使用者密碼
+
+您不得在系統管理員密碼中使用任何空格。
+
+
+
+== 應用裝置維護主控台認證資料
+
+您必須使用「maint」使用者名稱來存取維護主控台。您可以在部署期間設定「maint」使用者的密碼。您可以使用ONTAP 您的VMware工具維護主控台的「應用程式組態」功能表來變更密碼。
+
+
+
+== vCenter Server管理員認證
+
+您可以在部署ONTAP VMware vCenter工具的同時、設定vCenter Server的系統管理員認證。
+
+如果vCenter Server的密碼有所變更、您可以使用下列URL來更新管理員的密碼：\https://<IP>:8143/Register.html、其中IP位址是ONTAP 您在部署期間所提供的各種資訊工具。
+
+
+
+== vCenter Server IP位址
+
+* 您應該提供vCenter Server執行個體的IP位址（IPV4或IPV6）、以便登錄ONTAP 使用各種工具。
++
+所產生的VSC和VASA憑證類型取決於部署期間所提供的IP位址（IPv4或IPv6）。部署ONTAP 支援功能時、如果您尚未輸入任何靜態IP詳細資料、而且您的DHCP、則網路會同時提供IPv6位址。
+
+* 用來向vCenter Server註冊的VMware vCenter IP位址取決於在部署精靈中輸入的vCenter Server IP位址類型（IPv4或IPv6）ONTAP 。
++
+VSC和VASA憑證都會使用vCenter Server登錄期間所使用的相同類型IP位址來產生。
+
++
+
+NOTE: ：僅vCenter Server 6.7及更新版本才支援IPv6。
+
+
+
+
+
+== 應用裝置網路內容
+
+如果您不使用DHCP、請指定有效的DNS主機名稱（非合格）、ONTAP 以及靜態IP位址、以供使用VMware Tools和其他網路參數。所有這些參數都是正確安裝和操作所需的參數。

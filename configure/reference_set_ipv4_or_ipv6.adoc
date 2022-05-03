@@ -1,0 +1,65 @@
+---
+permalink: configure/reference_set_ipv4_or_ipv6.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以將喜好設定檔kaminoprefs.xml中 新增一個選項、以針對所有新增至VSC的儲存系統、啟用支援IPV4或IPV6。 
+---
+= 使用喜好設定檔設定IPV4或IPV6
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+偏好設定檔案包含可控制ONTAP VMware vSphere作業的各項功能的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解虛擬儲存主控台（VSC）使用哪些偏好設定檔很有幫助。
+
+VSC有多個偏好設定檔。這些檔案包含可決定VSC執行各種作業的輸入金鑰和值。以下是VSC使用的部分偏好設定檔：
+
+「/opt/NetApp/vscserver/etc/kamino/kaminoprefs.xml」
+
+「/opt/NetApp/vscserver/etc/Vsc/vscpets.xml」
+
+在某些情況下、您可能必須修改偏好設定檔。例如、如果您使用iSCSI或NFS、而且ESXi主機和儲存系統之間的子網路不同、則必須修改喜好設定檔。如果您未修改喜好設定檔中的設定、則由於VSC無法掛載資料存放區、資料存放區資源配置會失敗。
+
+您可以將喜好設定檔「kaminoprefs.xml」新增一個選項、設定為啟用對所有新增至VSC的儲存系統的IPV4或IPV6支援。
+
+* 「default.override.option.provision.mount.datastore.address.family`參數已新增至「kaminoprefs.xml」偏好檔案、以設定資料存放區資源配置的偏好資料LIF傳輸協定。
++
+此偏好選項適用於所有新增至VSC的儲存系統。
+
+* 新選項的值包括「ipv4」、「ipv6」和「nONE」。
+* 預設值設為「無」。
+
+
+|===
+
+
+| * 價值 * | *說明* 
+
+
+ a| 
+無
+ a| 
+* 資源配置會使用與叢集類型相同的IPv6或IPv4位址類型資料LIF、或是用於新增儲存設備的SVM管理LIF。
+* 如果SVM中沒有相同的IPv6或IPv4位址類型的資料LIF、則資源配置會透過其他類型的資料LIF（如果可用）進行。
+
+
+
+
+ a| 
+IPV4
+ a| 
+* 資源配置會使用所選SVM中的IPV4資料LIF進行。
+* 如果SVM沒有IPV4資料LIF、則資源配置會透過IPv6資料LIF進行（如果SVM中有）。
+
+
+
+
+ a| 
+IPv6
+ a| 
+* 資源配置會使用所選SVM中的IPv6資料LIF進行。
+* 如果SVM沒有IPv6資料LIF、則資源配置會透過可在SVM中使用的IPV4資料LIF進行。
+
+
+|===

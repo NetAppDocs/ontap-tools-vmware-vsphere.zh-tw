@@ -1,0 +1,27 @@
+---
+permalink: manage/task_configure_vasa_provider_to_work_with_ssh.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以設定VASA Provider使用SSH進行安全存取、方法是設定ONTAP 使用VMware工具。 
+---
+= 設定VASA Provider以搭配SSH使用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以設定VASA Provider使用SSH進行安全存取、方法是設定ONTAP 使用VMware工具。
+
+*關於此工作*
+
+設定SSH時、您必須以維護使用者的身分登入。這是因為已停用VASA Provider的root存取權。如果您使用其他登入認證、則無法使用SSH存取VASA Provider。
+
+*步驟*
+
+. 從vCenter Server開啟主控台、即可前往ONTAP VMware vCenter工具。
+. 以維護使用者身分登入。
+. 輸入「3」選擇*系統組態*。
+. 輸入「6」以選取*「啟用SSH存取」*。
+. 在確認對話方塊中輸入「y」。
+

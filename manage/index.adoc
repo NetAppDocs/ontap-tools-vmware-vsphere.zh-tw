@@ -1,0 +1,12 @@
+---
+permalink: manage/index.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= 系統管理指南
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

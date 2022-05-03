@@ -1,0 +1,81 @@
+---
+permalink: concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 如果您想要在VMware vSphere上使用以角色為基礎的存取控制搭配使用VMware vSphere的VMware®工具、則必須在ONTAP 儲存系統上設定以角色為基礎的存取控制（RBAC）ONTAP 。您可以使用ONTAP 「介紹RBAC」功能、建立一個或多個存取權限有限的自訂使用者帳戶。 
+---
+= 如何針對ONTAP VMware vSphere的VMware vSphere、設定ONTAP 以角色為基礎的驗證工具存取控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要在VMware vSphere上使用角色型存取控制搭配使用VMware vSphere的VMware工具、則必須在ONTAP 儲存系統上設定以角色為基礎的存取控制（RBAC）ONTAP 。您可以使用ONTAP 「介紹RBAC」功能、建立一個或多個存取權限有限的自訂使用者帳戶。
+
+VSC和SRA可存取叢集層級或儲存虛擬機器（SVM）SVM層級的儲存系統。如果您是在叢集層級新增儲存系統、則必須提供管理使用者的認證、以提供所有必要的功能。如果您是直接新增SVM詳細資料來新增儲存系統、您必須注意、「vsadmin」使用者並不具備執行特定工作所需的全部角色和功能。
+
+VASA Provider只能在叢集層級存取儲存系統。如果特定儲存控制器需要VASA Provider、則即使您使用VSC或SRA、也必須在叢集層級將儲存系統新增至VSC。
+
+若要建立新的使用者、並將叢集或SVM連線ONTAP 至VMware Tools、您應該執行下列步驟：
+
+* 建立叢集管理員或SVM管理員角色
++
+
+NOTE: 您可以使用下列其中一項來建立這些角色：
+
++
+** 系統管理程式9.8P1或更新版本ONTAP
++
+link:../configure/task_configure_user_role_and_privileges.html["設定使用者角色和權限"]
+
+** RBAC使用者建立工具ONTAP （若使用ONTAP 的是32個以上版本）
++
+https://community.netapp.com/t5/Virtualization-Articles-and-Resources/RBAC-User-Creator-tool-for-VSC-VASA-Provider-and-Storage-Replication-Adapter-7-0/ta-p/133203/t5/Virtualization-Articles-and-Resources/How-to-use-the-RBAC-User-Creator-for-Data-ONTAP/ta-p/86601["適用於VSC、VASA Provider和Storage Replication Adapter 7.0的RBAC使用者建立工具、適用於VMware vSphere"]
+
+
+
+* 使用ONTAP NetApp建立已指派角色的使用者、並使用NetApp建立適當的應用程式集
++
+您需要這些儲存系統認證資料、才能設定VSC的儲存系統。您可以在VSC中輸入認證資料、為VSC設定儲存系統。每次使用這些認證登入儲存系統時、您都有權使用ONTAP 在建立認證時於各處設定的VSC功能。
+
+* 將儲存系統新增至VSC、並提供您剛建立之使用者的認證資料
+
+
+
+
+== VSC角色
+
+VSC將ONTAP 「不含功能的」權限分類為下列一組VSC角色：
+
+* 探索
++
+可探索所有連線的儲存控制器
+
+* 建立儲存設備
++
+可建立磁碟區和邏輯單元編號（LUN）
+
+* 修改儲存設備
++
+實現儲存系統的大小調整和重複資料刪除
+
+* 摧毀儲存設備
++
+可銷毀磁碟區和LUN
+
+
+
+
+
+== VASA供應商角色
+
+您只能在叢集層級建立原則型管理。此角色可利用儲存功能設定檔、針對儲存設備進行原則型管理。
+
+
+
+== SRA角色
+
+SRA將ONTAP 「不支援功能」權限分類為叢集層級或SVM層級的SAN或NAS角色。這可讓使用者執行SRM作業。
+
+當ONTAP 您將叢集新增至VSC時、VSC會執行初始權限驗證以驗證各項RBAC角色。如果您已新增直接SVM儲存IP、則VSC不會執行初始驗證。VSC會在工作流程稍後檢查並強制執行權限。

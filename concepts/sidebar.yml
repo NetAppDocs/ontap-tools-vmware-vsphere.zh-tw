@@ -1,0 +1,30 @@
+---
+section: concepts
+title: 概念
+entries:
+- title: VMware工具總覽ONTAP
+  url: "/concepts/concept_virtual_storage_console_overview.html"
+- title: VVVols的VASA Provider組態
+  url: "/concepts/concept_configure_vvols_datastores.html"
+- title: 用於災難恢復的儲存複寫介面卡
+  url: "/concepts/concept_manage_disaster_recovery_setup_using_srm.html"
+- title: 角色型存取控制
+  entries:
+  - title: 關於以角色為基礎ONTAP 的存取控制功能之概述
+    url: "/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html"
+  - title: vCenter Server權限的元件
+    url: "/concepts/reference_components_that_make_up_vcenter_server_permissions.html"
+  - title: 指派和修改vCenter Server權限的重點
+    url: "/concepts/reference_key_points_about_assigning_and_modifying_permissions.html"
+  - title: 標準角色隨ONTAP 附於整套的功能
+    url: "/concepts/concept_standard_roles_packaged_with_ontap_tools_for_vmware_vsphere.html"
+  - title: VSC工作所需的權限
+    url: "/concepts/concept_privileges_required_for_vsc_tasks.html"
+  - title: 適用於VMware的權限ONTAP
+    url: "/concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html"
+  - title: 如何設定ONTAP 以角色為基礎的存取控制功能、以利執行各項功能
+    url: "/concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html"
+- title: 設定ONTAP 高可用度的功能以供使用
+  url: "/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html"
+- title: 支援的支援支援VMware的組態MetroCluster ONTAP
+  url: "/concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html"

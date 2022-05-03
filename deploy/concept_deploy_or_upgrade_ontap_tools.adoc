@@ -1,0 +1,14 @@
+---
+permalink: deploy/concept_deploy_or_upgrade_ontap_tools.html 
+sidebar: sidebar 
+keywords: deploying virtual appliance 
+summary: 您必須在ONTAP VMware vSphere環境中下載及部署這些功能、然後根據您要使用VSC、VASA Provider和SRA執行的工作來設定所需的應用程式。 
+---
+= 部署或升級ONTAP VMware vSphere的VMware®工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在ONTAP VMware vSphere環境中下載及部署這些功能、然後根據您要使用VSC、VASA Provider和SRA執行的工作來設定所需的應用程式。

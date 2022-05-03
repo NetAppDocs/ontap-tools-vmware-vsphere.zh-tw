@@ -1,0 +1,38 @@
+---
+permalink: manage/concept_decide_whether_to_use_this_guide.html 
+sidebar: sidebar 
+keywords: scope of guide 
+summary: 您可以使用本指南、快速找到有關資源配置及最佳化儲存設備與監控資料存放區與虛擬機器的工作相關資訊。 
+---
+= 決定是否使用本指南
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用本指南、快速找到有關資源配置及最佳化儲存設備與監控資料存放區與虛擬機器的工作相關資訊。
+
+本指南中的資訊適用於VSC使用者、而非系統管理員。本指南提供ONTAP VMware vSphere的所有部署後工作相關資訊、適用於VMware vSphere的VMware®工具。
+
+*使用本指南的要求*
+
+本指南以下列假設為基礎：
+
+* 您已安裝並設定VSC。
+* 您執行的工作所需的功能已經安裝完成。
++
+這些功能可能包括適用於VMware VAAI的NFS外掛程式、ONTAP 適用於VMware的VASA供應商、以及儲存複寫介面卡。
+
+* VSC已探索您所使用的所有儲存系統。
+* vCenter Server和ONTAP VMware均已設定角色型存取控制（RBAC）。
++
+如果您沒有所有必要的權限和權限、您執行的工作可能會在您執行精靈時正常運作、但仍無法成功完成。
+
+
+
+本指南所述的大多數工作、也都要求一次只能在目標資料存放區或虛擬機器上執行一項作業。
+
+如果您對VSC有任何疑問、或想要與其他VSC使用者分享資訊、您可以前往NetApp社群論壇。
+
+https://community.netapp.com/t5/Products-and-Services/ct-p/products-and-solutions["NetApp社群：適用於VMware vSphere的虛擬儲存主控台"]
