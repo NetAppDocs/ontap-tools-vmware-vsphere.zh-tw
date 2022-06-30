@@ -41,4 +41,4 @@ https://www.netapp.com/us/media/patents-page.pdf[]
 
 https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2881273["VMware vSphere 9.10的VMware工具注意事項ONTAP"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2881258["VMware vSphere 9.10的VMware工具注意事項ONTAP"^]
