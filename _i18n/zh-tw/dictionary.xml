@@ -415,8 +415,6 @@
   <block id="cb0b3fe7df304baf3d39da385a4ec459" category="summary">提供ONTAP 本次VMware vSphere之VMware vSphere版本的重要資訊、包括新功能與增強功能、修正問題、已知問題、注意事項及限制。</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">版本資訊</block>
   <block id="01de6d9be7e1aa419839bb0c0de0ebde" category="paragraph">提供ONTAP 本次VMware vSphere之更新版的重要資訊、包括修正問題、已知問題、注意事項及限制。</block>
-  <block id="afa73da64573c9300600d9dcda03dbca" category="inline-link">VMware vSphere 9.10版本說明的相關工具ONTAP</block>
-  <block id="1d39c4b0a8cc202b1cc30e5c2df964fb" category="paragraph">如需詳細資訊、請參閱<block ref="8da3a9cd5d4fe240d226b42d5d3c0796" category="inline-link-rx"></block>。</block>
   <block id="3cd4a44b3b904a2571f0a38e4172e2af" category="summary">若要存取ONTAP VMware vSphere GUI的VMware®工具、您必須在正確的vSphere物件層級指派產品層級的VSC特定檢視權限。如果您在沒有此權限的情況下登入、VSC會在您按一下NetApp圖示時顯示錯誤訊息、並防止您存取VSC。</block>
   <block id="8169f681458fdeab0f3382d2821b913f" category="doc">VMware vSphere的產品層級權限ONTAP 、由VMware vSphere的VMware工具提供</block>
   <block id="bf4c84b12f3372e0d4531a23f98f42a3" category="paragraph">下列資訊說明VSC產品層級檢視權限：</block>
@@ -960,13 +958,9 @@
   <block id="b7889df18249aae5d285bb8d5689673e" category="paragraph">對話方塊中的大部分欄位都是不言自明的。下表說明您可能需要指引的部分欄位。</block>
   <block id="d67372be0bd12a2ddbcf795ccfacc7de" category="cell">*章節*</block>
   <block id="0db377921f4ce762c62526131097968f" category="paragraph">一般</block>
-  <block id="5d796cb61105a94007269d4dd1796747" category="paragraph">「新資料存放區資源配置」對話方塊的「一般」區段提供選項、可輸入新資料存放區的目的地、名稱、大小、類型和傳輸協定。您可以選取* NFS*或* VMFS*傳輸協定來設定傳統的資料存放區。此版本可讓您設定大小上限為64TB的VMFS資料存放區。您可以選取「跨ONTAP 整個叢集分配資料存放區資料」選項、以便在FlexGroup 儲存系統上配置一個NetApp Volume。選取此選項會自動取消選取「Use Storage Capability Profile for provisioning」（使用儲存功能設定檔進行資源配置）核取方塊。針對供應資料區、僅會列出9.8以上的不實叢集供您選擇。FlexGroup ONTAPvVols資料存放區類型是用來設定vVols資料存放區。如果已啟用VASA Provider、您也可以決定是否使用儲存功能設定檔。*資料存放區叢集*選項僅適用於傳統資料存放區。您應該使用*進階*選項來指定* VMFS5*或* VMFS6*檔案系統。</block>
   <block id="f31303ddb8ada38aed08c2bb8f9d8e6c" category="paragraph">儲存系統</block>
-  <block id="f3a6fc9fb4ad23951edb2fc7ea7ce05b" category="paragraph">如果您已選取「一般」區段中的選項、則可以選取列出的其中一個儲存功能設定檔。如果您要配置FlexGroup 一個不支援的資料存放區、則不支援此資料存放區的儲存功能設定檔。儲存系統和儲存虛擬機器的系統建議值會填入以供輕鬆使用。但您可以視需要修改這些值。</block>
   <block id="03804e006add62cab43571db2a148f6e" category="paragraph">儲存屬性</block>
-  <block id="56b417b201b79abcd233bd24a3f67c7f" category="paragraph">根據預設、VSC會填入* Aggregate *和* Volumes *選項的建議值。您可以根據需求自訂值。由於可管理集合體選擇、因此不支援FlexGroup 將Aggregate選取項目用於不支援的資料存放區ONTAP 。「*進階*」功能表下的*空間保留*選項也會填入以提供最佳結果。</block>
   <block id="290612199861c31d1036b185b4e69b75" category="paragraph">摘要</block>
-  <block id="c00d812223c8931a6abca969bbb9c373" category="paragraph">您可以檢閱您為新資料存放區指定的參數摘要。「摘要」頁面中有一個新的「Volume樣式」欄位、可讓您區分所建立的資料存放區類型。「Volume樣式」可以是「FlexVol '漢城」或「FlexGroup 漢城」。</block>
   <block id="ce9642ced5a02053cc009b2bcdc0de38" category="admonition">作爲傳統資料存放區一部分的元件無法縮減至低於現有大小、但最多可增加120%。FlexGroup在這些FlexGroup 支援資料區上啟用預設快照。。在「摘要」區段中、按一下「*完成*」。</block>
   <block id="db25841cad5f4a3789c93e40d334c1b8" category="inline-link">當Volume狀態變更為離線時、無法存取資料存放區</block>
   <block id="e8f51520d45845b237d7483dd8e847f2" category="paragraph"><block ref="e8f51520d45845b237d7483dd8e847f2" category="inline-link-rx"></block></block>
@@ -1072,7 +1066,6 @@
   <block id="04336d4b9bf21d52125df44458219a0d" category="paragraph">對於SUSE Linux Enterprise Server 10或SUSE Linux Enterprise Server 11、會顯示類似下列訊息：</block>
   <block id="1e188467952fdbff98e3068f89af769c" category="summary">支援指令來重新平衡資料中心內的各種資料。ONTAP FlexVol主要目標是讓FlexVol 各個不景區之間的空間使用率達到同樣的效果。根據空間使用量、精簡配置、LUN數量和儲存功能設定檔、使用VMware Tools可在現有磁碟區之間重新分配vVols。ONTAP</block>
   <block id="18b21d5b06a5a5f79020d85de9c49a5d" category="doc">重新平衡vVols資料存放區</block>
-  <block id="fbaf83390e5a4d870b5b750c0656b670" category="paragraph">vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的準則為：</block>
   <block id="b0b15a5664f313c682449715f8797570" category="list-text">現有FlexVol 的版本不需調整大小、FlexVol 也不會新增新的版本</block>
   <block id="5415ed28641dd79c706bfc42b5c7606c" category="list-text">只有FlexVol 具有相同儲存功能或Volume屬性的部分Volume才會重新平衡</block>
   <block id="656a7ca9d5565aff5c4e7369951a72a3" category="list-text">空間使用率最高的VMware磁碟區可用於重新平衡FlexVol</block>
@@ -1927,7 +1920,6 @@
   <block id="5577ca03df0e06ba951c23f12a4b1ee5" category="section-title">其他部署考量</block>
   <block id="aa0daf1da4e1f1fa66af28051a66af18" category="paragraph">自訂部署ONTAP 功能時、您必須考量幾項需求。</block>
   <block id="193d005cb01e094b239bfe309208043b" category="paragraph">如果vCenter Server的密碼有所變更、您可以使用下列URL來更新管理員的密碼：「」\ https://&lt;IP&gt;:8143/Register.html`、其中IP位址是ONTAP 您在部署期間提供的各種功能。</block>
-  <block id="4cf800e4c7e3afad619ba39d635e53c7" category="sidebar">VMware vSphere 9.10文件適用的工具ONTAP</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="da951ef1610be90b45b31baf7b25b179" category="sidebar">深入瞭ONTAP 解VMware vSphere的各種功能</block>
   <block id="e695b432b77d6bddfcb785c76f5e5442" category="sidebar">VMware工具快速入門ONTAP</block>
@@ -1978,4 +1970,43 @@
   <block id="aac0bfa935c0891ccd1dbe6d4b9dc089" category="sidebar">監控資料存放區和vVols報告的效能</block>
   <block id="03e71fcc3229d7261096bb72d8cbfaf4" category="sidebar">資料存放區與虛擬機器報告的功能概述ONTAP</block>
   <block id="adc8e197d36a3b2270201bc307f60f15" category="paragraph"><block ref="adc8e197d36a3b2270201bc307f60f15" category="inline-link-rx"></block></block>
+  <block id="1415c1c83a97d2309236d6acbf410723" category="list-text">對於Kerberos驗證、您需要下列項目：</block>
+  <block id="232c27acd8cefdcf2eab2fd4448e58b7" category="list-text">Windows機器搭配Active Directory（AD）</block>
+  <block id="3b190489626bc91788e69bde26b23e49" category="list-text">網域名稱伺服器（DNS）</block>
+  <block id="c33ec8bbf1e9679441ee7b5780300148" category="list-text">金鑰發佈中心（Kdc）</block>
+  <block id="ffc5820bec391adec4d3ea0c0b487f5c" category="list-text">配置Kerberos的儲存系統（叢集）ONTAP</block>
+  <block id="87e73a2e34acfaa495847cdc56b91075" category="list-text">已設定Kerberos的ESXi主機</block>
+  <block id="247ab06aaf332c4dffa16f9e44bfb784" category="paragraph">「新資料存放區資源配置」對話方塊的「一般」區段提供選項、可輸入新資料存放區的目的地、名稱、大小、類型和傳輸協定。</block>
+  <block id="b8f85eda1edc7ce9e1da9898d153444e" category="paragraph">您可以選擇* NFS*或* VMFS*類型的傳輸協定來設定傳統的資料存放區。對於NFS、您可以選取NFS3或NFS 4.1。</block>
+  <block id="d728bb03f29ad9ea3295bc22a35d9cb0" category="paragraph">此版本可讓您設定大小上限為64TB的VMFS資料存放區。您可以選取「跨ONTAP 整個叢集分配資料存放區資料」選項、以便在FlexGroup 儲存系統上配置一個NetApp Volume。選取此選項會自動取消選取「Use Storage Capability Profile for provisioning」（使用儲存功能設定檔進行資源配置）核取方塊。針對供應資料區、僅會列出9.8以上的不實叢集供您選擇。FlexGroup ONTAPvVols資料存放區類型是用來設定vVols資料存放區。如果已啟用VASA Provider、您也可以決定是否使用儲存功能設定檔。*資料存放區叢集*選項僅適用於傳統資料存放區。您應該使用*進階*選項來指定* VMFS5*或* VMFS6*檔案系統。</block>
+  <block id="ad37ded9046268d8e5ea7cb253bb5dda" category="paragraph">Kerberos驗證</block>
+  <block id="3ea519f69263ba3e63c00ba026dfbb01" category="paragraph">如果您在*一般*頁面中選取NFS 4.1、請選取安全性層級。</block>
+  <block id="12f4ceb4f1dabc544795882faae863af" category="paragraph">Kerberos驗證僅支援FlexVols。</block>
+  <block id="cd506470f5e5655bb026fe078bbbcdd3" category="paragraph">如果您已選取「一般」區段中的選項、則可以選取列出的其中一個儲存功能設定檔。</block>
+  <block id="90a7ec5aa6debb1e9f051b3011306ea5" category="list-text">如果您要配置FlexGroup 一個不支援的資料存放區、則不支援此資料存放區的儲存功能設定檔。儲存系統和儲存虛擬機器的系統建議值會填入以供輕鬆使用。但您可以視需要修改這些值。</block>
+  <block id="395cd4e6b9788357ea9b4875980f0735" category="list-text">對於Kerberos驗證、會列出啟用Kerberos的儲存系統。</block>
+  <block id="d656972a3bb8dc447ca461f90894a1c0" category="paragraph">根據預設、VSC會填入* Aggregate *和* Volumes *選項的建議值。您可以根據需求自訂值。由於可管理集合體選擇、因此不支援FlexGroup 將Aggregate選取項目用於不支援的資料存放區ONTAP 。</block>
+  <block id="11d67c18b6ade2844dac7ac6e8d8e996" category="paragraph">「*進階*」功能表下的*空間保留*選項也會填入以提供最佳結果。</block>
+  <block id="8f0960fd537565d013c63b424e32e545" category="paragraph">（可選）您可以在*變更啟動器群組名稱*欄位中指定啟動器群組名稱。</block>
+  <block id="ff34df29001826a51c55234f7899a5c8" category="list-text">如果還不存在新的啟動器群組、則會以此名稱建立新的啟動器群組。</block>
+  <block id="87d50d4aca5654404d2bd923ef01f39d" category="list-text">傳輸協定名稱會附加至指定的啟動器群組名稱。</block>
+  <block id="fddf43b7509a27a580ae5b8204ed1b6e" category="list-text">如果在選定的啟動器中找到現有的igroup、則會以提供的名稱重新命名igroup、並重新使用。</block>
+  <block id="66f5d92a1b6d185f278cc7e3df89631f" category="list-text">如果您未指定igroup名稱、則會以預設名稱建立igroup。</block>
+  <block id="f112f880ee3808f45fa645d31a60919e" category="paragraph">您可以檢閱您為新資料存放區指定的參數摘要。</block>
+  <block id="d95d2027ad4faa7afb16847cf6829317" category="paragraph">「Volume樣式」欄位可讓您區分所建立的資料存放區類型。「Volume樣式」可以是「FlexVol '漢城」或「FlexGroup 漢城」。</block>
+  <block id="fe0891bb90d313b1b9098fdd3e5f531a" category="inline-link">支援Kerberos ONTAP</block>
+  <block id="5e31aad48428786bd6d1afc4fa881f95" category="paragraph"><block ref="5e31aad48428786bd6d1afc4fa881f95" category="inline-link-rx"></block></block>
+  <block id="b492eaf1aa700257b5bd87a0787ffbba" category="inline-link">使用NFS設定Kerberos的需求</block>
+  <block id="2f9647a83c40cf2ae0233ad123484629" category="paragraph"><block ref="2f9647a83c40cf2ae0233ad123484629" category="inline-link-rx"></block></block>
+  <block id="0503dc7bdab97ba0513cd725666d3394" category="inline-link">使用System Manager管理Kerberos領域服務- ONTAP 支援更新版本</block>
+  <block id="7fe6d5584982526cfe5bb1b708c9e10f" category="paragraph"><block ref="7fe6d5584982526cfe5bb1b708c9e10f" category="inline-link-rx"></block></block>
+  <block id="1a69d38f7b46901c58e85d024e87b034" category="inline-link">在資料LIF上啟用Kerberos</block>
+  <block id="bcafb10f2c5e3e1c946d39793d902146" category="paragraph"><block ref="bcafb10f2c5e3e1c946d39793d902146" category="inline-link-rx"></block></block>
+  <block id="b292d4b33c15cd5429a4aec0164b62f4" category="inline-link">設定ESXi主機進行Kerberos驗證</block>
+  <block id="2775eee214a07dd3ad16007a75341d1d" category="paragraph"><block ref="2775eee214a07dd3ad16007a75341d1d" category="inline-link-rx"></block></block>
+  <block id="f05d67a2632f89a349f888bc1abd2314" category="paragraph">vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的條件如下：</block>
+  <block id="4240120fee603161e3f32fa6a4127dc3" category="list-text">不支援NFS vVol資料存放區</block>
+  <block id="325ed2f7ffe6974144615e01682ab317" category="inline-link">VMware vSphere 9.11版本說明的相關工具ONTAP</block>
+  <block id="1b4b4851374b4f5e2e06a8e2cdea0bfc" category="paragraph">如需詳細資訊、請參閱<block ref="ef3304265bfcc8fef389579152b8897d" category="inline-link-rx"></block>。</block>
+  <block id="08420002b9383a71acf39a2e9f9d504a" category="sidebar">VMware vSphere 9.11文件適用的工具ONTAP</block>
 </blocks>

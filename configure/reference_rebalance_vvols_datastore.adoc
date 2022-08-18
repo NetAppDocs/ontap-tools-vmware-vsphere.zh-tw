@@ -13,8 +13,9 @@ summary: 支援指令來重新平衡資料中心內的各種資料。ONTAP FlexV
 [role="lead"]
 支援指令來重新平衡資料中心內的各種資料。ONTAP FlexVol主要目標是讓FlexVol 各個不景區之間的空間使用率達到同樣的效果。根據空間使用量、精簡配置、LUN數量和儲存功能設定檔、使用VMware Tools可在現有磁碟區之間重新分配vVols。ONTAP
 
-vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的準則為：
+vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的條件如下：
 
+* 不支援NFS vVol資料存放區
 * 現有FlexVol 的版本不需調整大小、FlexVol 也不會新增新的版本
 * 只有FlexVol 具有相同儲存功能或Volume屬性的部分Volume才會重新平衡
 * 空間使用率最高的VMware磁碟區可用於重新平衡FlexVol

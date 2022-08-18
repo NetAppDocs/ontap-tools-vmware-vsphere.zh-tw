@@ -1,6 +1,6 @@
 ---
 settings:
-  name: ONTAP tools for VMware vSphere 9.10
+  name: ONTAP tools for VMware vSphere 9.11
   internal:
     pdf_enabled: true
   prod:
@@ -9,7 +9,7 @@ settings:
   langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
 sidebar:
   entries:
-  - title: VMware vSphere 9.10文件適用的工具ONTAP
+  - title: VMware vSphere 9.11文件適用的工具ONTAP
     url: "/index.html"
   - title: 版本資訊
     url: "/release_notes.html"

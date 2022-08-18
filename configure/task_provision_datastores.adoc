@@ -53,6 +53,17 @@ VSC可以在NFS磁碟區或LUN上建立資料存放區：
 
 
 ====
+* 對於Kerberos驗證、您需要下列項目：
++
+** Windows機器搭配Active Directory（AD）
+** 網域名稱伺服器（DNS）
+** 金鑰發佈中心（Kdc）
+** 配置Kerberos的儲存系統（叢集）ONTAP
+** 已設定Kerberos的ESXi主機
+
+
+
+
 如果資源配置期間未指定儲存功能設定檔、您可以稍後使用「儲存對應」頁面、將資料存放區對應至儲存功能設定檔。您可以將儲存QoS設定、處理量上限（最大IOPS）和處理量層（最小IOPS）套用至資源FlexGroup 庫上的虛擬機器資料VMDK檔案。QoS設定可在資料存放區層級或個別虛擬機器層級套用、只要在資料存放區上按一下滑鼠右鍵即可。只有FlexGroup 以VMware資料存放區做為後盾的資料存放區或虛擬機器、才能使用滑鼠右鍵選項。將QoS套用至資料存放區之後、任何預先存在的資料存放區或虛擬機器QoS設定都會被覆寫。QoS設定無法在資料存放區層級或虛擬機器層級套用至直接SVM上的資料存放區、因為ONTAP 無法在SVM管理層級支援QoS。
 
 *步驟*
@@ -127,28 +138,57 @@ VMware工具首頁ONTAP
  a| 
 一般
  a| 
-「新資料存放區資源配置」對話方塊的「一般」區段提供選項、可輸入新資料存放區的目的地、名稱、大小、類型和傳輸協定。您可以選取* NFS*或* VMFS*傳輸協定來設定傳統的資料存放區。此版本可讓您設定大小上限為64TB的VMFS資料存放區。您可以選取「跨ONTAP 整個叢集分配資料存放區資料」選項、以便在FlexGroup 儲存系統上配置一個NetApp Volume。選取此選項會自動取消選取「Use Storage Capability Profile for provisioning」（使用儲存功能設定檔進行資源配置）核取方塊。針對供應資料區、僅會列出9.8以上的不實叢集供您選擇。FlexGroup ONTAPvVols資料存放區類型是用來設定vVols資料存放區。如果已啟用VASA Provider、您也可以決定是否使用儲存功能設定檔。*資料存放區叢集*選項僅適用於傳統資料存放區。您應該使用*進階*選項來指定* VMFS5*或* VMFS6*檔案系統。
+「新資料存放區資源配置」對話方塊的「一般」區段提供選項、可輸入新資料存放區的目的地、名稱、大小、類型和傳輸協定。
+
+您可以選擇* NFS*或* VMFS*類型的傳輸協定來設定傳統的資料存放區。對於NFS、您可以選取NFS3或NFS 4.1。
+
+此版本可讓您設定大小上限為64TB的VMFS資料存放區。您可以選取「跨ONTAP 整個叢集分配資料存放區資料」選項、以便在FlexGroup 儲存系統上配置一個NetApp Volume。選取此選項會自動取消選取「Use Storage Capability Profile for provisioning」（使用儲存功能設定檔進行資源配置）核取方塊。針對供應資料區、僅會列出9.8以上的不實叢集供您選擇。FlexGroup ONTAPvVols資料存放區類型是用來設定vVols資料存放區。如果已啟用VASA Provider、您也可以決定是否使用儲存功能設定檔。*資料存放區叢集*選項僅適用於傳統資料存放區。您應該使用*進階*選項來指定* VMFS5*或* VMFS6*檔案系統。
+
+
+
+ a| 
+Kerberos驗證
+ a| 
+如果您在*一般*頁面中選取NFS 4.1、請選取安全性層級。
+
+Kerberos驗證僅支援FlexVols。
 
 
 
  a| 
 儲存系統
  a| 
-如果您已選取「一般」區段中的選項、則可以選取列出的其中一個儲存功能設定檔。如果您要配置FlexGroup 一個不支援的資料存放區、則不支援此資料存放區的儲存功能設定檔。儲存系統和儲存虛擬機器的系統建議值會填入以供輕鬆使用。但您可以視需要修改這些值。
+如果您已選取「一般」區段中的選項、則可以選取列出的其中一個儲存功能設定檔。
+
+** 如果您要配置FlexGroup 一個不支援的資料存放區、則不支援此資料存放區的儲存功能設定檔。儲存系統和儲存虛擬機器的系統建議值會填入以供輕鬆使用。但您可以視需要修改這些值。
+** 對於Kerberos驗證、會列出啟用Kerberos的儲存系統。
+
 
 
 
  a| 
 儲存屬性
  a| 
-根據預設、VSC會填入* Aggregate *和* Volumes *選項的建議值。您可以根據需求自訂值。由於可管理集合體選擇、因此不支援FlexGroup 將Aggregate選取項目用於不支援的資料存放區ONTAP 。「*進階*」功能表下的*空間保留*選項也會填入以提供最佳結果。
+根據預設、VSC會填入* Aggregate *和* Volumes *選項的建議值。您可以根據需求自訂值。由於可管理集合體選擇、因此不支援FlexGroup 將Aggregate選取項目用於不支援的資料存放區ONTAP 。
+
+「*進階*」功能表下的*空間保留*選項也會填入以提供最佳結果。
+
+（可選）您可以在*變更啟動器群組名稱*欄位中指定啟動器群組名稱。
+
+** 如果還不存在新的啟動器群組、則會以此名稱建立新的啟動器群組。
+** 傳輸協定名稱會附加至指定的啟動器群組名稱。
+** 如果在選定的啟動器中找到現有的igroup、則會以提供的名稱重新命名igroup、並重新使用。
+** 如果您未指定igroup名稱、則會以預設名稱建立igroup。
+
 
 
 
  a| 
 摘要
  a| 
-您可以檢閱您為新資料存放區指定的參數摘要。「摘要」頁面中有一個新的「Volume樣式」欄位、可讓您區分所建立的資料存放區類型。「Volume樣式」可以是「FlexVol '漢城」或「FlexGroup 漢城」。
+您可以檢閱您為新資料存放區指定的參數摘要。
+
+「Volume樣式」欄位可讓您區分所建立的資料存放區類型。「Volume樣式」可以是「FlexVol '漢城」或「FlexGroup 漢城」。
 
 |===
 
@@ -159,3 +199,13 @@ NOTE: 作爲傳統資料存放區一部分的元件無法縮減至低於現有�
 *相關資訊*
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/Datastore_inaccessible_when_volume_status_is_changed_to_offline["當Volume狀態變更為離線時、無法存取資料存放區"]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/ontap-support-kerberos-concept.html["支援Kerberos ONTAP"]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/requirements-configuring-kerberos-concept.html["使用NFS設定Kerberos的需求"]
+
+https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/concept_kerberos_realm_services.html["使用System Manager管理Kerberos領域服務- ONTAP 支援更新版本"]
+
+https://docs.netapp.com/us-en/ontap/nfs-config/create-kerberos-config-task.html["在資料LIF上啟用Kerberos"]
+
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-BDCB7500-72EC-4B6B-9574-CFAEAF95AE81.html["設定ESXi主機進行Kerberos驗證"]
