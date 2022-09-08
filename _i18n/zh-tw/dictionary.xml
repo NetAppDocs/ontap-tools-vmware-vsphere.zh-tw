@@ -411,7 +411,6 @@
   <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
   <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
-  <block id="b1be7fedf2bae707bc5e880facde39f0" category="inline-link">VMware vSphere 9.10的VMware工具注意事項ONTAP</block>
   <block id="cb0b3fe7df304baf3d39da385a4ec459" category="summary">提供ONTAP 本次VMware vSphere之VMware vSphere版本的重要資訊、包括新功能與增強功能、修正問題、已知問題、注意事項及限制。</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">版本資訊</block>
   <block id="01de6d9be7e1aa419839bb0c0de0ebde" category="paragraph">提供ONTAP 本次VMware vSphere之更新版的重要資訊、包括修正問題、已知問題、注意事項及限制。</block>
@@ -1969,7 +1968,6 @@
   <block id="d9f3e338f746bd45726b28a4c9827ce1" category="sidebar">VSC和VASA Provider記錄檔</block>
   <block id="aac0bfa935c0891ccd1dbe6d4b9dc089" category="sidebar">監控資料存放區和vVols報告的效能</block>
   <block id="03e71fcc3229d7261096bb72d8cbfaf4" category="sidebar">資料存放區與虛擬機器報告的功能概述ONTAP</block>
-  <block id="adc8e197d36a3b2270201bc307f60f15" category="paragraph"><block ref="adc8e197d36a3b2270201bc307f60f15" category="inline-link-rx"></block></block>
   <block id="1415c1c83a97d2309236d6acbf410723" category="list-text">對於Kerberos驗證、您需要下列項目：</block>
   <block id="232c27acd8cefdcf2eab2fd4448e58b7" category="list-text">Windows機器搭配Active Directory（AD）</block>
   <block id="3b190489626bc91788e69bde26b23e49" category="list-text">網域名稱伺服器（DNS）</block>
@@ -2009,4 +2007,7 @@
   <block id="325ed2f7ffe6974144615e01682ab317" category="inline-link">VMware vSphere 9.11版本說明的相關工具ONTAP</block>
   <block id="1b4b4851374b4f5e2e06a8e2cdea0bfc" category="paragraph">如需詳細資訊、請參閱<block ref="ef3304265bfcc8fef389579152b8897d" category="inline-link-rx"></block>。</block>
   <block id="08420002b9383a71acf39a2e9f9d504a" category="sidebar">VMware vSphere 9.11文件適用的工具ONTAP</block>
+  <block id="f6d09a6ca81951d147ef393d3877b8d5" category="inline-link">VMware vSphere 9.11的VMware VMware工具注意事項ONTAP</block>
+  <block id="02994633d024cf9b53f3747d971a0667" category="paragraph"><block ref="02994633d024cf9b53f3747d971a0667" category="inline-link-rx"></block></block>
+  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere適用的工具ONTAP</block>
 </blocks>
