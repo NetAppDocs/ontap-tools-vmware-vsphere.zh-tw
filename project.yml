@@ -35,7 +35,7 @@ homepage:
   - title: 開始使用
     links:
     - title: 版本資訊
-      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2881273
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2883436
     - title: 深入瞭ONTAP 解VMware vSphere的各種功能
       url: "/concepts/concept_virtual_storage_console_overview.html"
     - title: VMware工具快速入門ONTAP

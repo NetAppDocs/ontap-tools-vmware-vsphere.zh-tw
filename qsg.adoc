@@ -83,7 +83,7 @@ VMware vSphere的VMware vSphere工具是單一vCenter Server外掛程式、包�
 | ONTAP | S299.3、9.5、9.6、9.7、9.8P1或更新版本。ONTAP 
 
 
-| VMware vSphere、vCenter伺服器、ESXi主機、Site Recovery Manager（SRM）、外掛應用程式及資料庫欄1 | 請參閱 https://imt.netapp.com/matrix/imt.jsp?components=103229;&solution=1777&isHWU&src=IMT["互通性對照表工具：OTV 9.10"] 
+| VMware vSphere、vCenter伺服器、ESXi主機、Site Recovery Manager（SRM）、外掛應用程式及資料庫欄1 | 請參閱 https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["互通性對照表工具"^] 
 |===
 
 

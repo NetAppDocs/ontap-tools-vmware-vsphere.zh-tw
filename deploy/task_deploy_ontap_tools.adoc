@@ -21,7 +21,7 @@ summary: 您應該在ONTAP 環境中部署VMware Tools、並指定必要的參�
 NOTE: 可透過Windows部署vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）部署來登錄這些工具。ONTAP
 
 +
-https://imt.netapp.com/matrix/imt.jsp?components=103229;&solution=1777&isHWU&src=IMT["互通性對照表工具"]
+https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["互通性對照表工具"^]
 
 * 您必須已設定及設定vCenter Server環境。
 * 您必須為虛擬機器設定ESXi主機。

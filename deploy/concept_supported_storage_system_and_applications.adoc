@@ -15,7 +15,7 @@ summary: 在開始部署ONTAP VMware vSphere的VMware vCenter工具之前、您�
 
 互通性對照表工具IMT （英文）包含ONTAP 有關支援版本的最新資訊、包括支援版本的VMware、vCenter Server、ESXi主機、外掛應用程式和Site Recovery Manager（SRM）。
 
-https://imt.netapp.com/matrix/imt.jsp?components=103229;&solution=1777&isHWU&src=IMT["互通性對照表工具"]
+https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["互通性對照表工具"^]
 
 您必須啟用FlexClone授權、才能針對VMware虛擬Volume（vVols）資料存放區執行虛擬機器快照作業和複製作業。
 

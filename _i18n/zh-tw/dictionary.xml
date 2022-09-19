@@ -49,8 +49,6 @@
   <block id="253b40ae359ba25b56231803430c4873" category="cell">ONTAP</block>
   <block id="690357a744b773276381391369196306" category="cell">S299.3、9.5、9.6、9.7、9.8P1或更新版本。ONTAP</block>
   <block id="9c564741b6540c27a49e170c8d8e979d" category="cell">VMware vSphere、vCenter伺服器、ESXi主機、Site Recovery Manager（SRM）、外掛應用程式及資料庫欄1</block>
-  <block id="b6bdbb42dd11a260ba5e106ec1746d08" category="inline-link">互通性對照表工具：OTV 9.10</block>
-  <block id="b6097d7254f8b577b98c43ebf2550517" category="cell">請參閱<block ref="195a086b43ebc4eb09de5db7eca98aaf" category="inline-link-rx"></block></block>
   <block id="86f56c72e0832c1bb59b9394dbcb0853" category="section-title">VMware工具需求ONTAP</block>
   <block id="b617261cab9c7f9e335f8f61a682f04e" category="list-text">設定及設定vCenter Server環境。</block>
   <block id="dfa57bc5abba0952197bf25265b987c7" category="list-text">下載.ova檔案。</block>
@@ -1744,7 +1742,6 @@
   <block id="284ff625891d588a04415377b2ccf4fc" category="list-text">您必須執行支援的vCenter Server版本。</block>
   <block id="22d503fcf87b43d3d538960286a3aabe" category="admonition">可透過Windows部署vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）部署來登錄這些工具。ONTAP</block>
   <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link">互通性對照表工具</block>
-  <block id="213681fae7ab740d065d6128157952d7" category="paragraph"><block ref="97e9e497c6215eaee7f74a091f9793db" category="inline-link-rx"></block></block>
   <block id="0efacb73c35dfad8adbb34de54b95af2" category="list-text">您必須已設定及設定vCenter Server環境。</block>
   <block id="ba4e8017753da6e2cad1d40cac107160" category="list-text">您必須為虛擬機器設定ESXi主機。</block>
   <block id="7cbcf00129841736fb6fde756a86dd32" category="list-text">您必須已下載_.ova_檔案。</block>
@@ -2010,4 +2007,6 @@
   <block id="f6d09a6ca81951d147ef393d3877b8d5" category="inline-link">VMware vSphere 9.11的VMware VMware工具注意事項ONTAP</block>
   <block id="02994633d024cf9b53f3747d971a0667" category="paragraph"><block ref="02994633d024cf9b53f3747d971a0667" category="inline-link-rx"></block></block>
   <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere適用的工具ONTAP</block>
+  <block id="d9feb2b730ded2731ab499f4b64cca33" category="paragraph"><block ref="ccafd2400edf7c1aa273a76ad605940f" category="inline-link-rx"></block></block>
+  <block id="8cd78caf975d066200418cff9639fdef" category="cell">請參閱<block ref="c4e3c5dd56e9c0925a46d52133eef091" category="inline-link-rx"></block></block>
 </blocks>
