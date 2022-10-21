@@ -34,9 +34,9 @@ https://www.vmware.com/support/pubs/srm_pubs.html["VMware Site Recovery Manager�
 
 . 確認主ESXi主機已連線至受保護站台上主要儲存系統的LUN。
 . 確認LUN位於igroup中、且主儲存系統的「ostype-」選項設為_VMware_。
-. 確認恢復站台的ESXi主機與儲存虛擬機器（SVM）之間具有適當的FC或iSCSI連線。
+. 確認恢復站台的ESXi主機與儲存虛擬機器（SVM）之間具有適當的FC或iSCSI連線。次要站台ESXi主機應該可以存取次要站台儲存設備、同樣地、主要站台ESXi主機也應該可以存取主要站台儲存設備。
 +
-您可以驗證ESXi主機是否已在SVM上連接本機LUN、或是在SVM上使用「FCP show啟動器」命令或「iSCSI show啟動器」命令。
+您可以驗證ESXi主機是否已在SVM上連接本機LUN、或是在SVM上使用「FCP show啟動器」命令或「iSCSI show啟動器」命令。檢查ESXi中對應LUN的LUN存取權、以驗證FC和iSCSI連線能力。
 
 
 

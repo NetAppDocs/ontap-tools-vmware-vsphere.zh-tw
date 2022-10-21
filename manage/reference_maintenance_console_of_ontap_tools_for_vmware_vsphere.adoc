@@ -18,7 +18,7 @@ summary: 您可以使用ONTAP VMware工具的維護主控台來管理應用程�
 
 NOTE: 啟用遠端診斷時、您必須為「diag」使用者設定密碼。
 
-您應該使用已部署ONTAP 的支援工具的「摘要」索引標籤來存取維護主控台。當您按一下時 image:../media/launch_maintenance_console.gif[""]、維護主控台即會啟動。
+您應該使用已部署ONTAP 的支援工具*摘要*索引標籤來存取維護主控台。當您按一下時 image:../media/launch_maintenance_console.gif[""]、維護主控台即會啟動。
 
 |===
 
@@ -41,8 +41,6 @@ NOTE: 啟用遠端診斷時、您必須為「diag」使用者設定密碼。
 . 變更虛擬儲存主控台服務的記錄層級
 . 變更VASA Provider和SRA服務的記錄層級
 . 顯示TLS組態
-. 啟用TLS傳輸協定
-. 停用TLS傳輸協定
 
 
 

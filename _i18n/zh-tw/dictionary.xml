@@ -282,8 +282,6 @@
   <block id="5964a20b29586f71f419711aae6ae487" category="paragraph">介面卡安裝在SRM上。</block>
   <block id="39d642e40fbcd108eb0ab15715ee349d" category="list-text">確認主ESXi主機已連線至受保護站台上主要儲存系統的LUN。</block>
   <block id="c295c005211b8c46c7e8ae09f97dae78" category="list-text">確認LUN位於igroup中、且主儲存系統的「ostype-」選項設為_VMware_。</block>
-  <block id="83e07e8dd229d7dad2fa5d0574490b80" category="list-text">確認恢復站台的ESXi主機與儲存虛擬機器（SVM）之間具有適當的FC或iSCSI連線。</block>
-  <block id="94d40bdd7b43645e14cbce746d040edf" category="paragraph">您可以驗證ESXi主機是否已在SVM上連接本機LUN、或是在SVM上使用「FCP show啟動器」命令或「iSCSI show啟動器」命令。</block>
   <block id="c15f6cdb57f72faef1aa17926a9bf11b" category="list-text">在恢復站台的每個ESXi主機上使用「ping」命令、驗證主機是否有可存取用於從SVM匯出NFS的IP位址的VMkernel連接埠。</block>
   <block id="ab8134918b4687eb0c742e8e5d83d390" category="summary">您必須在受保護的網站和恢復網站上對應網路、才能在它們之間進行通訊。</block>
   <block id="f9db3cd2b1be9139f944eb07d33427eb" category="doc">設定網路對應</block>
@@ -761,12 +759,8 @@
   <block id="c56d27742219ae4a57741de0980f6d83" category="list-text">使用VSC來設定主機的ESXi主機設定、這些主機會在「介面卡設定」欄、「MPIO設定」欄或「NFS設定」欄中顯示警示圖示。</block>
   <block id="2ee9c34a8861ffd8a60faa90dfe4eaea" category="list-text">提供儲存系統認證資料。</block>
   <block id="5239d77bc203f1ccbb06d46c0327b099" category="summary">您可以使用ONTAP VMware工具的維護主控台來管理應用程式、系統和網路組態。您可以變更系統管理員密碼和維護密碼。您也可以產生支援服務包、設定不同的記錄層級、檢視及管理TLS組態、以及啟動遠端診斷。</block>
-  <block id="0c99c2d41b42b35f0be071f1b29ac58a" category="doc">維護主控台選項ONTAP 、適用於各種工具</block>
   <block id="417ba69cd3cff33af12fb92ce9169d33" category="paragraph">您必須先安裝VMware工具、然後再部署ONTAP 支援功能、才能存取維護主控台。您應該使用「maint」做為部署期間設定的使用者名稱和密碼、以登入ONTAP 到VMware工具的維護主控台。</block>
   <block id="2e5b406e34be2192a717470c0af8e621" category="admonition">啟用遠端診斷時、您必須為「diag」使用者設定密碼。</block>
-  <block id="3a8f5c62d9ad72e1e28c71f8d0a4451b" category="paragraph">您應該使用已部署ONTAP 的支援工具*摘要*索引標籤來存取維護主控台。當您按一下時 <block ref="646d51cfcc95b274401d8044823da1c3" category="inline-image-macro-rx" type="image"></block>、維護主控台即會啟動。</block>
-  <block id="b01a305eaba26950499c18ed4f42608f" category="cell">主控台功能表</block>
-  <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="cell">選項</block>
   <block id="8771bccdcac2e3ecfec998ef1fff4833" category="paragraph">應用程式組態</block>
   <block id="be26199d886066a84db4063998d2f165" category="list-text">顯示伺服器狀態摘要</block>
   <block id="7eb3185a1570bf537b78f8ccb0697633" category="list-text">啟動虛擬儲存主控台服務</block>
@@ -775,13 +769,10 @@
   <block id="c5f5f62fa8098788ec639d85e5f58b17" category="list-text">停止VASA Provider和SRA服務</block>
   <block id="47143644236f774216e54ca22d1cd883" category="list-text">變更「系統管理員」使用者密碼</block>
   <block id="2b85c9deceb1ac9fcc6fd6ff2bda7190" category="list-text">重新產生憑證</block>
-  <block id="f4cbc772b7acc2c81f673e2eb77a6ca8" category="list-text">硬重設金鑰儲存區和憑證</block>
   <block id="3edfaa1d35137d169aaa6dadbc1e0fe3" category="list-text">硬重設資料庫</block>
   <block id="5ba55d604880b0b6ad27a48df8bfc5a9" category="list-text">變更虛擬儲存主控台服務的記錄層級</block>
   <block id="293ad933a5979b221ce4825406b4e447" category="list-text">變更VASA Provider和SRA服務的記錄層級</block>
   <block id="aea013b92d5d9e0908613c12a6ef462e" category="list-text">顯示TLS組態</block>
-  <block id="35d170dc4d56336951ac7a99f310afce" category="list-text">啟用TLS傳輸協定</block>
-  <block id="6f5b9f5237a43bee958b38be8626f249" category="list-text">停用TLS傳輸協定</block>
   <block id="9b685fecb65f77899f1ea4fd1e767722" category="paragraph">系統組態</block>
   <block id="978968aa0140e7645f3db01d1e5743c3" category="list-text">重新開機虛擬機器</block>
   <block id="c795b3f02d3ba272bf89b7228980a7c6" category="list-text">關閉虛擬機器</block>
@@ -811,7 +802,6 @@
   <block id="d32b692a228c985bcc53d0e3be7f3ee9" category="list-text">存取診斷Shell</block>
   <block id="fc50930a1e8c2b869ad303b5b5234574" category="list-text">啟用遠端診斷存取</block>
   <block id="234464a5fac0a1ef3a08301b88046660" category="inline-link-macro">虛擬儲存主控台和VASA Provider記錄檔</block>
-  <block id="3588d8f1b7af566c4b91addbce496cd0" category="paragraph"><block ref="3588d8f1b7af566c4b91addbce496cd0" category="inline-link-macro-rx"></block></block>
   <block id="759353c66286da27e863db604db19270" category="summary">您可以使用ONTAP VMware vSphere的更新功能來更新儲存系統的相關資訊、並強制Virtual Storage Console（VSC）探索儲存系統。</block>
   <block id="aa9742a8c89b1a51af38fb3122936dfa" category="doc">重新整理儲存系統顯示器</block>
   <block id="403c417c18b1cf269e4a6d842dcf6dd6" category="paragraph">您可以使用ONTAP VMware vSphere的更新功能、更新儲存系統的相關資訊、並強制虛擬儲存主控台（VSC）探索儲存系統。</block>
@@ -1372,7 +1362,6 @@
   <block id="49e93fd9a17de8559bffcb0218844f3a" category="paragraph">目前僅支援不含記憶體的虛擬機器快照。如果虛擬機器具有快照與記憶體、則不會將虛擬機器視為保護。</block>
   <block id="dacf6492baba7d65ff424a82e4118683" category="paragraph">您也無法保護具有記憶體Snapshot的未受保護虛擬機器。在此版本中、您應該先刪除記憶體快照、再啟用虛擬機器保護。</block>
   <block id="1160aea292cdf3dd55420a7a7bafa77e" category="doc">功能概述：工具維護主控台ONTAP</block>
-  <block id="53a0316200f9542f29bdba91612e8744" category="paragraph">您應該使用已部署ONTAP 的支援工具的「摘要」索引標籤來存取維護主控台。當您按一下時 <block ref="646d51cfcc95b274401d8044823da1c3" category="inline-image-macro-rx" type="image"></block>、維護主控台即會啟動。</block>
   <block id="0b8a80106a177e9178ec383905046532" category="cell">*主控台功能表*</block>
   <block id="2c639d8cf692c100e3eba8b611821414" category="cell">*選項*</block>
   <block id="d2a90b891e76a96b4b7f2eb26a53b356" category="list-text">硬重設金鑰存放區和憑證</block>
@@ -1659,12 +1648,7 @@
   <block id="2a60e4df2b66e723fc502252815fd80f" category="list-text">移轉任何現有的組態資料。</block>
   <block id="2ce72eb7080f033d37c840a728de9539" category="paragraph">組態資料包括儲存系統認證、以及「kaminoprefs.xml」和「vscpreferences.xml」檔案中的偏好設定。</block>
   <block id="9f9554604b180d4f12390e136147beb7" category="paragraph"><block ref="9f9554604b180d4f12390e136147beb7" category="inline-link-macro-rx"></block></block>
-  <block id="f0257f32dc0bfda00ae02ce78c8c7f9e" category="paragraph">在許多情況下、您可能不需要移轉組態資料。不過、如果您先前已自訂偏好設定檔案、您可能會想要檢閱這些檔案、並對新部署ONTAP 的VMware Tools進行類似變更。您可以執行下列其中一項：</block>
-  <block id="2612149a04c869d4a60c63a5b19cc6b2" category="inline-link">適用於SnapCenter VMware及Virtual Storage Console的NetApp匯入公用程式</block>
-  <block id="9731cece65b178e7bf213f0f3d5e891d" category="list-text">使用<block ref="29824d14e430788052b1250d1e3cc9dc" category="inline-link-rx"></block> 將儲存系統認證資料從VSC 6.X和SRA 4.X移轉至新部署。</block>
-  <block id="60caf4ce70cf77e2e70855a9ad54064a" category="list-text">將儲存系統新增至新部署ONTAP 的功能區工具、並在新增時指定認證資料。</block>
   <block id="b306db6d6bcaf976db5689e930b5aee2" category="paragraph">如果您要從VASA Provider 6.X升級、則應在升級之前先取消登錄VASA Provider。如需詳細資料、請參閱目前版本的文件。</block>
-  <block id="4aa2239dda37e378c2fd9033db9ad2f7" category="paragraph">如果您也要從SRA 4.0或更早版本升級：</block>
   <block id="7f92b985b9e4bff91f2d31ae0cc7bdd7" category="list-text">如果您使用的是SRA 4.0P1、則必須先升級至SRA9.6、然後執行SRA 9.6版本的就地升級。您可以稍後升級ONTAP 至最新版的VMware工具。</block>
   <block id="5df401ea01c055d3d0545c3236d0342d" category="list-text">如果您使用的是SRA 2.1或3.0、請先記下現有的站台組態詳細資料。</block>
   <block id="29207911ce269dda752ac4d44a979ae1" category="paragraph">_《儲存複寫介面卡4.0 ONTAP for ESUR__安裝與設定指南》中有「升級總覽」一節的詳細說明。這些SRA版本也使用VASA Provider、因此您必須先取消登錄VASA Provider、然後再部署ONTAP 最新版本的版的VMware工具。升級完成後、可移除舊版伺服器（`.ova'）。</block>
@@ -2009,4 +1993,13 @@
   <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere適用的工具ONTAP</block>
   <block id="d9feb2b730ded2731ab499f4b64cca33" category="paragraph"><block ref="ccafd2400edf7c1aa273a76ad605940f" category="inline-link-rx"></block></block>
   <block id="8cd78caf975d066200418cff9639fdef" category="cell">請參閱<block ref="c4e3c5dd56e9c0925a46d52133eef091" category="inline-link-rx"></block></block>
+  <block id="c84e3f1fce618833b2fe90a7026984c3" category="paragraph">您應該使用已部署ONTAP 的支援工具*摘要*索引標籤來存取維護主控台。當您按一下時 <block ref="646d51cfcc95b274401d8044823da1c3" category="inline-image-macro-rx" type="image"></block>、維護主控台即會啟動。</block>
+  <block id="5cd110d372988e6fedf83dab3b77194b" category="list-text">執行「CD /var/log/VMware/SRM」命令以瀏覽記錄目錄。</block>
+  <block id="ecf618584c0254b7edf0733670fcb0f8" category="list-text">確認恢復站台的ESXi主機與儲存虛擬機器（SVM）之間具有適當的FC或iSCSI連線。次要站台ESXi主機應該可以存取次要站台儲存設備、同樣地、主要站台ESXi主機也應該可以存取主要站台儲存設備。</block>
+  <block id="785694280aa2f361cd62ad2d7aadb3a7" category="paragraph">您可以驗證ESXi主機是否已在SVM上連接本機LUN、或是在SVM上使用「FCP show啟動器」命令或「iSCSI show啟動器」命令。檢查ESXi中對應LUN的LUN存取權、以驗證FC和iSCSI連線能力。</block>
+  <block id="34ab17700f5d219ac84124b2c9f0b173" category="paragraph">在許多情況下、您可能不需要移轉組態資料。不過、如果您先前已自訂偏好設定檔案、您可能會想要檢閱這些檔案、並對新部署ONTAP 的VMware Tools進行類似變更。您可以將儲存系統新增ONTAP 至新部署的功能區工具、並在新增時指定認證資料。</block>
+  <block id="d09d8dd95e7b4f1ec5ecf89bb65d374e" category="paragraph">如果您要從SRA 4.0或更早版本升級：</block>
+  <block id="f41a0f70d00fe5c4c096315736c1c5f5" category="paragraph">若要使用使用者介面設定IPv6或IPv6、請參閱下列各節：</block>
+  <block id="9e61293b777b055e3576d637f3d16625" category="list-text"><block ref="9e61293b777b055e3576d637f3d16625" category="inline-link-macro-rx"></block></block>
+  <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
 </blocks>

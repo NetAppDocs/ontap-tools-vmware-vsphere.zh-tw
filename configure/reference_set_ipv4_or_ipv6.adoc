@@ -63,3 +63,8 @@ IPv6
 
 
 |===
+若要使用使用者介面設定IPv6或IPv6、請參閱下列各節：
+
+* link:../configure/add_different_subnets.html["新增不同的子網路"]
+* link:../configure/task_enable_datastore_mounting_across_different_subnets.html["在不同的子網路上啟用資料存放區裝載"]
+
