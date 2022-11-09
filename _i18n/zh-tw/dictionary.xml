@@ -1210,7 +1210,6 @@
   <block id="8070bc80900108d97e4adad9ab6d22e4" category="list-text">* Net.TcpipHeapSiz*</block>
   <block id="648c390cbb92a78a0c73c046a459e1aa" category="paragraph">如果您使用的是vSphere 6.0或更新版本、則應將此值設為32。</block>
   <block id="8fa1b2348551705fe60dee095d5ff318" category="list-text">* Net.TcpipHeapMax*</block>
-  <block id="b38bf8be6e7b723590f1617ac2c54cc5" category="paragraph">如果您使用的是vSphere 6.0或更新版本、則ESXi主機6.x的值設為512、ESXi 7.x的值設為1024。</block>
   <block id="010bb3b0833d69b2d577ce46a15191c1" category="list-text">* NFS.MaxVolumes.*</block>
   <block id="4aa895532f12d328739fb09818f49892" category="paragraph">如果您使用的是vSphere 6.0或更新版本、則應將此值設為256。</block>
   <block id="a503d9e9758ec168f61d4fa7f51a9b77" category="list-text">* NFS41.MaxVolumes.*</block>
@@ -2002,4 +2001,5 @@
   <block id="f41a0f70d00fe5c4c096315736c1c5f5" category="paragraph">若要使用使用者介面設定IPv6或IPv6、請參閱下列各節：</block>
   <block id="9e61293b777b055e3576d637f3d16625" category="list-text"><block ref="9e61293b777b055e3576d637f3d16625" category="inline-link-macro-rx"></block></block>
   <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
+  <block id="9ed575bd998ffefe31b2b6708094410d" category="paragraph">對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。</block>
 </blocks>

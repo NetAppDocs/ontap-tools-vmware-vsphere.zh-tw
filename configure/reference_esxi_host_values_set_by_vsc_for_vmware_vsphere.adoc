@@ -39,7 +39,7 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 
 * * Net.TcpipHeapMax*
 +
-如果您使用的是vSphere 6.0或更新版本、則ESXi主機6.x的值設為512、ESXi 7.x的值設為1024。
+對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。
 
 * * NFS.MaxVolumes.*
 +
