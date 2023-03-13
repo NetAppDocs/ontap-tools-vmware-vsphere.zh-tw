@@ -1654,7 +1654,6 @@
   <block id="79cd3853b5a2b57deefe1845825a1900" category="paragraph">對於任何SRA升級、SRA軟體（Site Recovery Manager伺服器上的介面卡、由「.msi」檔案安裝）應從Site Recovery Manager伺服器移除。您可以使用Windows系統控制面板來解除安裝軟體、然後使用「. msi」檔案在SRA伺服器上安裝最新的SRA軟體。</block>
   <block id="774ccd148aa50c00b3379665779164a3" category="paragraph">如果您有VASA Provider部署、則在從現有設定升級後、您必須使用ONTAP 「Edit Settings」（編輯設定）選項、將您的VMware Tools記憶體大小設定為12GB。您也必須修改虛擬記憶體保留。必須關閉虛擬機器、才能修改記憶體大小。</block>
   <block id="e2444e964cdc125f0e5e638cd372f502" category="paragraph">如果您的VSC、VASA Provider和SRA使用7.2或7.2.1版虛擬應用裝置、則無法直接升級至9.7P1或更新版本的統一應用裝置。您必須先將現有的設定升級至9.7版虛擬應用裝置、然後再升級至最新版本。</block>
-  <block id="4bd884e7fb553fa43999861fb99f4795" category="paragraph">若要升級ONTAP 至VMware Tools 9.10、您應該執行虛擬應用裝置9.7P1或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。</block>
   <block id="b718294cda68e2103389a24908b155e6" category="paragraph">如果您要部署ONTAP 最新版的VMware Tools、您必須看到「需求」ONTAP 主題 「升級ONTAP 至最新版的VMware工具」主題提供執行就地升級的相關資訊。</block>
   <block id="018a6c6cf17ec407286da80c59f6b29c" category="paragraph"><block ref="018a6c6cf17ec407286da80c59f6b29c" category="inline-link-rx"></block></block>
   <block id="b71a941e1814d82255169b70e7887395" category="summary">根據預設、虛擬儲存主控台（VSC）會使用指定的連接埠、在其元件（包括儲存系統和VMware vCenter Server）之間進行通訊。如果您已啟用防火牆、則必須確定防火牆已設定為允許例外。</block>
@@ -2002,4 +2001,5 @@
   <block id="9e61293b777b055e3576d637f3d16625" category="list-text"><block ref="9e61293b777b055e3576d637f3d16625" category="inline-link-macro-rx"></block></block>
   <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
   <block id="9ed575bd998ffefe31b2b6708094410d" category="paragraph">對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。</block>
+  <block id="ed2b91672ee08a221afee30153dc24a9" category="paragraph">若要從ONTAP VMware Tools 9.10及更新版本升級、請執行虛擬應用裝置9.7P1或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。</block>
 </blocks>
