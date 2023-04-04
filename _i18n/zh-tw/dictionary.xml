@@ -368,7 +368,6 @@
   <block id="bef92ccaf2eaa0578e6024bf1bbf9ea7" category="list-text">使用命令「u root」切換至root使用者</block>
   <block id="9d58dbd20800ce51e37de67c2297da5f" category="list-text">在記錄位置輸入命令、以取得SRA使用的Docker ID：「Docker ps -l」</block>
   <block id="7202896d218d74a45a1995fe74164f61" category="list-text">若要登入容器ID、請輸入命令：「Docker執行-it -u SRM &lt;Container id&gt; sh」</block>
-  <block id="6408528f5006f0df83e2b2cc7b5f3eae" category="list-text">使用ONTAP 以下命令設定SRM：「perl command.pl -I &lt;VA-IP&gt;管理員&lt;VA-password&gt;」</block>
   <block id="3e06c9490934f18ce97a637bf06b781e" category="paragraph">此時會顯示一則成功訊息、確認儲存認證資料已儲存。SRA可以使用提供的IP位址、連接埠和認證、與SRA伺服器通訊。</block>
   <block id="4c65a82e131543c386c904a5ada59e9d" category="summary">VMware vSphere的支援功能可讓SRA功能與VSC搭配使用、以設定災難恢復。ONTAP</block>
   <block id="22bf2e5e3e861785a0e8f1eb7bd7492e" category="doc">啟用SRA來保護資料存放區</block>
@@ -2002,4 +2001,5 @@
   <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
   <block id="9ed575bd998ffefe31b2b6708094410d" category="paragraph">對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。</block>
   <block id="ed2b91672ee08a221afee30153dc24a9" category="paragraph">若要從ONTAP VMware Tools 9.10及更新版本升級、請執行虛擬應用裝置9.7P1或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。</block>
+  <block id="65f6fb9b3fd7c8798ba4a7010e84a65b" category="list-text">使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="2ca82e2fa9750815c3356b6e1692f9ca" prefix=" " category="inline-code"></block></block>
 </blocks>
