@@ -85,14 +85,12 @@
   <block id="be280321d69d14f5dfce8709e117a691" category="list-text">切換至root使用者：「u root」</block>
   <block id="9d7f1b1965b299ca0f83a93983a67fa9" category="list-text">在記錄位置輸入命令以取得SRA泊塢視窗所使用的Docker ID：「Docker ps -l」</block>
   <block id="a3fbfd6ca26f7eba2deb3733ea046eb1" category="list-text">登入容器ID：「Docker執行-it -u SRM &lt;container id&gt; sh」</block>
-  <block id="c93a0f0ebeda9ccb76c7ccdb97a1b6fc" category="list-text">使用ONTAP 下列功能設定SRM：「Perl command.pl -I &lt;VA-IP&gt;系統管理員&lt;VA-password&gt;」。畫面會顯示一則成功訊息、確認儲存認證資料已儲存。</block>
   <block id="3849324d415efa553fdff378e6dd712e" category="section-title">正在更新SRA認證</block>
   <block id="744ec7526945686620ba725a3be0778f" category="list-text">使用下列方法刪除/SRM/SRA/confDirectory的內容：</block>
   <block id="c8c76585229a8fa67ac61e761baed2fc" category="list-text">"CD /SRM/SRA/conf"</block>
   <block id="bc5ad92fecd3f6eeb4473c9df6479d46" category="list-text">「rm -RF *」</block>
   <block id="42f35b3ef9c82737da1f02ca0b45f308" category="list-text">執行perl命令以新認證設定SRA：</block>
   <block id="325c22d13dffac10de126d900c39ff29" category="list-text">「CD /SRM/SRA/」</block>
-  <block id="000595390ba91f5d02fbc87c52ad2a40" category="list-text">「perl command.pl -I &lt;VA-IP&gt;系統管理員&lt;VA-password&gt;」</block>
   <block id="9394c3b706fe8eb791b91c156fbd1c93" category="section-title">啟用VASA Provider和SRA</block>
   <block id="743107386a6cc6f0642e727e2e4181dc" category="list-text">使用您在部署期間指定的IP位址登入vSphere Web用戶端。</block>
   <block id="3f799c83f4fba0de5194eb1b91341f9a" category="list-text">按一下「* OTV*」圖示、然後輸入部署期間指定的使用者名稱和密碼、再按一下「*登入*」。</block>
@@ -2001,5 +1999,7 @@
   <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
   <block id="9ed575bd998ffefe31b2b6708094410d" category="paragraph">對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。</block>
   <block id="ed2b91672ee08a221afee30153dc24a9" category="paragraph">若要從ONTAP VMware Tools 9.10及更新版本升級、請執行虛擬應用裝置9.7P1或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。</block>
-  <block id="65f6fb9b3fd7c8798ba4a7010e84a65b" category="list-text">使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="2ca82e2fa9750815c3356b6e1692f9ca" prefix=" " category="inline-code"></block></block>
+  <block id="a88efd6c9b7763df783d278ede79c4a6" category="list-text">使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="4222690b3b5a5c9afb047223bc02154e" prefix=" " category="inline-code"></block>此時會顯示一則成功訊息、確認儲存認證資料已儲存。</block>
+  <block id="092016eb57c00c965fc19b3bff7ff343" category="list-text"><block ref="4222690b3b5a5c9afb047223bc02154e" prefix="" category="inline-code"></block></block>
+  <block id="b8e3b3982008f247b4868b6fd9b104d8" category="list-text">使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="4222690b3b5a5c9afb047223bc02154e" prefix=" " category="inline-code"></block></block>
 </blocks>

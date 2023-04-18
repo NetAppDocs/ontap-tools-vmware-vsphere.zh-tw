@@ -154,7 +154,7 @@ NOTE: （選用）如果您想要在不登錄vCenter Server的情況下建立容
 . 切換至root使用者：「u root」
 . 在記錄位置輸入命令以取得SRA泊塢視窗所使用的Docker ID：「Docker ps -l」
 . 登入容器ID：「Docker執行-it -u SRM <container id> sh」
-. 使用ONTAP 下列功能設定SRM：「Perl command.pl -I <VA-IP>系統管理員<VA-password>」。畫面會顯示一則成功訊息、確認儲存認證資料已儲存。
+. 使用 ONTAP 工具設定 SRM IP 位址和密碼： `perl command.pl -I <otv-IP> administrator <otv-password>`此時會顯示一則成功訊息、確認儲存認證資料已儲存。
 
 
 
@@ -171,7 +171,7 @@ NOTE: （選用）如果您想要在不登錄vCenter Server的情況下建立容
 . 執行perl命令以新認證設定SRA：
 +
 .. 「CD /SRM/SRA/」
-.. 「perl command.pl -I <VA-IP>系統管理員<VA-password>」
+.. `perl command.pl -I <otv-IP> administrator <otv-password>`
 
 
 
