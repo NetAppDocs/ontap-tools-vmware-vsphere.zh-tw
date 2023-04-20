@@ -38,8 +38,12 @@ entries:
     url: "/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html"
   - title: 設定儲存系統的預設認證資料
     url: "/configure/task_set_default_credentials_for_storage_systems.html"
-  - title: 將儲存系統新增至VSC
+  - title: 新增儲存系統
     url: "/configure/task_add_storage_systems.html"
+  - title: 修改儲存系統
+    url: "/configure/task_modify_storage_system.html"
+  - title: 更新憑證
+    url: "/configure/task_update_certificate.html"
   - title: 探索儲存系統與主機
     url: "/configure/task_discover_storage_systems_and_hosts.html"
   - title: 重新整理儲存系統顯示器
@@ -70,3 +74,5 @@ entries:
     url: "/configure/task_provision_vvols_datastores.html"
   - title: 重新平衡vVols資料存放區
     url: "/configure/reference_rebalance_vvols_datastore.html"
+  - title: 刪除 vVols 資料存放區
+    url: "/configure/reference_delete_vvols.html"

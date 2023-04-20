@@ -38,7 +38,7 @@ VMware HA功能可監控虛擬機器、以偵測作業系統故障和硬體故�
 
 設定VMware HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定VMware HA的步驟。
 
-https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["VMware vSphere文件：建立及使用vSphere HA叢集"]
+https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-availability/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html["VMware vSphere文件：建立及使用vSphere HA叢集"]
 
 
 

@@ -23,6 +23,7 @@ summary: 您可以使用ONTAP 「VMware Tools主控台報告」功能表來檢�
 * 虛擬機器報告
 * VVols資料存放區報告
 * VVols虛擬機器報告
+* 記錄完整性報告
 
 
 
@@ -47,7 +48,7 @@ NOTE: 不支援檔案監控FlexGroup 功能、以利在直接儲存虛擬機器�
 資料存放區報告功能表提供下列資料存放區參數的相關資訊：
 
 * 資料存放區名稱
-* 資料存放區類型：NFS或VMFS
+* 資料存放區類型： NFS 和 VMFS
 * Volume樣式
 +
 Volume樣式可以是FlexVol 一個「聲音量」或FlexGroup 「聲音量」。
@@ -118,7 +119,7 @@ Volume樣式可以FlexVol 是一個「聲音量」或FlexGroup 「聲音量」�
 
 vVols報告會顯示有關VMware虛擬磁碟區（vVols）資料存放區和這些資料存放區上所建立之虛擬機器的詳細資訊。vVols儀表板可讓您檢閱及識別vCenter Server中vVols資料存放區和虛擬機器的潛在問題。
 
-您可以檢視、組織及匯出報告。vVols資料存放區和虛擬機器的資料報告是ONTAP 由VMware提供、並搭配OnCommand 使用VMware API Services。
+您可以檢視、組織及匯出報告。VVols 資料存放區和虛擬機器報告的資料是由 ONTAP 提供。
 
 VVols提供下列預製報告：
 
@@ -162,3 +163,40 @@ vVols虛擬機器摘要報告功能表提供所有使用SAN vVols資料存放區
 
 
 報告中的每個虛擬機器名稱都是指向所選虛擬機器之「監控」索引標籤的連結。您可以根據需求來組織虛擬機器報告、以「.CSV」格式匯出報告、然後將報告儲存到本機系統。報告的時間戳記會附加至儲存的報告。
+
+* 記錄完整性報告 *
+
+記錄完整性報告會顯示檔案完整性狀態。系統會定期檢查記錄完整性、並在記錄完整性報告索引標籤中顯示報告。它也會提供正在復原的不同稽核檔案的狀態。
+
+可用的記錄檔狀態為：
+
+* 作用中：指出寫入記錄的目前作用中檔案。
+* 正常：表示歸檔檔案未遭竄改或刪除。
+* 竄改：表示檔案已在歸檔後修改
+* 轉換刪除：表示檔案已在記錄 4j 保留原則中刪除。
+* Unexpected 刪除：表示檔案已手動刪除。
+
+
+適用於 VMware vSphere 的 ONTAP 工具會針對下列項目產生稽核記錄：
+
+* VSC 服務
++
+vscservice 的稽核記錄位置： __/opt/NetApp/vscservice/VSC-稽 核記錄 _ 。您可以在 _/opt/NetApp/vscserver/etc/log4j2.properties_ 檔案中變更記錄完整性報告的下列參數：
+
++
+** 用於復原的最大記錄大小。
+** 保留原則、此參數的預設值為 10 個檔案。
+** 檔案大小、此參數的預設值為 10 MB 、檔案才會歸檔。您必須重新啟動服務、才能使新值生效。
+
+
+* VP 服務
++
+VP 服務的稽核記錄位置： __/opt/NetApp/vpservice/VP-vAudit 。 log_ VP 稽核記錄可在檔案 __/opt/NetApp/vpserver/conf/log4j2.properties_ 中修改。您必須重新啟動服務、才能使新值生效。
+
+* 維護命令
++
+維護服務的稽核記錄位置：可在 _/opt/NetApp/vscservice/main-tscile.log_ maint_logger.properties_ 檔案中修改維護記錄檔。變更預設值時、請重新啟動伺服器、讓新值生效。
+
+
+
+排程器可設定為定期檢查稽核記錄。排程器的預設值為一天。您可以變更 _/opt/NetApp/vscserver/etc/maint_logger.properties_ 檔案中的值。

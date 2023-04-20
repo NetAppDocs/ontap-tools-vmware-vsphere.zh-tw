@@ -13,7 +13,7 @@ summary: vVols報告會顯示有關VMware虛擬磁碟區（vVols）資料存放�
 [role="lead"]
 vVols報告會顯示有關VMware虛擬磁碟區（vVols）資料存放區和這些資料存放區上所建立之虛擬機器的詳細資訊。vVols儀表板可讓您檢閱及識別vCenter Server中vVols資料存放區和虛擬機器的潛在問題。
 
-您可以檢視、組織及匯出報告。vVols資料存放區和虛擬機器的資料報告是ONTAP 由VMware提供、並搭配OnCommand 使用VMware API Services。
+您可以檢視、組織及匯出報告。VVols 資料存放區和虛擬機器報告的資料是由 ONTAP 提供。
 
 VVols提供下列預製報告：
 

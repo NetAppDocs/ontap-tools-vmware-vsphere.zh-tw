@@ -2,7 +2,7 @@
 permalink: deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html 
 sidebar: sidebar 
 keywords: Virtual Storage Console, Storage Replication Adapter 
-summary: 您可以ONTAP 依照此處提供的指示、從現有的9.7.1或更新版本安裝程式、就地升級至最新版的VMware Tools。 
+summary: 您可以依照此處提供的指示、從現有的 9.10 或更新版本設定、執行就地升級至最新版本的 ONTAP 工具。 
 ---
 = 升級至ONTAP 最新版的VMware工具
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以ONTAP 依照此處提供的指示、從現有的9.7.1或更新
 
 
 [role="lead"]
-您可以ONTAP 依照此處提供的指示、從現有的9.7P1或更新版本、就地升級至最新版的VMware工具。
+您可以依照此處提供的指示、從現有的 9.10 版或更新版本執行就地升級至最新版本的 ONTAP 工具。
 
 *您需要的是什麼*
 
@@ -23,10 +23,37 @@ link:../deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html["�
 
 
 
+如有必要、請執行下列步驟來驗證 _.iso_ 檔案。這是選擇性步驟：
+
+. 從您從 Entrust （ OTV_ISO_CERT.pem ） opensl x509 中的 OTV_ISO_CERT.pem -publkey -noout > CSC-prod-OTV-SRA-TGZ.pub 核發的程式碼簽署憑證中擷取公開金鑰
+. 使用公開金鑰驗證摘要中的簽名（此步驟應在安裝二進位檔之前發生在終端使用者系統中。憑證套件應包含在部署套件中）
++
+openssl dgst -sha256 - 驗證 CSC-prod-OtV-SRA-Tgs.pub - 簽名 NetApp-onta-tools-From-vmware-vsphere-9.12-9327-upgrade -iso.sig netapp-ontap-tools-for-vmware-vsphere-9.12-9327-upgrade.iso
+
+
+
 升級後、會保留現有部署中VASA Provider的狀態。您應該根據升級後的需求、手動啟用或停用VASA Provider。不過、即使VMware虛擬磁碟區（vVols）未在使用中、還是最好啟用VASA Provider、因為它能為傳統的資料存放區資源配置和儲存警示啟用儲存功能設定檔。
 
 
-NOTE: 您只能ONTAP 從現有的9.7P1或更新版本執行就地升級至最新版的VMware工具。當您升級至9.7.1版ONTAP 的VMware Tools、並想要使用vVols複寫時、您需要在ONTAP 安裝Site Recovery Manager（SRM）的情況下、再設定一個vCenter Server搭配使用各種VMware工具。
+NOTE: 您只能從現有的 9.10 或更新版本執行就地升級至最新版本的 ONTAP 工具。
+
+
+NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與通訊程序都會透過自動信任 ONTAP 儲存憑證、從基本驗證變更為憑證型驗證。使用者無需採取任何行動。
+
+新增沒有憑證驗證的儲存系統是受到限制的。
+
+如果儲存系統是使用 json 檔案新增自訂建立的叢集範圍使用者、而您想要升級至 9.12 、請在升級之前、在 ONTAP CLI 上執行下列命令、以啟用 ONTAP 工具之間的 VMware vSphere 和 ONTAP 憑證型通訊：
+
+. _security 登入角色 create -role <role-name> -cmddirname "security login show" -access all_
+. _security 登入角色 create -role <role-name> -cmddirname "security certificate show" -access all_
+. _security 登入角色 create -role <role-name> -cmddirname "security certificate install" -access all_
+
+
+如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
+
+. _security 登入角色 create -role <role-name> -cmddirname "security certificate install" -access all -vserver <vserver-name> _
+. _security 登入角色 create -role <role-name> -cmddirname "security certificate show" -access all -vserver <vserver-name> _
+
 
 *步驟*
 
@@ -72,7 +99,7 @@ IMPORTANT: 僅vCenter Server 6.7及更新版本才支援IPv6。
 +
 屬性的預設值設為85%。
 
-* 升級至已啟用FIPS的最新OTV（9.10）版本、但不支援FIPS的舊版vCenter之後、部署仍會繼續運作。但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。
+* 當您升級至已啟用 FIPS 的最新 ONTAP 工具版本、但您擁有不支援 FIPS 的舊版 vCenter 之後、部署仍會正常運作。但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。
 
 
 ====

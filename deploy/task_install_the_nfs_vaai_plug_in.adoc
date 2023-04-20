@@ -15,10 +15,7 @@ summary: 您可以使用ONTAP VMware vSphere的GUI of支援VMware vSphere的VMwa
 
 *您需要的是什麼*
 
-* 您應該已經從NetApp支援網站下載適用於VAAI的NFS外掛程式（`.vib'）安裝套件。
-+
-https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
-
+* 您應該已下載適用於 VAAI 的 NFS 外掛程式安裝套件 (``.vib`）來自 NetApp 支援網站 。 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
 * 您應該已經安裝ESXi主機6.5或更新版本、ONTAP 以及不含更新版本的更新版本。
 * 您應該已開啟ESXi主機電源、並已掛載NFS資料存放區。
 * 您應該將「DataMover、HardwareAcceleratedMove」、「DataMover、HardwareAcceleratedInit」和「VMS3、HardwareAcceleratedLocking」主機設定的值設定為「1」。
@@ -27,6 +24,7 @@ https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
 
 * 您應該使用「vserver NFS modify -vserver vserver_name -vStorage enabled_」命令、在儲存虛擬機器（SVM）上啟用vStorage選項。
 * 如果您使用的是NetApp NFS VAAI外掛程式2.0、則應該有ESXi 7.0 Update 1或更新版本。
+* 您應該擁有 vSphere 7.x 版本、因為 vSphere 6.5 已過時、不支援 vSphere 8.x 。
 
 
 *步驟*

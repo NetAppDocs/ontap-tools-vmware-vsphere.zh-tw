@@ -1,5 +1,5 @@
 ---
-permalink: manage/task_edit_a_vvols_datastore.html 
+permalink: manage/task_edit_a_vvol_datastore.html 
 sidebar: sidebar 
 keywords:  
 summary: 您可以編輯現有的VMware虛擬磁碟區（vVols）資料存放區、以變更預設的儲存功能設定檔。預設的儲存功能設定檔主要用於交換vVols。 

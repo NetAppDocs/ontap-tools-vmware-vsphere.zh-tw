@@ -19,8 +19,8 @@ VMware vSphere的支援VMware vSphere工具可檢查及設定ESXi主機多重路
 
 *步驟*
 
-. 在VMware vSphere Web Client首頁中、按一下* vCenter*>* hostes*。
-. 在主機上按一下滑鼠右鍵、然後選取「*動作*>* NetApp VSC*>*設定建議值*」。
+. 從 VMware vSphere Web Client 首頁、按一下 * 主機與叢集 * 。
+. 在主機上按一下滑鼠右鍵、然後選取 * 動作 * > * NetApp ONTAP 工具 * > * 設定建議值 * 。
 . 在「NetApp建議設定」對話方塊中、選取最適合您系統的值。
 +
 預設會設定建議的標準值。

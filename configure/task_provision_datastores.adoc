@@ -35,6 +35,7 @@ summary: 資源配置資料存放區會為虛擬機器及其虛擬機器磁碟�
 
 * NFSv3和NFSv4.1
 * VMFS5和VMFS6
+* 從 vSphere 8.0 版本開始、支援 NVMe / FC 傳輸協定。
 
 
 VSC可以在NFS磁碟區或LUN上建立資料存放區：
@@ -140,9 +141,21 @@ VMware工具首頁ONTAP
  a| 
 「新資料存放區資源配置」對話方塊的「一般」區段提供選項、可輸入新資料存放區的目的地、名稱、大小、類型和傳輸協定。
 
-您可以選擇* NFS*或* VMFS*類型的傳輸協定來設定傳統的資料存放區。對於NFS、您可以選取NFS3或NFS 4.1。
+您可以選擇 *NFS* 、 *VMS* 或 *vVols* 類型來設定資料存放區。當您選取 vVols 類型時、則可以使用 NVMe / FC 傳輸協定。
 
-此版本可讓您設定大小上限為64TB的VMFS資料存放區。您可以選取「跨ONTAP 整個叢集分配資料存放區資料」選項、以便在FlexGroup 儲存系統上配置一個NetApp Volume。選取此選項會自動取消選取「Use Storage Capability Profile for provisioning」（使用儲存功能設定檔進行資源配置）核取方塊。針對供應資料區、僅會列出9.8以上的不實叢集供您選擇。FlexGroup ONTAPvVols資料存放區類型是用來設定vVols資料存放區。如果已啟用VASA Provider、您也可以決定是否使用儲存功能設定檔。*資料存放區叢集*選項僅適用於傳統資料存放區。您應該使用*進階*選項來指定* VMFS5*或* VMFS6*檔案系統。
+
+NOTE: ONTAP 9.91P3 及更新版本支援 NVMe / FC 傳輸協定。
+
+** NFS ：您可以使用 NFS3 或 NFS4.1 傳輸協定來配置 NFS 資料存放區。
++
+您可以選取選項 * 跨 ONTAP 叢集散佈資料存放區資料 * 、在儲存系統上佈建 FlexGroup Volume 。選取此選項會自動取消選取核取方塊 * 使用儲存功能設定檔進行資源配置 * 。
+
+** VMFS ：您可以使用 iSCSI 或 FC/FCoE 通訊協定來配置檔案系統類型為 vmf5 或 VMFS6 的 VMFS 資料存放區。
++
+
+NOTE: 如果已啟用 VASA Provider 、則您可以選擇使用儲存功能設定檔。
+
+
 
 
 
@@ -191,10 +204,12 @@ Kerberos驗證僅支援FlexVols。
 「Volume樣式」欄位可讓您區分所建立的資料存放區類型。「Volume樣式」可以是「FlexVol '漢城」或「FlexGroup 漢城」。
 
 |===
++
 
+NOTE: 作爲傳統資料存放區一部分的元件無法縮減至低於現有大小、但最多可增加120%。FlexGroup在這些FlexGroup 支援資料區上啟用預設快照。
 
+. 在「摘要」區段中、按一下「*完成*」。
 
-NOTE: 作爲傳統資料存放區一部分的元件無法縮減至低於現有大小、但最多可增加120%。FlexGroup在這些FlexGroup 支援資料區上啟用預設快照。。在「摘要」區段中、按一下「*完成*」。
 
 *相關資訊*
 

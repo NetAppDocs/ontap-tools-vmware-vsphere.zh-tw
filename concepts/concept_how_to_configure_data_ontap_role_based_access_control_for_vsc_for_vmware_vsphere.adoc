@@ -19,22 +19,7 @@ VASA Provider只能在叢集層級存取儲存系統。如果特定儲存控制�
 
 若要建立新的使用者、並將叢集或SVM連線ONTAP 至VMware Tools、您應該執行下列步驟：
 
-* 建立叢集管理員或SVM管理員角色
-+
-
-NOTE: 您可以使用下列其中一項來建立這些角色：
-
-+
-** 系統管理程式9.8P1或更新版本ONTAP
-+
-link:../configure/task_configure_user_role_and_privileges.html["設定使用者角色和權限"]
-
-** RBAC使用者建立工具ONTAP （若使用ONTAP 的是32個以上版本）
-+
-https://community.netapp.com/t5/Virtualization-Articles-and-Resources/RBAC-User-Creator-tool-for-VSC-VASA-Provider-and-Storage-Replication-Adapter-7-0/ta-p/133203/t5/Virtualization-Articles-and-Resources/How-to-use-the-RBAC-User-Creator-for-Data-ONTAP/ta-p/86601["適用於VSC、VASA Provider和Storage Replication Adapter 7.0的RBAC使用者建立工具、適用於VMware vSphere"]
-
-
-
+* 使用 ONTAP System Manager 9.8P1 或更新版本建立叢集管理員或 SVM 管理員角色。請參閱 link:../configure/task_configure_user_role_and_privileges.html["設定使用者角色和權限"] 以取得更多資訊。
 * 使用ONTAP NetApp建立已指派角色的使用者、並使用NetApp建立適當的應用程式集
 +
 您需要這些儲存系統認證資料、才能設定VSC的儲存系統。您可以在VSC中輸入認證資料、為VSC設定儲存系統。每次使用這些認證登入儲存系統時、您都有權使用ONTAP 在建立認證時於各處設定的VSC功能。

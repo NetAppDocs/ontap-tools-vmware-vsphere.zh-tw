@@ -17,7 +17,7 @@ VMware vSphere的支援功能可讓SRA功能與VSC搭配使用、以設定災難
 
 * 您必須設定vCenter Server執行個體並設定ESXi。
 * 您必須已部署ONTAP 完各種功能不實的工具。
-* 您必須下載SRA外掛程式的「.msi」檔案、或SRM應用裝置的「.tar.gz」檔案、才能設定Site Recovery Manager（SRM）災難恢復解決方案。
+* 您必須已下載 `.tar.gz` 只有當您想要設定 Site Recovery Manager （ SRM ）災難恢復解決方案時、才需要 SRM 應用程式的檔案。
 +
 https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["Site Recovery Manager安裝與組態Site Recovery Manager 8.2"] 有更多資訊。
 
@@ -30,38 +30,25 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_conf
 *步驟*
 
 . 登入VMware vSphere的網路使用者介面。
-. 在vSphere Client中、按一下*功能表*>* ONTAP 功能表工具主控台*。
+. 在 vSphere Client 中、按一下 * 功能表 * > * NetApp ONTAP 工具 * 主控台。
 . 按一下 * 設定 * 。
 . 按一下*管理設定*索引標籤中的*管理功能*。
 . 在「*管理功能*」對話方塊中、選取要啟用的SRA副檔名。
 . 輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。
 . 您可以使用下列其中一種方法來部署SRA：
 +
-|===
+*適用於SRM應用裝置*
 
-
- a| 
-*適用於Windows SRM *
-| *適用於SRM應用裝置* 
-
-
- a| 
-.. 按兩下下載的SRA外掛程式「.msi-」安裝程式。
-.. 依照螢幕上的指示操作。
-.. 輸入已部署ONTAP 的各種功能的IP位址和密碼。
-
- a| 
++
 .. 存取SRM應用裝置頁面、然後前往SRM應用裝置的「儲存複寫介面卡」頁面。
 .. 按一下「*新增介面卡*」。
 .. 將SRA外掛程式的_.tar.gz_安裝程式上傳至SRM。
 .. 重新掃描介面卡、確認「SRM儲存複寫介面卡」頁面中的詳細資料已更新。
 
 
-|===
-+
+
+
 您必須登出vSphere Client、然後再次登入、以驗證所選的擴充功能是否可供組態使用。
-
-
 
 *相關資訊*
 

@@ -13,17 +13,7 @@ summary: 您可以設定數ONTAP 個建議的VMware vCenter功能、以搭配ONT
 [role="lead"]
 您可以設定數ONTAP 個建議的VMware vCenter角色、以搭配ONTAP VMware vSphere的VMware VMware vCenter及角色型存取控制（RBAC）等各種功能。這些角色包含ONTAP 執行虛擬儲存主控台（VSC）工作所執行之必要儲存作業所需的功能。
 
-若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以ONTAP 使用下列其中一項來建立功能：
-
-* 系統管理程式9.8P1或更新版本ONTAP
-+
-link:../configure/task_configure_user_role_and_privileges.html["設定使用者角色和權限"]
-
-* RBAC使用者建立工具ONTAP （若使用ONTAP 的是32個以上版本）
-+
-https://community.netapp.com/t5/Virtualization-Articles-and-Resources/RBAC-User-Creator-tool-for-VSC-VASA-Provider-and-Storage-Replication-Adapter-7-0/ta-p/133203["適用於VSC、VASA Provider和Storage Replication Adapter 7.0的RBAC使用者建立工具、適用於VMware vSphere"]
-
-
+若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以使用 ONTAP 系統管理員 9.8P1 或更新版本來建立 ONTAP 角色。請參閱link:../configure/task_configure_user_role_and_privileges.html["設定使用者角色和權限"] 以取得更多資訊。
 
 每ONTAP 個功能都有一個相關的使用者名稱和密碼配對、構成該角色的認證資料。如果您未使用這些認證登入、則無法存取與該角色相關的儲存作業。
 

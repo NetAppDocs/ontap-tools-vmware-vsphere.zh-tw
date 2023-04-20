@@ -29,8 +29,8 @@ NOTE: 不支援檔案監控FlexGroup 功能、以利在直接儲存虛擬機器�
 *步驟*
 
 . 在vSphere Client首頁中、按一下* ONTAP 《VMware vSpher*適用的*功能性工具》。
-. 使用vCenter Server下拉式功能表選取所需的vCenter Server、以檢視資料存放區。
-. 按一下*傳統儀表板*。
+. 使用 * 執行個體 * 選取器選取所需的 vCenter Server 以檢視資料存放區。
+. 按一下 * 總覽 > 傳統儀表板 * 。
 +
 資料存放區入口小程序提供下列詳細資料：
 

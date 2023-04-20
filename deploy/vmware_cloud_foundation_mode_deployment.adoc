@@ -13,7 +13,7 @@ summary: VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。
 [role="lead"]
 VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境中。ONTAPVCF部署的主要目標是在ONTAP 雲端設定中使用VMware工具、並在不使用vCenter Server的情況下建立容器。
 
-VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。
+VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。ONTAP 工具 9.12 版本不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
 
 適用於VCF部署模式的API包括：
 
@@ -24,7 +24,7 @@ VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在
 
 
  a| 
-/1.0/admin/container
+/2.0/admin/containers
  a| 
 取得
  a| 
@@ -35,7 +35,7 @@ VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在
 
 
  a| 
-/1.0/admin/container
+/2.0/admin/containers
  a| 
 貼文
  a| 
@@ -46,7 +46,7 @@ VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在
 
 
  a| 
-/1.0/vcf/使用者/登入
+/2.0/vcf/user/login
  a| 
 貼文
  a| 
@@ -57,7 +57,7 @@ VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在
 
 
  a| 
-/1.0/admin/storage系統
+/3.0/ 儲存 / 叢集
  a| 
 取得
  a| 
@@ -68,7 +68,7 @@ VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在
 
 
  a| 
-/1.0/admin/storage系統
+/3.0/ 儲存 / 叢集
  a| 
 貼文
  a| 
@@ -239,7 +239,10 @@ FAS _最大20
 
 https://<machine_IP>/api/storage/volumes/{uuid}`
 
-利用VCF部署ONTAP 的支援功能、只能建立容器工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應ONTAP 使用Register.html頁面向vCenter Server註冊各種VMware工具。VCF模式中的靜態工具限制ONTAP 是您無法設定SRA進行災難恢復。
+利用VCF部署ONTAP 的支援功能、只能建立容器工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應使用「伺服器」頁面向 vCenter Server 註冊 ONTAP 工具。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。在 VCF 模式中、 ONTAP 工具的限制是、您必須先登錄外掛程式、才能設定用於災難恢復的。當您在不使用 VCF 模式的情況下部署 ONTAP 工具時、系統會自動進行登錄。
+
+
+NOTE: Register.html 將在即將推出的 ONTAP 工具版本中移除。
 
 image::../media/VCF_deployment.png[VMware Cloud Foundation部署工作流程]
 

@@ -17,16 +17,14 @@ summary: 如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子�
 
 當資料存放區資源配置失敗時、VSC會記錄下列錯誤訊息：
 
-「無法繼續。當控制器上的核心IP位址與位址相互參照時、找不到IP位址。
-
-找不到與這些主機的NFS掛載磁碟區相符的網路
+' 無法繼續。當控制器上的核心IP位址與位址相互參照時、找不到IP位址。無法找到與這些主機的 NFS 裝載磁碟區相符的網路。」
 
 *步驟*
 
 . 登入vCenter Server執行個體。
 . 使用統一化應用裝置虛擬機器啟動維護主控台。
 +
-link:reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html["VMware ONTAP vSphere的維護主控台"]
+link:../manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html["VMware ONTAP vSphere的維護主控台"]
 
 . 輸入「4」以存取「Support and Diagnostics（支援與診斷）」選項。
 . 輸入「2」存取存取「存取診斷Shell」選項。

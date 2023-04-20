@@ -35,38 +35,35 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 
 * * Net.TcpipHeapSiz*
 +
-如果您使用的是vSphere 6.0或更新版本、則應將此值設為32。
+將此值設為 32 。
 
 * * Net.TcpipHeapMax*
 +
-對於vSphere 6.X版本、您應將此值設為512MB、6.5U3和6.7U3版本除外。對於vSphere 6.5U3和6.7U3版本、請將此值設為1024MB。如果您使用的是vSphere 7.0或更新版本、則應將此值設為1024MB。
+將此值設為 1024MB 。
 
 * * NFS.MaxVolumes.*
 +
-如果您使用的是vSphere 6.0或更新版本、則應將此值設為256。
+將此值設為 256 。
 
 * * NFS41.MaxVolumes.*
 +
-如果您使用的是vSphere 6.0或更新版本、則應將此值設為256。
+將此值設為 256 。
 
 * * NFS.MaxQuesteDepet深度*
 +
-如果您使用的是vSphere 6.0或更新版本的ESXi主機、則應將此值設為128或更新版本、以避免出現佇列瓶頸。
-
-+
-對於6.0之前的vSphere版本、您應該將此值設為64。
+將此值設為 128 或更高、以避免佇列瓶頸。
 
 * * NFS.HeartbeatMaxFailures *
 +
-您應該將所有NFS組態的此值設為10。
+針對所有 NFS 組態、將此值設為 10 。
 
 * * NFS.HeartbeatFrequency*
 +
-您應該將所有NFS組態的此值設為12。
+針對所有 NFS 組態、將此值設為 12 。
 
 * * NFS.Heartbeattimeout*
 +
-您應該將所有NFS組態的此值設為5。
+針對所有 NFS 組態、將此值設為 5 。
 
 
 
@@ -76,21 +73,21 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 
 * *路徑選擇原則*
 +
-當使用具有ALUA的FC路徑時、您應該將此值設為「'RR」（循環配置資源）。
+使用具有 ALUA 的 FC 路徑時、請將此值設為「 RR 」（循環配置資源）。
 
 +
-對於所有其他組態、您應該將此值設為「固定」。
+針對所有其他組態、將此值設為「固定」。
 
 +
 將此值設為「RR」有助於在所有主動/最佳化路徑之間提供負載平衡。「固定」值用於舊版非ALUA組態、有助於防止Proxy I/O
 
 * *磁碟.QFullSampleSize*
 +
-您應該將所有組態的此值設為32。設定此值有助於避免I/O錯誤。
+將所有組態的此值設為 32 。設定此值有助於避免I/O錯誤。
 
 * *磁碟QFullTrresh*
 +
-您應該將所有組態的此值設為8。設定此值有助於避免I/O錯誤。
+將所有組態的此值設為 8 。設定此值有助於避免I/O錯誤。
 
 * * Emulex FC HBA超時*
 +
@@ -108,17 +105,17 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 
 * *路徑選擇原則*
 +
-您應該將所有iSCSI路徑的此值設為「'RR」。
+將所有 iSCSI 路徑的此值設為「 RR 」。
 
 +
 將此值設為「RR」有助於在所有主動/最佳化路徑之間提供負載平衡。
 
 * *磁碟.QFullSampleSize*
 +
-您應該將所有組態的此值設為32。設定此值有助於避免I/O錯誤。
+將所有組態的此值設為 32 。設定此值有助於避免I/O錯誤。
 
 * *磁碟QFullTrresh*
 +
-您應該將所有組態的此值設為8。設定此值有助於避免I/O錯誤。
+將所有組態的此值設為 8 。設定此值有助於避免I/O錯誤。
 
 

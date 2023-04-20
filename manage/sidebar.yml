@@ -9,9 +9,9 @@ entries:
   - title: 調整資料存放區大小
     url: "/manage/task_resize_datastores.html"
   - title: 編輯vVols資料存放區
-    url: "/manage/task_edit_a_vvols_datastore.html"
+    url: "/manage/task_edit_a_vvol_datastore.html"
   - title: 將儲存設備新增至vVols資料存放區
-    url: "/manage/task_add_storage_to_a_vvols_datastore.html"
+    url: "/manage/task_add_storage_to_a_vvol_datastore.html"
   - title: 從vVols資料存放區移除儲存設備
     url: "/manage/task_remove_storage_from_a_vvols_datastore.html"
   - title: 掛載vVols資料存放區
@@ -24,6 +24,8 @@ entries:
     url: "/manage/task_migrate_standard_virtual_machines_to_vvols_datastores.html"
   - title: 移轉具有舊版儲存功能設定檔的虛擬機器
     url: "/manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html"
+  - title: Vasa 清理
+    url: "/manage/task_delete_virtual_machines.html"
 - title: 修改ESXi主機設定
   url: "/manage/task_edit_esxi_host_settings.html"
 - title: 存取ONTAP VMware工具維護主控台
@@ -40,6 +42,8 @@ entries:
     url: "/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html"
 - title: 收集記錄檔
   url: "/manage/task_collect_the_log_files.html"
+- title: 管理系統記錄
+  url: "/manage/task_syslog_files.html"
 - title: 監控資料存放區和vVols報告的效能
   entries:
   - title: 資料存放區與虛擬機器報告的功能概述ONTAP

@@ -13,9 +13,9 @@ summary: 您可以使用VASA Provider ONTAP for VMware建立及管理VMware虛�
 [role="lead"]
 您可以使用VASA Provider ONTAP for VMware來建立及管理VMware虛擬磁碟區（vVols）。您可以配置、編輯、掛載及刪除vVols資料存放區。您也可以將儲存設備新增至vVols資料存放區、或從vVols資料存放區移除儲存設備。提供更大的靈活度。您可以配置及管理每個虛擬機器及相關的VMDK。
 
-vVols資料存放區是由FlexVol 儲存容器內的一個或多個支援區所組成（也稱為「備用儲存設備」）。虛擬機器可分散在一個vVols資料存放區或多個vVols資料存放區。
+VVols 資料存放區是由儲存容器內的一或多個 FlexVol 磁碟區（也稱為備份儲存）所組成。虛擬機器可分散在一個vVols資料存放區或多個vVols資料存放區。
 
-雖然您可以建立一個具有多FlexVol 個VMware磁碟區的vVols資料存放區、FlexVol 但儲存容器內的所有VMware磁碟區都必須使用相同的傳輸協定（NFS、iSCSI或FCP）和相同的儲存虛擬機器（SVM）。
+雖然您可以建立具有多個 FlexVol 磁碟區的 VVols 資料存放區、但儲存容器內的所有 FlexVol 磁碟區都必須使用相同的傳輸協定（ NFS 、 iSCSI 、 FCP 或 NVMe / FC ）、以及相同的儲存虛擬機器（ SVM ）。
 
 您不需要詳細瞭解基礎儲存設備。例如、您不需要識別特定FlexVol 的功能區即可容納儲存設備。在FlexVol vVols資料存放區中新增支援磁碟區之後、儲存容器會管理儲存需求、並在VM資源配置期間防止VMware資源配置到無容量的備用磁碟區。
 

@@ -1,5 +1,5 @@
 ---
-permalink: manage/task_add_storage_to_a_vvols_datastore.html 
+permalink: manage/task_add_storage_to_a_vvol_datastore.html 
 sidebar: sidebar 
 keywords: virtual volume datastores 
 summary: 您可以使用「新增儲存設備」精靈、將FlexVol VMware虛擬磁碟區新增至現有的VMware虛擬磁碟區（vVols\）資料存放區、以增加可用的儲存空間。 

@@ -1,0 +1,29 @@
+---
+permalink: configure/reference_delete_vvols.html 
+sidebar: sidebar 
+keywords: vVols datastore,delete vVol 
+summary: ONTAP 工具支援刪除資料中心內 FlexVol Volume 的命令。 
+---
+= 刪除 vVols 資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從 vCenter 的 ONTAP 工具刪除 VVOL 資料存放區工作可執行下列動作：
+
+* 卸載 vVol 容器。
+* 清除 igroup 。如果未使用 igroup 、請從 igroup 移除 iqn 。
+* 刪除 VVOL 容器。
+* 將 Flex Volume 留在儲存陣列上。
+
+
+請依照下列步驟、從 vCenter 中刪除 ONTAP 工具中的 VVOL 資料存放區：
+
+步驟：
+
+. 從 Inventory * view* 中選取資料存放區。
+. 在 vVol 資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* > * 刪除 vVols datastore* 。
+. 清理儲存陣列和 igroup 的 Flex Volume 。
+

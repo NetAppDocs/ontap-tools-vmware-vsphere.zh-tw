@@ -27,9 +27,7 @@ summary: 在升級ONTAP 完VMware工具或部署ONTAP 最新版本的VMware®後
 Windows
  a| 
 .. 登入SRM Windows Server。
-.. 從SRM伺服器解除安裝現有的SRA _.ms__安裝程式。
 .. 將系統路徑變更為「C:\Program Files\VMware\VMware vCenter Site Recovery Manager\extere\perl\c\bin」
-.. 按兩下從NetApp支援網站下載的_.ms__安裝程式、然後依照螢幕上的指示進行。
 .. 輸入已部署ONTAP 的各個功能表的IP位址和密碼。
 
 

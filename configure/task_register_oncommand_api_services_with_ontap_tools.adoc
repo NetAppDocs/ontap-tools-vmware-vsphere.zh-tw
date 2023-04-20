@@ -18,7 +18,7 @@ summary: 如果您使用ONTAP 的是VMware Virtual Volumes（vVols）9.6或更�
 您必須已從OnCommand NetApp支援網站下載《21：NetApp API Services 2.1或更新版本」。
 
 
-NOTE: vVols儀表板只有在SAN vVols資料存放區和虛擬機器使用ONTAP VMware 9.3或更新版本進行設定時、才會顯示效能指標。
+NOTE: VVols 儀表板只有在使用 ONTAP 9.7 或更新版本設定 SAN vVols 資料存放區和虛擬機器時、才會顯示效能指標。
 
 *步驟*
 

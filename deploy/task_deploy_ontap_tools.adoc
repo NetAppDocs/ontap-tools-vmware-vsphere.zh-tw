@@ -28,7 +28,7 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 * 您必須已下載_.ova_檔案。
 * 您必須擁有vCenter Server執行個體的系統管理員登入認證。
 * 您應該已登出並關閉vSphere Client的所有瀏覽器工作階段、並刪除瀏覽器快取、以避免在ONTAP 部署完各種VMware應用程式時發生任何瀏覽器快取問題。
-* 您必須已啟用網際網路控制訊息傳輸協定（ICMP）。
+* 您必須已啟用網際網路控制訊息傳輸協定（ ICMP ）。
 +
 如果停用ICMP、ONTAP 則無法初始設定支援工具、且VSC無法在部署後啟動VSC和VASA Provider服務。您必須在部署後手動啟用VSC和VASA Provider服務。
 
@@ -43,8 +43,8 @@ link:../deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html
 *步驟*
 
 . 登入vSphere Client。
-. 選擇* Home *>* Host & Clusters*。
-. 以滑鼠右鍵按一下所需的資料中心、然後按一下*部署OVA範本*。
+. 選取 * 首頁 * > * 主機與叢集 * 。
+. 以滑鼠右鍵按一下所需的資料中心、然後按一下 * 部署 OVF 範本 ... * 。
 . 選取適當的方法、提供ONTAP 適用於VMware的部署檔案以供使用、然後按一下*下一步*。
 +
 |===
@@ -63,7 +63,7 @@ URL
  a| 
 資料夾
  a| 
-從ONTAP 儲存的位置選取_.ova_檔案以供使用。
+將包含 .ova 檔案的 .zip 檔案解壓縮至您的本機系統。在「選取 OVF 範本」頁面上、指定 .ova 檔案在擷取資料夾內的位置。
 
 |===
 . 輸入詳細資料以自訂部署精靈。
@@ -81,7 +81,7 @@ URL
 
 . 開啟ONTAP VMware Tools虛擬機器的電源、然後開啟執行ONTAP VMware Tools的虛擬機器主控台。
 . 驗證ONTAP 部署完成後、是否執行了一些功能不完整的工具。
-. 如果ONTAP 沒有在任何vCenter Server上登錄使用此功能、請使用「https://appliance_ip:8143/Register.html`」登錄VSC執行個體。
+. 如果 ONTAP 工具未在任何 vCenter Server 上登錄、請使用 `\https://appliance_ip:8143/Register.html` 註冊 VSC 執行個體。Register.html 會將您重新導向至「瀏覽器」頁面。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。
 . 登出並重新登入vSphere Client、以檢視部署ONTAP 的功能表工具。
 +
 在vSphere Client中更新外掛程式可能需要幾分鐘的時間。
@@ -93,9 +93,6 @@ URL
 link:../deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html["清除vSphere快取下載的外掛程式套件"]
 
 
-
-
-NOTE: 如果您使用ONTAP 的是32個以上版本的版本、則若要檢視vVols儀表板、您必須下載並安裝OnCommand 32個API服務。但對於NetApp 9.7、您不需要向VASA Provider註冊使用無法更新的API服務。ONTAP OnCommand
 
 link:../deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html["啟用VASA Provider以設定虛擬資料存放區"]
 

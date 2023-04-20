@@ -54,21 +54,21 @@ NOTE: 9.10版ONTAP 的Eshot工具支援建立vVols資料存放區、而VMDK大�
  a| 
 資料中心內的所有主機
  a| 
-在資料中心上按一下滑鼠右鍵、然後選取「* NetApp VSC*>*資源配置資料庫*」。
+在資料中心上按一下滑鼠右鍵、然後選取* NetApp ONTAP 功能介紹*>*資源配置資料庫*。
 
 
 
  a| 
 叢集中的所有主機
  a| 
-在叢集上按一下滑鼠右鍵、然後選取「* NetApp VSC*>*資源配置資料庫*」。
+在叢集上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* > * Provision Datastore* 。
 
 
 
  a| 
 單一主機
  a| 
-在主機上按一下滑鼠右鍵、然後選取「* NetApp VSC*>*資源配置資料庫*」。
+在主機上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* > * Provision Datastore* 。
 
 |===
 . 完成「New Datastore（新資料存放區）」對話方塊中的欄位、以建立資料存放區。
@@ -86,6 +86,11 @@ NOTE: 9.10版ONTAP 的Eshot工具支援建立vVols資料存放區、而VMDK大�
 一般
  a| 
 「New Datastore（新資料存放區）」對話方塊的「General（一般）」區段提供選項、可輸入新資料存放區的位置、名稱、說明、類型和傳輸協定。vVols資料存放區類型是用來設定vVols資料存放區。
+
+如果已啟用 VASA 提供者功能、您可以配置 VVols 資料存放區。請參閱、 link:../deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html["啟用VASA Provider以設定虛擬資料存放區"] 以取得詳細資料。VVols 資料存放區支援 NFS 、 iSCSI 、 FC/FEoE 和 NVMe / FC 傳輸協定。
+
+
+NOTE: 如果 ONTAP 工具已在 vCenter 8.0 及更新版本中註冊、且 ONTAP 版本為 ONTAP 9.91P3 及更新版本、則適用於 vVols 資料存放區的 NVMe / FC 傳輸協定可供使用。
 
 
 NOTE: 如果您要配置iSCSI vVols資料存放區以進行vVols複寫、則在目標站台建立vVols資料存放區之前、您需要執行SnapMirror更新和叢集重新探索。

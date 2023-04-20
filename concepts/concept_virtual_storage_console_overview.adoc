@@ -2,7 +2,7 @@
 permalink: concepts/concept_virtual_storage_console_overview.html 
 sidebar: sidebar 
 keywords:  
-summary: VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理vCenter Server內的儲存設備、進而簡化VMware環境的儲存與資料管理。 
+summary: VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。 
 ---
 = VMware工具總覽ONTAP
 :allow-uri-read: 
@@ -11,11 +11,13 @@ summary: VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環
 
 
 [role="lead"]
-VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理vCenter Server內的儲存設備、進而簡化VMware環境的儲存與資料管理。
+VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。
 
-有了vSphere 6.5、VMware推出了一款名為vSphere Client的全新HTML5用戶端。9.6版ONTAP 及更新版本的支援功能僅支援vSphere Client。此功能可與vSphere Client整合、讓您使用單一登入（SSO）服務。ONTAP在具有多個vCenter Server執行個體的環境中、您要管理的每個vCenter Server執行個體都必須擁有自己的VSC登錄執行個體。
+此功能可與vSphere Client整合、讓您使用單一登入（SSO）服務。ONTAP在具有多個 vCenter Server 執行個體的環境中、您要管理的每個 vCenter Server 執行個體都必須擁有自己的 ONTAP 工具登錄執行個體。
 
 每個ONTAP 元件均提供功能、協助您更有效率地管理儲存設備。
+
+VMware vSphere Client 遠端外掛程式工具的設計是將外掛程式功能整合至 vSphere Client 、而無需在 vCenter Server 中執行。這可提供外掛程式隔離功能、並可在大型 vSphere 環境中運作的外掛程式橫向擴充。
 
 
 
@@ -57,11 +59,6 @@ VASA Provider for ONTAP VMware vSphere API for Storage感知（VASA）可將VMwa
 * 設定警示以在磁碟區和集合體接近臨界值時發出警示
 * 監控虛擬機器磁碟（VMDK）和虛擬機器在vVols資料存放區上建立的效能
 
-
-如果您使用ONTAP 的是32個以上版本的版本、則VASA Provider會使用VASA API與vCenter Server通訊、ONTAP 並使用稱為ZAPI的NetApp API與VMware通訊。若要檢視ONTAP 適用於VMware 9.6及更早版本的vVols儀表板、您必須在OnCommand vCenter Server上安裝並註冊了VMware API服務。如果您使用ONTAP 的是更新版本的版本、則不需要OnCommand 向VASA Provider註冊才能檢視vVols儀表板。
-
-
-NOTE: 對於僅適用於支援支援支援支援的支援、VASA Provider需要專門的支援範例來執行某些應用程式。ONTAP OnCommand無法與多個VASA Provider執行個體共用一個不支援的API服務執行個體OnCommand 。
 
 
 

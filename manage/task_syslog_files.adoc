@@ -1,0 +1,41 @@
+---
+permalink: manage/task_syslog_files.html 
+sidebar: sidebar 
+keywords:  
+summary: Syslog 用於將系統記錄傳送至集中式記錄伺服器。 
+---
+= 管理系統記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用 Syslog 將系統記錄傳送至集中式記錄伺服器。
+
+*關於此工作*
+
+適用於 VMware vSphere 9.12 版本的 ONTAP 工具會移除較早的 2.0 Syslog API 、並包含新的 3.0 Syslog 相關 API 、可支援相互驗證。請依照下列步驟設定系統記錄。
+
+*步驟*
+
+. 執行 _POST /2.0/security/user/login 以取得工作階段 ID 。
+. 傳送上述回應中收到的 SessionID 、以執行 _POST /3.0/apple-management / logging-client-certificate 。
++
+這會為 VP 伺服器和 VSC 伺服器產生憑證。
+
+. 將這兩個憑證複製到 Syslog 伺服器、並使其在 Syslog 伺服器上受到信任。
++
+以下是如何在「 syslog-ng 」泊塢視窗中執行的範例：
+
++
+** JSON 同時釋放憑證並將 pem 格式的憑證複製到 ca.d 目錄
+** `openssl x509 -noout -hash -in vsccert.pem` 結果是雜湊（例如 6d2962a8 ）
+** `ln -s vsccert.pem 6d2962a8.0` 這會建立一個符號連結、以雜湊形式連結憑證、並加上後置碼 .0
+** 啟動 Syslog 伺服器
+
+
+. 透過傳遞伺服器 IP 、連接埠、模式（選用）、 log_level 和 Syslog 伺服器的公用憑證、執行 _patch /3.0/applier-management / syslog-config_ API 。
+
+
+記錄會路由至指定的 Syslog 伺服器。

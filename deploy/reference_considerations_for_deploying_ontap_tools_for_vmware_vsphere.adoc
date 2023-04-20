@@ -26,8 +26,6 @@ summary: 在部署ONTAP VMware vSphere的VMware vCenter工具之前、最好先�
  a| 
 部署這些功能可自動安裝VSC功能。ONTAP
 
-link:../deploy/concept_deploy_or_upgrade_ontap_tools.html["部署及升級ONTAP 功能"]
-
 link:../deploy/concept_installation_workflow_for_new_users.html["VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程"]
 
 
@@ -107,7 +105,7 @@ VSC同時支援vCenter Server RBAC和ONTAP RBAC。用於登錄VSC至vCenter Serv
  a| 
 版本ONTAP
  a| 
-您的儲存系統必須執行ONTAP 的是NetApp 9.3、9.5、9.6、9.7、9.8P1或更新版本。
+您的儲存系統必須執行 ONTAP 9.7 、 9.8P1 或更新版本。
 
 
 
@@ -125,9 +123,9 @@ VSC同時支援vCenter Server RBAC和ONTAP RBAC。用於登錄VSC至vCenter Serv
 
 
 
-=== 應用裝置管理員使用者密碼
+=== 應用程式使用者密碼
 
-您不得在系統管理員密碼中使用任何空格。
+這是指派給系統管理員帳戶的密碼。基於安全考量、建議密碼長度為 8 至 30 個字元、且至少包含一個上方、下方、一位數及一個特殊字元。密碼在 90 天後過期。
 
 
 
@@ -142,6 +140,12 @@ VSC同時支援vCenter Server RBAC和ONTAP RBAC。用於登錄VSC至vCenter Serv
 您可以在部署ONTAP VMware vCenter工具的同時、設定vCenter Server的系統管理員認證。
 
 如果vCenter Server的密碼有所變更、您可以使用下列URL來更新管理員的密碼：「」\ https://<IP>:8143/Register.html`、其中IP位址是ONTAP 您在部署期間提供的各種功能。
+
+
+
+=== Derby 資料庫密碼
+
+基於安全考量、建議密碼長度為 8 至 30 個字元、且至少包含一個上方、下方、一位數及一個特殊字元。密碼在 90 天後過期。
 
 
 

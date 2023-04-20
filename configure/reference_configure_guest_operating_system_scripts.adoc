@@ -45,6 +45,6 @@ Solaris
 \https://<appliance_ip>:8143/vsc/public/writable/solaris_gos_timeout_190-install.iso
 
 |===
-您應該從登錄到管理虛擬機器的vCenter Server的VSC執行個體複本安裝指令碼。如果您的環境包含多個vCenter Server、則應選取包含您要設定其儲存逾時值之虛擬機器的伺服器。
+您應該從登錄到管理虛擬機器的 vCenter Server （ Elm ）的 VSC 執行個體複本安裝指令碼。如果您的環境包含多個 vCenter Server 、則應選取包含要設定儲存逾時值的虛擬機器執行個體。
 
 您應該登入虛擬機器、然後執行指令碼來設定儲存逾時值。

@@ -19,8 +19,8 @@ vSphere Web用戶端提供預設的儲存原則。但您可以建立原則並將
 
 *步驟*
 
-. 在vSphere Client頁面上、按一下*功能表*>*原則與設定檔*。
-. 按一下「* VM儲存原則*>*建立VM儲存原則*」。
+. 在 vSphere Client 頁面上、按一下 * 原則和設定檔 * 。
+. 在 VM Storage Policies （ VM 儲存原則）頁面中、按一下 *cre* （ * 建立 * ）。
 . 在Create VM Storage Policy（建立VM儲存原則）頁面中、提供下列詳細資料：
 +
 .. 輸入VM儲存原則的名稱和說明。
