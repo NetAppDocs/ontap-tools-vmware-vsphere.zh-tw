@@ -17,7 +17,6 @@
   <block id="940e6992d6d93b47b8889b1f27daa310" category="section-title">準備安裝</block>
   <block id="8ee2af7eaf4bb800c6978db4ecfbf9c8" category="paragraph">您將外掛程式部署為虛擬應用裝置、可減少在vCenter Server上個別安裝及註冊每個產品的工作。</block>
   <block id="ff31982aef870d546d52f49bb30ef34b" category="section-title">部署需求</block>
-  <block id="7dbc03160c35d84d113cf544dad5f6f0" category="paragraph">可搭配Windows vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）使用的VMware vCenter工具。ONTAP您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。</block>
   <block id="b1b9e64fcb7143271a2c70320984f7a7" category="paragraph">最小空間和主機規模調整需求為：</block>
   <block id="dc1ecf8620e5c055a2b23392f8e7f25d" category="cell">*系統*</block>
   <block id="d54802040021d687335cbcb507d0a765" category="cell">*最低要求*</block>
@@ -36,13 +35,9 @@
   <block id="89a71adc7ceff2f08a2162d1abfd9de6" category="cell">*額外需求*</block>
   <block id="ad3fbba845249aa049a193e4e344bf61" category="cell">*說明欄*</block>
   <block id="a44ba9086b2b83ccf2baf7c678723449" category="cell">9083.</block>
-  <block id="f6bfd6bd8ed886acfafded075083f4f4" category="cell">啟用時、VASA Provider和SRA都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。</block>
   <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443..</block>
-  <block id="b0ed24c095ae71a9e7a0b8c829f59e5e" category="cell">根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。</block>
   <block id="0c95054981de037de06e544a52eb3613" category="cell">8143.</block>
   <block id="c0874a8cac213072d254da44f2516ac3" category="cell">VSC會偵聽此連接埠上的安全通訊。</block>
-  <block id="8f14e45fceea167a5a36dedd4bea2543" category="cell">7.</block>
-  <block id="f4f368700c2fc35eed8f90ab56432358" category="cell">VSC會傳送回應要求給ONTAP Sing、以驗證可連線性、而且只有在新增儲存系統時才需要、之後才能停用。</block>
   <block id="97157b0bbe0ba304414559c34c463fa8" category="paragraph">最低儲存與應用程式需求：</block>
   <block id="495d63c3f347c7d241c61c9f988a6523" category="cell">*儲存設備、主機及應用程式*</block>
   <block id="beb34180fd99ea25331033f185458b28" category="cell">*版本要求*</block>
@@ -1463,7 +1458,6 @@
   <block id="356680b8197be9cb75c323f2dbe4ef55" category="paragraph">vVols Datastore Report功能表提供下列資料存放區參數的相關資訊：</block>
   <block id="8cd57303880c61cb2131bc6c86606338" category="paragraph">vVols虛擬機器摘要報告功能表提供所有使用SAN vVols資料存放區的虛擬機器效能指標、這些虛擬機器是由VASA Provider針對ONTAP 所選vCenter Server進行資源配置的。VM報告中顯示的虛擬機器度量為虛擬機器vVols資料存放區上每10分鐘收集一次的歷史資料。表格中會新增「上次重新整理時間」和「下次重新整理時間」、以提供資料收集時間及下次資料收集時間的相關資訊。</block>
   <block id="93eba8e55cc19fd39c04bf73a599af01" category="paragraph">報告中的每個虛擬機器名稱都是指向所選虛擬機器之「監控」索引標籤的連結。您可以根據需求來組織虛擬機器報告、以「.CSV」格式匯出報告、然後將報告儲存到本機系統。報告的時間戳記會附加至儲存的報告。</block>
-  <block id="b63375020fe42de81afebfc9fc66baae" category="summary">在部署ONTAP 完VMware開發工具之前、您應該先瞭解部署需求、並決定要執行的工作。根據您的工作、您可以選擇部署模式來部署ONTAP 各種VMware工具</block>
   <block id="578d9149fa04c3d4f2229ad419fbfec3" category="doc">部署ONTAP 這些功能的需求</block>
   <block id="943a0a91e2e47ea889874a0788bdea47" category="summary">VMware vSphere的VMware®工具提供單一機制、可探索儲存系統並設定儲存認證。ONTAP這些認證資料提供ONTAP 必要的資訊、可讓虛擬儲存主控台（VSC）使用者使用儲存系統執行工作。</block>
   <block id="70d0d796e1ae8de516c95867f195e5f2" category="paragraph">VMware vSphere的VMware®工具提供單一機制、可探索儲存系統並設定儲存認證。ONTAP認證資料提供ONTAP 必要的資訊、讓虛擬儲存主控台（VSC）使用者能夠使用儲存系統執行工作。</block>
@@ -1529,7 +1523,6 @@
   <block id="77508822eda5d675bed0a20bfe5cf0ff" category="paragraph">「無法與伺服器通訊。</block>
   <block id="60a5cb8bad06dbd50e4b20c4a0e54bdc" category="paragraph">VSC使用下列預設雙向TCP連接埠：</block>
   <block id="ac234df83bfcb986ebeb55e2c7819fd9" category="cell">*預設連接埠號碼*</block>
-  <block id="ecd50ff405da370c550857b00f4bbf8c" category="paragraph">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。</block>
   <block id="6b4c21d373aa9752550838c028733812" category="admonition">在部署ONTAP VMware Tools之前、您應該先啟用網際網路控制訊息傳輸協定（ICMP）。</block>
   <block id="63d4de9135523662dddc6029dfe2f1cf" category="paragraph">如果停用ICMP、ONTAP 則無法初始設定支援工具、且VSC無法在部署後啟動VSC和VASA Provider服務。您必須在部署後手動啟用VSC和VASA Provider服務。</block>
   <block id="3f3cc3de4019e9795e981e468c628e57" category="summary">VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。ONTAP</block>
@@ -1683,22 +1676,8 @@
   <block id="6240e8bd04b4c174a6de46ff02f517d8" category="paragraph">如果您不使用DHCP、請指定有效的DNS主機名稱（非合格）、ONTAP 以及靜態IP位址、以供使用VMware Tools和其他網路參數。所有這些參數都是正確安裝和操作所需的參數。</block>
   <block id="8462ebd1f7c1dea31df640cf9e7c50d0" category="admonition">如果VASA Provider狀態在啟用VASA Provider副檔名後仍顯示為「離線」、請檢查「/var/log/VMware/VMware-sps/sps.log」檔案、查看VASA Provider是否有任何連線錯誤、或重新啟動「VMware-sps」服務。</block>
   <block id="147526bf2b5a3f09ae14e12840a1138e" category="summary">如果在部署或升級ONTAP 完整套工具之後、外掛程式並未自動更新、您應該在瀏覽器和vCenter Server上清理快取的下載外掛程式套件、以解決vCenter Server外掛程式問題。</block>
-  <block id="2486f16fb02b577c6c3375ba9a93762d" category="paragraph">如果在部署或升級ONTAP 完整套工具之後、外掛程式並未自動更新、您應該在瀏覽器和vCenter Server上清理快取的下載外掛程式套件、以解決vCenter Server外掛程式問題。</block>
-  <block id="928a0fc17a8823d170fddc579679a74b" category="list-text">從現有vSphere Web用戶端或vSphere Client登出。</block>
   <block id="a0616a23fd099dfad3eb5032733a31a3" category="list-text">移除瀏覽器快取。</block>
-  <block id="a81218cfa1b12253d3738424f7fe41f1" category="list-text">移除vSphere Client快取外掛程式套件。</block>
-  <block id="d3f8fbc38c70102f80ae8f7fad51a2ba" category="cell">*如果您正在使用...*</block>
-  <block id="6022f5a040dd9eabb5e196140c0a3837" category="paragraph">Windows vCenter伺服器</block>
-  <block id="08ade16156fae5f96326f33fb911645a" category="paragraph">移除下列資料夾：com.netapp.vasa.vvol.webclient-x.x.x.xxxx`、「com.netapp.nvpf.webclient-x.x.x.xxxx`」和「com.netapp.vsch5-x.x.x.xxxx`」、網址為：</block>
-  <block id="c50bfe91c2a67370ca4e01f0fbcaa60b" category="list-text">vSphere Web Client路徑：「C：\ProgramData\VMware\vCenterServer\cfg/vSphere-client\vc-packages\vSphere-client-recreation」</block>
-  <block id="dd286c989dcb346e3dcbcdcffb367513" category="list-text">vSphere Client（HTML5）路徑：「C：\ProgramData\VMware\vCenterServer\cfg/vSphere-ui\vc-packages.vSphere-client-nersity」</block>
-  <block id="32b6ae27b932f6df4adc3773921186b2" category="paragraph">VCSA</block>
   <block id="7828ebc558b735f6dff95945a2060819" category="list-text">SSH加入VCSA應用裝置。</block>
-  <block id="c2893b865600d46b6cf4853c3e95aaef" category="list-text">使用「CD /etc/VMware/vSphere-client/vC-packages/vSphere-client-nility」將目錄變更為vCenter Web用戶端UI副檔名目錄</block>
-  <block id="c967b27fa47f0711ff8f4f94f6001d1c" category="list-text">使用「rm -rf」命令移除NetApp專屬的快取外掛程式套件：範例：這裡是您的外掛程式版本。--rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx rm -rf com.netapp.vsch5-x.x.x.xxxx</block>
-  <block id="bd102b609640a336d673bcb7001cf07e" category="list-text">使用「CD /etc/VMware/vSphere-ui/vC-packages/vSphere-client-nility」、將目錄變更為vCenter用戶端（HTML5）UI副檔名目錄</block>
-  <block id="e8472057a9b51ca61b841e7cba26f994" category="list-text">使用「rm -rf」命令移除NetApp外掛程式專屬的快取外掛程式套件：範例：這裡是您的外掛程式版本、即rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx rm -rf com.netapp.vsch5-x.x.x.xxxx、</block>
-  <block id="04817d905fd962e9edfde7e6036e0241" category="list-text">使用下列命令登入vSphere、然後重新啟動vSphere Web用戶端和vSphere Client服務：</block>
   <block id="cac000aa96604e0bb47a3105eddb0164" category="summary">您可以ONTAP 從NetApp支援網站下載適用於VMware vSphere的.ova檔案。</block>
   <block id="b619f377f35b0b908b2adf21a0d31ee8" category="doc">如何下載ONTAP 功能介紹工具</block>
   <block id="759c03b6b17de770a7b5c6d4c2dfcc3f" category="paragraph">如果您想要在部署ONTAP VMware vCenter工具時啟用SRA、則必須在Site Recovery Manager（SRM）伺服器上安裝SRA外掛程式。您可以從「ONTAP 軟體下載」區段的「*儲存複寫介面卡for Rise*」功能表下載SRA外掛程式的安裝檔案。</block>
@@ -1861,7 +1840,6 @@
   <block id="7ea5502ed4cc89cb1fc4be2cc51190f4" category="admonition">Register.html 將在即將推出的 ONTAP 工具版本中移除。</block>
   <block id="af2e98a831555badce1ec02cfe100834" category="paragraph">ONTAP 版本的儲存複寫介面卡（） 4.0 也使用 VASA Provider 、因此您必須先取消註冊 VASA Provider 、然後再部署最新版本的 ONTAP 工具。舊版伺服器 <block ref="8d8b01a4d628953e7a2225813c8edb3f" prefix="(" category="inline-code"></block>）可在升級完成時移除。</block>
   <block id="c20f9adcd877706d050f9e7249f16810" category="paragraph">若要升級至 ONTAP 工具 9.10 及更新版本、您應該執行的是虛擬應用裝置 9.7P1 或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。</block>
-  <block id="9540fc60d33ac231357b4fd7310065a9" category="paragraph">如果您要部署最新版的 ONTAP 工具、您必須參閱主題 <block ref="1f5f630effbb534deb34c8700cc819c7" category="inline-link-macro-rx"></block>。主題 <block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block> 具有執行就地升級的相關資訊。</block>
   <block id="bd5b59e1812c598c5458ce040cc8fd66" category="doc">為 VMware vSphere 儲存系統設定 ONTAP 工具</block>
   <block id="8854c86add608ae836aaeb597474bb7b" category="paragraph">將儲存系統新增至VSC時、您必須提供儲存系統的IP位址、以及與該系統相關聯的使用者名稱和密碼配對。您可以設定VSC在儲存系統探索過程中使用的預設認證、也可以在發現儲存系統時手動輸入認證資料。新增至VSC的儲存系統詳細資料會自動推送至您在部署中啟用的擴充功能。您不需要手動將儲存設備新增至VASA Provider和儲存複寫介面卡（SRA）。VSC和SRA都支援在叢集層級和儲存虛擬機器（SVM）層級新增認證資料。VASA Provider僅支援新增儲存系統的叢集層級認證。當您新增儲存系統時、 ONTAP 工具外掛程式與儲存系統之間的任何通訊都應該相互驗證。</block>
   <block id="f3adfda90e905d04465d600d9b713b48" category="list-text">您可以按一下「儲存系統」頁面中的 * 重新探索全部 * 按鈕、或在主機或資料中心上、從 * 動作 * 功能表中選取（ * 動作 * &gt; * NetApp ONTAP 工具 * &gt; * 更新主機和儲存資料 * ）。您也可以按一下「總覽」區段「使用入門」索引標籤上的*「探索」。</block>
@@ -2089,4 +2067,30 @@
   <block id="ffca6b6ccf577f01ebec5049ed6530d7" category="inline-link">適用於 VMware vSphere 9.12 的 ONTAP 工具注意事項</block>
   <block id="58c791a72760f6b1607675a232883816" category="paragraph"><block ref="58c791a72760f6b1607675a232883816" category="inline-link-rx"></block></block>
   <block id="a80f3275e655b331da24a4073b9c6ed4" category="sidebar">適用於 VMware vSphere 9.12 文件的 ONTAP 工具</block>
+  <block id="fb6e6c413e9963fd23d2a0dd101c04ac" category="admonition">直接 SVM 不支援 VVOL 資料存放區。</block>
+  <block id="017f8e6e7370b01bd1fed75ddba8b8d3" category="paragraph">請參閱 <block ref="97253b89ed0b6873167793a2fe7f5831" category="inline-link-macro-rx"></block> 程序一節。</block>
+  <block id="69ac127712ba2f454cf4501e9db7a265" category="paragraph-title">quick 重新同步功能啟動</block>
+  <block id="107cd024dfeeb71b9a8570d7f9a25a64" category="paragraph">您可以啟用 quick 重新同步旗標、以在 SRA 中執行重新保護和還原作業。這僅適用於以非同步 SnapMirror 關係為磁碟區備份的資料存放區。由於重新同步不會在傳輸新資料之前產生儲存效率負荷、因此可以加快目的地 Volume 的重新同步時間。根據預設、 quick （快速）重新同步不會啟用。建議啟用 quick 重新同步旗標：</block>
+  <block id="1c52dcdd4491d0706b3364ecaca3636e" category="list-text">當重新同步的來源未啟用 Volume Effeness.</block>
+  <block id="9fff6c8ee7fb3c43cbe3124a1d4883a7" category="list-text">減少重新同步時間比保留網路上所有可能的儲存效率更重要。</block>
+  <block id="91a71eb29f05d0e0d765dd24efd35e07" category="paragraph">請依照下列步驟啟用 quick （快速）重新同步旗標：</block>
+  <block id="992e4c552a6e3e8132e2ff5dcf4d9ba2" category="list-text">登入控制面板、網址為 _https ： &lt;IP address&gt; ： 9083_ 、然後按一下網路型 CLI 介面。</block>
+  <block id="933360919bcc7a54c2c15a9ba3062f75" category="list-text">執行命令<block ref="a20fbe11e2f20ab8ef5cc0bc3aa22e41" prefix=" " category="inline-code"></block>。</block>
+  <block id="ba2a1e4d95dc56709260e82cca20a789" category="list-text">執行命令<block ref="6d83e9fce5e947159c3c34b9f499e80e" prefix=" " category="inline-code"></block>。</block>
+  <block id="bec4fe8b0a1c02393fd0700875750a56" category="list-text">從現有的 vSphere Web 用戶端或 vSphere UI 登出。</block>
+  <block id="fae0172133f0506cbb207e15e1eb4aef" category="list-text">移除vSphere Client快取外掛程式套件。對於 VCSA 、請執行下列步驟：</block>
+  <block id="a8f3b27f04ef4962a5caf70a06ae28fb" category="list-text">停止 VMware vSphere Client 服務：<block ref="4ad331c0aae87e53252a4e9c0fb7b3fe" prefix=" " category="inline-code"></block></block>
+  <block id="2096eb0aa64e2928992af27ac4402e59" category="list-text">將目錄變更為 vCenter 用戶端 UI 副檔名目錄：<block ref="877ddb80b516a509c7c154978a1ff7ee" prefix=" " category="inline-code"></block></block>
+  <block id="dc37c1c22c04fc5e7386e3092519eac8" category="list-text">使用移除 NetApp 特有的快取外掛程式套件<block ref="373d5cc730dd449760c437daf3d5a6d5" prefix=" " category="inline-code"></block> 命令：</block>
+  <block id="ea51a159279a27e3f4ac4547881ff688" category="paragraph"><block ref="91fa5c8593259f0cb6f0845470d72256" prefix="" category="inline-code"></block></block>
+  <block id="5e9e6efcbe65718c4f8940b263317a69" category="paragraph"><block ref="7f4891afcb11aecd70e2cfd4c1573829" prefix="" category="inline-code"></block></block>
+  <block id="5547d8d27b62c49e4555e1f79122a342" category="paragraph"><block ref="9e427bf42ac054021120757914ef1809" prefix="" category="inline-code"></block></block>
+  <block id="b8ace162f3094fd5ac1138ced112d7a7" category="list-text">啟動 VMware vSphere Client 服務：<block ref="bfbe7f4b006f6fcfc7bb66e075309067" prefix=" " category="inline-code"></block></block>
+  <block id="02026f27af003e00469addac855d370b" category="paragraph">如果您要部署最新版的 ONTAP 工具、您必須參閱主題 <block ref="44969696c082c6abaae247e8c1723287" category="inline-link-macro-rx"></block>。主題 <block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block> 具有執行就地升級的相關資訊。</block>
+  <block id="36716d5924fd9465137a810fd76c2f48" category="paragraph">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠可用於下載 VP 支援套件、存取 Web-CLI 使用者介面、以及控制 VMware 與 VP 之間的路徑通訊。</block>
+  <block id="71a6973fa992a434c0d25fb07bd6f07d" category="paragraph">根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。安全連線預設會啟用 443 連接埠。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。</block>
+  <block id="8678399a2b31de4e8e3f91c25fdbb6f4" category="paragraph">VSC會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。此連接埠可用於 VSC 服務及匯出 VSC 伺服器記錄檔。register.html 頁面託管在此連接埠上。其餘的交換器會暴露在此連接埠上。</block>
+  <block id="94694a876801fa4851e5478564de6f4a" category="paragraph">ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用。您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。</block>
+  <block id="21076231e2fb130435663c1226fafb7f" category="cell">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠支援套件下載、 Web-CLI 使用者介面、以及從 VMware 到 VP 的控制路徑通訊。SRA 會與後端 SRA 服務就此連接埠號碼進行通訊。</block>
+  <block id="9abf7c4d6f8e5b536137c70ad41a5f3b" category="paragraph"><block ref="9abf7c4d6f8e5b536137c70ad41a5f3b" category="inline-link-rx"></block></block>
 </blocks>

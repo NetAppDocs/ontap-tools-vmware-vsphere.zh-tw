@@ -31,7 +31,7 @@ VMware vSphere的VMware vSphere工具是單一vCenter Server外掛程式、包�
 
 === 部署需求
 
-可搭配Windows vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）使用的VMware vCenter工具。ONTAP您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。
+ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用。您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。
 
 最小空間和主機規模調整需求為：
 
@@ -63,16 +63,10 @@ VMware vSphere的VMware vSphere工具是單一vCenter Server外掛程式、包�
 | *額外需求* | *說明欄* 
 
 
-| 9083. | 啟用時、VASA Provider和SRA都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。 
-
-
-| 443.. | 根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。 
+| 9083. | 啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠支援套件下載、 Web-CLI 使用者介面、以及從 VMware 到 VP 的控制路徑通訊。SRA 會與後端 SRA 服務就此連接埠號碼進行通訊。 
 
 
 | 8143. | VSC會偵聽此連接埠上的安全通訊。 
-
-
-| 7. | VSC會傳送回應要求給ONTAP Sing、以驗證可連線性、而且只有在新增儲存系統時才需要、之後才能停用。 
 |===
 最低儲存與應用程式需求：
 

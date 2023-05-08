@@ -73,4 +73,4 @@ https://kb.netapp.com/mgmt/OTV/SRA/NetApp_Storage_Replication_Adapter_4.0%2F%2F7
 
 有關修改SAN Provider設定的VMware文件有更多資訊。
 
-https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-711FD223-50DB-414C-A2A7-3BEB8FAFDBD9.html["VMware Site Recovery Manager文件：變更儲存設定"]
+https://docs.vmware.com/en/Site-Recovery-Manager/index.html?hWord=N4IghgNiBcIGoFkDuYBOBTABAZQJYBcsAldAYwHsA3dVAT0wTADswBzGzAEXNIFcBbdE3xh8uckxABfIA["VMware Site Recovery Manager文件：變更儲存設定"]

@@ -46,7 +46,7 @@ ONTAP 版本的儲存複寫介面卡（） 4.0 也使用 VASA Provider 、因此
 
 若要升級至 ONTAP 工具 9.10 及更新版本、您應該執行的是虛擬應用裝置 9.7P1 或更新版本。不支援從舊版的虛擬應用裝置9.7P1升級。
 
-如果您要部署最新版的 ONTAP 工具、您必須參閱主題 link:..deploy/concept_requirements_for_deploying_ontap_tools_for_vmware_vsphere.html["部署ONTAP 這些功能的需求"]。主題 link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升級至ONTAP 最新版的VMware工具"] 具有執行就地升級的相關資訊。
+如果您要部署最新版的 ONTAP 工具、您必須參閱主題 link:../deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html["空間與規模需求ONTAP 、滿足各種需求"]。主題 link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升級至ONTAP 最新版的VMware工具"] 具有執行就地升級的相關資訊。
 
 *相關資訊*
 

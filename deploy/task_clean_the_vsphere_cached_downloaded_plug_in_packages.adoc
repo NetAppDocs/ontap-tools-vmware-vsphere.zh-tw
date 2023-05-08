@@ -8,50 +8,36 @@ summary: 如果在部署或升級ONTAP 完整套工具之後、外掛程式並�
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+:revnumber: 
+:revdate: you should clean up the cached download plug-in packages on the browser and on the vCenter Server to resolve vCenter Server plug-in issues.
 
-
-[role="lead"]
-如果在部署或升級ONTAP 完整套工具之後、外掛程式並未自動更新、您應該在瀏覽器和vCenter Server上清理快取的下載外掛程式套件、以解決vCenter Server外掛程式問題。
 
 *步驟*
 
-. 從現有vSphere Web用戶端或vSphere Client登出。
+. 從現有的 vSphere Web 用戶端或 vSphere UI 登出。
 . 移除瀏覽器快取。
-. 移除vSphere Client快取外掛程式套件。
+. 移除vSphere Client快取外掛程式套件。對於 VCSA 、請執行下列步驟：
 +
-|===
-
-
-| *如果您正在使用...* | *執行下列...* 
-
-
- a| 
-Windows vCenter伺服器
- a| 
-移除下列資料夾：com.netapp.vasa.vvol.webclient-x.x.x.xxxx`、「com.netapp.nvpf.webclient-x.x.x.xxxx`」和「com.netapp.vsch5-x.x.x.xxxx`」、網址為：
-
-** vSphere Web Client路徑：「C：\ProgramData\VMware\vCenterServer\cfg/vSphere-client\vc-packages\vSphere-client-recreation」
-** vSphere Client（HTML5）路徑：「C：\ProgramData\VMware\vCenterServer\cfg/vSphere-ui\vc-packages.vSphere-client-nersity」
-
-
-
-
- a| 
-VCSA
- a| 
 .. SSH加入VCSA應用裝置。
-.. 使用「CD /etc/VMware/vSphere-client/vC-packages/vSphere-client-nility」將目錄變更為vCenter Web用戶端UI副檔名目錄
-.. 使用「rm -rf」命令移除NetApp專屬的快取外掛程式套件：範例：這裡是您的外掛程式版本。--rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx rm -rf com.netapp.vsch5-x.x.x.xxxx
-.. 使用「CD /etc/VMware/vSphere-ui/vC-packages/vSphere-client-nility」、將目錄變更為vCenter用戶端（HTML5）UI副檔名目錄
-.. 使用「rm -rf」命令移除NetApp外掛程式專屬的快取外掛程式套件：範例：這裡是您的外掛程式版本、即rm -rf com.netapp.vasa.vvol.webclient-x.x.x.xxxx rm -rf com.netapp.nvpf.webclient-x.x.x.xxxx rm -rf com.netapp.vsch5-x.x.x.xxxx、
-
-
-|===
-. 使用下列命令登入vSphere、然後重新啟動vSphere Web用戶端和vSphere Client服務：
+.. 停止 VMware vSphere Client 服務：
+`service-control --stop vsphere-ui`
+.. 將目錄變更為 vCenter 用戶端 UI 副檔名目錄： `cd /etc/vmware/vsphere-ui/vc-packages/vsphere-client-serenity`
+.. 使用移除 NetApp 特有的快取外掛程式套件 `rm -rf` 命令：
 +
-[listing]
-----
-service-control --stop vsphere-client vsphere-ui
-service-control --start vsphere-client vsphere-ui
-----
+`rm -rf com.netapp.nvpf.webclient-*`
+
++
+`rm -rf com.netapp.vasa.vvol.webclient-*`
+
++
+`rm -rf com.netapp.vsch5-*`
+
+.. 啟動 VMware vSphere Client 服務：
+`service-control --start vsphere-ui`
+
+
 
