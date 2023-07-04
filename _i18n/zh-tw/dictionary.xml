@@ -87,7 +87,6 @@
   <block id="3ef179b9c339ebf06db691f18287d220" category="admonition">您不應該在單一VVols資料存放區中、混合設定受保護和未受保護的虛擬機器。容錯移轉後重新保護作業將會刪除未受保護的虛擬機器。使用複寫時、請確保vVols資料存放區中的所有虛擬機器都受到保護。</block>
   <block id="39257a3688316e4fc063d2c22bc315b3" category="paragraph">複寫群組是在vVols資料存放區期間建立、為每FlexVol 個版本建立工作流程。若要使用vVols複寫、您必須建立VM儲存原則、其中包括複寫狀態和排程、以及儲存功能設定檔。複寫群組包含虛擬機器、這些虛擬機器會在災難恢復時複寫到目標站台。您可以使用SRM主控台、為DR工作流程設定具有保護群組和恢復計畫的複寫群組。</block>
   <block id="e82cdb865c10a6e2846353935c22fcdd" category="admonition">如果您使用vVols資料存放區的災難恢復、則不需要個別設定儲存複寫介面卡（SRA）、因為VASA Provider功能已增強、可進行vVols複寫。</block>
-  <block id="045808f0dd6488827a80a9ece7ce8913" category="image-alt">vvols複寫</block>
   <block id="a25b09ef62f093cb958512723cf9c709" category="inline-link-macro">設定現有資料存放區的vVols複寫</block>
   <block id="d54b1afb8378e7fe0084d91e5e715292" category="paragraph"><block ref="d54b1afb8378e7fe0084d91e5e715292" category="inline-link-macro-rx"></block></block>
   <block id="d8b78f8f27c423a569c3bda009182a52" category="summary">您應該將受保護站台上的儲存原則對應至還原站台上的儲存原則、以便根據對應、將恢復的虛擬機器放置在適當的資料存放區上。在恢復站台上恢復虛擬機器之後、對應的VM儲存原則將指派給虛擬機器。</block>
@@ -118,7 +117,6 @@
   <block id="8ac32f6a8aa36578bdfe17eaa1b09d09" category="list-text">登入vCenter Server、然後按一下*站台恢復*&gt;*站台*。</block>
   <block id="bb11372d84393cda662c1a6ada5caf20" category="list-text">選取您的受保護網站、然後按一下*管理*。</block>
   <block id="975a5d96a32b63ae9e78d2fab188fc7d" category="list-text">在Manage（管理）選項卡中，選擇*文件夾映射*。</block>
-  <block id="321a111d1dae3f7e0d938394bb51fdd5" category="list-text">按一下 <block ref="53c809c0b3efdf133f3691c8dadc54b3" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的資料夾對應。</block>
   <block id="11f4ccd371b621a7fd0ddb2b197b1e00" category="paragraph">此時會出現「建立資料夾對應」精靈。</block>
   <block id="6f39eceaad564346f7c828d828949f3f" category="list-text">在「建立資料夾對應」精靈中、執行下列步驟：</block>
   <block id="cbe12451cac47906dbec30deb7af9da2" category="list-text">選擇*自動準備名稱相符的資料夾對應*、然後按*下一步*。</block>
@@ -144,7 +142,6 @@
   <block id="5c0c0e72c5e970358a3cd73aa5a6cdfb" category="list-text">存取未受保護的虛擬機器、並編輯VM儲存原則。</block>
   <block id="f5d7ddef19ac20f1f403b4e17dd45319" category="list-text">選取VM儲存原則和資料存放區。</block>
   <block id="4577690c09752b0ca7185efe45717b27" category="list-text">將複寫群組新增至未受保護的虛擬機器。</block>
-  <block id="cc7af6d60ed13eebff9a071d28b7f2db" category="image-alt">vvols複寫現有的資料存放區</block>
   <block id="9a58b5aa20d973302c3a17ded0496b1a" category="paragraph">*附註：*</block>
   <block id="c1c8479c1167662eb9257d77ff142920" category="list-text">將虛擬機器設定為啟用現有資料存放區的複寫時、請務必確認FlexVol 包含Config vVols的流通量。</block>
   <block id="d702ff1bee15d5d3b7250939fe4b588d" category="list-text">當現有虛擬機器的vVols分散在多個資料存放區時、您應該使用vMotion將該虛擬機器的所有vVols移至單一資料存放區、然後再啟用複寫。</block>
@@ -169,7 +166,6 @@
   <block id="d50592c91e3b0e5662b620ee7ab3dbc4" category="paragraph">您必須設定預留位置資料存放區、以便將受保護虛擬機器（VM）的位置保留在vCenter資源清冊中。預留位置資料存放區不需要太大、因為預留位置的VM很小、而且只使用數百或更少的KB。</block>
   <block id="cc033bcfc189c3eea2b7a910b7c5f057" category="list-text">您必須已設定資源對應。</block>
   <block id="1492b0392ea61287f2885789d58f0cb2" category="list-text">在「Manage（管理）」索引標籤中、選取*佔位資料存放區*。</block>
-  <block id="73a81863dedf94f58450aa0c3ecef2f8" category="list-text">按一下 <block ref="cdb88dc1087a6f5aa8a2aa5b28bdc94e" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的預留位置資料存放區。</block>
   <block id="63d79daa70d7585f9f91ede52fe2cecc" category="list-text">選取適當的資料存放區、然後按一下「*確定*」。</block>
   <block id="9f300d87b0b24027951fafe07e70031d" category="admonition">預留位置資料存放區可以是本機或遠端、不應複寫。</block>
   <block id="5de92fca08ac717a6277a6303e846d53" category="list-text">重複步驟3到5、為恢復站台設定預留位置資料存放區。</block>
@@ -273,7 +269,6 @@
   <block id="7cb2c88a440a03e13d32d94f6c048340" category="list-text">預留位置資料存放區</block>
   <block id="9b5de986e60b871fe7abaa3678c90552" category="list-text">登入vCenter Server、然後按一下*站台恢復*&gt;*站台*。</block>
   <block id="2ad1cb1a025f61d83d0ce7d7ec4e1775" category="list-text">在Manage（管理）選項卡中，選擇* Network Mappings（網絡映射）*。</block>
-  <block id="4fc058d5aabb89cec1a8ecf09e3e10ed" category="list-text">按一下 <block ref="59be0f5e0f28a9bdc3a1ff2cbdacc90c" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的網路對應。</block>
   <block id="6753f4982155708aac37a1bd3bef1245" category="paragraph">「Create Network Mapping」（建立網路對應）精靈隨即出現。</block>
   <block id="6211d5bb29b9c1509eb64e37fd1af6f4" category="list-text">在Create Network MappingWizard（建立網路對應精靈）中、執行下列步驟：</block>
   <block id="fa3c2dff2aa64bf77790451d4ad4e2a6" category="list-text">選擇*自動準備名稱相符的網路對應*、然後按*下一步*。</block>
@@ -282,11 +277,8 @@
   <block id="b1615a1d50989bbe005256e6352c9d57" category="doc">將Windows SRM移轉至SRM設備</block>
   <block id="f728e6376c02d0120eb394fe6b65bfd0" category="paragraph">如果您使用Windows型Site Recovery Manager（SRM）進行災難恢復、且想要使用SRM設備進行相同的設定、則應將Windows災難恢復設定移轉至以應用裝置為基礎的SRM。</block>
   <block id="fa7482ecdf6cd8902f31cda90682fe24" category="paragraph">移轉災難恢復所需的步驟如下：</block>
-  <block id="7649d59a52d07134510f2699764f49b5" category="list-text">將現有ONTAP 的VMware Tools升級至9.7.1版。</block>
   <block id="39f29a6c7f811815442f4a6e6bc0945c" category="inline-link-macro">升級至ONTAP 最新版的VMware工具</block>
   <block id="6db555bae030dd891aa85762ae9d5b14" category="paragraph"><block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block></block>
-  <block id="1b57ce58bd15cb0830a07b3ff30354e6" category="list-text">將Windows型儲存複寫介面卡移轉至以應用裝置為基礎的SRA。</block>
-  <block id="f5f343bc2137f12db9cb09a476fdf405" category="list-text">將Windows SRM資料移轉至SRM Appliance。</block>
   <block id="3061b3ff6d3a7fe53051f50f814b02de" category="inline-link">從Site Recovery Manager for Windows移轉至Site Recovery Manager Virtual Appliance</block>
   <block id="e98071b2fdde8378fcd32e609913ab66" category="paragraph">請參閱<block ref="7cf7ce0cd4f57deb650bf40ef131cabd" category="inline-link-rx"></block> 以取得詳細步驟</block>
   <block id="e57ab3165732742ce0656b61518a9477" category="summary">您必須建立保護群組、以保護受保護站台上的一組虛擬機器。</block>
@@ -361,7 +353,6 @@
   <block id="030d70f04daf1a419b22fa9a45e77ff2" category="list-text">輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。</block>
   <block id="24d416b3da9556f9ce25fb84ea68495c" category="list-text">您可以使用下列其中一種方法來部署SRA：</block>
   <block id="bad42c55fd769862a49a558477587b7e" category="cell">*適用於SRM應用裝置*</block>
-  <block id="92a8061393663f953e9e1a4a2d009db3" category="list-text">存取SRM應用裝置頁面、然後前往SRM應用裝置的「儲存複寫介面卡」頁面。</block>
   <block id="6e7ce8cda7fca8d5eb6cca98fe90a434" category="list-text">按一下「*新增介面卡*」。</block>
   <block id="b1fb84ee8230e3e0cf8f6ea25e31815a" category="list-text">將SRA外掛程式的_.tar.gz_安裝程式上傳至SRM。</block>
   <block id="59f9d35b4ce4564f26ab2f5357c373aa" category="paragraph">您必須登出vSphere Client、然後再次登入、以驗證所選的擴充功能是否可供組態使用。</block>
@@ -399,10 +390,7 @@
   <block id="ed7f08e236934f84eff400f2a6307549" category="list-text">建立更精細的角色。</block>
   <block id="f934fe4ede361b2778e687b9b91cd305" category="paragraph">如果貴公司要求您實作比標準VSC角色更具限制性的角色、您可以使用VSC角色來建立新角色。</block>
   <block id="52559a3597647289ddc42175b58d675c" category="paragraph">在這種情況下、您會複製必要的VSC角色、然後編輯複製的角色、使其僅擁有使用者所需的權限。</block>
-  <block id="93cf0ce401485ea512d0cebd7aa9a5b6" category="summary">vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在VMware vSphere的VMware®工具中、vCenter Server RBAC可搭配使用以確定特定使用者可在特定儲存系統上的物件上執行哪些VSC工作。ONTAP ONTAP</block>
   <block id="a2b6bdbaa7f478b53edca02553c0dd6b" category="doc">概述以角色為基礎的ONTAP 存取控制功能</block>
-  <block id="f737dbfa4bc20b26d0a2b6647fa12dbb" category="paragraph">vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在VMware vSphere的VMware®工具中、vCenter Server RBAC可搭配使用以確定特定使用者可在特定儲存系統上的物件上執行哪些VSC工作。ONTAP ONTAP</block>
-  <block id="06f90c47c5652bcdb308e3ff60795047" category="paragraph">若要成功完成工作、您必須擁有適當的vCenter Server RBAC權限。在工作期間、VSC會先檢查使用者的vCenter Server權限、然後再檢查使用者ONTAP 的VMware vCenter權限。</block>
   <block id="4e97a87c57d50537bba2389e33f34a93" category="paragraph">您可以在根物件（也稱為根資料夾）上設定vCenter Server權限。然後您可以限制不需要這些權限的子實體、藉此精簡安全性。</block>
   <block id="c69756aca5576df11336d4f750a7fb7d" category="summary">您可以使用VASA Provider ONTAP for VMware建立及管理VMware虛擬磁碟區（vVols）。您可以配置、編輯、掛載及刪除vVols資料存放區。您也可以將儲存設備新增至vVols資料存放區、或從vVols資料存放區移除儲存設備。提供更大的靈活度。您可以配置及管理每個虛擬機器及相關的VMDK。</block>
   <block id="0bc53908165e8112244704360fb1a404" category="doc">VVVols的VASA Provider組態</block>
@@ -457,13 +445,9 @@
   <block id="fddbfde8381a8cd2ead18c94350d2a14" category="paragraph">設定VMware HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定VMware HA的步驟。</block>
   <block id="1d5795cd94cc0753911dd6bc7e4121e0" category="inline-link">VMware vSphere文件：建立及使用vSphere HA叢集</block>
   <block id="57913afe7758e6ac629330a6211986c2" category="paragraph"><block ref="57913afe7758e6ac629330a6211986c2" category="inline-link-rx"></block></block>
-  <block id="5589c3092776301a216aaf2d3ac2d8a8" category="summary">VMware vSphere工作的不同功能需要不同的權限組合、這些權限是虛擬儲存主控台（VSC）和原生vCenter Server權限的專屬權限。ONTAP</block>
   <block id="7d95f88d5acd32cda8bb48c562c0a438" category="doc">VSC工作所需的權限</block>
-  <block id="193c88c1ab14526b933d9caf9484432a" category="paragraph">VMware vSphere工作的不同功能需要不同的權限組合、這些權限是虛擬儲存主控台（VSC）和原生vCenter Server權限的專屬權限。ONTAP</block>
-  <block id="04b73aa98bf2f2396de0535eaf3faf8e" category="paragraph">如需VSC工作所需權限的相關資訊、請參閱NetApp知識庫文章1032542。</block>
   <block id="6b894d7e8f2bb219ece874c3c249c3f7" category="inline-link">如何為虛擬儲存主控台設定RBAC</block>
   <block id="14d107055fdbd0aa4ef3c23300469f88" category="paragraph"><block ref="14d107055fdbd0aa4ef3c23300469f88" category="inline-link-rx"></block></block>
-  <block id="b6d1b0cb2147f5fa73ba96a40d7c5374" category="paragraph">若要存取ONTAP VMware vSphere GUI的VMware vSphere工具、您必須在正確的vSphere物件層級指派產品層級VSC專屬檢視權限。如果您在沒有此權限的情況下登入、VSC會在您按一下NetApp圖示時顯示錯誤訊息、並防止您存取VSC。</block>
   <block id="6f34d21822642a48589bd338b41f0924" category="summary">VMware vSphere容錯能力（FT）功能可在更高層級提供高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。</block>
   <block id="cdfc5a777443e1d48691c26fa9cae9e1" category="doc">VMware vSphere容錯能力</block>
   <block id="bd13f0208899c7acaf359a3a498b1a16" category="paragraph">VMware vSphere容錯（FT）功能可提供更高層級的高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。</block>
@@ -478,13 +462,10 @@
   <block id="74357ddc4a8bb94a1e387cdc464d35b9" category="doc">指派和修改vCenter Server權限的重點</block>
   <block id="c8ae2664c1636dc82742c9e4a7d61618" category="section-title">指派權限</block>
   <block id="930763c1a1aa2d8dac9f593b88cc97f3" category="paragraph">如果您只想限制對vSphere物件和工作的存取、則只需要設定vCenter Server權限。否則、您可以以系統管理員的身分登入。此登入可讓您自動存取所有vSphere物件。</block>
-  <block id="fe59038eb9a34529745fdff28894d375" category="paragraph">指派權限的位置決定使用者可以執行的VSC工作。</block>
   <block id="2999d34a2175214e4c82aac37d21932b" category="paragraph">有時候、為了確保工作完成、您必須在較高層級（例如根物件）指派權限。當工作需要不適用於特定vSphere物件的權限（例如追蹤工作）、或是需要的權限套用至非vSphere物件（例如儲存系統）時、就會發生這種情況。</block>
   <block id="2c04f4cf2a358eb25b9eadacab86952c" category="paragraph">在這些情況下、您可以設定權限、讓子實體繼承權限。您也可以將其他權限指派給子實體。指派給子實體的權限一律會覆寫繼承自父實體的權限。這表示您可以將權限授予子實體、以限制指派給根物件並由子實體繼承的權限範圍。</block>
   <block id="3cfc0fca04f11488b56caab42cdd61d4" category="admonition">除非貴公司的安全性原則需要更嚴格的權限、否則指派權限給根物件（也稱為根資料夾）是很好的做法。</block>
   <block id="65e2bf8aa80dc9818c751f89f6af711e" category="section-title">權限與非vSphere物件</block>
-  <block id="77c1bbd024525075bdd272268499ec51" category="paragraph">您建立的權限會套用至非vSphere物件。例如、儲存系統不是vSphere物件。如果某項權限適用於儲存系統、您必須將包含該權限的權限指派給VSC根物件、因為您無法將該權限指派給vSphere物件。</block>
-  <block id="fc8078b7efcfc8d791f2b4291e1d4ec0" category="paragraph">例如、任何包含VSC權限的權限、例如「新增/修改/跳過儲存系統」、都必須在根物件層級指派。</block>
   <block id="b9fb193a2e0ec11e6325daf26766f10a" category="section-title">修改權限</block>
   <block id="a8e01cabe9b5f1e74700dfe84ecb64df" category="paragraph">您可以隨時修改一個權限。</block>
   <block id="738c71d468b929e0b80b012e95674531" category="paragraph">如果您變更權限內的權限、則與該權限相關的使用者應登出、然後重新登入以啟用更新的權限。</block>
@@ -499,15 +480,10 @@
   <block id="debdb3ce4a86d0a653cb9af2997ed87b" category="paragraph">使用者或群組會定義可以執行工作的人員。</block>
   <block id="f050ff5690e22a95a842525c7cdec28c" category="paragraph">如下圖所示、您必須擁有所有三個元素、才能取得權限。</block>
   <block id="83002a8f3da272c6326e5e31c94c7134" category="admonition">在此圖中、灰色方塊表示vCenter Server中存在的元件、而白色方塊則表示vCenter Server執行所在作業系統中存在的元件。</block>
-  <block id="d6604cece2634ee88b99e28a1cc25369" category="image-alt">權限更新圖形</block>
   <block id="d4613ce1ce58f0172e8a4a07c9582cdf" category="section-title">權限</block>
   <block id="b96085011a4e0805bceab50863c6d6a7" category="paragraph">VMware vSphere的VMware vSphere的VMware VMware工具有兩種權限：ONTAP</block>
   <block id="ac38773d017495a97d5b88f242578cb8" category="list-text">原生vCenter Server權限</block>
   <block id="812c5d24b89720dbab0e021d979b0bdf" category="paragraph">這些權限隨附於vCenter Server。</block>
-  <block id="2ea487293094c000053b7ecdcc4f9d0f" category="list-text">VSC專屬權限</block>
-  <block id="e31f18ecad0532c28fad839c9b939c8f" category="paragraph">這些權限是針對特定VSC工作所定義。VSC獨一無二。</block>
-  <block id="70b39d807e560871dc0c378bc38e13f3" category="paragraph">VSC工作需要VSC專屬權限和vCenter Server原生權限。這些權限構成使用者的「角色」。權限可以有多個權限。這些權限適用於登入vCenter Server的使用者。</block>
-  <block id="4dc8d442f599c6c18cf7dd10b52fa487" category="admonition">為了簡化vCenter Server RBAC作業、VSC提供多種標準角色、其中包含執行VSC工作所需的所有VSC專屬和原生權限。</block>
   <block id="a61c7e49f2d62469efe4be0dd2d42a28" category="paragraph">如果您變更權限內的權限、則與該權限相關的使用者應登出、然後登入以啟用更新的權限。</block>
   <block id="d1dc06daf2b40eda05a92978bd21de6b" category="cell">*角色*</block>
   <block id="f197f8354a88ee5425ed2bd92e3432cd" category="cell">*工作*</block>
@@ -515,14 +491,10 @@
   <block id="c9ef8e8cb4e9071b6711dacd2032d148" category="list-text">VSC管理員</block>
   <block id="8ac826ebad5c44b12551e1ad81ac67c6" category="list-text">VSC配置</block>
   <block id="c5ac298b280c51f301192df10798efec" category="list-text">VSC唯讀</block>
-  <block id="1f0cf4c19fd3048b62df0cf67d5b3434" category="paragraph">所有VSC和VASA Provider特定工作都需要View權限。</block>
   <block id="d843fc807a4643e3570b6bf94e75e58f" category="paragraph">NetApp虛擬儲存主控台&gt;原則型管理&gt;管理或privilege.nvpfVSC.VASAGroup.com.netapp.nvpf.label &gt;管理</block>
   <block id="977ab2e24a7487c2a601a55ebc3ad363" category="paragraph">VSC和VASA Provider工作與儲存功能設定檔和臨界值設定相關。</block>
   <block id="0c26eb3da0cc8bb038a438623b92ece4" category="section-title">vSphere物件</block>
-  <block id="6c624932dc6dcc57d998289b2da4f386" category="paragraph">權限與vSphere物件相關聯、例如vCenter Server、ESXi主機、虛擬機器、資料存放區、資料中心、 和資料夾。您可以將權限指派給任何vSphere物件。vCenter Server會根據指派給vSphere物件的權限、決定誰可以在該物件上執行哪些工作。對於VSC特定工作、權限僅會指派並驗證於根資料夾層級（vCenter Server）、而非任何其他實體。VAAI外掛程式作業除外、該作業會針對相關ESXi驗證權限。</block>
   <block id="b7f56258c47d620440751b7faddb209b" category="section-title">使用者與群組</block>
-  <block id="879f661c4c82cd6443000f6d69b2141d" category="paragraph">您可以使用Active Directory（或本機vCenter Server機器）來設定使用者和使用者群組。然後您可以使用vCenter Server權限來授予這些使用者或群組存取權、讓他們能夠執行特定的VSC工作。</block>
-  <block id="51713fa15070cba1e70c7fed4efe6782" category="admonition">這些vCenter Server權限適用於VSC vCenter使用者、而非VSC管理員。根據預設、VSC系統管理員擁有產品的完整存取權、不需要指派權限給他們。</block>
   <block id="c3a3dd532edfb82b4e332bc19f333c01" category="paragraph">使用者和群組並未指派角色給他們。他們可透過vCenter Server權限的一部分來存取角色。</block>
   <block id="2bf690158e044812ab33988c70464eba" category="summary">支援高可用度（HA）組態的支援功能、有助於在故障時提供不中斷的功能。ONTAP ONTAP</block>
   <block id="08bab46947b750954e0eb5a840fc8f07" category="doc">設定ONTAP 高可用度的功能以供使用</block>
@@ -551,42 +523,24 @@
   <block id="3d384eb1ba36d273adab30ad3d265c2d" category="list-text">摧毀儲存設備</block>
   <block id="021f124189b20e2f6f27d6d11b2002aa" category="paragraph">此角色可讓您銷毀儲存設備。此角色也包含與探索角色、建立儲存角色及修改儲存角色相關的所有權限。</block>
   <block id="9d64075f7476840c8c1339f43bb2904c" category="paragraph">如果您使用VASA Provider ONTAP 來執行功能、也應該設定原則型管理（PBM）角色。此角色可讓您使用儲存原則來管理儲存設備。這項職務要求您也必須設定「探索」角色。</block>
-  <block id="41d1595a6193e61f46686c24799acd68" category="summary">為了簡化vCenter Server權限與角色型存取控制（RBAC）的使用、Virtual Storage Console（VSC）提供標準VSC角色、讓您能夠執行關鍵VSC工作。此外、也有唯讀角色可讓您檢視VSC資訊、但無法執行任何工作。</block>
   <block id="80bcb999ba82a6a1735d3b331e492294" category="doc">標準角色隨ONTAP 附於整套的功能</block>
-  <block id="a9a80aa47fcaa73837cbe598c5ec021b" category="paragraph">為了簡化vCenter Server權限與角色型存取控制（RBAC）的使用、Virtual Storage Console（VSC）提供標準VSC角色、讓您能夠執行關鍵VSC工作。此外、也有唯讀角色可讓您檢視VSC資訊、但無法執行任何工作。</block>
-  <block id="4797f6fbb591d5a8ff4f4cca1e952f0f" category="paragraph">標準VSC角色具有必要的VSC專屬權限、以及使用者執行VSC工作所需的原生vCenter Server權限。此外、這些角色也會設定成擁有所有受支援版本vCenter Server所需的權限。</block>
   <block id="7ea79dfc92d95f271e38ad8d0b267dd5" category="paragraph">身為管理員、您可以視需要指派這些角色給使用者。</block>
-  <block id="ed262a17b17027c186d2f4959236b610" category="admonition">當您將VSC升級至最新版本時、系統會自動升級標準角色、以搭配新版VSC使用。</block>
-  <block id="788e1de3a7bee65991ce6ac2a2c16df2" category="paragraph">您可以按一下vSphere Client首頁上的*角色*來檢視VSC標準角色。</block>
-  <block id="044cb1a9b7ea095d18f2e6b48cdf4055" category="paragraph">VSC提供的角色可讓您執行下列工作：</block>
   <block id="cf917d8457fcc174b9b969143eda5613" category="cell">*角色*</block>
-  <block id="590c0db1af29adabce858b066a78d2cb" category="paragraph">提供執行所有VSC工作所需的所有原生vCenter Server權限和VSC專屬權限。</block>
   <block id="c1c2bda70ad6cdf12fd6f3f51eed2c3d" category="paragraph">VSC唯讀</block>
-  <block id="c56b0bee3be5c774d802562e22d3f115" category="paragraph">提供VSC的唯讀存取權。這些使用者無法執行任何存取控制的VSC動作。</block>
-  <block id="ddea7f18ed761ebe3b44ba447c70ff84" category="paragraph">提供配置儲存設備所需的所有原生vCenter Server權限和VSC專屬權限。您可以執行下列工作：</block>
   <block id="b444bb84c6347f04bc0fe9b808470c02" category="list-text">建立新的資料存放區</block>
   <block id="b269c93fa6b5ac129b588fab76e9b62a" category="list-text">銷毀資料存放區</block>
   <block id="b4ee819aec2169a685f048d59bfe124d" category="list-text">檢視儲存功能設定檔的相關資訊</block>
   <block id="a06e01651b689422008d3b0b46478373" category="paragraph">當您使用VMware ONTAP vSphere角色的標準版基礎架構工具時、您應該遵循某些準則。</block>
-  <block id="60acc8ec200a03cba0bcec34dbd21cdb" category="summary">以角色為基礎的存取控制（RBAC）可讓您控制對特定儲存系統的存取、並控制使用者可在這些儲存系統上執行的動作。ONTAP在VMware vSphere的VMware®工具中ONTAP 、VMware vSphere的VMware RBAC可搭配vCenter Server RBAC來判斷特定使用者可在特定儲存系統的物件上執行哪些虛擬儲存主控台（VSC）工作。ONTAP</block>
   <block id="da496c85a4c5475dec77c310cdcb6be9" category="doc">適用於VMware的權限ONTAP</block>
-  <block id="b64652024bc922b3d81a43a634cd8b78" category="paragraph">以角色為基礎的存取控制（RBAC）可讓您控制對特定儲存系統的存取、並控制使用者可在這些儲存系統上執行的動作。ONTAP在VMware vSphere的VMware®工具中ONTAP 、VMware vSphere的VMware RBAC可搭配vCenter Server RBAC來判斷特定使用者可在特定儲存系統的物件上執行哪些虛擬儲存主控台（VSC）工作。ONTAP</block>
-  <block id="ea70a4edb98e06a20b4aa66ebbd21541" category="paragraph">VSC會使用您在VSC中設定的認證（使用者名稱和密碼）來驗證每個儲存系統、並決定可在該儲存系統上執行哪些儲存作業。VSC會針對每個儲存系統使用一組認證資料。這些認證資料可決定在該儲存系統上執行哪些VSC工作；換句話說、認證資料適用於VSC、而非適用於個別VSC使用者。</block>
-  <block id="cf2c657b8054c77eb2047febf6dcf2ad" category="paragraph">支援RBAC僅適用於存取儲存系統及執行與儲存相關的VSC工作、例如資源配置虛擬機器。ONTAP如果ONTAP 您沒有適用於特定儲存系統的適當RBAC權限、就無法在該儲存系統上裝載的vSphere物件上執行任何工作。您可以搭配ONTAP VSC專屬權限來使用RBAC、以控制使用者可以執行的VSC工作：</block>
   <block id="845e835b372dcd78cff8f20ea48e3ec4" category="list-text">監控及設定儲存系統上的儲存或vCenter Server物件</block>
   <block id="6209ea29783659ad409dca288f7ef0f1" category="list-text">資源配置位於儲存系統上的vSphere物件</block>
-  <block id="e23a6962569e72c389019da0b535986b" category="paragraph">利用具備VSC專屬權限的RBAC、可提供儲存管理員可管理的儲存導向安全層。ONTAP因此、您擁有比ONTAP 單純使用VMware RBAC或僅使用vCenter Server RBAC支援更精細的存取控制。例如、有了vCenter Server RBAC、您可以允許vCenterUserB在NetApp儲存設備上配置資料存放區、同時防止vCenterUserA配置資料存放區。如果特定儲存系統的儲存系統認證不支援建立儲存設備、則vCenterUserB或vCenterUserA都無法在該儲存系統上配置資料存放區。</block>
-  <block id="939a23b83676c3479d999e91ad9e3ac0" category="paragraph">當您啟動VSC工作時、VSC會先驗證您是否擁有該工作的正確vCenter Server權限。如果vCenter Server權限不足以允許您執行工作、VSC就不需要檢查ONTAP 該儲存系統的「可靠性」權限、因為您未通過初始vCenter Server安全性檢查。因此、您無法存取儲存系統。</block>
-  <block id="de0ff4ee80ccee1354197493fb2479db" category="paragraph">如果vCenter Server權限足夠、VSC會檢查ONTAP 與儲存系統認證（使用者名稱和密碼）相關聯的VMware RBAC權限（ONTAP 您的VMware角色）。 以判斷您是否擁有足夠的權限、可在該儲存系統上執行該VSC工作所需的儲存作業。如果ONTAP 您擁有正確的資訊功能、可以存取儲存系統並執行VSC工作。這個功能可決定您可以在儲存系統上執行的VSC工作。ONTAP</block>
   <block id="73323449688ee575cf05cc2f312e5ff6" category="paragraph">每個儲存系統都有ONTAP 一組相關的「樣」權限。</block>
   <block id="f46a8de847ea89539f483ec4e81f61c3" category="paragraph">同時使用ONTAP VMware RBAC和vCenter Server RBAC可提供下列優點：</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="list-text">安全性</block>
   <block id="d0caf142a60fe8cbe2a5e159bc77af0c" category="paragraph">管理員可控制哪些使用者可在精細的vCenter Server物件層級和儲存系統層級執行哪些工作。</block>
   <block id="823d854786bb307b0a8fb9efbf5b6809" category="list-text">稽核資訊</block>
-  <block id="c64db94c963700314d728f06945369d2" category="paragraph">在許多情況下、VSC會在儲存系統上提供稽核追蹤、讓您能夠將事件追蹤回執行儲存修改的vCenter Server使用者。</block>
   <block id="16d1034d74164e0d782a4f32f3af3698" category="list-text">使用性</block>
   <block id="2d7d9bf238d879f4a632c0e18e45ae8a" category="paragraph">您可以將所有的控制器認證資料保留在同一個位置。</block>
-  <block id="235a8def2260474f71ef08e874bf3aa1" category="paragraph">您可以設定數ONTAP 個建議的VMware vCenter功能、以搭配ONTAP VMware vSphere的VMware®工具和角色型存取控制（RBAC）。這些角色包含ONTAP 執行虛擬儲存主控台（VSC）工作所執行之必要儲存作業所需的功能。</block>
   <block id="f6583fef730506d9fe22b8e35e52baa4" category="summary">您可以在vCenter Server中建立及管理災難恢復設定、以及VMware的Site Recovery Manager（SRM）。</block>
   <block id="2bc7deb07688f7ce42775f13c2de6a08" category="doc">設定災難恢復設定</block>
   <block id="0377bf3c458168db35756da5b972cb6e" category="paragraph">您可以在vCenter Server中建立及管理災難恢復設定、以及VMware的Site Recovery Manager（SRM）。</block>
@@ -595,17 +549,10 @@
   <block id="539dd82a460517760883ce4ae5bda489" category="admonition">VMware Site Recovery Manager（SRM）不使用SRA來管理vVols資料存放區的災難恢復。VASA Provider則用於ONTAP 複寫及容錯移轉、以控制VVols資料存放區在更新版本的叢集上。</block>
   <block id="81f1f2affe0b93927ee304ef7e0dcfe8" category="inline-link-macro">啟用儲存複寫介面卡</block>
   <block id="97253b89ed0b6873167793a2fe7f5831" category="paragraph"><block ref="97253b89ed0b6873167793a2fe7f5831" category="inline-link-macro-rx"></block></block>
-  <block id="ef9fe79e06af531fbe18dd870cdb7dc7" category="summary">如果您想要在VMware vSphere上使用以角色為基礎的存取控制搭配使用VMware vSphere的VMware®工具、則必須在ONTAP 儲存系統上設定以角色為基礎的存取控制（RBAC）ONTAP 。您可以使用ONTAP 「介紹RBAC」功能、建立一個或多個存取權限有限的自訂使用者帳戶。</block>
   <block id="6b3c5cff95a01171d231d2c77b8852ff" category="doc">如何針對ONTAP VMware vSphere的VMware vSphere、設定ONTAP 以角色為基礎的驗證工具存取控制</block>
   <block id="677ff51eca7b8b3b89d23a32fc0b88c9" category="paragraph">如果您想要在VMware vSphere上使用角色型存取控制搭配使用VMware vSphere的VMware工具、則必須在ONTAP 儲存系統上設定以角色為基礎的存取控制（RBAC）ONTAP 。您可以使用ONTAP 「介紹RBAC」功能、建立一個或多個存取權限有限的自訂使用者帳戶。</block>
-  <block id="b52c90b248d9f62d24671e4edfc2261a" category="paragraph">VSC和SRA可存取叢集層級或儲存虛擬機器（SVM）SVM層級的儲存系統。如果您是在叢集層級新增儲存系統、則必須提供管理使用者的認證、以提供所有必要的功能。如果您是直接新增SVM詳細資料來新增儲存系統、您必須注意、「vsadmin」使用者並不具備執行特定工作所需的全部角色和功能。</block>
-  <block id="3efaac93d4a2b12bc7bf283063f35f84" category="paragraph">VASA Provider只能在叢集層級存取儲存系統。如果特定儲存控制器需要VASA Provider、則即使您使用VSC或SRA、也必須在叢集層級將儲存系統新增至VSC。</block>
   <block id="ac9f97a99a048cbef4e6c1dd7488effe" category="paragraph">若要建立新的使用者、並將叢集或SVM連線ONTAP 至VMware Tools、您應該執行下列步驟：</block>
   <block id="69e3a1dff1352bb06840dbcbff566e40" category="list-text">使用ONTAP NetApp建立已指派角色的使用者、並使用NetApp建立適當的應用程式集</block>
-  <block id="a4e90f544f0d8ede6e2023d539fef693" category="paragraph">您需要這些儲存系統認證資料、才能設定VSC的儲存系統。您可以在VSC中輸入認證資料、為VSC設定儲存系統。每次使用這些認證登入儲存系統時、您都有權使用ONTAP 在建立認證時於各處設定的VSC功能。</block>
-  <block id="82e8b78ffb3455f0a5df307de255c3dc" category="list-text">將儲存系統新增至VSC、並提供您剛建立之使用者的認證資料</block>
-  <block id="19a470a04ffe94a545dd18fbe203f6b2" category="section-title">VSC角色</block>
-  <block id="97c0616f06055c544f27b7a5771b5856" category="paragraph">VSC將ONTAP 「不含功能的」權限分類為下列一組VSC角色：</block>
   <block id="744d17f996689656ea9299b7759dae8e" category="paragraph">可探索所有連線的儲存控制器</block>
   <block id="f1d26c85be39a772a5049e842f6cbe7d" category="paragraph">可建立磁碟區和邏輯單元編號（LUN）</block>
   <block id="6edb28798e7ae3ebe9053233ddfa3ded" category="paragraph">實現儲存系統的大小調整和重複資料刪除</block>
@@ -614,7 +561,6 @@
   <block id="6e44145c3e783bea336bc5f349025e9a" category="paragraph">您只能在叢集層級建立原則型管理。此角色可利用儲存功能設定檔、針對儲存設備進行原則型管理。</block>
   <block id="86b7641afb5cdf4c3101910328663b4d" category="section-title">SRA角色</block>
   <block id="d40b84cd39848a2632ff0f16278a6ad7" category="paragraph">SRA將ONTAP 「不支援功能」權限分類為叢集層級或SVM層級的SAN或NAS角色。這可讓使用者執行SRM作業。</block>
-  <block id="6fa9d4b747333eb053b24b538dfdcdb9" category="paragraph">當ONTAP 您將叢集新增至VSC時、VSC會執行初始權限驗證以驗證各項RBAC角色。如果您已新增直接SVM儲存IP、則VSC不會執行初始驗證。VSC會在工作流程稍後檢查並強制執行權限。</block>
   <block id="1633df946f0d6e82efbce7d3e6e50cc6" category="summary">VMware vSphere的支援VMware vSphere的支援環境、這些環境使用的是VMware vSphere的支援功能。ONTAP MetroCluster ONTAP大部分支援都是自動的。不過MetroCluster 、當您搭配VSC和VASA Provider使用時、可能會注意到一些差異。</block>
   <block id="926c545e813337f4bef6900a78c65bfc" category="doc">支援的支援支援VMware的組態MetroCluster ONTAP</block>
   <block id="39e2af895ac75a278cab1467d55da02b" category="admonition">SRA不支援MetroCluster 不支援的不支援的組態。</block>
@@ -807,7 +753,6 @@
   <block id="90f4749e9da62fd23df0230157cafbdc" category="summary">如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會失敗、因為Virtual Storage Console（VSC）無法掛載資料存放區。</block>
   <block id="dcc6aeac19fa1bb3898ff0a6c6a84b48" category="doc">在不同的子網路上啟用資料存放區裝載</block>
   <block id="88da7b011d6c44231a237e4eb64d680f" category="paragraph">如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會因為虛擬儲存主控台（VSC）無法掛載資料存放區而失敗。</block>
-  <block id="7a20db1a9c2e22ef5e236ae38150fc9e" category="paragraph">當資料存放區資源配置失敗時、VSC會記錄下列錯誤訊息：</block>
   <block id="35a2998dbc95ad29cf2c17c7e32ca02a" category="list-text">登入vCenter Server執行個體。</block>
   <block id="ff562f9edd82624104457532dabfa10c" category="list-text">使用統一化應用裝置虛擬機器啟動維護主控台。</block>
   <block id="ca5adffd751c55bab8647e73f43c9a6f" category="inline-link-macro">VMware ONTAP vSphere的維護主控台</block>
@@ -1108,7 +1053,6 @@
   <block id="91b8e7b080ca6adf38c0a1a479880c74" category="paragraph">視組態和系統負載而定、此程序可能需要很長時間。工作進度會顯示在「近期工作」面板中。工作完成時、主機狀態警示圖示會以正常圖示或「等待重新開機」圖示取代。</block>
   <block id="4c53150a7d5b0d30a5be88983c1b112f" category="list-text">在「NetApp建議設定」對話方塊中、選取最適合您系統的值。</block>
   <block id="9f13fd3e85b5850ed977035971bc1580" category="paragraph">預設會設定建議的標準值。</block>
-  <block id="f3cd9f76c304494071881fa300e01737" category="image-alt">VSC建議的主機設定</block>
   <block id="481a4353946c90ce05d5219831e46abe" category="summary">您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。虛擬儲存主控台（VSC）設定的值、是以NetApp內部測試為基礎。</block>
   <block id="aca62502918ac3a2a37cef2995a2d816" category="doc">ESXi主機值是使用ONTAP 各種功能介紹工具設定的</block>
   <block id="e9df7d5252c2104198351b64e368569b" category="paragraph">您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。這些功能是根據NetApp內部測試所設定的價值ONTAP 。</block>
@@ -1207,8 +1151,6 @@
   <block id="3a7126e89509a7e2ce3446580acdf318" category="paragraph">您可以從ONTAP VSC圖形使用者介面（GUI）中的選項收集VMware vSphere的各種資訊工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。</block>
   <block id="ef1070995ad39c34df59dcf7aa1fbea4" category="paragraph">如果您需要VASA Provider記錄檔、可以從「廠商供應商供應商控制台」畫面產生支援服務包。此頁面是VASA Provider維護功能表的一部分、可從虛擬應用裝置的主控台存取。</block>
   <block id="8f124924c0fbddac76336e23aaeb30d9" category="paragraph">https://vm_ip:9083`</block>
-  <block id="6d74a8de1959d0b43477e06a0ef27565" category="paragraph">您可以使用VSC GUI中的「Export VSC Logs」（匯出VSC記錄）功能來收集VSC記錄檔。當您在啟用VASA Provider的情況下收集VSC記錄套件時、VSC記錄套件組合也會有VP記錄。下列步驟說明如何收集VSC記錄檔：</block>
-  <block id="bc82adfccc21009861c92dae0e7f162d" category="list-text">從「VMware Tools」首頁、按一下ONTAP 「*組態*&gt;*匯出VSC記錄*」。</block>
   <block id="5f3b52e4c0acfbc3bae5a10aef3314ae" category="paragraph">此作業可能需要數分鐘的時間。</block>
   <block id="18531314ab2ad4b124be981bc848c3fe" category="list-text">出現提示時、請將檔案儲存至本機電腦。</block>
   <block id="d4dd1a3c4b1981df0b96e615bedef8d9" category="paragraph">然後、您可以將_.Zip檔案傳送給技術支援部門。</block>
@@ -1692,7 +1634,6 @@
   <block id="a254dba35541de0f870ec6ae78a16d10" category="list-text">從下拉式清單中選取*資料存放區ISO*檔案。</block>
   <block id="35a9802991888891ffd72bb52960f2ea" category="list-text">瀏覽並選取下載的_.ISO_檔案、然後選取「*在開機時連線*」核取方塊。</block>
   <block id="a712ca4fc0423909791945d003ec86e3" category="list-text">存取已部署ONTAP 之VMware工具的「摘要」索引標籤。</block>
-  <block id="5a292ef9cc75c93b76a300ae60bd07e6" category="list-text">按一下*<block ref="646d51cfcc95b274401d8044823da1c3" category="inline-image-macro-rx" type="image"></block>*啟動維護主控台。</block>
   <block id="3b9c2bcd5dc2c652ec5cfd176b0cbb9d" category="list-text">在「主功能表」提示下、輸入選項「2」作為*系統組態*、然後輸入選項「8」作為*升級*。</block>
   <block id="52d69c6566efc61232124f37f6b8aadb" category="paragraph">升級完成後ONTAP 、即可重新啟動此功能。將VMware vCenter Server的IP位址登錄至升級前的相同IP位址。ONTAP</block>
   <block id="24e7885391999df72b5723c443057435" category="list-text">如果您想ONTAP 要在vCenter Server上以IPv6位址登錄使用VMware vCenter工具、則必須執行下列步驟：</block>
@@ -1804,7 +1745,6 @@
   <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere適用的工具ONTAP</block>
   <block id="d9feb2b730ded2731ab499f4b64cca33" category="paragraph"><block ref="ccafd2400edf7c1aa273a76ad605940f" category="inline-link-rx"></block></block>
   <block id="8cd78caf975d066200418cff9639fdef" category="cell">請參閱<block ref="c4e3c5dd56e9c0925a46d52133eef091" category="inline-link-rx"></block></block>
-  <block id="c84e3f1fce618833b2fe90a7026984c3" category="paragraph">您應該使用已部署ONTAP 的支援工具*摘要*索引標籤來存取維護主控台。當您按一下時 <block ref="646d51cfcc95b274401d8044823da1c3" category="inline-image-macro-rx" type="image"></block>、維護主控台即會啟動。</block>
   <block id="5cd110d372988e6fedf83dab3b77194b" category="list-text">執行「CD /var/log/VMware/SRM」命令以瀏覽記錄目錄。</block>
   <block id="ecf618584c0254b7edf0733670fcb0f8" category="list-text">確認恢復站台的ESXi主機與儲存虛擬機器（SVM）之間具有適當的FC或iSCSI連線。次要站台ESXi主機應該可以存取次要站台儲存設備、同樣地、主要站台ESXi主機也應該可以存取主要站台儲存設備。</block>
   <block id="785694280aa2f361cd62ad2d7aadb3a7" category="paragraph">您可以驗證ESXi主機是否已在SVM上連接本機LUN、或是在SVM上使用「FCP show啟動器」命令或「iSCSI show啟動器」命令。檢查ESXi中對應LUN的LUN存取權、以驗證FC和iSCSI連線能力。</block>
@@ -1820,7 +1760,6 @@
   <block id="389fed57e0f06c0d1d884e132105585a" category="list-text">您應該擁有 vSphere 7.x 版本、因為 vSphere 6.5 已過時、不支援 vSphere 8.x 。</block>
   <block id="5ccc8ee8b61049069fbdba29f36f4627" category="paragraph">您可以下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block> 檔案中包含二進位檔案（ _.ova_ ）、以及用於 VMware vSphere 之 ONTAP 工具的簽署憑證<block ref="c28762f698ce57f013f1f9dff01575ab" category="inline-link-rx"></block>。</block>
   <block id="a22c2344e50a5c512de911f01896192b" category="paragraph">_.ova_檔案包含ONTAP 了一些不實的工具。部署完成後、您的環境中會安裝 VSC 、 VASA 和 SRA 產品。根據預設、一旦您決定後續部署模式、VSC就會立即開始運作、並根據您的需求選擇是否啟用VASA Provider和SRA。</block>
-  <block id="5175510162c2e0f1ffaba57ba908e730" category="list-text">在 vSphere Client 中、按一下 * 功能表 * &gt; * NetApp ONTAP 工具 * 主控台。</block>
   <block id="74b89574ae17445aac6b10c4285106ea" category="list-text">您必須已啟用網際網路控制訊息傳輸協定（ ICMP ）。</block>
   <block id="7b0b307b4afc8ee310326b2ac3707a62" category="list-text">選取 * 首頁 * &gt; * 主機與叢集 * 。</block>
   <block id="88ba567f89bd6b5781bd16462ced3cfb" category="list-text">以滑鼠右鍵按一下所需的資料中心、然後按一下 * 部署 OVF 範本 ... * 。</block>
@@ -1852,13 +1791,7 @@
   <block id="23deb0793155947837dd665446bf1830" category="admonition">您只能從現有的 9.10 或更新版本執行就地升級至最新版本的 ONTAP 工具。</block>
   <block id="19303f93882b5db590ef2d1f0c5e45a9" category="admonition">作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與通訊程序都會透過自動信任 ONTAP 儲存憑證、從基本驗證變更為憑證型驗證。使用者無需採取任何行動。</block>
   <block id="909f197f2c195f18181232c0399d961b" category="paragraph">新增沒有憑證驗證的儲存系統是受到限制的。</block>
-  <block id="311fe9cde51a539ea97916f76833decf" category="paragraph">如果儲存系統是使用 json 檔案新增自訂建立的叢集範圍使用者、而您想要升級至 9.12 、請在升級之前、在 ONTAP CLI 上執行下列命令、以啟用 ONTAP 工具之間的 VMware vSphere 和 ONTAP 憑證型通訊：</block>
-  <block id="71e4ca2cd01fd2c9d4ab3b5cbff81743" category="list-text">_security 登入角色 create -role &lt;role-name&gt; -cmddirname "security login show" -access all_</block>
-  <block id="3d7bd92214a16594f665e0b81793575b" category="list-text">_security 登入角色 create -role &lt;role-name&gt; -cmddirname "security certificate show" -access all_</block>
-  <block id="215f8610c147b8b46e8480a88a6c2afb" category="list-text">_security 登入角色 create -role &lt;role-name&gt; -cmddirname "security certificate install" -access all_</block>
   <block id="f0b1836ff9ac15748295aca6a6f17ab6" category="paragraph">如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：</block>
-  <block id="4e586abae1f8c7ff65a5ba3ce0979275" category="list-text">_security 登入角色 create -role &lt;role-name&gt; -cmddirname "security certificate install" -access all -vserver &lt;vserver-name&gt; _</block>
-  <block id="1e27fae79102d8c2fcefadb3df957058" category="list-text">_security 登入角色 create -role &lt;role-name&gt; -cmddirname "security certificate show" -access all -vserver &lt;vserver-name&gt; _</block>
   <block id="501ccbce991cb3f09d5c8beab6fe094e" category="list-text">當您升級至已啟用 FIPS 的最新 ONTAP 工具版本、但您擁有不支援 FIPS 的舊版 vCenter 之後、部署仍會正常運作。但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。</block>
   <block id="de0cffd38a1c5c3911e4777672bc89b1" category="cell">ONTAP 9.7 、 9.8P1 或更新版本。</block>
   <block id="9108015548f218fefb6c4357b6fb9447" category="paragraph">如果您要部署與 VMware Site Recovery Manager 搭配使用的虛擬應用裝置、則必須下載： *<block ref="d6f1afa70d6145a212d9dc6bc8a2fa64" prefix=" " category="inline-code"></block> 使用 SRM 應用裝置時的 SRA 檔案。</block>
@@ -1997,7 +1930,6 @@
   <block id="8f22fdcdb403a975c8e0128536d37a24" category="paragraph">若要存取ONTAP VMware vSphere GUI的VMware®工具、您必須在正確的vSphere物件層級指派產品層級的VSC特定檢視權限。如果您在沒有此權限的情況下登入、VSC會在您按一下NetApp圖示時顯示錯誤訊息、並防止您存取VSC。在 * 檢視 * 權限中、您可以存取 VSC GUI 。此權限無法讓您在VSC內執行工作。若要執行任何VSC工作、您必須擁有正確的VSC專屬及原生vCenter Server權限、才能執行這些工作。</block>
   <block id="b0fc0bed1deb4cd0ac1733c83406a338" category="list-text">使用 ONTAP System Manager 9.8P1 或更新版本建立叢集管理員或 SVM 管理員角色。請參閱 <block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="36a3e078a9ae64bd58305972fd6b6a14" category="paragraph">若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以使用 ONTAP 系統管理員 9.8P1 或更新版本來建立 ONTAP 角色。請參閱 <block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="41b876a86df6d3c4b1d821b154131297" category="paragraph">在 * 檢視 * 權限中、您可以存取 VSC GUI 。此權限無法讓您在VSC內執行工作。若要執行任何VSC工作、您必須擁有正確的VSC專屬及原生vCenter Server權限、才能執行這些工作。</block>
   <block id="057bdc0890b14e869dc32365d6dbda14" category="paragraph">若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以使用 ONTAP 系統管理員 9.8P1 或更新版本來建立 ONTAP 角色。請參閱<block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="f1ca65352f21d33a199ffdf014a20d67" category="paragraph"><block ref="f1ca65352f21d33a199ffdf014a20d67" category="inline-link-rx"></block></block>
   <block id="1466c5e3d8ac799469615631f5db8a88" category="paragraph">VVols 資料存放區是由儲存容器內的一或多個 FlexVol 磁碟區（也稱為備份儲存）所組成。虛擬機器可分散在一個vVols資料存放區或多個vVols資料存放區。</block>
@@ -2093,4 +2025,92 @@
   <block id="94694a876801fa4851e5478564de6f4a" category="paragraph">ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用。您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。</block>
   <block id="21076231e2fb130435663c1226fafb7f" category="cell">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠支援套件下載、 Web-CLI 使用者介面、以及從 VMware 到 VP 的控制路徑通訊。SRA 會與後端 SRA 服務就此連接埠號碼進行通訊。</block>
   <block id="9abf7c4d6f8e5b536137c70ad41a5f3b" category="paragraph"><block ref="9abf7c4d6f8e5b536137c70ad41a5f3b" category="inline-link-rx"></block></block>
+  <block id="b90d3b6f6e5b0c0e2c25f2558f90408c" category="paragraph">當資料存放區資源配置失敗時、適用於 VMware vSphere 的 ONTAP 工具會記錄下列錯誤訊息：</block>
+  <block id="0d488d3f24d754594c736226d7e87fa7" category="image-alt">設定建議值畫面</block>
+  <block id="7dcb0e2e13022cf76e7deec88d9063e3" category="list-text">從 vSphere Client 中、選取 * 功能表 * &gt; * NetApp ONTAP tools* 。</block>
+  <block id="1d2ca8610f741cc034c84d7107647a51" category="summary">為了簡化使用 vCenter Server 權限和角色型存取控制（ RBAC ）的過程、 ONTAP 工具提供標準的 ONTAP 工具角色、可讓您執行重要的 ONTAP 工具工作。還有一個唯讀角色、可讓您檢視資訊、但不執行任何工作。</block>
+  <block id="8f4f23d0a5cd74ef1675a76fabde9ddd" category="paragraph">為了簡化使用 vCenter Server 權限和角色型存取控制（ RBAC ）的過程、 ONTAP 工具提供標準的 ONTAP 工具角色、可讓您執行重要的 ONTAP 工具工作。還有一個唯讀角色、可讓您檢視資訊、但不執行任何工作。</block>
+  <block id="6676fb7e24cf701fd77e7d703405cabc" category="paragraph">標準 ONTAP 工具角色具有必要的 ONTAP 工具專屬權限、以及使用者執行 ONTAP 工具工作所需的原生 vCenter Server 權限。此外、這些角色也會設定成擁有所有受支援版本vCenter Server所需的權限。</block>
+  <block id="7d389690e3dbf66454c9c49a3cc3e8c3" category="admonition">當您將 ONTAP 工具升級至最新版本時、標準角色會自動升級以搭配新版本的工具使用。</block>
+  <block id="a763466042e50f8cade695949275d67b" category="paragraph">按一下 vSphere Client 首頁上的 * 角色 * 、即可檢視 ONTAP 工具標準角色。</block>
+  <block id="f86b2601acf6e16997dcbdf72820c0d2" category="paragraph">ONTAP 工具提供的角色可讓您執行下列工作：</block>
+  <block id="f7b47ea1582e704ce131905b51e8285e" category="paragraph">提供執行所有 ONTAP 工具工作所需的所有原生 vCenter Server 權限和 ONTAP 工具專屬權限。</block>
+  <block id="f8a435a9c71e1bdfbe8e26c70a0bd2ec" category="paragraph">提供 ONTAP 工具的唯讀存取權。這些使用者無法執行任何存取控制的 ONTAP 工具動作。</block>
+  <block id="9c2c3026139ccc6286e9dee2750c4e6c" category="paragraph">提供資源配置儲存所需的所有原生 vCenter Server 權限和 ONTAP 工具專屬權限。您可以執行下列工作：</block>
+  <block id="b86f8f9e5913183792f992ea9acd4a86" category="section-title">使用 ONTAP 工具標準角色的準則</block>
+  <block id="918a2f5f75f4cc67aa044d83af010497" category="paragraph">您不應直接修改標準角色。如果您這麼做、 ONTAP 工具會在您每次升級時覆寫您的變更。每次升級 ONTAP 工具時、安裝程式都會更新標準角色定義。如此可確保您的 ONTAP 工具版本以及 vCenter Server 所有支援版本的角色都是最新的。</block>
+  <block id="de35e57367d1db7f8a42aa3a72ca2537" category="paragraph">不過、您可以使用標準角色來建立專為您環境量身打造的角色。若要這麼做、您應該複製 ONTAP 工具標準角色、然後編輯複製的角色。透過建立新角色、即使您重新啟動或升級 ONTAP 工具 Windows 服務、也可以維持此角色。</block>
+  <block id="0ad1bc8e9e92595e2f696b77b523ea57" category="paragraph">您可以使用 ONTAP 工具標準角色的一些方法包括：</block>
+  <block id="086d3d2eb48d608a145a6cfee7c4ff78" category="list-text">使用標準 ONTAP 工具角色來執行所有 ONTAP 工具工作。</block>
+  <block id="0d0f3c3c8ef35720ae4bcdbbf182c9fa" category="paragraph">在此案例中、標準角色提供使用者執行 ONTAP 工具工作所需的所有權限。</block>
+  <block id="5b66efe36dee3f7c37570e36881f1418" category="paragraph">如果標準 ONTAP 工具角色為您的環境提供太多精細度、您可以建立包含多個角色的較高層級群組來擴充角色。</block>
+  <block id="2ba0401845b2e4be3fa7287e7d78031f" category="paragraph">如果使用者需要執行其他需要額外原生 vCenter Server 權限的非 ONTAP 工具工作、您可以建立提供這些權限的角色、並將其新增至群組。</block>
+  <block id="b9a5c3223541eb822dbe12039a15d4c1" category="paragraph">如果貴公司要求您實作的角色比標準 ONTAP 工具角色更具限制性、您可以使用 ONTAP 工具角色來建立新角色。</block>
+  <block id="701208db1c1b3544b650900bb52446c8" category="paragraph">在這種情況下、您將會複製必要的 ONTAP 工具角色、然後編輯複製的角色、使其僅擁有使用者所需的權限。</block>
+  <block id="a0f12657c3613cc54b2b058b2d1bc781" category="summary">以角色為基礎的存取控制（RBAC）可讓您控制對特定儲存系統的存取、並控制使用者可在這些儲存系統上執行的動作。ONTAP在適用於 VMware vSphere 的 ONTAP ® 工具中、 ONTAP RBAC 可與 vCenter Server RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。</block>
+  <block id="3df2a4200fd2e450e1ba076ffdc903f8" category="paragraph">以角色為基礎的存取控制（RBAC）可讓您控制對特定儲存系統的存取、並控制使用者可在這些儲存系統上執行的動作。ONTAP在適用於 VMware vSphere 的 ONTAP ® 工具中、 ONTAP RBAC 可與 vCenter Server RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。</block>
+  <block id="ef6ceeafacd0db001065bf9d73f2ed8d" category="paragraph">ONTAP 工具會使用您在 ONTAP 工具中設定的認證（使用者名稱和密碼）來驗證每個儲存系統、並判斷可以在該儲存系統上執行哪些儲存作業。ONTAP 工具會針對每個儲存系統使用一組認證。這些認證可決定可在該儲存系統上執行哪些 ONTAP 工具工作；換句話說、認證適用於 ONTAP 工具、而非個別 ONTAP 工具使用者。</block>
+  <block id="578f14abca26368d9e736e68fb0dbd95" category="paragraph">ONTAP RBAC 僅適用於存取儲存系統及執行與儲存相關的 ONTAP 工具工作、例如資源配置虛擬機器。如果ONTAP 您沒有適用於特定儲存系統的適當RBAC權限、就無法在該儲存系統上裝載的vSphere物件上執行任何工作。您可以搭配使用 ONTAP RBAC 與 ONTAP 工具專屬權限、來控制使用者可以執行哪些 ONTAP 工具工作：</block>
+  <block id="349465893e02a4b19c90b99a025a86de" category="paragraph">使用 ONTAP RBAC 搭配 ONTAP 工具專屬權限、可提供儲存管理員可管理的儲存導向安全層。因此、您擁有比ONTAP 單純使用VMware RBAC或僅使用vCenter Server RBAC支援更精細的存取控制。例如、有了vCenter Server RBAC、您可以允許vCenterUserB在NetApp儲存設備上配置資料存放區、同時防止vCenterUserA配置資料存放區。如果特定儲存系統的儲存系統認證不支援建立儲存設備、則vCenterUserB或vCenterUserA都無法在該儲存系統上配置資料存放區。</block>
+  <block id="bbae15f5d2f85db376999e05d1a6461c" category="paragraph">當您起始 ONTAP 工具工作時、 ONTAP 工具會先確認您是否擁有該工作的正確 vCenter Server 權限。如果 vCenter Server 權限不足以允許您執行工作、則 ONTAP 工具不必檢查該儲存系統的 ONTAP 權限、因為您並未通過初始 vCenter Server 安全性檢查。因此、您無法存取儲存系統。</block>
+  <block id="b9a4baf0d8ee948197fc0f935de691a5" category="paragraph">如果 vCenter Server 權限足夠、則 ONTAP 工具會檢查與儲存系統認證（使用者名稱和密碼）相關聯的 ONTAP RBAC 權限（您的 ONTAP 角色）。 判斷您是否擁有足夠的權限來執行該儲存系統上 ONTAP 工具工作所需的儲存作業。如果您擁有正確的 ONTAP 權限、則可以存取儲存系統並執行 ONTAP 工具工作。ONTAP 角色決定您可以在儲存系統上執行的 ONTAP 工具工作。</block>
+  <block id="ee94bbc418cbda9da8f802e12ae95bc5" category="paragraph">在許多情況下、 ONTAP 工具會在儲存系統上提供稽核追蹤記錄、讓您能夠將事件追蹤回執行儲存修改的 vCenter Server 使用者。</block>
+  <block id="f0e507995b9ca6b0e84fae8adf238dfc" category="paragraph">您可以設定數ONTAP 個建議的VMware vCenter功能、以搭配ONTAP VMware vSphere的VMware®工具和角色型存取控制（RBAC）。這些角色包含執行 ONTAP 工具工作所需儲存作業所需的 ONTAP 權限。</block>
+  <block id="a4a00dc4eea3bf873f1aee5b9c1126b2" category="paragraph">作為一項安全措施、 ONTAP 工具專屬的 ONTAP 角色會以階層順序排列。這表示第一個角色是最具限制性的角色、只有與最基本的 ONTAP 工具儲存作業集相關的權限。下一個角色同時包含自己的權限、以及與先前角色相關的所有權限。對於支援的儲存作業、每個額外角色的限制都較少。</block>
+  <block id="ffc3fd9f523678979711e4c22959a313" category="paragraph">以下是使用 ONTAP 工具時建議的一些 ONTAP RBAC 角色。建立這些角色之後、您可以將角色指派給必須執行儲存相關工作的使用者、例如資源配置虛擬機器。</block>
+  <block id="6ab87189782cbc29731ee36f3e4d8e14" category="summary">vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在適用於 VMware vSphere 的 ONTAP 工具中、 vCenter Server RBAC 可與 ONTAP RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。</block>
+  <block id="dd48842c135ca987d437dd7b3093cb9b" category="paragraph">vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在適用於 VMware vSphere 的 ONTAP ® 工具中、 vCenter Server RBAC 可與 ONTAP RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。</block>
+  <block id="58cdc8e25f9268a11f5f61dd2862e506" category="paragraph">若要成功完成工作、您必須擁有適當的vCenter Server RBAC權限。在工作期間、 ONTAP 工具會先檢查使用者的 vCenter Server 權限、然後再檢查使用者的 ONTAP 權限。</block>
+  <block id="53cd97c6e5ca33becf4a87d66fe1fb2b" category="summary">針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限組合、這些權限是專屬於 ONTAP 工具和原生 vCenter Server 權限的。</block>
+  <block id="1b7ba508f4f8e6ec9de699f1252dfbec" category="doc">ONTAP 工具工作所需的權限</block>
+  <block id="093b094ad16ac0602826f5edad199644" category="paragraph">有關 ONTAP 工具工作所需權限的資訊、請參閱 NetApp 知識庫文章 1032542 。</block>
+  <block id="581d333bdd69470cc8cef359697686ea" category="paragraph">若要存取 VMware vSphere GUI 的 ONTAP 工具、您必須在正確的 vSphere 物件層級指派產品層級的 ONTAP 工具專屬檢視權限。如果您沒有此權限登入、當您按一下 NetApp 圖示時、 ONTAP 工具會顯示錯誤訊息、並阻止您存取 ONTAP 工具。</block>
+  <block id="641b04545bb04a16c9711b2e2c2f1594" category="paragraph">在 * 檢視 * 權限中、您可以存取 ONTAP 工具 GUI 。此權限無法讓您在 ONTAP 工具中執行工作。若要執行任何 ONTAP 工具工作、您必須擁有這些工作的正確 ONTAP 工具專屬和原生 vCenter Server 權限。</block>
+  <block id="e4d17ccf29740331f87b6398478160b6" category="paragraph">指派層級決定您可以看到的UI部分。指派根物件（資料夾）的檢視權限、可讓您按一下 NetApp 圖示來輸入 ONTAP 工具。</block>
+  <block id="96fda33db0e5f4d0564e065655911c1a" category="paragraph">您可以將「檢視」權限指派給其他 vSphere 物件層級、但這麼做會限制您可以查看和使用的 ONTAP 工具功能表。</block>
+  <block id="c044992cd80fcb18a780756977b6bc3f" category="image-alt">權限元件圖例</block>
+  <block id="c583b0e017739fb649bcc5aa5ba5619c" category="list-text">ONTAP 工具專屬權限</block>
+  <block id="9b319728af871f2cdb51fe50bfe11375" category="paragraph">這些權限是針對特定的 ONTAP 工具工作而定義。它們是 ONTAP 工具的專屬產品。</block>
+  <block id="af5a3767c40e6a5129711e57494409cf" category="paragraph">ONTAP 工具工作需要 ONTAP 工具專屬權限和 vCenter Server 原生權限。這些權限構成使用者的「角色」。權限可以有多個權限。這些權限適用於登入vCenter Server的使用者。</block>
+  <block id="1e88bb00ba0732a2c32a563008aff361" category="admonition">為了簡化使用 vCenter Server RBAC 的過程、 ONTAP 工具提供數個標準角色、其中包含執行 ONTAP 工具工作所需的所有 ONTAP 工具專屬和原生權限。</block>
+  <block id="9c3b83950ecbb194500ebb7d4d7f928a" category="paragraph">所有 ONTAP 工具和 VASA Provider 的特定工作都需要檢視權限。</block>
+  <block id="6184e53410d6b5ab34cba7a9371730c5" category="paragraph">權限與vSphere物件相關聯、例如vCenter Server、ESXi主機、虛擬機器、資料存放區、資料中心、 和資料夾。您可以將權限指派給任何vSphere物件。vCenter Server會根據指派給vSphere物件的權限、決定誰可以在該物件上執行哪些工作。對於 ONTAP 工具的特定工作、權限只會在根資料夾層級（ vCenter Server ）指派和驗證、而不會在任何其他實體上指派和驗證。VAAI外掛程式作業除外、該作業會針對相關ESXi驗證權限。</block>
+  <block id="c96c57a6929739514fab2431c7bbc08d" category="paragraph">您可以使用Active Directory（或本機vCenter Server機器）來設定使用者和使用者群組。接著您可以使用 vCenter Server 權限、將存取權授予這些使用者或群組、讓他們能夠執行特定的 ONTAP 工具工作。</block>
+  <block id="f358a2c90c11b3244eb955405bd0f5a8" category="admonition">這些 vCenter Server 權限適用於 ONTAP 工具 vCenter 使用者、而非 VSC 管理員。根據預設、VSC系統管理員擁有產品的完整存取權、不需要指派權限給他們。</block>
+  <block id="dc5d790d99534de49ddf3a4c3ac9d8c4" category="paragraph">指派權限的位置決定了使用者可以執行的 ONTAP 工具工作。</block>
+  <block id="2f9673497a70f9c3bf375ca62d587891" category="paragraph">您建立的權限會套用至非vSphere物件。例如、儲存系統不是vSphere物件。如果權限套用至儲存系統、則必須將包含該權限的權限指派給 ONTAP 工具根物件、因為沒有 vSphere 物件可供您指派。</block>
+  <block id="ba77066270ccf036939e8215dffdec6b" category="paragraph">例如、任何包含 ONTAP 工具權限「新增 / 修改 / 略過儲存系統」等權限的權限、都必須在根物件層級指派。</block>
+  <block id="aec94e0c0770f31b10266f224fde600c" category="summary">如果您想要使用適用於 VMware vSphere 的 ONTAP 工具來進行角色型存取控制、則必須在儲存系統上設定 ONTAP 角色型存取控制（ RBAC ）。您可以使用ONTAP 「介紹RBAC」功能、建立一個或多個存取權限有限的自訂使用者帳戶。</block>
+  <block id="418572ad86a9bb6dd83f90019dd995b1" category="paragraph">ONTAP 工具和 SRA 可以存取叢集層級或儲存虛擬機器（ SVM ） SVM 層級的儲存系統。如果您是在叢集層級新增儲存系統、則必須提供管理使用者的認證、以提供所有必要的功能。如果您是直接新增SVM詳細資料來新增儲存系統、您必須注意、「vsadmin」使用者並不具備執行特定工作所需的全部角色和功能。</block>
+  <block id="91b31c927f164960033b3b41be393126" category="paragraph">VASA Provider只能在叢集層級存取儲存系統。如果特定儲存控制器需要 VASA Provider 、則即使您使用的是 ONTAP 工具或 ONTAP 、也必須將儲存系統新增至叢集層級的工具。</block>
+  <block id="93f6ac1beb52bbdf9af3cad6d6a1ead8" category="paragraph">您需要這些儲存系統認證、才能設定 ONTAP 工具的儲存系統。您可以在 ONTAP 工具中輸入認證、為 ONTAP 工具設定儲存系統。每次使用這些認證登入儲存系統時、您都會擁有在 ONTAP 中設定的 ONTAP 工具功能權限、同時也會建立認證。</block>
+  <block id="cdd4275081291ca377175bcc6d92f1eb" category="list-text">將儲存系統新增至 ONTAP 工具、並提供您剛建立的使用者認證</block>
+  <block id="39c9785bf195b5e3416ae69617f8bd06" category="section-title">ONTAP 工具角色</block>
+  <block id="85f49d93c8f5e500eec52ad263201e61" category="paragraph">ONTAP 工具會將 ONTAP 權限分類為下列 ONTAP 工具角色集：</block>
+  <block id="71a8d3467ad2cf960b6e380881dfa0ff" category="paragraph">當您將叢集新增至 ONTAP 工具時、 ONTAP 工具會執行 ONTAP RBAC 角色的初始權限驗證。如果您已新增直接 SVM 儲存 IP 、則 ONTAP 工具不會執行初始驗證。ONTAP 工具稍後會檢查並強制執行工作流程中的權限。</block>
+  <block id="b30d030b1599225982a98b5e5ae30728" category="paragraph">如果使用 json 檔案新增儲存系統、並使用自訂建立的叢集範圍使用者、而您想要升級至 9.12 、則
+在升級之前、請先在 ONTAP CLI 上執行下列命令、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊。</block>
+  <block id="f2103c08f15fe6fa42bcf844c2049013" category="list-text">_security 登入角色 create -role &lt;existing-role-name&gt; -cmddirname "security login show" -access all_</block>
+  <block id="c971b61c1ee15c3d48f7ae4c3e20991f" category="list-text">_security 登入角色 create -role &lt;existing-role-name&gt; -cmddirname "security certificate show" -access all_</block>
+  <block id="6b424944a9c9af7e5350d367795a1306" category="list-text">_security 登入角色 create -role &lt;existing-role-name&gt; -cmddirname "security certificate install" -access all_</block>
+  <block id="273e24f3e69cab8b51170d245172a629" category="list-text">_security 登入角色 create -role &lt;existing-role-name&gt; -cmddirname "security certificate install" -access all -vserver &lt;vserver-name&gt; _</block>
+  <block id="ee83a1637d6bc95b51de487e34382d40" category="list-text">_security 登入角色 create -role &lt;existing-role-name&gt; -cmddirname "security certificate show" -access all -vserver &lt;vserver-name&gt; _</block>
+  <block id="174f603ffaa2e2f55a79dec8ba83c657" category="list-text">_security 登入 create -user-or -group-name &lt;user&gt; -application http -驗 證方法 cert -role &lt;existing-role-name&gt; -vserver &lt;vserver-name&gt; _</block>
+  <block id="15fe50c1cf5cc9a20b0c2914724a8ed1" category="list-text">_security 登入 create -user-or -group-name &lt;user&gt; -applicationontapi -authent驗 證方法 cert -role &lt;existing-role-name&gt; -vserver &lt;vserver-name&gt; _</block>
+  <block id="df3b9e22c3ad1804e7de3391d62fd333" category="list-text">啟動維護主控台。</block>
+  <block id="5b2f94f8fc7fac6c5b65ae92f973ae81" category="paragraph">您可以使用 VSC GUI 中的「 VMware vSphere 記錄匯出 ONTAP 工具」功能、來收集 VMware vSphere 記錄檔的 ONTAP 工具。當您為啟用 VASA Provider 的 VMware vSphere 記錄套件收集 ONTAP 工具時、適用於 VMware vSphere 記錄套件的 ONTAP 工具也會有 VP 記錄。下列步驟說明如何收集 VMware vSphere 記錄檔的 ONTAP 工具：</block>
+  <block id="6ab0668e8afff4a2efaec36739183097" category="list-text">從 ONTAP 工具首頁、按一下 * 組態 * &gt; * 匯出 ONTAP 工具以取得 VMware vSphere 記錄 * 。</block>
+  <block id="f2bf379ad5a0f05a54bbcdb5678a796e" category="inline-image-macro">播放按鈕</block>
+  <block id="f09ce17953135a26f2f12c89bb1b9a79" category="paragraph">您應該使用已部署ONTAP 的支援工具*摘要*索引標籤來存取維護主控台。當您按一下時  <block ref="80abd5c70dec820fc31b07b6e3d6acac" category="inline-image-macro-rx" type="image"></block>、維護主控台即會啟動。</block>
+  <block id="ad6409a6647b6007d0c59236c9a9526d" category="inline-image-macro">地球圖示</block>
+  <block id="de0b37295bc569e05978d71253c5fc03" category="list-text">按一下 <block ref="10af7a3d6b71a29635365f6da600da8a" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的網路對應。</block>
+  <block id="01a4b38a822503fac9ae3f0ec3e92ed5" category="list-text">存取 VMware SRM Appliance Management Interface 、然後前往 SRM 應用裝置的「儲存複寫介面卡」頁面。</block>
+  <block id="a86a5be1650520ca8fdf9ff8bc76967f" category="list-text">將現有的 ONTAP 工具設備升級至最新版本。</block>
+  <block id="ceafa9243433e49b5a0576a4ed1cd4b5" category="list-text">將 Windows 型儲存複寫介面卡移轉至應用裝置型的 SRA 。</block>
+  <block id="81f65208775e1359f20f81e36c085f41" category="list-text">將 Windows SRM 資料移轉至 SRM Appliance 。</block>
+  <block id="008e64a5de1742c87435cc61c7288a46" category="image-alt">新使用者和現有使用者工作流程</block>
+  <block id="c2a38047ec858944f77ff5e67afebd25" category="image-alt">設定 ONTAP 系統工作流程</block>
+  <block id="69e0c20cc370e4f2eb4bdc1e3bc3a684" category="list-text">選取 * 資料夾 * 圖示以建立新的資料夾對應。</block>
+  <block id="a4c7d7c61679768abcab3550525c4661" category="inline-image-macro">搜尋並新增圖示</block>
+  <block id="46f855aaeb43b702265b4d4aae505653" category="list-text">按一下 <block ref="b95cf97b2492098c584f14080a443ee3" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的預留位置資料存放區。</block>
 </blocks>

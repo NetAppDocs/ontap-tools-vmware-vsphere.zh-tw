@@ -23,6 +23,6 @@ WARNING: 您不應該在單一VVols資料存放區中、混合設定受保護和
 
 NOTE: 如果您使用vVols資料存放區的災難恢復、則不需要個別設定儲存複寫介面卡（SRA）、因為VASA Provider功能已增強、可進行vVols複寫。
 
-image::../media/vvols_replication.png[vvols複寫]
+image::../media/vvols_replication.png[設定 ONTAP 系統工作流程]
 
 link:../protect/configure_vvols_replication_existing_datastore.html["設定現有資料存放區的vVols複寫"]

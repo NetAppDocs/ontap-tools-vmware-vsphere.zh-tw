@@ -26,7 +26,7 @@ VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以
 *步驟*
 
 . 登入VMware vSphere的網路使用者介面。
-. 在 vSphere Client 中、按一下 * 功能表 * > * NetApp ONTAP 工具 * 主控台。
+. 從 vSphere Client 中、選取 * 功能表 * > * NetApp ONTAP tools* 。
 . 按一下 * 設定 * 。
 . 按一下「管理設定」索引標籤中的「*管理功能*」。
 . 在「管理功能」對話方塊中、選取要啟用的VASA Provider副檔名。

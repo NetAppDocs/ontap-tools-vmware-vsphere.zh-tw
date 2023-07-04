@@ -2,7 +2,7 @@
 permalink: concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html 
 sidebar: sidebar 
 keywords:  
-summary: vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在VMware vSphere的VMware®工具中、vCenter Server RBAC可搭配使用以確定特定使用者可在特定儲存系統上的物件上執行哪些VSC工作。ONTAP ONTAP 
+summary: vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在適用於 VMware vSphere 的 ONTAP 工具中、 vCenter Server RBAC 可與 ONTAP RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。 
 ---
 = 概述以角色為基礎的ONTAP 存取控制功能
 :allow-uri-read: 
@@ -11,8 +11,8 @@ summary: vCenter Server提供角色型存取控制（RBAC）、可讓您控制vS
 
 
 [role="lead"]
-vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在VMware vSphere的VMware®工具中、vCenter Server RBAC可搭配使用以確定特定使用者可在特定儲存系統上的物件上執行哪些VSC工作。ONTAP ONTAP
+vCenter Server提供角色型存取控制（RBAC）、可讓您控制vSphere物件的存取。在適用於 VMware vSphere 的 ONTAP ® 工具中、 vCenter Server RBAC 可與 ONTAP RBAC 搭配運作、以判斷特定使用者可在特定儲存系統上的物件上執行哪些 ONTAP 工具工作。
 
-若要成功完成工作、您必須擁有適當的vCenter Server RBAC權限。在工作期間、VSC會先檢查使用者的vCenter Server權限、然後再檢查使用者ONTAP 的VMware vCenter權限。
+若要成功完成工作、您必須擁有適當的vCenter Server RBAC權限。在工作期間、 ONTAP 工具會先檢查使用者的 vCenter Server 權限、然後再檢查使用者的 ONTAP 權限。
 
 您可以在根物件（也稱為根資料夾）上設定vCenter Server權限。然後您可以限制不需要這些權限的子實體、藉此精簡安全性。

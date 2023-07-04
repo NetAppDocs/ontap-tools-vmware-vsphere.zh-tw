@@ -26,7 +26,7 @@ VMware vSphere的支援VMware vSphere工具可檢查及設定ESXi主機多重路
 預設會設定建議的標準值。
 
 +
-image::../media/vsc_recommended_hosts_settings.gif[VSC建議的主機設定]
+image::../media/vsc_recommended_hosts_settings.gif[設定建議值畫面]
 
 . 按一下「*確定*」。
 

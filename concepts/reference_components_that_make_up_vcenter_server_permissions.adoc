@@ -34,7 +34,7 @@ vCenter Server具有下列元件：
 
 NOTE: 在此圖中、灰色方塊表示vCenter Server中存在的元件、而白色方塊則表示vCenter Server執行所在作業系統中存在的元件。
 
-image::../media/permission_updated_graphic.gif[權限更新圖形]
+image::../media/permission_updated_graphic.gif[權限元件圖例]
 
 
 
@@ -46,16 +46,16 @@ VMware vSphere的VMware vSphere的VMware VMware工具有兩種權限：ONTAP
 +
 這些權限隨附於vCenter Server。
 
-* VSC專屬權限
+* ONTAP 工具專屬權限
 +
-這些權限是針對特定VSC工作所定義。VSC獨一無二。
+這些權限是針對特定的 ONTAP 工具工作而定義。它們是 ONTAP 工具的專屬產品。
 
 
 
-VSC工作需要VSC專屬權限和vCenter Server原生權限。這些權限構成使用者的「角色」。權限可以有多個權限。這些權限適用於登入vCenter Server的使用者。
+ONTAP 工具工作需要 ONTAP 工具專屬權限和 vCenter Server 原生權限。這些權限構成使用者的「角色」。權限可以有多個權限。這些權限適用於登入vCenter Server的使用者。
 
 
-NOTE: 為了簡化vCenter Server RBAC作業、VSC提供多種標準角色、其中包含執行VSC工作所需的所有VSC專屬和原生權限。
+NOTE: 為了簡化使用 vCenter Server RBAC 的過程、 ONTAP 工具提供數個標準角色、其中包含執行 ONTAP 工具工作所需的所有 ONTAP 工具專屬和原生權限。
 
 如果您變更權限內的權限、則與該權限相關的使用者應登出、然後登入以啟用更新的權限。
 
@@ -73,7 +73,7 @@ NetApp ONTAP 解決方案工具主控台>檢視
 * VSC唯讀
 
  a| 
-所有VSC和VASA Provider特定工作都需要View權限。
+所有 ONTAP 工具和 VASA Provider 的特定工作都需要檢視權限。
 
 
 
@@ -89,15 +89,15 @@ VSC和VASA Provider工作與儲存功能設定檔和臨界值設定相關。
 
 == vSphere物件
 
-權限與vSphere物件相關聯、例如vCenter Server、ESXi主機、虛擬機器、資料存放區、資料中心、 和資料夾。您可以將權限指派給任何vSphere物件。vCenter Server會根據指派給vSphere物件的權限、決定誰可以在該物件上執行哪些工作。對於VSC特定工作、權限僅會指派並驗證於根資料夾層級（vCenter Server）、而非任何其他實體。VAAI外掛程式作業除外、該作業會針對相關ESXi驗證權限。
+權限與vSphere物件相關聯、例如vCenter Server、ESXi主機、虛擬機器、資料存放區、資料中心、 和資料夾。您可以將權限指派給任何vSphere物件。vCenter Server會根據指派給vSphere物件的權限、決定誰可以在該物件上執行哪些工作。對於 ONTAP 工具的特定工作、權限只會在根資料夾層級（ vCenter Server ）指派和驗證、而不會在任何其他實體上指派和驗證。VAAI外掛程式作業除外、該作業會針對相關ESXi驗證權限。
 
 
 
 == 使用者與群組
 
-您可以使用Active Directory（或本機vCenter Server機器）來設定使用者和使用者群組。然後您可以使用vCenter Server權限來授予這些使用者或群組存取權、讓他們能夠執行特定的VSC工作。
+您可以使用Active Directory（或本機vCenter Server機器）來設定使用者和使用者群組。接著您可以使用 vCenter Server 權限、將存取權授予這些使用者或群組、讓他們能夠執行特定的 ONTAP 工具工作。
 
 
-NOTE: 這些vCenter Server權限適用於VSC vCenter使用者、而非VSC管理員。根據預設、VSC系統管理員擁有產品的完整存取權、不需要指派權限給他們。
+NOTE: 這些 vCenter Server 權限適用於 ONTAP 工具 vCenter 使用者、而非 VSC 管理員。根據預設、VSC系統管理員擁有產品的完整存取權、不需要指派權限給他們。
 
 使用者和群組並未指派角色給他們。他們可透過vCenter Server權限的一部分來存取角色。

@@ -30,7 +30,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_conf
 *步驟*
 
 . 登入VMware vSphere的網路使用者介面。
-. 在 vSphere Client 中、按一下 * 功能表 * > * NetApp ONTAP 工具 * 主控台。
+. 從 vSphere Client 中、選取 * 功能表 * > * NetApp ONTAP tools* 。
 . 按一下 * 設定 * 。
 . 按一下*管理設定*索引標籤中的*管理功能*。
 . 在「*管理功能*」對話方塊中、選取要啟用的SRA副檔名。
@@ -40,7 +40,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_conf
 *適用於SRM應用裝置*
 
 +
-.. 存取SRM應用裝置頁面、然後前往SRM應用裝置的「儲存複寫介面卡」頁面。
+.. 存取 VMware SRM Appliance Management Interface 、然後前往 SRM 應用裝置的「儲存複寫介面卡」頁面。
 .. 按一下「*新增介面卡*」。
 .. 將SRA外掛程式的_.tar.gz_安裝程式上傳至SRM。
 .. 重新掃描介面卡、確認「SRM儲存複寫介面卡」頁面中的詳細資料已更新。

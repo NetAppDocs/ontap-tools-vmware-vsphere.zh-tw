@@ -15,12 +15,12 @@ summary: 如果您使用Windows型Site Recovery Manager（SRM）進行災難恢�
 
 移轉災難恢復所需的步驟如下：
 
-. 將現有ONTAP 的VMware Tools升級至9.7.1版。
+. 將現有的 ONTAP 工具設備升級至最新版本。
 +
 link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升級至ONTAP 最新版的VMware工具"]
 
-. 將Windows型儲存複寫介面卡移轉至以應用裝置為基礎的SRA。
-. 將Windows SRM資料移轉至SRM Appliance。
+. 將 Windows 型儲存複寫介面卡移轉至應用裝置型的 SRA 。
+. 將 Windows SRM 資料移轉至 SRM Appliance 。
 
 
 請參閱 https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-F39A84D3-2E3D-4018-97DD-5D7F7E041B43.html["從Site Recovery Manager for Windows移轉至Site Recovery Manager Virtual Appliance"] 以取得詳細步驟

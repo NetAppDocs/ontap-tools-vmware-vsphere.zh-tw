@@ -42,17 +42,20 @@ NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與�
 
 新增沒有憑證驗證的儲存系統是受到限制的。
 
-如果儲存系統是使用 json 檔案新增自訂建立的叢集範圍使用者、而您想要升級至 9.12 、請在升級之前、在 ONTAP CLI 上執行下列命令、以啟用 ONTAP 工具之間的 VMware vSphere 和 ONTAP 憑證型通訊：
+如果使用 json 檔案新增儲存系統、並使用自訂建立的叢集範圍使用者、而您想要升級至 9.12 、則
+在升級之前、請先在 ONTAP CLI 上執行下列命令、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊。
 
-. _security 登入角色 create -role <role-name> -cmddirname "security login show" -access all_
-. _security 登入角色 create -role <role-name> -cmddirname "security certificate show" -access all_
-. _security 登入角色 create -role <role-name> -cmddirname "security certificate install" -access all_
+. _security 登入角色 create -role <existing-role-name> -cmddirname "security login show" -access all_
+. _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate show" -access all_
+. _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all_
 
 
 如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
 
-. _security 登入角色 create -role <role-name> -cmddirname "security certificate install" -access all -vserver <vserver-name> _
-. _security 登入角色 create -role <role-name> -cmddirname "security certificate show" -access all -vserver <vserver-name> _
+. _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all -vserver <vserver-name> _
+. _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate show" -access all -vserver <vserver-name> _
+. _security 登入 create -user-or -group-name <user> -application http -驗 證方法 cert -role <existing-role-name> -vserver <vserver-name> _
+. _security 登入 create -user-or -group-name <user> -applicationontapi -authent驗 證方法 cert -role <existing-role-name> -vserver <vserver-name> _
 
 
 *步驟*
@@ -65,7 +68,7 @@ NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與�
 
 
 . 存取已部署ONTAP 之VMware工具的「摘要」索引標籤。
-. 按一下*image:../media/launch_maintenance_console.gif[""]*啟動維護主控台。
+. 啟動維護主控台。
 . 在「主功能表」提示下、輸入選項「2」作為*系統組態*、然後輸入選項「8」作為*升級*。
 +
 升級完成後ONTAP 、即可重新啟動此功能。將VMware vCenter Server的IP位址登錄至升級前的相同IP位址。ONTAP

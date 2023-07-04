@@ -24,7 +24,7 @@ summary: 您必須將預留位置資料存放區設定為在vCenter庫存中保�
 . 登入vCenter Server、然後按一下*站台恢復*>*站台*。
 . 選取您的受保護網站、然後按一下*管理*。
 . 在「Manage（管理）」索引標籤中、選取*佔位資料存放區*。
-. 按一下 image:../media/new_placeholder_datastore.gif[""] 圖示以建立新的預留位置資料存放區。
+. 按一下 image:../media/new_placeholder_datastore.gif["搜尋並新增圖示"] 圖示以建立新的預留位置資料存放區。
 . 選取適當的資料存放區、然後按一下「*確定*」。
 +
 

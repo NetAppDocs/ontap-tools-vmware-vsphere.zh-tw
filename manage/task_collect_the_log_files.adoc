@@ -19,11 +19,11 @@ summary: 您可以從ONTAP VSC圖形化使用者介面（GUI）中的選項、�
 
 https://vm_ip:9083`
 
-您可以使用VSC GUI中的「Export VSC Logs」（匯出VSC記錄）功能來收集VSC記錄檔。當您在啟用VASA Provider的情況下收集VSC記錄套件時、VSC記錄套件組合也會有VP記錄。下列步驟說明如何收集VSC記錄檔：
+您可以使用 VSC GUI 中的「 VMware vSphere 記錄匯出 ONTAP 工具」功能、來收集 VMware vSphere 記錄檔的 ONTAP 工具。當您為啟用 VASA Provider 的 VMware vSphere 記錄套件收集 ONTAP 工具時、適用於 VMware vSphere 記錄套件的 ONTAP 工具也會有 VP 記錄。下列步驟說明如何收集 VMware vSphere 記錄檔的 ONTAP 工具：
 
 *步驟*
 
-. 從「VMware Tools」首頁、按一下ONTAP 「*組態*>*匯出VSC記錄*」。
+. 從 ONTAP 工具首頁、按一下 * 組態 * > * 匯出 ONTAP 工具以取得 VMware vSphere 記錄 * 。
 +
 此作業可能需要數分鐘的時間。
 

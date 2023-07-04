@@ -45,7 +45,7 @@ NOTE: 如果您使用System Manager來保護FlexVol 支援的是「不」、而�
 . 將複寫群組新增至未受保護的虛擬機器。
 
 
-image::../media/vvols_replication_existing_datastore.png[vvols複寫現有的資料存放區]
+image::../media/vvols_replication_existing_datastore.png[新使用者和現有使用者工作流程]
 
 *附註：*
 
