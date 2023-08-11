@@ -1,7 +1,7 @@
 ---
 permalink: concepts/concept_vmware_fault_tolerance_for_vcenter_server.html 
 sidebar: sidebar 
-keywords: VSC 
+keywords: ONTAP tools 
 summary: VMware vSphere容錯能力（FT）功能可在更高層級提供高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。 
 ---
 = VMware vSphere容錯能力

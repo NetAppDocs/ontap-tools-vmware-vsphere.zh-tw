@@ -13,7 +13,9 @@ summary: VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。
 [role="lead"]
 VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境中。ONTAPVCF部署的主要目標是在ONTAP 雲端設定中使用VMware工具、並在不使用vCenter Server的情況下建立容器。
 
-VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。ONTAP 工具 9.12 版本不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
+VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
+
+推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。ONTAP 工具 9.12 版本不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
 
 適用於VCF部署模式的API包括：
 

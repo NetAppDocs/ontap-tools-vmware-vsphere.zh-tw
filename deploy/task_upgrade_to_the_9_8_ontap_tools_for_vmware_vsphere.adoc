@@ -77,7 +77,7 @@ NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與�
 +
 .. 取消登錄ONTAP VMware Tools。
 .. 使用「* Register *」（*登錄*）頁面、將ONTAP 「IPv6」工具位址登錄至vCenter Server。
-.. 登錄後重新產生VSC和VASA Provider憑證。
+.. 在註冊之後重新產生 ONTAP 工具和 VASA Provider 憑證。
 
 
 +

@@ -1,0 +1,15 @@
+---
+permalink: manage/vasa_provider_disaster_recovery.html 
+sidebar: sidebar 
+keywords: scope of guide 
+summary: 如果 VASA Provider （ VP ）虛擬應用裝置遺失、無法存取或無法正常運作、您可能必須執行 VP 災難恢復。  
+---
+= Vasa Provider 災難恢復
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果 VASA Provider （ VP ）虛擬應用裝置遺失、無法存取或無法正常運作、您可能必須執行 VP 災難恢復。
+如需詳細資訊、請參閱 https://kb.netapp.com/mgmt/OTV/Virtual_Storage_Console/How_to_perform_a_VASA_Provider_Disaster_Recovery_-_Resolution_Guide["如何執行 VASA Provider 災難恢復解決方案指南"]

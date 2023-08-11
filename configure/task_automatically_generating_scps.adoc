@@ -15,8 +15,8 @@ Vasa Provider for ONTAP 功能更新可讓您自動為現有的傳統資料存�
 
 *您需要的是什麼*
 
-* 您必須已向虛擬儲存主控台（VSC）註冊VASA Provider執行個體。
-* VSC必須已探索到您的儲存設備。
+* 您必須已使用 ONTAP 工具登錄 VASA Provider 執行個體。
+* ONTAP 工具必須已探索到您的儲存設備。
 
 
 *關於此工作*

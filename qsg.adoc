@@ -66,7 +66,7 @@ ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用
 | 9083. | 啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠支援套件下載、 Web-CLI 使用者介面、以及從 VMware 到 VP 的控制路徑通訊。SRA 會與後端 SRA 服務就此連接埠號碼進行通訊。 
 
 
-| 8143. | VSC會偵聽此連接埠上的安全通訊。 
+| 8143. | ONTAP 工具會偵聽此連接埠上的安全通訊。 
 |===
 最低儲存與應用程式需求：
 

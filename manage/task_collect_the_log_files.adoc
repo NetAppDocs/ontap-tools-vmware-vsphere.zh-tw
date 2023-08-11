@@ -2,7 +2,7 @@
 permalink: manage/task_collect_the_log_files.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以從ONTAP VSC圖形化使用者介面（GUI）中的選項、收集VMware vSphere的Sethere®工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。 
+summary: 您可以從 ONTAP 工具圖形化使用者介面（ GUI ）中提供的選項、收集適用於 VMware vSphere 的 ONTAP ® 工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。 
 ---
 = 收集記錄檔
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以從ONTAP VSC圖形化使用者介面（GUI）中的選項、�
 
 
 [role="lead"]
-您可以從ONTAP VSC圖形使用者介面（GUI）中的選項收集VMware vSphere的各種資訊工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。
+您可以從 ONTAP 工具圖形化使用者介面（ GUI ）中提供的選項、收集適用於 VMware vSphere 的 ONTAP 工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。
 
 *關於此工作*
 
@@ -19,7 +19,7 @@ summary: 您可以從ONTAP VSC圖形化使用者介面（GUI）中的選項、�
 
 https://vm_ip:9083`
 
-您可以使用 VSC GUI 中的「 VMware vSphere 記錄匯出 ONTAP 工具」功能、來收集 VMware vSphere 記錄檔的 ONTAP 工具。當您為啟用 VASA Provider 的 VMware vSphere 記錄套件收集 ONTAP 工具時、適用於 VMware vSphere 記錄套件的 ONTAP 工具也會有 VP 記錄。下列步驟說明如何收集 VMware vSphere 記錄檔的 ONTAP 工具：
+您可以使用 ONTAP 工具 GUI 中的「 VMware vSphere 記錄匯出 ONTAP 工具」功能、來收集 VMware vSphere 記錄檔的 ONTAP 工具。當您為啟用 VASA Provider 的 VMware vSphere 記錄套件收集 ONTAP 工具時、適用於 VMware vSphere 記錄套件的 ONTAP 工具也會有 VP 記錄。下列步驟說明如何收集 VMware vSphere 記錄檔的 ONTAP 工具：
 
 *步驟*
 

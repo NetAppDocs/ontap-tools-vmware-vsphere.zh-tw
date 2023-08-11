@@ -2,21 +2,21 @@
 permalink: configure/reference_configure_the_vsc_preferences_files.html 
 sidebar: sidebar 
 keywords: preferences files 
-summary: 偏好設定檔包含可控制ONTAP VMware vSphere作業之VMware®工具的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解虛擬儲存主控台（VSC\）使用哪些偏好設定檔很有幫助。 
+summary: 偏好設定檔包含可控制ONTAP VMware vSphere作業之VMware®工具的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解 ONTAP 工具使用的偏好檔案有助益。 
 ---
-= 設定VSC喜好設定檔案
+= 設定 ONTAP 工具偏好設定檔
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-偏好設定檔案包含可控制ONTAP VMware vSphere作業的各項功能的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解虛擬儲存主控台（VSC）使用哪些偏好設定檔很有幫助。
+偏好設定檔案包含可控制ONTAP VMware vSphere作業的各項功能的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解 ONTAP 工具使用的偏好檔案有助益。
 
-VSC有多個偏好設定檔。這些檔案包含可決定VSC執行各種作業的輸入金鑰和值。以下是VSC使用的部分偏好設定檔：
+ONTAP 工具有多個偏好設定檔。這些檔案包含項目金鑰和值、可決定 ONTAP 工具執行各種作業的方式。以下是 ONTAP 工具使用的一些喜好設定檔：
 
 「/opt/NetApp/vscserver/etc/kamino/kaminoprefs.xml」
 
 「/opt/NetApp/vscserver/etc/Vsc/vscpets.xml」
 
-在某些情況下、您可能必須修改偏好設定檔。例如、如果您使用 iSCSI 、 NFS 或 NVMe / FC 、且 ESXi 主機和儲存系統之間的子網路不同、則必須修改偏好設定檔。如果您未修改喜好設定檔中的設定、則由於VSC無法掛載資料存放區、資料存放區資源配置會失敗。
+在某些情況下、您可能必須修改偏好設定檔。例如、如果您使用 iSCSI 、 NFS 或 NVMe / FC 、且 ESXi 主機和儲存系統之間的子網路不同、則必須修改偏好設定檔。如果您未修改偏好設定檔中的設定、資料存放區資源配置將會失敗、因為 ONTAP 工具無法掛載資料存放區。

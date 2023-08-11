@@ -2,7 +2,7 @@
 permalink: concepts/reference_product_level_privilege_required_by_ontap_tools_for_vmware_vsphere.html 
 sidebar: sidebar 
 keywords:  
-summary: 若要存取ONTAP VMware vSphere GUI的VMware®工具、您必須在正確的vSphere物件層級指派產品層級的VSC特定檢視權限。如果您在沒有此權限的情況下登入、VSC會在您按一下NetApp圖示時顯示錯誤訊息、並防止您存取VSC。 
+summary: 若要存取 VMware vSphere GUI 的 ONTAP 工具、您必須在正確的 vSphere 物件層級指派產品層級的 ONTAP 工具專屬檢視權限。如果您沒有此權限登入、當您按一下 NetApp 圖示時、 ONTAP 工具會顯示錯誤訊息、並阻止您存取 ONTAP 工具。 
 ---
 = VMware vSphere的產品層級權限ONTAP 、由VMware vSphere的VMware工具提供
 :allow-uri-read: 
@@ -11,10 +11,11 @@ summary: 若要存取ONTAP VMware vSphere GUI的VMware®工具、您必須在正
 
 
 [role="lead"]
-若要存取ONTAP VMware vSphere GUI的VMware®工具、您必須在正確的vSphere物件層級指派產品層級的VSC特定檢視權限。如果您在沒有此權限的情況下登入、VSC會在您按一下NetApp圖示時顯示錯誤訊息、並防止您存取VSC。在 * 檢視 * 權限中、您可以存取 VSC GUI 。此權限無法讓您在VSC內執行工作。若要執行任何VSC工作、您必須擁有正確的VSC專屬及原生vCenter Server權限、才能執行這些工作。
+若要存取適用於 VMware vSphere GUI 的 ONTAP ® 工具、您必須在正確的 vSphere 物件層級指派產品層級的 ONTAP 工具專屬檢視權限。如果您沒有此權限登入、當您按一下 NetApp 圖示時、 ONTAP 工具會顯示錯誤訊息、並阻止您存取 ONTAP 工具。
+在 * 檢視 * 權限中、您可以存取 ONTAP 工具 GUI 。此權限無法讓您在 ONTAP 工具中執行工作。若要執行任何 ONTAP 工具工作、您必須擁有這些工作的正確 ONTAP 工具專屬和原生 vCenter Server 權限。
 
-指派層級決定您可以看到的UI部分。在根物件（資料夾）上指派檢視權限、可讓您按一下NetApp圖示進入VSC。
+指派層級決定您可以看到的UI部分。指派根物件（資料夾）的檢視權限、可讓您按一下 NetApp 圖示來輸入 ONTAP 工具。
 
-您可以將「檢視」權限指派給另一個vSphere物件層級、但這樣做會限制您可以查看及使用的VSC功能表。
+您可以將「檢視」權限指派給其他 vSphere 物件層級、但這麼做會限制您可以查看和使用的 ONTAP 工具功能表。
 
 根物件是指派任何包含檢視權限的權限的建議位置。

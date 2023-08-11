@@ -2,7 +2,7 @@
 permalink: configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。虛擬儲存主控台（VSC）設定的值、是以NetApp內部測試為基礎。 
+summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。這些功能是根據NetApp內部測試所設定的價值ONTAP 。 
 ---
 = ESXi主機值是使用ONTAP 各種功能介紹工具設定的
 :allow-uri-read: 

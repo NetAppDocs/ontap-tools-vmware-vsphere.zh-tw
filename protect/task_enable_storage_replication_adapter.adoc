@@ -2,7 +2,7 @@
 permalink: protect/task_enable_storage_replication_adapter.html 
 sidebar: sidebar 
 keywords:  
-summary: VMware vSphere的支援功能可讓SRA功能與VSC搭配使用、以設定災難恢復。ONTAP 
+summary: VMware vSphere 的 ONTAP 工具可讓您選擇搭配 ONTAP 工具使用 SRA 功能來設定災難恢復。 
 ---
 = 啟用SRA來保護資料存放區
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: VMware vSphere的支援功能可讓SRA功能與VSC搭配使用、以設
 
 
 [role="lead"]
-VMware vSphere的支援功能可讓SRA功能與VSC搭配使用、以設定災難恢復。ONTAP
+VMware vSphere 的 ONTAP 工具可讓您選擇搭配 ONTAP 工具使用 SRA 功能來設定災難恢復。
 
 *您需要的是什麼*
 
@@ -40,7 +40,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_conf
 *適用於SRM應用裝置*
 
 +
-.. 存取 VMware SRM Appliance Management Interface 、然後前往 SRM 應用裝置的「儲存複寫介面卡」頁面。
+.. 使用 URL 存取 VMware SRM Appliance Management Interface ： https://:<srm_ip>:5480[]，然後轉至 VMware SRM Appliance Management Interface 中的 Storage Replication Adapters 。
 .. 按一下「*新增介面卡*」。
 .. 將SRA外掛程式的_.tar.gz_安裝程式上傳至SRM。
 .. 重新掃描介面卡、確認「SRM儲存複寫介面卡」頁面中的詳細資料已更新。

@@ -52,3 +52,5 @@ entries:
     url: "/manage/task_monitor_datastores_using_the_traditional_dashboard.html"
   - title: 使用vVols儀表板分析效能資料
     url: "/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html"
+- title: Vasa Provider 災難恢復
+  url: "/manage/vasa_provider_disaster_recovery.html"

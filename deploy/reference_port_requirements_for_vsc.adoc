@@ -2,22 +2,22 @@
 permalink: deploy/reference_port_requirements_for_vsc.html 
 sidebar: sidebar 
 keywords: port requirements 
-summary: 根據預設、虛擬儲存主控台（VSC）會使用指定的連接埠、在其元件（包括儲存系統和VMware vCenter Server）之間進行通訊。如果您已啟用防火牆、則必須確定防火牆已設定為允許例外。 
+summary: 根據預設、 ONTAP 工具會使用指定的連接埠來啟用其元件（包括儲存系統和 VMware vCenter Server ）之間的通訊。如果您已啟用防火牆、則必須確定防火牆已設定為允許例外。 
 ---
-= VSC的連接埠需求
+= ONTAP 工具的連接埠需求
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-根據預設、虛擬儲存主控台（VSC）會使用指定的連接埠、在其元件（包括儲存系統和VMware vCenter Server）之間進行通訊。如果您已啟用防火牆、則必須確定防火牆已設定為允許例外。
+根據預設、 ONTAP 工具會使用指定的連接埠來啟用其元件（包括儲存系統和 VMware vCenter Server ）之間的通訊。如果您已啟用防火牆、則必須確定防火牆已設定為允許例外。
 
-對於Windows以外的防火牆、您應該手動授予VSC使用的特定連接埠存取權。如果您未授予存取這些連接埠的權限、則會顯示下列錯誤訊息。
+對於 Windows 以外的防火牆、您應該手動授予 ONTAP 工具使用的特定連接埠存取權。如果您未授予存取這些連接埠的權限、則會顯示下列錯誤訊息。
 
 「無法與伺服器通訊。
 
-VSC使用下列預設雙向TCP連接埠：
+使用下列預設雙向TCP連接埠的VMware Tools：ONTAP
 
 |===
 
@@ -42,10 +42,10 @@ VSC使用下列預設雙向TCP連接埠：
  a| 
 8143.
  a| 
-VSC會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。此連接埠可用於 VSC 服務及匯出 VSC 伺服器記錄檔。register.html 頁面託管在此連接埠上。其餘的交換器會暴露在此連接埠上。
+ONTAP 工具會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。此連接埠可用於 ONTAP 工具服務和匯出 ONTAP 工具伺服器記錄檔。register.html 頁面託管在此連接埠上。其餘的交換器會暴露在此連接埠上。
 
 |===
 
 NOTE: 在部署ONTAP VMware Tools之前、您應該先啟用網際網路控制訊息傳輸協定（ICMP）。
 
-如果停用ICMP、ONTAP 則無法初始設定支援工具、且VSC無法在部署後啟動VSC和VASA Provider服務。您必須在部署後手動啟用VSC和VASA Provider服務。
+如果停用 ICMP 、則 ONTAP 工具的初始組態將會失敗、而 ONTAP 工具在部署後無法啟動 ONTAP 工具和 VASA 提供者服務。您必須在部署後手動啟用 ONTAP 工具和 VASA Provider 服務。

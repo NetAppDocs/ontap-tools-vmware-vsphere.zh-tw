@@ -12,7 +12,7 @@ entries:
   url: "/qsg.html"
 - title: 部署ONTAP 這些功能的需求
   entries:
-  - title: VSC的連接埠需求
+  - title: ONTAP 工具的連接埠需求
     url: "/deploy/reference_port_requirements_for_vsc.html"
   - title: 空間與規模需求ONTAP 、滿足各種需求
     url: "/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html"

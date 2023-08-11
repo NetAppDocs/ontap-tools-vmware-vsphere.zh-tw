@@ -2,7 +2,7 @@
 permalink: configure/task_regenerate_an_ssl_certificate_for_vsc.html 
 sidebar: sidebar 
 keywords:  
-summary: SSL憑證是在您安裝虛擬儲存主控台（VSC）時產生的。為SSL憑證產生的辨別名稱（DN\）可能不是用戶端機器可辨識的一般名稱（CN\）。藉由變更Keystore和私密金鑰密碼、您可以重新產生憑證並建立站台專屬的憑證。 
+summary: SSL 憑證會在您安裝 ONTAP 工具時產生。為SSL憑證產生的辨別名稱（DN\）可能不是用戶端機器可辨識的一般名稱（CN\）。藉由變更Keystore和私密金鑰密碼、您可以重新產生憑證並建立站台專屬的憑證。 
 ---
 = 為虛擬儲存主控台重新產生SSL憑證
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: SSL憑證是在您安裝虛擬儲存主控台（VSC）時產生的。�
 
 
 [role="lead"]
-SSL憑證會在您安裝虛擬儲存主控台（VSC）時產生。為SSL憑證產生的辨別名稱（DN）可能不是用戶端機器識別的一般名稱（CN）。藉由變更Keystore和私密金鑰密碼、您可以重新產生憑證並建立站台專屬的憑證。
+SSL 憑證會在您安裝 ONTAP 工具時產生。為SSL憑證產生的辨別名稱（DN）可能不是用戶端機器識別的一般名稱（CN）。藉由變更Keystore和私密金鑰密碼、您可以重新產生憑證並建立站台專屬的憑證。
 
 *關於此工作*
 

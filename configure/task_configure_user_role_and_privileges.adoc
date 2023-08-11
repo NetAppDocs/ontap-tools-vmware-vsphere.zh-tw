@@ -16,6 +16,9 @@ summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式�
 *您需要的是什麼*
 
 * 您應該ONTAP 已經使用\https://{virtual_appliance_IP}:9083/vsc/config/VSC_ONTAP_User_Privileges.zip從ONTAP 資訊工具下載了《Esenter各項 功能》檔案。
++
+請參閱知識庫文章 - https://kb.netapp.com/mgmt/OTV/Virtual_Storage_Console/Virtual_Storage_Console%3A_How_to_retrieve_the_JSON_file_to_configure_user_roles_and_privileges["虛擬儲存主控台：如何擷取 JSON 檔案以設定使用者角色和權限"] 如需如何從 WebCLI 下載 ONTAP 權限檔案的說明。
+
 * 您應該已經設定ONTAP 好了更新版本的儲存設備。
 * 您應該已以系統管理員權限登入儲存系統。
 

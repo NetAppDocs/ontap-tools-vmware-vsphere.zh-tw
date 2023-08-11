@@ -2,7 +2,7 @@
 permalink: configure/task_refresh_the_storage_system_display.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以使用ONTAP VMware vSphere的更新功能來更新儲存系統的相關資訊、並強制Virtual Storage Console（VSC）探索儲存系統。 
+summary: 您可以使用適用於 VMware vSphere 的 ONTAP ® 工具所提供的更新功能、來重新整理儲存系統的相關資訊、並強制 ONTAP 工具探索儲存系統。 
 ---
 = 重新整理儲存系統顯示器
 :allow-uri-read: 
@@ -11,11 +11,11 @@ summary: 您可以使用ONTAP VMware vSphere的更新功能來更新儲存系統
 
 
 [role="lead"]
-您可以使用ONTAP VMware vSphere的更新功能、更新儲存系統的相關資訊、並強制虛擬儲存主控台（VSC）探索儲存系統。
+您可以使用適用於 VMware vSphere 的 ONTAP ® 工具所提供的更新功能、來重新整理儲存系統的相關資訊、並強制 ONTAP 工具探索儲存系統。
 
 *關於此工作*
 
-。 `refresh` 如果您在收到驗證錯誤後變更儲存系統的預設認證、則此選項很有用。如果您在儲存系統報告後變更儲存系統認證、則應該一律執行更新作業 `Authentication Failure Status`。在更新作業期間、VSC會嘗試使用新認證來連線至儲存系統。
+。 `refresh` 如果您在收到驗證錯誤後變更儲存系統的預設認證、則此選項很有用。如果您在儲存系統報告後變更儲存系統認證、則應該一律執行更新作業 `Authentication Failure Status`。在更新作業期間、 ONTAP 工具會嘗試使用新認證連線至儲存系統。
 
 視系統設定而定、此工作可能需要很長時間才能完成。
 
