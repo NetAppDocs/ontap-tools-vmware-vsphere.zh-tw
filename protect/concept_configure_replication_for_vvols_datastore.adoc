@@ -13,6 +13,9 @@ summary: 您可以使用ONTAP 各種功能來設定vVols資料存放區的複寫
 [role="lead"]
 您可以使用ONTAP 各種功能來設定vVols資料存放區的複寫。vVols複寫的主要目標是使用VMware Site Recovery Manager（SRM）、在災難恢復期間保護重要的虛擬機器。
 
+
+NOTE: vCenter 8.0 中的 Site Recovery Manager （ SRM ）工作流程失敗、並顯示錯誤訊息。VVOL 複寫在 vCenter 7.0u3 版本中的運作方式與預期相同。
+
 不過、若要設定vVols複寫功能以供ONTAP 使用、則必須啟用VASA Provider功能和vVols複寫。Vasa Provider預設會在ONTAP 支援功能方面啟用。以陣列為基礎的複寫是FlexVol 在整個過程中執行。每個vVols資料存放區都會對應至一個儲存容器、其中包含一個或多FlexVol 個VMware Volume。應使用來自NetApp的SnapMirror預先設定此等資料冊。FlexVol ONTAP
 
 

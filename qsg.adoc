@@ -19,7 +19,7 @@ summary: 提供VMware ONTAP vSphere的部署和初始化功能。
 
 
 [role="lead"]
-VMware vSphere的VMware vSphere工具是單一vCenter Server外掛程式、包含VSC、VASA Provider和Storage Replication Adapter（SRA）擴充功能。ONTAP建議所有ONTAP 的VMware vSphere環境都使用VSC、因為它會使用ONTAP 最佳實務做法來設定ESXi主機設定及配置不完整的儲存資源。虛擬磁碟區（vVols）支援需要VASA Provider、SRA則需搭配VMware Site Recovery Manager一起運作。
+適用於 VMware vSphere 的 ONTAP 工具是單一 vCenter Server 外掛程式、內含 ONTAP 工具、 VASA Provider 和儲存複寫介面卡（ SRA ）擴充功能。建議所有 ONTAP vSphere 環境使用 ONTAP 工具、因為它會使用最佳實務做法來設定 ESXi 主機設定和配置 ONTAP 儲存設備。虛擬磁碟區（vVols）支援需要VASA Provider、SRA則需搭配VMware Site Recovery Manager一起運作。
 
 
 

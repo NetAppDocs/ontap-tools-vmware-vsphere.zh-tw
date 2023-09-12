@@ -18,9 +18,9 @@ summary: 您應該瞭解建立和編輯儲存功能設定檔的考量事項。
 +
 此功能可為虛擬資料存放區上配置的同一部虛擬機器的不同VMDK指派不同的QoS度量、提供更大的靈活度。
 
-* 您可以設定FAS 用於資料不二和AFF 不二的儲存功能設定檔。
+* 您可以設定 Flash Array Hybrid 、 ASA 和 AFF 資料存放區的儲存功能設定檔。
 +
-若為FAS 靜態系統AFF 、您可以將空間保留區設定為厚或薄。
+對於 Flash Array 混合式系統、 ASA 和 AFF 系統、您可以將空間保留設定為精簡或精簡。
 
 * 您可以使用儲存功能設定檔為資料存放區提供加密功能。
 * 從ONTAP VMware vSphere的舊版版版VMware vSphere升級至ONTAP 最新版的VMware vCenter工具後、您無法修改現有的儲存功能設定檔（建立於7.2版之前）。

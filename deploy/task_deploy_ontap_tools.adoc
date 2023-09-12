@@ -30,7 +30,7 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 * 您應該已登出並關閉vSphere Client的所有瀏覽器工作階段、並刪除瀏覽器快取、以避免在ONTAP 部署完各種VMware應用程式時發生任何瀏覽器快取問題。
 * 您必須已啟用網際網路控制訊息傳輸協定（ ICMP ）。
 +
-如果停用ICMP、ONTAP 則無法初始設定支援工具、且VSC無法在部署後啟動VSC和VASA Provider服務。您必須在部署後手動啟用VSC和VASA Provider服務。
+如果停用 ICMP 、則 ONTAP 工具的初始組態將會失敗、而 ONTAP 工具在部署後無法啟動 ONTAP 工具和 VASA 提供者服務。您必須在部署後手動啟用 ONTAP 工具和 VASA Provider 服務。
 
 
 
@@ -81,7 +81,7 @@ URL
 
 . 開啟ONTAP VMware Tools虛擬機器的電源、然後開啟執行ONTAP VMware Tools的虛擬機器主控台。
 . 驗證ONTAP 部署完成後、是否執行了一些功能不完整的工具。
-. 如果 ONTAP 工具未在任何 vCenter Server 上登錄、請使用 `\https://appliance_ip:8143/Register.html` 註冊 VSC 執行個體。Register.html 會將您重新導向至「瀏覽器」頁面。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。
+. 如果 ONTAP 工具未在任何 vCenter Server 上登錄、請使用 `\https://appliance_ip:8143/Register.html` 登錄 ONTAP 工具執行個體。Register.html 會將您重新導向至「瀏覽器」頁面。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。
 +
 使用 POST API 從 9.12 開始向 vCenter 登錄 ONTAP 工具。
 

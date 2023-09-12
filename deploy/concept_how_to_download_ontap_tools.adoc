@@ -13,6 +13,6 @@ summary: 您可以ONTAP 從NetApp支援網站下載適用於VMware vSphere的.ov
 [role="lead"]
 您可以下載 `.zip` 檔案中包含二進位檔案（ _.ova_ ）、以及用於 VMware vSphere 之 ONTAP 工具的簽署憑證 https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp 支援網站"^]。
 
-_.ova_檔案包含ONTAP 了一些不實的工具。部署完成後、您的環境中會安裝 VSC 、 VASA 和 SRA 產品。根據預設、一旦您決定後續部署模式、VSC就會立即開始運作、並根據您的需求選擇是否啟用VASA Provider和SRA。
+_.ova_檔案包含ONTAP 了一些不實的工具。部署完成後、工具、 VASA 和 ONTAP 產品會安裝在您的環境中。根據預設、 ONTAP 工具會在您決定後續部署模式後立即開始運作、並根據您的需求選擇是否啟用 VASA Provider 和 SRA 。
 
 如果您想要在部署ONTAP VMware vCenter工具時啟用SRA、則必須在Site Recovery Manager（SRM）伺服器上安裝SRA外掛程式。您可以從「ONTAP 軟體下載」區段的「*儲存複寫介面卡for Rise*」功能表下載SRA外掛程式的安裝檔案。

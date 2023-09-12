@@ -2,7 +2,7 @@
 permalink: manage/concept_virtual_storage_console_reports.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以使用ONTAP 「VMware Tools主控台報告」功能表來檢視特定vCenter Server中所選VSC執行個體所管理之所有資料存放區的預先定義報告。您可以執行排序和匯出報告等作業。 
+summary: 您可以使用 ONTAP 工具主控台報告功能表、檢視特定 vCenter Server 中由所選 ONTAP 工具執行個體所管理之所有資料存放區的預先定義報告。您可以執行排序和匯出報告等作業。 
 ---
 = 功能性工具資料存放區和vVols報告總覽ONTAP
 :allow-uri-read: 
@@ -11,13 +11,13 @@ summary: 您可以使用ONTAP 「VMware Tools主控台報告」功能表來檢�
 
 
 [role="lead"]
-您可以使用ONTAP 「參考工具」主控台*「報告」*功能表來檢視特定vCenter Server中所選VSC執行個體所管理之所有資料存放區的預先定義報告。您可以執行排序和匯出報告等作業。
+您可以使用 ONTAP 工具主控台 * 報告 * 功能表來檢視由特定 vCenter Server 中所選 ONTAP 工具執行個體所管理之所有資料存放區的預先定義報告。您可以執行排序和匯出報告等作業。
 
 報告會顯示有關資料存放區和虛擬機器的詳細資訊、讓您能夠檢閱及識別vCenter Server中資料存放區和虛擬機器的潛在問題
 
 您可以檢視、排序及匯出報告。
 
-虛擬儲存主控台（VSC）提供下列預先定義的報告：
+ONTAP 工具提供下列預先定義的報告：
 
 * 資料存放區報告
 * 虛擬機器報告
@@ -73,7 +73,7 @@ Volume樣式可以是FlexVol 一個「聲音量」或FlexGroup 「聲音量」�
 
 *虛擬機器報告*
 
-「虛擬機器報告」功能表提供所有使用VSC針對所選vCenter Server所配置之資料存放區的虛擬機器效能指標。虛擬機器報告中所顯示的虛擬機器度量是每30分鐘收集一次的歷史資料、用於傳統資料存放區上的虛擬機器。表格中會新增「上次重新整理時間」和「下次重新整理時間」、以提供資料收集時間及下次資料收集時間的詳細資料。
+「虛擬機器報告」功能表可為所有使用 ONTAP 工具為所選 vCenter Server 佈建的資料存放區的虛擬機器提供效能指標。虛擬機器報告中所顯示的虛擬機器度量是每30分鐘收集一次的歷史資料、用於傳統資料存放區上的虛擬機器。表格中會新增「上次重新整理時間」和「下次重新整理時間」、以提供資料收集時間及下次資料收集時間的詳細資料。
 
 * 虛擬機器名稱
 * 資料存放區名稱
@@ -179,7 +179,7 @@ vVols虛擬機器摘要報告功能表提供所有使用SAN vVols資料存放區
 
 適用於 VMware vSphere 的 ONTAP 工具會針對下列項目產生稽核記錄：
 
-* VSC 服務
+* ONTAP 工具服務
 +
 vscservice 的稽核記錄位置： __/opt/NetApp/vscservice/VSC-稽 核記錄 _ 。您可以在 _/opt/NetApp/vscserver/etc/log4j2.properties_ 檔案中變更記錄完整性報告的下列參數：
 

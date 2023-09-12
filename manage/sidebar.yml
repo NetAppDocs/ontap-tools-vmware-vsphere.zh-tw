@@ -32,7 +32,7 @@ entries:
   entries:
   - title: 功能概述：工具維護主控台ONTAP
     url: "/manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html"
-  - title: VSC和VASA Provider記錄檔
+  - title: ONTAP 工具和 VASA Provider 記錄檔
     url: "/manage/concept_virtual_storage_console_and_vasa_provider_log_files.html"
   - title: 變更系統管理員密碼
     url: "/manage/task_change_the_administrative_password.html"

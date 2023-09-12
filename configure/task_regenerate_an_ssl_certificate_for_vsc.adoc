@@ -23,6 +23,6 @@ https://kb.netapp.com/advice_and_troubleshooting/data_storage_software/vsc_and_v
 
 . 登入維護主控台。
 . 輸入「1」存取「應用程式組態」功能表。
-. 在「應用程式組態」功能表中、輸入「3」以停止VSC服務。
+. 在應用程式組態功能表中、輸入 `3` 停止 ONTAP 工具服務。
 . 輸入「7」重新產生SSL憑證。
 

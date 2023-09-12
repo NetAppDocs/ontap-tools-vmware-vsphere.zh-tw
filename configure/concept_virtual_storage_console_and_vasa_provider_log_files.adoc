@@ -15,7 +15,8 @@ summary: 當您遇到錯誤時、可以檢查/opp/NetApp/vscserver/log目錄和/
 
 下列三個記錄檔有助於識別問題：
 
-* 「CXf.log」、內含進出VASA Provider *「kaminoPrefs.XML」的API流量相關資訊、其中包含VSC設定的相關資訊
+* 「 cXV.log 」、包含進出 VASA Provider 的 API 流量資訊
+*'kaminoPrefs.xml' 、包含 ONTAP 工具設定的相關資訊
 * 「vvolvp.log」、包含VASA Provider的所有記錄資訊
 
 
@@ -29,7 +30,7 @@ VMware vSphere的支援功能表可讓您針對需求設定不同的記錄層級
 
 當您設定記錄層級時、下列檔案會更新：
 
-* VSC伺服器：「kamin.log」和「vvolvp.log」
+* ONTAP 工具伺服器：「 kamino.log 」和「 vvolvp.log 」
 * Vasa Provider伺服器：「vvolvp.log」、「error.log」和「NetApp.log」
 
 

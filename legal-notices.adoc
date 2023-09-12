@@ -1,13 +1,13 @@
 ---
-sidebar: sidebar 
 permalink: legal-notices.html 
+sidebar: sidebar 
 keywords:  
 summary:  
 ---
 = 法律聲明
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -41,4 +41,10 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2885834["適用於 VMware vSphere 9.12 的 ONTAP 工具注意事項"^]
+
+
+== 開放原始碼
+
+通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2886293["適用於 VMware vSphere 9.13 的 ONTAP 工具注意事項"^]

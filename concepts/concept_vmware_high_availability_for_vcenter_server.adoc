@@ -1,7 +1,7 @@
 ---
 permalink: concepts/concept_vmware_high_availability_for_vcenter_server.html 
 sidebar: sidebar 
-keywords: VSC 
+keywords: ONTAP tools 
 summary: 您可以設定vSphere環境、以便ONTAP 部署VMware vSphere的VMware vSphere的VMware工具以實現高可用度（HA）。VMware HA功能可提供容錯移轉保護、避免虛擬環境中的硬體故障和作業系統故障。 
 ---
 = VMware vSphere HA

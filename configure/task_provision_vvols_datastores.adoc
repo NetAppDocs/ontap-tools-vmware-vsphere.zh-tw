@@ -104,7 +104,7 @@ NOTE: 如果您要配置iSCSI vVols資料存放區以進行vVols複寫、則在�
 
 *附註：*在FlexVol 以邊區建立邊區時ONTAP 、您應確保使用您想要在儲存功能設定檔中選取的屬性來建立它們。讀取寫入和資料保護FlexVol 功能的功能區應該具有類似的屬性。
 
-建立完包含SnapMirror的磁碟區、並在其中初始化SnapMirror之後、您應該在VSC中執行儲存設備重新探索、才能看到新的磁碟區。FlexVol ONTAP
+在 ONTAP 中建立 FlexVol 磁碟區並初始化 SnapMirror 之後、您應該在 ONTAP 工具中執行儲存重新探索、才能看到新的磁碟區。
 
 
 

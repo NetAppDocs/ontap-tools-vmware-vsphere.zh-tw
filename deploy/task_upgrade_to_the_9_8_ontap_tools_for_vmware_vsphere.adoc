@@ -38,11 +38,11 @@ openssl dgst -sha256 - 驗證 CSC-prod-OtV-SRA-Tgs.pub - 簽名 NetApp-onta-tool
 NOTE: 您只能從現有的 9.10 或更新版本執行就地升級至最新版本的 ONTAP 工具。
 
 
-NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與通訊程序都會透過自動信任 ONTAP 儲存憑證、從基本驗證變更為憑證型驗證。使用者無需採取任何行動。
+NOTE: 從 ONTAP 工具 9.12 升級、所有儲存系統驗證與通訊程序都會自動信任 ONTAP 儲存憑證、從基本驗證變更為憑證型驗證。使用者無需採取任何行動。
 
 新增沒有憑證驗證的儲存系統是受到限制的。
 
-如果使用 json 檔案新增儲存系統、並使用自訂建立的叢集範圍使用者、而您想要升級至 9.12 、則
+如果使用 json 檔案新增儲存系統、並使用自訂建立的叢集範圍使用者、而您想要升級至 9.12 版及更新版本、則
 在升級之前、請先在 ONTAP CLI 上執行下列命令、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊。
 
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security login show" -access all_
@@ -50,7 +50,8 @@ NOTE: 作為 ONTAP 工具 9.12 升級的一部分、所有儲存系統驗證與�
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all_
 
 
-如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
+如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 版及更新版本、則
+在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、然後再升級以啟用 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
 
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all -vserver <vserver-name> _
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate show" -access all -vserver <vserver-name> _

@@ -2,7 +2,7 @@
 permalink: configure/task_enable_datastore_mounting_across_different_subnets.html 
 sidebar: sidebar 
 keywords:  
-summary: 如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會失敗、因為Virtual Storage Console（VSC）無法掛載資料存放區。 
+summary: 如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會失敗、因為 ONTAP 工具無法掛載資料存放區。 
 ---
 = 在不同的子網路上啟用資料存放區裝載
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子�
 
 
 [role="lead"]
-如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會因為虛擬儲存主控台（VSC）無法掛載資料存放區而失敗。
+如果您使用iSCSI或NFS、且ESXi主機與儲存系統之間的子網路不同、則必須修改ONTAP VMware vSphere喜好設定檔案的VMware工具。如果您未修改偏好設定檔、則資料存放區資源配置會失敗、因為 ONTAP 工具無法掛載資料存放區。
 
 *關於此工作*
 

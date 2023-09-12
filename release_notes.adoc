@@ -13,4 +13,4 @@ summary: 提供ONTAP 本次VMware vSphere之VMware vSphere版本的重要資訊�
 [role="lead"]
 提供ONTAP 本次VMware vSphere之更新版的重要資訊、包括修正問題、已知問題、注意事項及限制。
 
-如需詳細資訊、請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP2885833["適用於 VMware vSphere 9.12 的 ONTAP 工具版本資訊"^]。
+如需詳細資訊、請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMLP2886293["適用於 VMware vSphere 9.13 的 ONTAP 工具版本資訊"^]。

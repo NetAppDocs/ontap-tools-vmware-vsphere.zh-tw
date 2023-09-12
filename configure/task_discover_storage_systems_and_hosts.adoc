@@ -2,7 +2,7 @@
 permalink: configure/task_discover_storage_systems_and_hosts.html 
 sidebar: sidebar 
 keywords:  
-summary: 當您第一次在vSphere Client中執行虛擬儲存主控台（VSC）時、VSC會探索ESXi主機、其LUN和NFS匯出、以及擁有這些LUN和匯出的NetApp儲存系統。 
+summary: 當您第一次在 vSphere Client 中執行 ONTAP 工具時、 ONTAP 工具會探索 ESXi 主機、其 LUN 和 NFS 匯出、以及擁有這些 LUN 和匯出的 NetApp 儲存系統。 
 ---
 = 探索儲存系統與主機
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 當您第一次在vSphere Client中執行虛擬儲存主控台（VSC）
 
 
 [role="lead"]
-當您第一次在vSphere Client中執行虛擬儲存主控台（VSC）時、VSC會探索ESXi主機、其LUN和NFS匯出、以及擁有這些LUN和匯出的NetApp儲存系統。
+當您第一次在 vSphere Client 中執行 ONTAP 工具時、 ONTAP 工具會探索 ESXi 主機、其 LUN 和 NFS 匯出、以及擁有這些 LUN 和匯出的 NetApp 儲存系統。
 
 *您需要的是什麼*
 
@@ -21,16 +21,16 @@ summary: 當您第一次在vSphere Client中執行虛擬儲存主控台（VSC）
 
 *關於此工作*
 
-您可以隨時探索新的儲存系統或更新現有儲存系統的相關資訊、以取得最新的容量和組態資訊。您也可以修改VSC用來登入儲存系統的認證資料。
+您可以隨時探索新的儲存系統或更新現有儲存系統的相關資訊、以取得最新的容量和組態資訊。您也可以修改 ONTAP 工具用來登入儲存系統的認證。
 
-在探索儲存系統時、VSC會從由vCenter Server執行個體管理的ESXi主機收集資訊。
+在探索儲存系統時、 ONTAP 工具會從 vCenter Server 執行個體所管理的 ESXi 主機收集資訊。
 
 *步驟*
 
 . 從vSphere Client首頁選取*主機與叢集*。
 . 右鍵單擊所需的數據中心，然後選擇 *NetApp ONTAP tools*>* Update Host and Storage Data* 。
 +
-VSC 會顯示「確認」對話方塊、通知您此動作將重新啟動所有已連線儲存系統的探索、並可能需要幾分鐘的時間。您要繼續嗎？
+ONTAP 工具會顯示「確認」對話方塊、通知您此動作將會重新開始探索所有已連線的儲存系統、並可能需要幾分鐘的時間。您要繼續嗎？
 
 . 按一下 * 是 * 。
 . 選取狀態為的探索到儲存控制器 `Authentication Failure`，然後單擊 * 操作 * > * 修改 * 。
@@ -40,6 +40,6 @@ VSC 會顯示「確認」對話方塊、通知您此動作將重新啟動所有�
 
 探索程序完成後、請執行下列步驟：
 
-* 使用VSC來設定主機的ESXi主機設定、這些主機會在「介面卡設定」欄、「MPIO設定」欄或「NFS設定」欄中顯示警示圖示。
+* 使用 ONTAP 工具來設定主機的 ESXi 主機設定、這些主機會在「介面卡設定」欄、「 MPIO 設定」欄或「 NFS 設定」欄中顯示警示圖示。
 * 提供儲存系統認證資料。
 

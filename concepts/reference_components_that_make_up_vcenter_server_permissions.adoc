@@ -82,7 +82,7 @@ NetApp虛擬儲存主控台>原則型管理>管理或privilege.nvpfVSC.VASAGroup
  a| 
 VSC管理員
  a| 
-VSC和VASA Provider工作與儲存功能設定檔和臨界值設定相關。
+與儲存功能設定檔和臨界值設定相關的 ONTAP 工具和 VASA Provider 工作。
 
 |===
 

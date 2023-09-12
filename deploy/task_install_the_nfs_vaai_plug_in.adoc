@@ -29,7 +29,7 @@ summary: 您可以使用ONTAP VMware vSphere的GUI of支援VMware vSphere的VMwa
 
 *步驟*
 
-. 將您從NetApp支援網站下載的「.vib'檔案重新命名為NetAppNasPlugin.vib,以符合VSC使用的預先定義名稱。
+. 重新命名 `.vib` 您從 NetApp 支援網站 下載至 NetAppNasPlugin.vib 的檔案、以符合 ONTAP 工具使用的預先定義名稱。
 . 按ONTAP 一下「介紹工具」首頁中的「*設定*」。
 . 按一下「* NFS VAAI工具*索引標籤」。
 . 按一下*現有版本*區段中的*變更*。
@@ -40,6 +40,6 @@ summary: 您可以使用ONTAP VMware vSphere的GUI of支援VMware vSphere的VMwa
 
 . 安裝完成後、重新啟動ESXi主機。
 +
-當您重新開機ESXi主機時、VSC會自動偵測NFS VAAI外掛程式。您不需要執行其他步驟來啟用外掛程式。
+當您重新啟動 ESXi 主機時、 ONTAP 工具會自動偵測 NFS VAAI 外掛程式。您不需要執行其他步驟來啟用外掛程式。
 
 

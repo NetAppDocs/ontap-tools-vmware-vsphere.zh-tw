@@ -2,7 +2,7 @@
 permalink: configure/task_configure_alarm_thresholds.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以使用VSC設定警示、在Volume臨界值和Aggregate臨界值達到設定限制時通知您。 
+summary: 您可以使用 ONTAP 工具來設定警示、以便在音量臨界值和彙總臨界值達到設定限制時通知您。 
 ---
 = 設定警示臨界值
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以使用VSC設定警示、在Volume臨界值和Aggregate臨界�
 
 
 [role="lead"]
-您可以使用VSC設定警示、在Volume臨界值和Aggregate臨界值達到設定限制時通知您。
+您可以使用 ONTAP 工具來設定警示、以便在音量臨界值和彙總臨界值達到設定限制時通知您。
 
 *步驟*
 

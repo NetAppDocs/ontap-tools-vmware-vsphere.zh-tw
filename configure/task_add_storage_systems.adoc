@@ -2,7 +2,7 @@
 permalink: configure/task_add_storage_systems.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以手動將儲存系統新增至虛擬儲存主控台（VSC）。 
+summary: 您可以手動將儲存系統新增至 ONTAP 工具。 
 ---
 = 新增儲存系統
 :allow-uri-read: 
@@ -11,21 +11,21 @@ summary: 您可以手動將儲存系統新增至虛擬儲存主控台（VSC）�
 
 
 [role="lead"]
-您可以手動將儲存系統新增至虛擬儲存主控台（VSC）。
+您可以手動將儲存系統新增至 ONTAP 工具。
 
 
 NOTE: 如果 ONTAP 叢集已啟用 SAML 、則會以基本驗證方式與 ONTAP 進行通訊。
 
 *關於此工作*
 
-每次啟動虛擬儲存主控台（VSC）或選取*重新探索All（全部）*選項時、VSC都會自動探索可用的儲存系統。
+每當您啟動 ONTAP 工具或選取 * 重新探索 All （全部） * 選項時、 ONTAP 工具都會自動探索可用的儲存系統。
 
 
 NOTE: 直接 SVM 不支援 VVOL 資料存放區。
 
 *步驟*
 
-. 使用 ONTAP 工具首頁中的任一選項、將儲存系統新增至 VSC ：
+. 使用 ONTAP 工具首頁中的任一選項、將儲存系統新增至 ONTAP 工具：
 +
 ** 按一下「*儲存系統*>*新增*」。或
 ** 按一下「*總覽*>*入門*」、然後按一下「新增儲存系統」下的「*新增*」按鈕。
@@ -39,7 +39,7 @@ NOTE: 直接 SVM 不支援 VVOL 資料存放區。
 您也可以使用叢集或SVM的IPv6位址來新增儲存系統。
 
 +
-從 VSC 儲存系統頁面新增儲存設備時、請指定儲存設備所在的 vCenter Server 執行個體。「新增儲存系統」對話方塊提供可用vCenter Server執行個體的下拉式清單。如果您要將儲存設備新增至已與vCenter Server執行個體相關聯的資料中心、VSC不會顯示此選項。
+當您從「 ONTAP 工具儲存系統」頁面新增儲存設備時、請指定儲存設備所在的 vCenter Server 執行個體。「新增儲存系統」對話方塊提供可用vCenter Server執行個體的下拉式清單。如果您要將儲存設備新增至已與 vCenter Server 執行個體相關聯的資料中心、 ONTAP 工具就不會顯示此選項。
 
 +
 附註：

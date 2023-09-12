@@ -2,7 +2,7 @@
 permalink: configure/reference_set_ipv4_or_ipv6.html 
 sidebar: sidebar 
 keywords:  
-summary: 您可以將喜好設定檔kaminoprefs.xml中 新增一個選項、以針對所有新增至VSC的儲存系統、啟用支援IPV4或IPV6。 
+summary: 偏好設定檔 kaminoprefs.xml中 新增了一個選項、您可以設定此選項、為新增至 ONTAP 工具的所有儲存系統啟用對 IPv4 或 IPv6 的支援。 
 ---
 = 使用喜好設定檔設定IPV4或IPV6
 :allow-uri-read: 
@@ -11,21 +11,21 @@ summary: 您可以將喜好設定檔kaminoprefs.xml中 新增一個選項、以�
 
 
 [role="lead"]
-偏好設定檔案包含可控制ONTAP VMware vSphere作業的各項功能的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解虛擬儲存主控台（VSC）使用哪些偏好設定檔很有幫助。
+偏好設定檔案包含可控制ONTAP VMware vSphere作業的各項功能的設定。在大多數情況下、您不需要修改這些檔案中的設定。瞭解 ONTAP 工具使用的偏好檔案有助益。
 
-VSC有多個偏好設定檔。這些檔案包含可決定VSC執行各種作業的輸入金鑰和值。以下是VSC使用的部分偏好設定檔：
+ONTAP 工具有多個偏好設定檔。這些檔案包含項目金鑰和值、可決定 ONTAP 工具執行各種作業的方式。以下是 ONTAP 工具使用的一些喜好設定檔：
 
 「/opt/NetApp/vscserver/etc/kamino/kaminoprefs.xml」
 
 「/opt/NetApp/vscserver/etc/Vsc/vscpets.xml」
 
-在某些情況下、您可能必須修改偏好設定檔。例如、如果您使用 iSCSI 或 NFS 、且 ESXi 主機和儲存系統之間的子網路不同、則必須修改偏好設定檔。如果您未修改喜好設定檔中的設定、則由於VSC無法掛載資料存放區、資料存放區資源配置會失敗。
+在某些情況下、您可能必須修改偏好設定檔。例如、如果您使用 iSCSI 或 NFS 、且 ESXi 主機和儲存系統之間的子網路不同、則必須修改偏好設定檔。如果您未修改偏好設定檔中的設定、資料存放區資源配置將會失敗、因為 ONTAP 工具無法掛載資料存放區。
 
-您可以將喜好設定檔「kaminoprefs.xml」新增一個選項、設定為啟用對所有新增至VSC的儲存系統的IPV4或IPV6支援。
+喜好設定檔中新增了一個選項 `kaminoprefs.xml` 您可以設定為啟用對所有新增至 ONTAP 工具的儲存系統的 IPv4 或 IPv6 支援。
 
 * 「default.override.option.provision.mount.datastore.address.family`參數已新增至「kaminoprefs.xml」偏好檔案、以設定資料存放區資源配置的偏好資料LIF傳輸協定。
 +
-此偏好選項適用於所有新增至VSC的儲存系統。
+此偏好選項適用於新增至 ONTAP 工具的所有儲存系統。
 
 * 新選項的值包括「ipv4」、「ipv6」和「nONE」。
 * 預設值設為「無」。

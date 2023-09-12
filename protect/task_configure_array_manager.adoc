@@ -39,7 +39,7 @@ NOTE: VMware不支援SRM的NFS4.1傳輸協定。
 *** 如果您直接連線至SVM、則應輸入SVM管理LIF的IP位址。
 +
 
-NOTE: 在設定陣列管理程式時、您必須在Virtual Storage Console的Storage Systems（儲存系統）功能表中、針對用於新增儲存系統的儲存系統使用相同的連線和認證。例如、如果陣列管理程式組態為SVM範圍、則必須在SVM層級新增VSC下的儲存設備。
+NOTE: 在設定陣列管理程式時、您必須在Virtual Storage Console的Storage Systems（儲存系統）功能表中、針對用於新增儲存系統的儲存系統使用相同的連線和認證。例如、如果陣列管理員組態是 SVM 範圍、則必須在 SVM 層級新增 ONTAP 工具下的儲存設備。
 
 
 

@@ -2,7 +2,7 @@
 permalink: configure/reference_configure_guest_operating_system_scripts.html 
 sidebar: sidebar 
 keywords: Guest operating system 
-summary: 客體作業系統（OS）指令碼的ISO映像會掛載ONTAP 於VMware vSphere伺服器的VMware®工具上。若要使用客體作業系統指令碼來設定虛擬機器的儲存逾時、您必須從vSphere Client掛載指令碼。 
+summary: 適用於 VMware vSphere 伺服器的 ONTAP 工具上會裝載客體作業系統（ OS ）指令碼的 ISO 映像。若要使用客體作業系統指令碼來設定虛擬機器的儲存逾時、您必須從vSphere Client掛載指令碼。 
 ---
 = 設定客體作業系統指令碼
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 客體作業系統（OS）指令碼的ISO映像會掛載ONTAP 於VMware
 
 
 [role="lead"]
-客體作業系統（OS）指令碼的ISO映像會掛載到ONTAP VMware vSphere伺服器的VMware®工具上。若要使用客體作業系統指令碼來設定虛擬機器的儲存逾時、您必須從vSphere Client掛載指令碼。
+客體作業系統（ OS ）指令碼的 ISO 映像會安裝在 VMware vSphere 伺服器的工具上。若要使用客體作業系統指令碼來設定虛擬機器的儲存逾時、您必須從vSphere Client掛載指令碼。
 
 |===
 
@@ -45,6 +45,6 @@ Solaris
 \https://<appliance_ip>:8143/vsc/public/writable/solaris_gos_timeout_190-install.iso
 
 |===
-您應該從登錄到管理虛擬機器的 vCenter Server （ Elm ）的 VSC 執行個體複本安裝指令碼。如果您的環境包含多個 vCenter Server 、則應選取包含要設定儲存逾時值的虛擬機器執行個體。
+您應該從登錄至管理虛擬機器的 vCenter Server （ Elm ）的 ONTAP 工具執行個體複本安裝指令碼。如果您的環境包含多個 vCenter Server 、則應選取包含要設定儲存逾時值的虛擬機器執行個體。
 
 您應該登入虛擬機器、然後執行指令碼來設定儲存逾時值。

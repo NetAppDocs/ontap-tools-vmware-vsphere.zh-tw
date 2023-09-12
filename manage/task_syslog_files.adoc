@@ -15,14 +15,15 @@ summary: Syslog 用於將系統記錄傳送至集中式記錄伺服器。
 
 *關於此工作*
 
-適用於 VMware vSphere 9.12 版本的 ONTAP 工具會移除較早的 2.0 Syslog API 、並包含新的 3.0 Syslog 相關 API 、可支援相互驗證。請依照下列步驟設定系統記錄。
+從適用於 VMware vSphere 9.12 以上版本的 ONTAP 工具、 ONTAP 工具會移除較早的 2.0 Syslog API 。其中包含新的 3.0 Syslog 相關 API 、可支援相互驗證。
+請依照下列步驟設定系統記錄。
 
 *步驟*
 
 . 執行 _POST /2.0/security/user/login 以取得工作階段 ID 。
 . 傳送上述回應中收到的 SessionID 、以執行 _POST /3.0/apple-management / logging-client-certificate 。
 +
-這會為 VP 伺服器和 VSC 伺服器產生憑證。
+這會為 VP 伺服器和 ONTAP 工具伺服器產生憑證。
 
 . 將這兩個憑證複製到 Syslog 伺服器、並使其在 Syslog 伺服器上受到信任。
 +

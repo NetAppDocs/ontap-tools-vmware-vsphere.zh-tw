@@ -15,7 +15,10 @@ VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境�
 
 VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
 
-推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。ONTAP 工具 9.12 版本不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
+推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。從 ONTAP 工具 9.12 版本開始、 swagger 不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
+
+
+NOTE: 從適用於 VMware vSphere 9.13 版本的 ONTAP 工具中、 2.0 儲存功能設定檔 API 已不再提供使用。
 
 適用於VCF部署模式的API包括：
 
@@ -143,13 +146,11 @@ Volume
 執行Container create API時、您可以將現有的Volume新增至容器。但您應該確保現有磁碟區的壓縮和重複資料刪除值符合容器的儲存功能。當值不相符時、虛擬機器建立失敗。下表提供現有磁碟區對應儲存功能設定檔應有的值詳細資料。
 
 |===
-
-
 | * Container Storage功能設定檔* | *重複資料刪除* | *壓縮* 
 
 
  a| 
-白金級
+Platinal_AFF_A
  a| 
 兩者兼具
  a| 
@@ -158,7 +159,7 @@ Volume
 
 
  a| 
-AFF_Thick
+Platinal_AFF_C
  a| 
 兩者兼具
  a| 
@@ -167,7 +168,106 @@ AFF_Thick
 
 
  a| 
-AFF_Default
+Platinal_Asa_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_NVMe _AFF_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_NVMe _AFF_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_NVMe _Asa_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_thick AFF_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_thick AFF_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_BUST_ASA)
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Default_AFF_A
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
+AFF_Default_AFF_C
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
+AFF_Default_ASA
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
+AFF_Tiering AFF_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Tiering AFF_C
  a| 
 兩者兼具
  a| 
@@ -185,7 +285,7 @@ AFF_Tiering
 
 
  a| 
-AFF_Encrypted
+AFF_Encrypted_AFF_A
  a| 
 兩者兼具
  a| 
@@ -194,7 +294,7 @@ AFF_Encrypted
 
 
  a| 
-AFF_Encrypted_Tiering
+AFF_Encrypted_AFF_C
  a| 
 兩者兼具
  a| 
@@ -203,7 +303,7 @@ AFF_Encrypted_Tiering
 
 
  a| 
-AFF_Encrypted_Min50
+AFF_Encrypted_Aa_
  a| 
 兩者兼具
  a| 
@@ -212,20 +312,56 @@ AFF_Encrypted_Min50
 
 
  a| 
-FAS預設值
+AFF_Encrypted_Tiering _AFF_A
  a| 
-背景
+兩者兼具
  a| 
-無
+兩者兼具
 
 
 
  a| 
-FAS _最大20
+AFF_Encrypted_Tiering _AFF_C
  a| 
-背景
+兩者兼具
  a| 
-無
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Tiering （ ASA)
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Min50_AFF_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Min50_AFF_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Min50_Aa_
+ a| 
+兩者兼具
+ a| 
+兩者兼具
 
 
 
