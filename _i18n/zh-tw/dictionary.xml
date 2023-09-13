@@ -2107,7 +2107,6 @@
   <block id="e35bb7c62e5e99a4dd4c45dc7401d654" category="paragraph">客體作業系統（ OS ）指令碼的 ISO 映像會安裝在 VMware vSphere 伺服器的工具上。若要使用客體作業系統指令碼來設定虛擬機器的儲存逾時、您必須從vSphere Client掛載指令碼。</block>
   <block id="7a7c304e2893cb9575f4c95e13bd9557" category="paragraph">您應該從登錄至管理虛擬機器的 vCenter Server （ Elm ）的 ONTAP 工具執行個體複本安裝指令碼。如果您的環境包含多個 vCenter Server 、則應選取包含要設定儲存逾時值的虛擬機器執行個體。</block>
   <block id="955b51e13e470f907369543549a3a405" category="inline-link">適用於 VMware vSphere 9.13 的 ONTAP 工具版本資訊</block>
-  <block id="5e6870560e6c8c9613501cc132ae6c39" category="paragraph">如需詳細資訊、請參閱<block ref="a04b4fbd78e27d3612eea8f3ed389176" category="inline-link-rx"></block>。</block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">開放原始碼</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
   <block id="b1659ef2c01d8401d9bc67bd39f2ad1d" category="inline-link">適用於 VMware vSphere 9.13 的 ONTAP 工具注意事項</block>
@@ -2131,4 +2130,5 @@
   <block id="5693a336860dc6b738a1f289ec743b63" category="sidebar">適用於 VMware vSphere 9.13 文件的 ONTAP 工具</block>
   <block id="48c1a759d48445c3852e48203f0d0aae" category="sidebar">ONTAP 工具和 VASA Provider 記錄檔</block>
   <block id="b1ea6eb22e631a7bdaef7c4f2b598432" category="sidebar">重新產生 ONTAP 工具的 SSL 憑證</block>
+  <block id="ccfe3ded2b336756061426e3beb4ea84" category="paragraph">如需詳細資訊、請參閱<block ref="217abffc61852464bf1ed6a3818c434b" category="inline-link-rx"></block>。</block>
 </blocks>
