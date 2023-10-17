@@ -25,7 +25,7 @@ NOTE: 在Site Recovery Manager（SRM）中、資源可以是資源集區、ESXi�
 . 登入vCenter Server、然後按一下*站台恢復*>*站台*。
 . 選取您的受保護網站、然後按一下*管理*。
 . 在Manage（管理）選項卡中，選擇* Resource Mappings（資源映射）*。
-. 按一下 image:../media/new_resource_mappings.gif[""] 圖示以建立新的資源對應。
+. 按一下 image:../media/new_resource_mappings.gif["地球圖示"] 圖示以建立新的資源對應。
 +
 此時會出現「建立資源對應」精靈。
 

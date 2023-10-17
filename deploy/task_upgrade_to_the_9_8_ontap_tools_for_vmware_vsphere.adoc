@@ -98,12 +98,13 @@ IMPORTANT: 僅vCenter Server 6.7及更新版本才支援IPv6。
 
 [NOTE]
 ====
+* 從適用於 VMware vSphere 9.12 以上版本的 ONTAP 工具、 ONTAP 驗證是透過憑證完成。您可以新增 CA 簽署的憑證或自我簽署的憑證。請參閱、 link:../configure/task_modify_storage_system.html["修改儲存系統"] 以取得相關指示。
 * 如果從7.0版ONTAP 的VMware Tools升級至ONTAP 最新版的VMware Tools、您必須先建立儲存功能設定檔、才能嘗試編輯現有的VM儲存原則、否則可能會發生錯誤、指出值不正確或遺失。
 * 如果從舊版升級至ONTAP 最新版的支援工具、在「vvol.properties」檔案中發現「VVOL.reBalance.threshold」屬性遺失。
 +
-屬性的預設值設為85%。
+內容的預設值設為 85% 。 * 升級至已啟用 FIPS 的最新 ONTAP 工具版本後、您的 vCenter 版本較舊、但不支援 FIPS 、則部署仍可正常運作。
+但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。
 
-* 當您升級至已啟用 FIPS 的最新 ONTAP 工具版本、但您擁有不支援 FIPS 的舊版 vCenter 之後、部署仍會正常運作。但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。
 
 
 ====

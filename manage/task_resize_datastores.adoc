@@ -26,7 +26,7 @@ NOTE: 如果您使用ASA All SAN Array（更新版本）類型的儲存平台ONT
 
 . 在vSphere Client首頁中、按一下*主機與叢集*。
 . 在導覽窗格中、選取包含資料存放區的資料中心。
-. 在資料存放區上按一下滑鼠右鍵、然後選取「* NetApp ONTAP S庫 工具*>*指派QoS*」。
+. 在資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* > * Resize non-vVols datastore* 。
 . 在「調整大小」對話方塊中、指定資料存放區的新大小、然後按一下「*確定*」。
 +
 您可以執行「Storage Systems（儲存系統）」功能表中的「*重新探索全部*」選項、手動更新「Storage Systems and Dashboard（儲存系統和儀表板）」下的儲存清單、或等待下次排程的重新整理。

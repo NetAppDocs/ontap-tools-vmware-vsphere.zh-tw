@@ -13,10 +13,6 @@ summary: 您必須先設定儲存系統、再執行Site Recovery Manager（SRM�
 [role="lead"]
 您必須先設定儲存系統、再執行Site Recovery Manager（SRM）的儲存複寫介面卡（SRA）。
 
-適用於 VMware vSphere 的 ONTAP 工具支援 VMware 的 SRM 共享還原網站組態。如需詳細資訊、請參閱： https://docs.vmware.com/en/Site-Recovery-Manager/8.6/com.vmware.srm.install_config.doc/GUID-EBF84252-DF37-43CD-ADC8-E90F5254F315.html["共享恢復站點配置中的 Site Recovery Manager"]。
-
-。 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["如何在 SRM 共享恢復站點中配置 SRA"] 知識庫文章詳細說明設定支援 SRM 共用修復網站組態的 SRA 的程序。
-
 *您需要的是什麼*
 
 您必須在受保護的站台和恢復站台上安裝下列程式：

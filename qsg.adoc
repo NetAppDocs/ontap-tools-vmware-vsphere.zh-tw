@@ -60,13 +60,37 @@ ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用
 使用下列預設雙向TCP連接埠的VMware Tools：ONTAP
 
 |===
+
+
 | *額外需求* | *說明欄* 
 
 
-| 9083. | 啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠支援套件下載、 Web-CLI 使用者介面、以及從 VMware 到 VP 的控制路徑通訊。SRA 會與後端 SRA 服務就此連接埠號碼進行通訊。 
+ a| 
+9083.
+ a| 
+啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠可用於下載 VP 支援套件、存取 Web-CLI 使用者介面、以及控制 VMware 與 VP 之間的路徑通訊。
 
 
-| 8143. | ONTAP 工具會偵聽此連接埠上的安全通訊。 
+
+ a| 
+443..
+ a| 
+根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。安全連線預設會啟用 443 連接埠。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。
+
+
+
+ a| 
+8143.
+ a| 
+ONTAP 工具會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。此連接埠可用於 ONTAP 工具服務和匯出 ONTAP 工具伺服器記錄檔。register.html 頁面託管在此連接埠上。其餘的交換器會暴露在此連接埠上。
+
+
+
+ a| 
+8443
+ a| 
+此連接埠用於遠端外掛程式服務。
+
 |===
 最低儲存與應用程式需求：
 

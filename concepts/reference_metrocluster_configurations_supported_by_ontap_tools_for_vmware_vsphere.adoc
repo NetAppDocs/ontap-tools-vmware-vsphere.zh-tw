@@ -14,9 +14,6 @@ summary: VMware vSphere的支援VMware vSphere的支援環境、這些環境使�
 VMware vSphere的支援VMware vSphere的支援環境、這些環境使用的是VMware vSphere的支援功能。ONTAP MetroCluster ONTAP大部分支援都是自動的。不過、當您將 MetroCluster 環境與 ONTAP 工具和 VASA Provider 搭配使用時、可能會發現一些差異。
 
 
-NOTE: SRA不支援MetroCluster 不支援的不支援的組態。
-
-
 
 == MetroCluster 組態和 ONTAP 工具
 
@@ -37,3 +34,17 @@ VASA Provider會自動支援使用MetroCluster 不完整組態的環境。在VAS
 
 
 NOTE: VASA Provider在切換後、不會在次要站台上的SVM名稱加上「-MC」字尾。
+
+
+
+== 內部組態與SRA MetroCluster
+
+儲存複寫介面卡（ SRA ）支援使用 MetroCluster 組態（ MCC ）搭配 FC 傳輸協定的環境。
+
+所有儲存虛擬機器（ SVM ）名稱在 MCC 叢集上都應是唯一的、這是 MCC 和 SA 組態的先決條件。如果名稱不是唯一的、則會造成衝突、且 SRA 工作流程會失敗。
+
+必要行動：
+
+. 在執行 MCC 切換或切換後、請確定來源叢集上的 _SnapMirror list-destinations_ 命令會顯示正確的輸出、並顯示新的 SVM 名稱（ <vserver_name> - MC ）。命令可能需要 30 分鐘才能執行。
+. 在繼續進行其他的 SRA 工作流程之前、請先從 SRM UI 執行「探索裝置」作業。此作業可確保 SRM 在切換或切換後、能夠察覺 SVM 名稱的變更。
+
