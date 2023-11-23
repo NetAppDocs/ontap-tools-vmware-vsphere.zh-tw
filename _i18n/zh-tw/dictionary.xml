@@ -2128,8 +2128,6 @@
   <block id="b1caae1e6a180ff384d708f6f5f51304" category="admonition">在工具維護主控台中變更管理員密碼後、如果 ONTAP 工具上已啟用並設定了、請執行中提供的 * 更新 ONTAP 認證 * 程序 <block ref="1e7a640d1bcd6b5c87262f4ec3ea69d7" category="inline-link-macro-rx"></block> 區段。如果未能遵循這些指示、將會導致 SRM 報告錯誤。</block>
   <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">在資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* &gt; * Resize non-vVols datastore* 。</block>
   <block id="2d7ee85ca6eba61e2ebc56fcd9749a22" category="section-title">內部組態與SRA MetroCluster</block>
-  <block id="566082b04c4b3f59fa2abd9407221d29" category="paragraph">儲存複寫介面卡（ SRA ）支援使用 MetroCluster 組態（ MCC ）搭配 FC 傳輸協定的環境。</block>
-  <block id="dd316d5ffd2f84622629d92855047e4d" category="paragraph">所有儲存虛擬機器（ SVM ）名稱在 MCC 叢集上都應是唯一的、這是 MCC 和 SA 組態的先決條件。如果名稱不是唯一的、則會造成衝突、且 SRA 工作流程會失敗。</block>
   <block id="a3a5ab624299236efd1aa00751d3e9d9" category="paragraph">必要行動：</block>
   <block id="9a5bef2e6baedf8812a9649b615baf1a" category="list-text">在執行 MCC 切換或切換後、請確定來源叢集上的 _SnapMirror list-destinations_ 命令會顯示正確的輸出、並顯示新的 SVM 名稱（ &lt;vserver_name&gt; - MC ）。命令可能需要 30 分鐘才能執行。</block>
   <block id="44a62aa72367cca25b9e3f92da55ace0" category="list-text">在繼續進行其他的 SRA 工作流程之前、請先從 SRM UI 執行「探索裝置」作業。此作業可確保 SRM 在切換或切換後、能夠察覺 SVM 名稱的變更。</block>
@@ -2154,4 +2152,6 @@
   <block id="c65d22128372567906e7fa3a79c5aa8c" category="list-text">從適用於 VMware vSphere 9.12 以上版本的 ONTAP 工具、 ONTAP 驗證是透過憑證完成。您可以新增 CA 簽署的憑證或自我簽署的憑證。請參閱、 <block ref="6424e4a6ccc5b08f64694eae7a99760f" category="inline-link-macro-rx"></block> 以取得相關指示。</block>
   <block id="ce1bc9deb1a63ccda9fedbd2789b5462" category="paragraph">內容的預設值設為 85% 。 * 升級至已啟用 FIPS 的最新 ONTAP 工具版本後、您的 vCenter 版本較舊、但不支援 FIPS 、則部署仍可正常運作。
 但是如果您將vCenter升級至最新的FIPS支援版本、而且您擁有較早版本ONTAP 的VMware工具、則只有在vCenter上停用FIPS時、部署才會運作。</block>
+  <block id="700f785cc3b0c94782ea099d30974628" category="paragraph">儲存複寫介面卡（ SRA ）支援使用 MetroCluster 組態（ MCC ）搭配 NFS 、 iSCSI 和 FCP 傳輸協定的環境。</block>
+  <block id="b0cf503432f798961e23d246f3541857" category="paragraph">所有儲存虛擬機器（ SVM ）名稱在 MCC 叢集上都應是唯一的、這是 MCC SRA 組態的先決條件。如果名稱不是唯一的、則會造成衝突、且 SRA 工作流程會失敗。</block>
 </blocks>

@@ -5,17 +5,14 @@ keywords: QSG, ONTAP tools for VMware vSphere, Quick start guide, Installing
 summary: 提供VMware ONTAP vSphere的部署和初始化功能。 
 ---
 = VMware vSphere快速入門工具ONTAP
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :allow-uri-read: 
-:toc: 
 :toclevels: 1
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
