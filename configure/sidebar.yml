@@ -36,8 +36,6 @@ entries:
   entries:
   - title: 儲存系統的概述ONTAP 、以瞭解各種工具
     url: "/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html"
-  - title: 設定儲存系統的預設認證資料
-    url: "/configure/task_set_default_credentials_for_storage_systems.html"
   - title: 新增儲存系統
     url: "/configure/task_add_storage_systems.html"
   - title: 修改儲存系統

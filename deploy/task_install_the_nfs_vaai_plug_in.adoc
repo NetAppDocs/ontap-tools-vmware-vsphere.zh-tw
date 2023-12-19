@@ -25,6 +25,7 @@ summary: 您可以使用ONTAP VMware vSphere的GUI of支援VMware vSphere的VMwa
 * 您應該使用「vserver NFS modify -vserver vserver_name -vStorage enabled_」命令、在儲存虛擬機器（SVM）上啟用vStorage選項。
 * 如果您使用的是NetApp NFS VAAI外掛程式2.0、則應該有ESXi 7.0 Update 1或更新版本。
 * 您應該擁有 vSphere 7.x 版本、因為 vSphere 6.5 已過時、不支援 vSphere 8.x 。
+* NetApp NFS VAAI 外掛程式 2.0.1 （組建 16 ）支援 vSphere 8.x 。
 
 
 *步驟*
