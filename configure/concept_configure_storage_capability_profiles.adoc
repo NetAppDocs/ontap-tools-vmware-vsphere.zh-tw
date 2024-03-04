@@ -27,27 +27,35 @@ NOTE: 直接 SVM 不支援 VVOL 資料存放區。
 * Platinal_AFF_A
 * Platinal_AFF_C
 * Platinal_Asa_A
+* Platinal_Asa_C
 * AFF_NVMe _AFF_A
 * AFF_NVMe _AFF_C
 * AFF_NVMe _Asa_A
+* AFF_NVMe _Asa_C
 * AFF_thick AFF_A
 * AFF_thick AFF_C
 * AFF_BUST_ASA)
+* AFF_BUST_AS_C
 * AFF_Default_AFF_A
 * AFF_Default_AFF_C
 * AFF_Default_ASA
+* AFF_Default_Asa_C
 * AFF_Tiering AFF_A
 * AFF_Tiering AFF_C
+* AFF_Tiering
 * AFF_Tiering
 * AFF_Encrypted_AFF_A
 * AFF_Encrypted_AFF_C
 * AFF_Encrypted_Aa_
+* AFF_Encrypted_Aa_C
 * AFF_Encrypted_Tiering _AFF_A
 * AFF_Encrypted_Tiering _AFF_C
+* AFF_Encrypted_Tiering （ ASA)
 * AFF_Encrypted_Tiering （ ASA)
 * AFF_Encrypted_Min50_AFF_A
 * AFF_Encrypted_Min50_AFF_C
 * AFF_Encrypted_Min50_Aa_
+* AFF_Encrypted_Min50_Asa_C
 * 銅級
 
 
@@ -76,5 +84,4 @@ NOTE: 直接 SVM 不支援 VVOL 資料存放區。
 保留舊版儲存功能設定檔、以提供向下相容性。如果未使用預設範本、則在升級至ONTAP 最新版的VMware Tools期間、會覆寫現有的範本、以反映與儲存功能設定檔效能相關的新QoS指標和分層原則。
 
 * 您無法修改或使用舊版儲存功能設定檔來配置新的虛擬資料存放區或VM儲存原則。
-* 您必須為所有新的資料存放區使用新的儲存功能設定檔。
 

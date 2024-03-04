@@ -13,7 +13,7 @@ summary: VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。
 [role="lead"]
 VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境中。ONTAPVCF部署的主要目標是在ONTAP 雲端設定中使用VMware工具、並在不使用vCenter Server的情況下建立容器。
 
-VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以使用REST API新增儲存系統並建立容器。下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
+VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以新增、刪除或修改儲存系統、並使用 REST API 建立容器。下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
 
 推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。從 ONTAP 工具 9.12 版本開始、 swagger 不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
 
@@ -78,6 +78,28 @@ NOTE: 從適用於 VMware vSphere 9.13 版本的 ONTAP 工具中、 2.0 儲存�
 貼文
  a| 
 已修改
+ a| 
+儲存系統
+
+
+
+ a| 
+/3.0/ 儲存 / 叢集
+ a| 
+刪除
+ a| 
+新功能
+ a| 
+儲存系統
+
+
+
+ a| 
+/3.0/ 儲存 / 叢集
+ a| 
+放入
+ a| 
+新功能
  a| 
 儲存系統
 
@@ -177,6 +199,15 @@ Platinal_Asa_A
 
 
  a| 
+Platinal_Asa_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
 AFF_NVMe _AFF_A
  a| 
 兩者兼具
@@ -196,6 +227,15 @@ AFF_NVMe _AFF_C
 
  a| 
 AFF_NVMe _Asa_A
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_NVMe _Asa_C
  a| 
 兩者兼具
  a| 
@@ -231,6 +271,15 @@ AFF_BUST_ASA)
 
 
  a| 
+AFF_BUST_AS_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
 AFF_Default_AFF_A
  a| 
 背景
@@ -258,6 +307,15 @@ AFF_Default_ASA
 
 
  a| 
+AFF_Default_Asa_C
+ a| 
+背景
+ a| 
+無
+
+
+
+ a| 
 AFF_Tiering AFF_A
  a| 
 兩者兼具
@@ -268,6 +326,15 @@ AFF_Tiering AFF_A
 
  a| 
 AFF_Tiering AFF_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Tiering
  a| 
 兩者兼具
  a| 
@@ -312,6 +379,15 @@ AFF_Encrypted_Aa_
 
 
  a| 
+AFF_Encrypted_Aa_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
 AFF_Encrypted_Tiering _AFF_A
  a| 
 兩者兼具
@@ -322,6 +398,15 @@ AFF_Encrypted_Tiering _AFF_A
 
  a| 
 AFF_Encrypted_Tiering _AFF_C
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Tiering （ ASA)
  a| 
 兩者兼具
  a| 
@@ -358,6 +443,15 @@ AFF_Encrypted_Min50_AFF_C
 
  a| 
 AFF_Encrypted_Min50_Aa_
+ a| 
+兩者兼具
+ a| 
+兩者兼具
+
+
+
+ a| 
+AFF_Encrypted_Min50_Asa_C
  a| 
 兩者兼具
  a| 

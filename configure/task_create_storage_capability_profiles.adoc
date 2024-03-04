@@ -72,7 +72,7 @@ _ 如此將會關閉目前的工作流程來移除輸入的資料、並開啟「
 您可以使用名稱和說明索引標籤上的 * 說明 * 欄位來說明儲存功能設定檔（ SCP ）的用途。提供良好的說明非常實用、因為根據所使用的應用程式設定不同的設定檔是很好的做法。
 
 例如、業務關鍵應用程式需要具備支援更高效能的設定檔、例如 AFF 和 ASA 平台。用於測試或訓練的資料存放區可能會使用效能較低的 Flash Array Hybrid 平台設定檔、並啟用所有儲存效率功能和分層功能來控制成本。
-平台類型與非對稱旗標的組合決定了 CDP 的類型。例如： Platinal_Asa_Platinum 、 Platinal_AFF_A 、 Platinal_AFF_C
+平台類型與非對稱旗標的組合決定了 CDP 的類型。例如： Platinum 、 ASA 、 Platinum 、 ASA 、 Platinum 、 AFF_A 、 Platinum 、 AFF_C
 
 如果您已為vCenter Server啟用「連結」模式、則必須選取要為其建立儲存功能設定檔的vCenter Server。
 
