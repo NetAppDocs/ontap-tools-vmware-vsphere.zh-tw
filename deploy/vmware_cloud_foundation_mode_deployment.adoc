@@ -13,7 +13,12 @@ summary: VMware vSphere的各種工具可部署在VMware Cloud基礎環境中。
 [role="lead"]
 VMware vSphere的各種工具可部署在VMware Cloud Foundation（VCF）環境中。ONTAPVCF部署的主要目標是在ONTAP 雲端設定中使用VMware工具、並在不使用vCenter Server的情況下建立容器。
 
-VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以新增、刪除或修改儲存系統、並使用 REST API 建立容器。下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
+VCF模式可讓您建立儲存設備的容器、而不需要vCenter Server。在ONTAP VCF模式下部署完各種功能後、預設會啟用VASA Provider。部署完成後、您可以新增、刪除或修改儲存系統、並使用 REST API 建立容器。
+
+
+NOTE: ONTAP 工具支援修改及刪除 VMware vSphere 9.13P1 版本之後版本的儲存系統。
+
+下列文章說明啟用 VCF 時、將儲存設備新增至 ONTAP 工具的程序、 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["從 Swagger-UI 新增儲存設備至 ONTAP 工具"]。
 
 推出新的API來產生用於驗證API呼叫的_apple-ap-tokon_。部分現有的API已經過修改、納入_applier-apier-tokon_標頭。從 ONTAP 工具 9.12 版本開始、 swagger 不支援 1.0 API 。先前在 1.0 上的指標會移至 2.0 或 3.0 API 。
 
@@ -469,7 +474,7 @@ AFF_Encrypted_Min50_Asa_C
 |===
 您可以使用ONTAP 修補程式API來設定適當的值。
 
-https://<machine_IP>/api/storage/volumes/{uuid}`
+`\https://<machine_IP>/api/storage/volumes/{uuid}`
 
 利用VCF部署ONTAP 的支援功能、只能建立容器工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應使用「伺服器」頁面向 vCenter Server 註冊 ONTAP 工具。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。在 VCF 模式中、 ONTAP 工具的限制是、您必須先登錄外掛程式、才能設定用於災難恢復的。當您在不使用 VCF 模式的情況下部署 ONTAP 工具時、系統會自動進行登錄。
 

@@ -32,7 +32,7 @@ NOTE: VMware Site Recovery Manager（SRM）不使用SRA來管理vVols資料存�
 請依照下列步驟啟用 quick （快速）重新同步旗標：
 
 .步驟
-. 登入控制面板、網址為 _https ： <IP address> ： 9083_ 、然後按一下網路型 CLI 介面。
+. 登入控制面板、網址為 `/https://<IP address>:9083` 然後按一下「網路型 CLI 介面」。
 . 執行命令 `vp updateconfig -key=snapmirror.quick.resync.enabled -value=true`。
 . 執行命令 `vp reloadconfig`。
 

@@ -34,4 +34,4 @@ VMware vSphere的支援功能表可讓您針對需求設定不同的記錄層級
 * Vasa Provider伺服器：「vvolvp.log」、「error.log」和「NetApp.log」
 
 
-此外、VASA Provider Web命令列介面（CLI）頁面也包含所發出的API呼叫、傳回的錯誤、以及數個效能相關的計數器。網頁CLI頁位於 'https://<IP_address_or_hostname>:9083/stats'[]。
+此外、VASA Provider Web命令列介面（CLI）頁面也包含所發出的API呼叫、傳回的錯誤、以及數個效能相關的計數器。網頁CLI頁位於 `\https://<IP_address_or_hostname>:9083/stats`。

@@ -18,7 +18,7 @@ NOTE: 建議您在執行 VASA 清理之前、先移除任何 VVols 資料存放�
 
 *步驟*
 
-. 請移至以取消登錄外掛程式 https://OTV_IP:8143/Register.html[]
+. 請移至以取消登錄外掛程式 `\https://OTV_IP:8143/Register.html`
 . 確認 vCenter 上已不再提供外掛程式。
 . 關閉 VMware vSphere VM 的 ONTAP 工具
 . 刪除適用於 VMware vSphere VM 的 ONTAP 工具

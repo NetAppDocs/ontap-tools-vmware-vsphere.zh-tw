@@ -17,7 +17,7 @@ summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式�
 
 * 您應該已從 ONTAP 工具下載 ONTAP 權限檔案、步驟如下：
 +
-** 瀏覽至 https://{virtual_appliance_IP}:9083/vsc/config/[]
+** 瀏覽至 `\https://{virtual_appliance_IP}:9083/vsc/config/`
 ** 下載檔案 VSC_ONTAP_User_Privileges.zip
 ** 解壓縮下載的 VSC_ONTAP_User_Privileges.zip 檔案
 ** 存取系統管理員
