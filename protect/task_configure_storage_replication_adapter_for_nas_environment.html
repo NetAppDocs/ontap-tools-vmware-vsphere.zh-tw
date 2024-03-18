@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>設定NAS環境的儲存複寫介面卡</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="設定NAS環境的儲存複寫介面卡" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+	<meta property="og:description" content="您必須先設定儲存系統、再執行VMware vCenter Site Recovery Manager（SRM）的儲存複寫介面卡（SRA）。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="您必須先設定儲存系統、再執行VMware vCenter Site Recovery Manager（SRM）的儲存複寫介面卡（SRA）。">
+  <meta name="keywords" content=" "><!-- Icons -->
+  <link rel="icon" href="/zh-tw/ontap-tools-vmware-vsphere/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/ontap-tools-vmware-vsphere/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/zh-tw/ontap-tools-vmware-vsphere/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/ontap-tools-vmware-vsphere/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/ontap-tools-vmware-vsphere/js/na-search.js'></script><script src='/zh-tw/ontap-tools-vmware-vsphere/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/zh-tw/ontap-tools-vmware-vsphere/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/ontap-tools-vmware-vsphere/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/ontap-tools-vmware-vsphere/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/ontap-tools-vmware-vsphere/js/jszip.min.js'></script><script src='/zh-tw/ontap-tools-vmware-vsphere/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/zh-tw/ontap-tools-vmware-vsphere/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/tw">
+                <image id="ie-header-logo" src="/zh-tw/ontap-tools-vmware-vsphere/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">文件</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">繁體中文</span>
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">所有 NetApp</span>
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">支援</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">知識庫</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">訓練</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/zh-tw/ontap-tools-vmware-vsphere/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">所有文件</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/zh-tw/ontap-tools-vmware-vsphere/">-->
+      ONTAP tools for VMware vSphere 9.13
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors"><div id="version-dropdown-new" class="custom-dropdown" >
+  <div class="custom-dropdown-select unselected" title=" 9.13">
+    <label>版本</label>
+    <span translate="no" class="notranslate">9.13</span>
+    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown version invisible" />
+    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup version" />
+  </div>
+
+  <ul class="custom-dropdown-menu"><li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.13</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere-912/protect/task_configure_storage_replication_adapter_for_nas_environment.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.12</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere-911/protect/task_configure_storage_replication_adapter_for_nas_environment.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.11</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere-910/protect/task_configure_storage_replication_adapter_for_nas_environment.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.10</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere-98/protect/task_configure_storage_replication_adapter_for_nas_environment.html" target="_self">
+        <span translate="no" class="notranslate"><span class="version"> 9.8</span></span>
+      </a>
+                     
+    </li>
+    
+  </ul>
+</div></div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/zh-tw/ontap-tools-vmware-vsphere/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/zh-tw/ontap-tools-vmware-vsphere/search.html" 
+        data-type="widget"
+        data-placeholder="搜尋說明文件"
+        data-no-results-found="找不到 {query} 的結果"
+        data-did-you-mean="搜尋 {suggestion}。"
+        data-no-results-found-did-you-mean="找不到 {query} 的結果。您的意思是 {suggestion} 嗎？"
+        data-results-found="找到 {hitCount} 個結果"
+        data-error-message="發生錯誤。請再試一次。"
+        data-error-reset="重設搜尋"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="適用於 VMware vSphere 9.13 文件的 ONTAP 工具"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-tools-vmware-vsphere/index.html">
+        適用於 VMware vSphere 9.13 文件的 ONTAP 工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="版本資訊"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/release_notes.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-tools-vmware-vsphere/release_notes.html">
+        版本資訊
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware工具總覽ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_virtual_storage_console_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_virtual_storage_console_overview.html">
+        VMware工具總覽ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VVVols的VASA Provider組態"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_configure_vvols_datastores.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_configure_vvols_datastores.html">
+        VVVols的VASA Provider組態
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="用於災難恢復的儲存複寫介面卡"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_manage_disaster_recovery_setup_using_srm.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_manage_disaster_recovery_setup_using_srm.html">
+        用於災難恢復的儲存複寫介面卡
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="角色型存取控制"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 角色型存取控制</div>-->
+         角色型存取控制
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具的角色型存取控制概觀"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html">
+        ONTAP 工具的角色型存取控制概觀
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Server權限的元件"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/reference_components_that_make_up_vcenter_server_permissions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/reference_components_that_make_up_vcenter_server_permissions.html">
+        vCenter Server權限的元件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="指派和修改vCenter Server權限的重點"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/reference_key_points_about_assigning_and_modifying_permissions.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/reference_key_points_about_assigning_and_modifying_permissions.html">
+        指派和修改vCenter Server權限的重點
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="標準角色隨ONTAP 附於整套的功能"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_standard_roles_packaged_with_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_standard_roles_packaged_with_ontap_tools_for_vmware_vsphere.html">
+        標準角色隨ONTAP 附於整套的功能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具工作所需的權限"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_privileges_required_for_vsc_tasks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_privileges_required_for_vsc_tasks.html">
+        ONTAP 工具工作所需的權限
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="適用於VMware的權限ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_ontap_role_based_access_control_feature_for_ontap_tools.html">
+        適用於VMware的權限ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何設定ONTAP 以角色為基礎的存取控制功能、以利執行各項功能"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_how_to_configure_data_ontap_role_based_access_control_for_vsc_for_vmware_vsphere.html">
+        如何設定ONTAP 以角色為基礎的存取控制功能、以利執行各項功能
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ONTAP 高可用度的功能以供使用"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html">
+        設定ONTAP 高可用度的功能以供使用
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的支援支援VMware的組態MetroCluster ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/concepts/reference_metrocluster_configurations_supported_by_ontap_tools_for_vmware_vsphere.html">
+        支援的支援支援VMware的組態MetroCluster ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署及升級ONTAP 功能"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 部署及升級ONTAP 功能</div>-->
+         部署及升級ONTAP 功能
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/concept_installation_workflow_for_new_users.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/concept_installation_workflow_for_new_users.html">
+        VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="針對現有使用者的部署工作流程ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/concept_installation_workflow_for_existing_users_of_ontap_tools.html">
+        針對現有使用者的部署工作流程ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware Cloud Foundation ONTAP 部署功能、適用於各種VMware工具"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/vmware_cloud_foundation_mode_deployment.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/vmware_cloud_foundation_mode_deployment.html">
+        VMware Cloud Foundation ONTAP 部署功能、適用於各種VMware工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="VMware工具快速入門ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/qsg.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/qsg.html">
+        VMware工具快速入門ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署ONTAP 這些功能的需求"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 部署ONTAP 這些功能的需求</div>-->
+         部署ONTAP 這些功能的需求
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具的連接埠需求"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/reference_port_requirements_for_vsc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/reference_port_requirements_for_vsc.html">
+        ONTAP 工具的連接埠需求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="空間與規模需求ONTAP 、滿足各種需求"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html">
+        空間與規模需求ONTAP 、滿足各種需求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的儲存系統、授權及應用ONTAP 程式、適用於各種功能"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/concept_supported_storage_system_and_applications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/concept_supported_storage_system_and_applications.html">
+        支援的儲存系統、授權及應用ONTAP 程式、適用於各種功能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署ONTAP 資訊工具的考量事項"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/reference_considerations_for_deploying_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/reference_considerations_for_deploying_ontap_tools_for_vmware_vsphere.html">
+        部署ONTAP 資訊工具的考量事項
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署ONTAP 各種工具"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 部署ONTAP 各種工具</div>-->
+         部署ONTAP 各種工具
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何下載ONTAP 功能介紹工具"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/concept_how_to_download_ontap_tools.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/concept_how_to_download_ontap_tools.html">
+        如何下載ONTAP 功能介紹工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="如何部署ONTAP 資訊工具"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_deploy_ontap_tools.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_deploy_ontap_tools.html">
+        如何部署ONTAP 資訊工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="啟用VASA Provider以設定虛擬資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html">
+        啟用VASA Provider以設定虛擬資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝NFS VAAI外掛程式"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_install_the_nfs_vaai_plug_in.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_install_the_nfs_vaai_plug_in.html">
+        安裝NFS VAAI外掛程式
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="清除vSphere快取下載的外掛程式套件"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html">
+        清除vSphere快取下載的外掛程式套件
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級ONTAP 功能"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 升級ONTAP 功能</div>-->
+         升級ONTAP 功能
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級至ONTAP 最新版的VMware工具"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html">
+        升級至ONTAP 最新版的VMware工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="升級儲存複寫介面卡"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/deploy/task_upgrade_storage_replication_adapter.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/deploy/task_upgrade_storage_replication_adapter.html">
+        升級儲存複寫介面卡
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ONTAP VMware工具"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定ONTAP VMware工具</div>-->
+         設定ONTAP VMware工具
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ONTAP 功能的工作流程"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/concept_workflow_for_configuring_the_unified_appliance.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/concept_workflow_for_configuring_the_unified_appliance.html">
+        設定ONTAP 功能的工作流程
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ESXi設定"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定ESXi設定</div>-->
+         設定ESXi設定
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ESXi伺服器多重路徑和逾時設定"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_configure_esx_server_multipathing_and_timeout_settings.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_configure_esx_server_multipathing_and_timeout_settings.html">
+        設定ESXi伺服器多重路徑和逾時設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ESXi主機值是使用ONTAP 各種功能介紹工具設定的"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html">
+        ESXi主機值是使用ONTAP 各種功能介紹工具設定的
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定客體作業系統"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定客體作業系統</div>-->
+         設定客體作業系統
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定客體作業系統指令碼"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/reference_configure_guest_operating_system_scripts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/reference_configure_guest_operating_system_scripts.html">
+        設定客體作業系統指令碼
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定Windows客體作業系統的逾時值"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_run_the_gos_timeout_scripts_for_windows.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_run_the_gos_timeout_scripts_for_windows.html">
+        設定Windows客體作業系統的逾時值
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定Solaris客體作業系統的逾時值"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_run_the_gos_timeout_scripts_for_solaris.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_run_the_gos_timeout_scripts_for_solaris.html">
+        設定Solaris客體作業系統的逾時值
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定Linux客體作業系統的逾時值"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_run_the_gos_timeout_scripts_for_rhel4_or_sles9.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_run_the_gos_timeout_scripts_for_rhel4_or_sles9.html">
+        設定Linux客體作業系統的逾時值
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在多個 vCenter Server 環境中登錄 ONTAP 工具的需求"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/concept_requirements_for_registering_vsc_in_multiple_vcenter_servers_environment.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/concept_requirements_for_registering_vsc_in_multiple_vcenter_servers_environment.html">
+        在多個 vCenter Server 環境中登錄 ONTAP 工具的需求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定ONTAP 「VMware Tools偏好設定」檔案"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定ONTAP 「VMware Tools偏好設定」檔案</div>-->
+         設定ONTAP 「VMware Tools偏好設定」檔案
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用喜好設定檔設定IPV4或IPV6"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/reference_set_ipv4_or_ipv6.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/reference_set_ipv4_or_ipv6.html">
+        使用喜好設定檔設定IPV4或IPV6
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增不同的子網路"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/add_different_subnets.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/add_different_subnets.html">
+        新增不同的子網路
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在不同的子網路上啟用資料存放區裝載"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_enable_datastore_mounting_across_different_subnets.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_enable_datastore_mounting_across_different_subnets.html">
+        在不同的子網路上啟用資料存放區裝載
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="重新產生 ONTAP 工具的 SSL 憑證"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_regenerate_an_ssl_certificate_for_vsc.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_regenerate_an_ssl_certificate_for_vsc.html">
+        重新產生 ONTAP 工具的 SSL 憑證
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定儲存系統"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定儲存系統</div>-->
+         設定儲存系統
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存系統的概述ONTAP 、以瞭解各種工具"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/concept_configure_storage_systems_for_ontap_tools_for_vmware_vsphere.html">
+        儲存系統的概述ONTAP 、以瞭解各種工具
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增儲存系統"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_add_storage_systems.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_add_storage_systems.html">
+        新增儲存系統
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="修改儲存系統"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_modify_storage_system.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_modify_storage_system.html">
+        修改儲存系統
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="更新憑證"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_update_certificate.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_update_certificate.html">
+        更新憑證
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="探索儲存系統與主機"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_discover_storage_systems_and_hosts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_discover_storage_systems_and_hosts.html">
+        探索儲存系統與主機
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="重新整理儲存系統顯示器"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_refresh_the_storage_system_display.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_refresh_the_storage_system_display.html">
+        重新整理儲存系統顯示器
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定警示臨界值"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_configure_alarm_thresholds.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_configure_alarm_thresholds.html">
+        設定警示臨界值
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定使用者角色和權限"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_configure_user_role_and_privileges.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_configure_user_role_and_privileges.html">
+        設定使用者角色和權限
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定儲存功能設定檔"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定儲存功能設定檔</div>-->
+         設定儲存功能設定檔
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="儲存功能設定檔總覽"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/concept_configure_storage_capability_profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/concept_configure_storage_capability_profiles.html">
+        儲存功能設定檔總覽
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="建立儲存功能設定檔"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_create_storage_capability_profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_create_storage_capability_profiles.html">
+        建立儲存功能設定檔
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自動產生儲存功能設定檔"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_automatically_generating_scps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_automatically_generating_scps.html">
+        自動產生儲存功能設定檔
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定資料存放區"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定資料存放區</div>-->
+         設定資料存放區
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置傳統資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_provision_datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_provision_datastores.html">
+        配置傳統資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將資料存放區對應至儲存功能設定檔"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_map_storage_to_storage_capability_profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_map_storage_to_storage_capability_profiles.html">
+        將資料存放區對應至儲存功能設定檔
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="指派QoS原則"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_assign_qos_policies.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_assign_qos_policies.html">
+        指派QoS原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="驗證資料存放區是否符合對應的儲存功能設定檔"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_check_for_datastore_compliance_with_the_mapped_storage_capability_profile.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_check_for_datastore_compliance_with_the_mapped_storage_capability_profile.html">
+        驗證資料存放區是否符合對應的儲存功能設定檔
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/task_provision_vvols_datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/task_provision_vvols_datastores.html">
+        配置vVols資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="重新平衡vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/reference_rebalance_vvols_datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/reference_rebalance_vvols_datastore.html">
+        重新平衡vVols資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="刪除 vVols 資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/configure/reference_delete_vvols.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/configure/reference_delete_vvols.html">
+        刪除 vVols 資料存放區
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護資料存放區和虛擬機器"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 保護資料存放區和虛擬機器</div>-->
+         保護資料存放區和虛擬機器
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="啟用儲存複寫介面卡來保護資料存放區"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_enable_storage_replication_adapter.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_enable_storage_replication_adapter.html">
+        啟用儲存複寫介面卡來保護資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定儲存系統以進行災難恢復"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定儲存系統以進行災難恢復</div>-->
+         設定儲存系統以進行災難恢復
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定SAN和NAS的儲存系統"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_storage_replication_adapter_for_san_environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_san_environment.html">
+        設定SAN和NAS的儲存系統
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="針對高度擴充的環境設定儲存設備"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/reference_configure_storage_replication_adapter_for_highly_scaled_environment.html">
+        針對高度擴充的環境設定儲存設備
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在共享恢復站點配置中使用 SRM 配置 SRA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/configure_sra_with_srm_shared_site.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/configure_sra_with_srm_shared_site.html">
+        在共享恢復站點配置中使用 SRM 配置 SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在SRM設備上設定SRA"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_sra_on_srm_appliance.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_sra_on_srm_appliance.html">
+        在SRM設備上設定SRA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="更新SRA認證資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_update_sra_credentials.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_update_sra_credentials.html">
+        更新SRA認證資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將Windows SRM移轉至SRM設備"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/concept_migration_of_disaster_recovery_setup_from_windows_to_appliance.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/concept_migration_of_disaster_recovery_setup_from_windows_to_appliance.html">
+        將Windows SRM移轉至SRM設備
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定vVols資料存放區的複寫、以保護虛擬機器"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/concept_configure_replication_for_vvols_datastore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/concept_configure_replication_for_vvols_datastore.html">
+        設定vVols資料存放區的複寫、以保護虛擬機器
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定現有資料存放區的vVols複寫"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/configure_vvols_replication_existing_datastore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/configure_vvols_replication_existing_datastore.html">
+        設定現有資料存放區的vVols複寫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護未受保護的虛擬機器"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_protect_non_protected_virtual_machines.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_protect_non_protected_virtual_machines.html">
+        保護未受保護的虛擬機器
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定受保護和恢復站台"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定受保護和恢復站台</div>-->
+         設定受保護和恢復站台
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定VM儲存原則"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_vm_storage_policies.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_vm_storage_policies.html">
+        設定VM儲存原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定保護群組"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_protection_groups.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_protection_groups.html">
+        設定保護群組
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配對受保護和恢復站台"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_pair_protected_and_recovery_sites.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_pair_protected_and_recovery_sites.html">
+        配對受保護和恢復站台
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定受保護和恢復站台資源"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 設定受保護和恢復站台資源</div>-->
+         設定受保護和恢復站台資源
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定網路對應"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_network_mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_network_mappings.html">
+        設定網路對應
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定資料夾對應"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_folder_mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_folder_mappings.html">
+        設定資料夾對應
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定資源對應"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_resource_mappings.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_resource_mappings.html">
+        設定資源對應
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="對應儲存原則"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_map_storage_policies.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_map_storage_policies.html">
+        對應儲存原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定預留位置資料存放區"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_placeholder_datastores.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_placeholder_datastores.html">
+        設定預留位置資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Array Manager設定SRA"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_configure_array_manager.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_array_manager.html">
+        使用Array Manager設定SRA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="驗證複寫的儲存系統"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/protect/task_verify_the_replicated_storage_environment.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/protect/task_verify_the_replicated_storage_environment.html">
+        驗證複寫的儲存系統
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理ONTAP 各種工具"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理ONTAP 各種工具</div>-->
+         管理ONTAP 各種工具
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理資料存放區"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理資料存放區</div>-->
+         管理資料存放區
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在其他主機上掛載資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_mount_datastores_on_host.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_mount_datastores_on_host.html">
+        在其他主機上掛載資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="調整資料存放區大小"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_resize_datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_resize_datastores.html">
+        調整資料存放區大小
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="編輯vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_edit_a_vvol_datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_edit_a_vvol_datastore.html">
+        編輯vVols資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將儲存設備新增至vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_add_storage_to_a_vvol_datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_add_storage_to_a_vvol_datastore.html">
+        將儲存設備新增至vVols資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="從vVols資料存放區移除儲存設備"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_remove_storage_from_a_vvols_datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_remove_storage_from_a_vvols_datastore.html">
+        從vVols資料存放區移除儲存設備
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="掛載vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_mount_a_vvols_datastore.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_mount_a_vvols_datastore.html">
+        掛載vVols資料存放區
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理虛擬機器"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理虛擬機器</div>-->
+         管理虛擬機器
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="移轉或複製虛擬機器的考量"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/reference_considerations_for_migrating_virtual_machines.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/reference_considerations_for_migrating_virtual_machines.html">
+        移轉或複製虛擬機器的考量
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將傳統虛擬機器移轉至vVols資料存放區"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_migrate_standard_virtual_machines_to_vvols_datastores.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_migrate_standard_virtual_machines_to_vvols_datastores.html">
+        將傳統虛擬機器移轉至vVols資料存放區
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="移轉具有舊版儲存功能設定檔的虛擬機器"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_migrate_virtual_machines_with_older_storage_capability_profiles.html">
+        移轉具有舊版儲存功能設定檔的虛擬機器
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vasa 清理"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_delete_virtual_machines.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_delete_virtual_machines.html">
+        Vasa 清理
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="修改ESXi主機設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_edit_esxi_host_settings.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_edit_esxi_host_settings.html">
+        修改ESXi主機設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="存取ONTAP VMware工具維護主控台"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 存取ONTAP VMware工具維護主控台</div>-->
+         存取ONTAP VMware工具維護主控台
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="功能概述：工具維護主控台ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/reference_maintenance_console_of_ontap_tools_for_vmware_vsphere.html">
+        功能概述：工具維護主控台ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ONTAP 工具和 VASA Provider 記錄檔"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/concept_virtual_storage_console_and_vasa_provider_log_files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/concept_virtual_storage_console_and_vasa_provider_log_files.html">
+        ONTAP 工具和 VASA Provider 記錄檔
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="變更系統管理員密碼"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_change_the_administrative_password.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_change_the_administrative_password.html">
+        變更系統管理員密碼
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定VASA Provider以搭配SSH使用"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_configure_vasa_provider_to_work_with_ssh.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_configure_vasa_provider_to_work_with_ssh.html">
+        設定VASA Provider以搭配SSH使用
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定遠端診斷存取"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html">
+        設定遠端診斷存取
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="收集記錄檔"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_collect_the_log_files.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_collect_the_log_files.html">
+        收集記錄檔
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理系統記錄"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_syslog_files.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_syslog_files.html">
+        管理系統記錄
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="監控資料存放區和vVols報告的效能"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/ontap-tools-vmware-vsphere/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 監控資料存放區和vVols報告的效能</div>-->
+         監控資料存放區和vVols報告的效能
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="資料存放區與虛擬機器報告的功能概述ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/concept_virtual_storage_console_reports.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/concept_virtual_storage_console_reports.html">
+        資料存放區與虛擬機器報告的功能概述ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用傳統儀表板分析效能資料"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_monitor_datastores_using_the_traditional_dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_monitor_datastores_using_the_traditional_dashboard.html">
+        使用傳統儀表板分析效能資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用vVols儀表板分析效能資料"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html">
+        使用vVols儀表板分析效能資料
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Vasa Provider 災難恢復"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/manage/vasa_provider_disaster_recovery.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/ontap-tools-vmware-vsphere/manage/vasa_provider_disaster_recovery.html">
+        Vasa Provider 災難恢復
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律聲明"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/protect/task_configure_storage_replication_adapter_for_nas_environment.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/ontap-tools-vmware-vsphere/legal-notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/zh-tw/ontap-tools-vmware-vsphere"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/zh-tw/ontap-tools-vmware-vsphere"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/zh-tw/ontap-tools-vmware-vsphere/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">設定NAS環境的儲存複寫介面卡</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2022-05-03 10:47:07 +0000">05/03/2022</time>
+        
+    
+    
+        <span>貢獻者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/zh-tw/ontap-tools-vmware-vsphere/images/discuss-sm.svg" alt="" class="github-icon" />建議變更</span>
+        <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere.zh-tw/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/zh-tw/ontap-tools-vmware-vsphere/protect/task_configure_storage_replication_adapter_for_nas_environment.html&page-title=設定NAS環境的儲存複寫介面卡" class="page-nav-contribute-link" role="button">請求文件變更</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/ontap-tools-vmware-vsphere/blob/main/protect/task_configure_storage_replication_adapter_for_nas_environment.adoc" class="page-nav-contribute-link" role="button">編輯本頁</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >瞭解如何貢獻</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/zh-tw/ontap-tools-vmware-vsphere/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/fullsite-sidebar/VMware_vSphere文件的相關工具ONTAP.pdf" >
+                    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>此文件 PDF 的網站</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/角色型存取控制.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            角色型存取控制
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/部署及升級ONTAP_功能.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            部署及升級ONTAP 功能
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/部署ONTAP_這些功能的需求.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            部署ONTAP 這些功能的需求
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/部署ONTAP_各種工具.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            部署ONTAP 各種工具
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/升級ONTAP_功能.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            升級ONTAP 功能
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定ONTAP_VMware工具.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定ONTAP VMware工具
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定ESXi設定.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定ESXi設定
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定客體作業系統.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定客體作業系統
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定ONTAP__VMware_Tools偏好設定_檔案.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定ONTAP 「VMware Tools偏好設定」檔案
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定儲存系統.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定儲存系統
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定儲存功能設定檔.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定儲存功能設定檔
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定資料存放區.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定資料存放區
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/保護資料存放區和虛擬機器.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            保護資料存放區和虛擬機器
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定儲存系統以進行災難恢復.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定儲存系統以進行災難恢復
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定受保護和恢復站台.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定受保護和恢復站台
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/設定受保護和恢復站台資源.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            設定受保護和恢復站台資源
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/管理ONTAP_各種工具.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理ONTAP 各種工具
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/管理資料存放區.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理資料存放區
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/管理虛擬機器.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理虛擬機器
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/存取ONTAP_VMware工具維護主控台.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            存取ONTAP VMware工具維護主控台
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/ontap-tools-vmware-vsphere/pdfs/sidebar/監控資料存放區和vVols報告的效能.pdf" 
+            
+          >
+            <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-icon.png" alt="" width="16" height="16"/>
+            監控資料存放區和vVols報告的效能
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/zh-tw/ontap-tools-vmware-vsphere/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>個別的 PDF 文件集合<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div class="paragraph lead">
+<p>您必須先設定儲存系統、再執行VMware vCenter Site Recovery Manager（SRM）的儲存複寫介面卡（SRA）。</p>
+</div>
+<div class="paragraph">
+<p><strong>您需要的是什麼</strong></p>
+</div>
+<div class="paragraph">
+<p>您必須在受保護的站台和恢復站台上安裝下列程式：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SRM</p>
+<div class="paragraph">
+<p>如需安裝SRM的相關文件、請參閱VMware網站。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.vmware.com/support/pubs/srm_pubs.html">"VMware Site Recovery Manager文件"</a></p>
+</div>
+</li>
+<li>
+<p>SRA</p>
+<div class="paragraph">
+<p>介面卡安裝在SRM和SRA伺服器上。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>步驟</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>確認受保護站台的資料存放區包含已向vCenter Server註冊的虛擬機器。</p>
+</li>
+<li>
+<p>確認受保護站台的ESXi主機已從儲存虛擬機器（SVM）掛載NFS匯出磁碟區。</p>
+</li>
+<li>
+<p>使用Array Manager精靈將陣列新增至SRM時、請確認「* NFS Addresses <strong>（</strong> NFS位址*）」欄位中已指定有效位址、例如有NFS匯出的IP位址、主機名稱或FQDN。</p>
+</li>
+<li>
+<p>在恢復站台的每個ESXi主機上使用ping命令、以驗證主機是否有VMkernel連接埠、可存取用於從SVM匯出NFS的IP位址。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="https://mysupport.netapp.com/site/global/dashboard">"NetApp支援"</a></p>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/zh-tw/ontap-tools-vmware-vsphere/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/zh-tw/ontap-tools-vmware-vsphere/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">在本頁</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">使用條款</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隱私權政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">傳送有關本網頁的意見反應</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/ontap-tools-vmware-vsphere/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/ontap-tools-vmware-vsphere/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/ontap-tools-vmware-vsphere/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/ontap-tools-vmware-vsphere/js/ie-tabbed-blocks.js'></script>
+    <script src='/zh-tw/ontap-tools-vmware-vsphere/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
