@@ -35,7 +35,7 @@ summary: 資源配置資料存放區會為虛擬機器及其虛擬機器磁碟�
 
 * NFSv3和NFSv4.1
 * VMFS5和VMFS6
-* 從 vSphere 8.0 版本開始、支援 NVMe / FC 傳輸協定。
+* 從 vSphere 8.0 版本開始、 VVOL 資料存放區支援 NVMe / FC 傳輸協定。
 
 
 ONTAP 工具可以在 NFS 磁碟區或 LUN 上建立資料存放區：

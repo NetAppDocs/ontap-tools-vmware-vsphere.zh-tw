@@ -50,8 +50,7 @@ NOTE: 從 ONTAP 工具 9.12 升級、所有儲存系統驗證與通訊程序都�
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all_
 
 
-如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 版及更新版本、則
-在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、然後再升級以啟用 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
+如果儲存系統是使用 json 檔案新增自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 及更新版本、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：
 
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate install" -access all -vserver <vserver-name> _
 . _security 登入角色 create -role <existing-role-name> -cmddirname "security certificate show" -access all -vserver <vserver-name> _

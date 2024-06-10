@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
   <block id="8f7be3c874feb6ef0fd5f20afd8d5fbb" category="summary">VMware vSphere的支援工具可讓您在vCenter Server環境中設定、管理及保護虛擬資料存放區。ONTAP</block>
-  <block id="46c4d9bfa1c229940459326940489ab0" category="doc">VMware vSphere文件的相關工具ONTAP</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">法律聲明提供版權聲明、商標、專利等存取權限。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版權</block>
@@ -358,7 +357,6 @@
   <block id="dfb1f7e164fa9a18cdccdd70cc836871" category="doc">更新SRA認證資料</block>
   <block id="06e0b13e99109afd1553218d06e4287d" category="inline-link-macro">在SRM設備上設定SRA</block>
   <block id="a7b1731ee7a384d42899d1089c98fcd0" category="paragraph"><block ref="a7b1731ee7a384d42899d1089c98fcd0" category="inline-link-macro-rx"></block></block>
-  <block id="91041cdb80acf69ffc64bea820b683a1" category="list-text">刪除「/SRM/SRA/confdirectory」的內容、方法如下：</block>
   <block id="cb0b3fe7df304baf3d39da385a4ec459" category="summary">提供ONTAP 本次VMware vSphere之VMware vSphere版本的重要資訊、包括新功能與增強功能、修正問題、已知問題、注意事項及限制。</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">版本資訊</block>
   <block id="01de6d9be7e1aa419839bb0c0de0ebde" category="paragraph">提供ONTAP 本次VMware vSphere之更新版的重要資訊、包括修正問題、已知問題、注意事項及限制。</block>
@@ -1358,7 +1356,6 @@
   <block id="3d3f0daa239b0b019c9d5ecc236fccea" category="paragraph">提供適用於ONTAP 各種資訊工具的_.ova_檔案URL。</block>
   <block id="b0f2b97dc5d2b76b26e040408bb1d8af" category="paragraph">資料夾</block>
   <block id="b74ac16094255bdf0eabd36ff36949d7" category="list-text">輸入詳細資料以自訂部署精靈。</block>
-  <block id="ff22f9429bb46603451057ba28a08029" category="paragraph">（選用）在「Configure vCenter（設定vCenter）」或「Enable VCF（啟用VCF）」區段中、選取「Enable VMware Cloud Foundation（VCF）*（啟用VMware Cloud Foundation（VCF）*）」核取方塊、並提供ONTAP 密碼以供使用。您不需要提供IP位址、但必須提供密碼。如需完整詳細資料、請參閱下列內容。</block>
   <block id="c939783f93b1afb10f97a0d5e171777b" category="inline-link-macro">部署自訂考量</block>
   <block id="db87f0e7d398509389710de2acd5bc37" category="list-text"><block ref="db87f0e7d398509389710de2acd5bc37" category="inline-link-macro-rx"></block></block>
   <block id="86c1acfce4de432d234f580b141148df" category="list-text"><block ref="86c1acfce4de432d234f580b141148df" category="inline-link-macro-rx"></block></block>
@@ -1537,8 +1534,6 @@
   <block id="f41a0f70d00fe5c4c096315736c1c5f5" category="paragraph">若要使用使用者介面設定IPv6或IPv6、請參閱下列各節：</block>
   <block id="9e61293b777b055e3576d637f3d16625" category="list-text"><block ref="9e61293b777b055e3576d637f3d16625" category="inline-link-macro-rx"></block></block>
   <block id="c012b5b3ff136d3277c106ffd47bf52e" category="list-text"><block ref="c012b5b3ff136d3277c106ffd47bf52e" category="inline-link-macro-rx"></block></block>
-  <block id="a88efd6c9b7763df783d278ede79c4a6" category="list-text">使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="4222690b3b5a5c9afb047223bc02154e" prefix=" " category="inline-code"></block>此時會顯示一則成功訊息、確認儲存認證資料已儲存。</block>
-  <block id="092016eb57c00c965fc19b3bff7ff343" category="list-text"><block ref="4222690b3b5a5c9afb047223bc02154e" prefix="" category="inline-code"></block></block>
   <block id="0e28dc8bb869d015f17f333c6255226d" category="list-text">您應該已下載適用於 VAAI 的 NFS 外掛程式安裝套件 <block ref="d7d0fd6d41e4cc9c277d6e7d82ae6981" prefix="(" category="inline-code"></block>）來自 NetApp 支援網站 。<block ref="eb2c61027d5e6c8b35692c1e74187026" category="inline-link-rx"></block></block>
   <block id="389fed57e0f06c0d1d884e132105585a" category="list-text">您應該擁有 vSphere 7.x 版本、因為 vSphere 6.5 已過時、不支援 vSphere 8.x 。</block>
   <block id="5ccc8ee8b61049069fbdba29f36f4627" category="paragraph">您可以下載<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block> 檔案中包含二進位檔案（ _.ova_ ）、以及用於 VMware vSphere 之 ONTAP 工具的簽署憑證<block ref="c28762f698ce57f013f1f9dff01575ab" category="inline-link-rx"></block>。</block>
@@ -1623,7 +1618,6 @@
   <block id="7aab78a1b39daabb0255f06097941141" category="paragraph">_ 如此將會關閉目前的工作流程來移除輸入的資料、並開啟「建立儲存功能設定檔」工作流程。是否要繼續？ _</block>
   <block id="f604eb859718e32220986583f0dd60f8" category="list-text">按一下 * 是 * 以開啟「建立儲存容量設定檔」視窗。</block>
   <block id="f5881ae95eaddf3eaa37ea9dfa5a4025" category="paragraph">當您執行的工作需要指定 vCenter Server 時、畫面左上角的 * 執行個體 * 選取器會以英數字元順序顯示可用的 vCenter Server 。預設vCenter Server永遠是下拉式清單中的第一個伺服器。</block>
-  <block id="3ba26e2ef418a8000e72bed69c2b1204" category="list-text">從 vSphere 8.0 版本開始、支援 NVMe / FC 傳輸協定。</block>
   <block id="cfbd5fccaf4fd8045e424e51da259e46" category="paragraph">您可以選擇 *NFS* 、 *VMS* 或 *vVols* 類型來設定資料存放區。當您選取 vVols 類型時、則可以使用 NVMe / FC 傳輸協定。</block>
   <block id="18da7537a6d6a586cd1724bd68e0f65b" category="admonition">ONTAP 9.91P3 及更新版本支援 NVMe / FC 傳輸協定。</block>
   <block id="ee3acded2da3caf4c3251cbe51ed714f" category="list-text">NFS ：您可以使用 NFS3 或 NFS4.1 傳輸協定來配置 NFS 資料存放區。</block>
@@ -2045,8 +2039,6 @@
   <block id="47036403afaaf8ca717ff4a9ab5e937f" category="admonition">從 ONTAP 工具 9.12 升級、所有儲存系統驗證與通訊程序都會自動信任 ONTAP 儲存憑證、從基本驗證變更為憑證型驗證。使用者無需採取任何行動。</block>
   <block id="58219ebdf648f85e26c26438bb61d686" category="paragraph">如果使用 json 檔案新增儲存系統、並使用自訂建立的叢集範圍使用者、而您想要升級至 9.12 版及更新版本、則
 在升級之前、請先在 ONTAP CLI 上執行下列命令、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊。</block>
-  <block id="c8651a1e5e8dc4eb77c21ebfee7aa345" category="paragraph">如果使用 json 檔案新增儲存系統、並使用自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 版及更新版本、則
-在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、然後再升級以啟用 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：</block>
   <block id="89ee3f6f60ef2fe23bff96f279b6d85a" category="summary">您必須在 VMware vSphere 環境中下載及部署 ONTAP 工具、然後根據您想要使用 ONTAP 工具、 VASA Provider 及 SRA 執行的工作來設定所需的應用程式。</block>
   <block id="7c3f9f49cd79868d0fe504cc021d45ff" category="doc">部署或升級適用於 VMware vSphere 的 ONTAP 工具</block>
   <block id="5ee2d67e9c2037d55fb50ede660fd324" category="list-text">重新命名<block ref="74f7b54ea713d9f5b69839982911bbf7" prefix=" " category="inline-code"></block> 您從 NetApp 支援網站 下載至 NetAppNasPlugin.vib 的檔案、以符合 ONTAP 工具使用的預先定義名稱。</block>
@@ -2120,5 +2112,40 @@
   <block id="8b0a036d076285ea830ca8290e260a77" category="list-text">請移至以取消登錄外掛程式<block ref="3668afd07686ea27a6f1590042360bee" prefix=" " category="inline-code"></block></block>
   <block id="4b8bd3e99bfcc26c0f74b6bf405ef012" category="list-text">輸入密碼、密碼長度至少八個字元、最多 30 個字元。密碼必須至少包含一個大寫字母、一個下方字母、一個數字和一個特殊字元。重設密碼 75 天後會顯示密碼過期警告。新密碼不能與上次使用的密碼相同。您需要每 90 天變更一次密碼。</block>
   <block id="062f397773db685232413bdf1cdc77d6" category="list-text">使用 URL ： \https ： &lt;srm_ip&gt; ： 5480 存取 VMware SRM 設備管理介面、然後前往 VMware SRM 設備管理介面中的儲存複寫介面卡。</block>
-  <block id="02d748a182bd49eb68c66826e023ae52" category="list-text">使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="80e6857610e0d41189fe70adcfa7e87b" prefix=" " category="inline-code"></block></block>
+  <block id="fad46460446354fa80d2500a2f1c2238" category="list-text">使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="4222690b3b5a5c9afb047223bc02154e" prefix=" " category="inline-code"></block>。您需要針對密碼值提供單一報價。
+此時會顯示一則成功訊息、確認儲存認證資料已儲存。SRA可以使用提供的IP位址、連接埠和認證、與SRA伺服器通訊。</block>
+  <block id="86e0bf9c3c7b551354475df97b7d9009" category="list-text"><block ref="4222690b3b5a5c9afb047223bc02154e" prefix="" category="inline-code"></block>。您需要針對密碼值提供單一報價。</block>
+  <block id="48ac6224163e1e40df5fddadacfd3cab" category="list-text">使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼：<block ref="4222690b3b5a5c9afb047223bc02154e" prefix=" " category="inline-code"></block>。您需要針對密碼值提供單一報價。</block>
+  <block id="68e962ea1c22b4a4ce454c6d0243fb84" category="paragraph">您需要刪除 SRM 機器資料夾快取的工具使用者名稱密碼、然後重新安裝 ONTAP 。</block>
+  <block id="3642e7476d2c39d4c6204e36acaa5431" category="list-text">執行下列命令以刪除 SRM 機器資料夾快取的 ONTAP 工具使用者名稱密碼：</block>
+  <block id="98ea8bb5748846a8eb48ec17775dd65c" category="list-text"><block ref="73be5ab307e7055f684cc317b6aff741" prefix="" category="inline-code"></block></block>
+  <block id="9aac114d9a8bbe576d39d35cf5fad65b" category="list-text"><block ref="5ec1d0f6687a4c1e0107632871d4a131" prefix="" category="inline-code"></block></block>
+  <block id="be886d30990ecb1cd7da9458a1301ba3" category="list-text"><block ref="ed73a6dfaf2769c449bcf6ac1257b40e" prefix="" category="inline-code"></block></block>
+  <block id="2a7f66eb3c213058f0136bcf65d63f11" category="list-text"><block ref="1c2934a64ebf7e159bf45c1e6c30b478" prefix="" category="inline-code"></block></block>
+  <block id="c6503e5473d2858467146e434dedb32e" category="list-text">執行 perl 命令以使用新認證來設定 SRA ：</block>
+  <block id="d2ef96c1cd4e9e918af9cc6fe693d19c" category="list-text"><block ref="3e82875f30595fcc3e2ea7112a52aec3" prefix="" category="inline-code"></block></block>
+  <block id="9f39a8ba317fa65df6bf0329cacd5667" category="paragraph">如果儲存系統是使用 json 檔案新增自訂建立的 SVM 範圍使用者、而您想要升級至 9.12 及更新版本、 然後在具有叢集管理存取權的 ONTAP CLI 上執行下列命令、再進行升級、以啟用適用於 VMware vSphere 和 ONTAP 的 ONTAP 工具之間的憑證型通訊：</block>
+  <block id="6b93e6fdc6e3dbf8009c665ddf94abcf" category="paragraph">（選用）在「Configure vCenter（設定vCenter）」或「Enable VCF（啟用VCF）」區段中、選取「Enable VMware Cloud Foundation（VCF）*（啟用VMware Cloud Foundation（VCF）*）」核取方塊、並提供ONTAP 密碼以供使用。ONTAP 工具會以編碼格式儲存使用者詳細資料。對於從 ONTAP 工具到 vCenter 的任何通訊、都會使用這些 vCenter 使用者詳細資料。
+您不需要提供IP位址、但必須提供密碼。
+如需完整詳細資料、請參閱下列內容。</block>
+  <block id="8cc72bf41639ac37b90eb2211ba395af" category="admonition">請勿將 ONTAP 工具虛擬機器儲存在其管理的 vVol 資料存放區上。</block>
+  <block id="fb65092a2b1818d2f28038d58c52a701" category="paragraph">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。需要在防火牆上啟用此連接埠、從 ESXi 主機到 ONTAP 工具應用裝置。此連接埠可用於下載 VP 支援套件、存取 Web-CLI 使用者介面、以及控制 VMware 與 VP 之間的路徑通訊。</block>
+  <block id="552de149f7e69b0800ade32a13e7e6f1" category="list-text">從 vSphere 8.0 版本開始、 VVOL 資料存放區支援 NVMe / FC 傳輸協定。</block>
+  <block id="26ffc687a7267f96a389530199971cd1" category="sidebar">適用於 VMware vSphere 的 ONTAP 工具文件</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
+  <block id="da951ef1610be90b45b31baf7b25b179" category="sidebar">深入瞭ONTAP 解VMware vSphere的各種功能</block>
+  <block id="21e2a89d708329706ec6ed3fc989a1f6" category="sidebar">使用ONTAP VMware工具</block>
+  <block id="317bbf73ff27c5f981628c8fb83ebf22" category="sidebar">設定角色型存取控制</block>
+  <block id="48bc2d028cb2a507ef974230ca3ba793" category="sidebar">設定遠端診斷</block>
+  <block id="641e9457539249e880725760f91d5ee2" category="sidebar">設定高可用度</block>
+  <block id="04edeb5424c826c14a69edb777edf395" category="sidebar">保護及管理資料存放區</block>
+  <block id="eaf78ca462bf848b7c59c410077002b6" category="sidebar">保護資料存放區</block>
+  <block id="c724784c65896d8b16350f4b0580dfd4" category="sidebar">保護虛擬機器</block>
+  <block id="5267febc97a2cc385cc5c73995dc64df" category="sidebar">監控傳統的資料存放區和虛擬機器</block>
+  <block id="3123ece3c3b36f605758cb0c9a28f904" category="sidebar">監控vVols資料存放區和虛擬機器</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
+  <block id="51cf1968b9a38ab03f7396d237ad0be6" category="sidebar">適用於ONTAP VMware的舊版VMware版資訊工具文件</block>
+  <block id="4c3c39a603eb21106d2df2836d4b456c" category="sidebar">NetApp知識庫ONTAP -資訊工具</block>
+  <block id="bbf1057ad175e1e1664e224351019ac9" category="sidebar">NetApp匯入公用程式-影片</block>
+  <block id="72393f9ef0b6b69526a30ac7ce5276bc" category="sidebar">NetApp社群ONTAP -功能強大的工具</block>
 </blocks>

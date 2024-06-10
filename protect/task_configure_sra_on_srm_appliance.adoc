@@ -32,7 +32,7 @@ SRM設備上的SRA組態會將SRA認證儲存在SRM設備中。
 . 執行「CD /var/log/VMware/SRM」命令以瀏覽記錄目錄。
 . 在記錄位置輸入命令、以取得SRA使用的Docker ID：「Docker ps -l」
 . 若要登入容器ID、請輸入命令：「Docker執行-it -u SRM <Container id> sh」
-. 使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼： `perl command.pl -I administrator '<otv-password>'`
+. 使用以下命令、使用 ONTAP 工具設定 SRM IP 位址和密碼： `perl command.pl -I <otv-IP> administrator <otv-password>`。您需要針對密碼值提供單一報價。
 +
 此時會顯示一則成功訊息、確認儲存認證資料已儲存。SRA可以使用提供的IP位址、連接埠和認證、與SRA伺服器通訊。
 
