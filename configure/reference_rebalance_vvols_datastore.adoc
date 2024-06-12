@@ -36,7 +36,27 @@ ReBalance命令會移除空FlexVol 的等量資料區、為其他資料存放區
 
 
 * 如果FlexVol 某個不穩定磁碟區有Snapshot快照、則vVols在重新平衡作業期間、由於空間使用率的詳細資料不足、vVols無法正確重新平衡。
-* 您可以將VASA Provider屬性_enable、update、VVOL、Through、Discovery設為true、ONTAP 以便在ONTAP 容器重新平衡作業期間發生逾時時時、在VMware工具和VMware之間取得一致的資料。
+* 當容器重新平衡作業期間發生逾時時、您可以將 VASA Provider 屬性 _enable 、 update.vVOL 、 through 、 dindiscovery （ VASA 提供者）設為 true 、以便在 VMware vSphere 和 ONTAP 的 ONTAP 工具之間取得一致的資料。
+* 沒有公開的 REST API 可重新平衡 vVol 資料存放區。
 
 
 ====
+.*開始之前*
+* 從維護主控台產生 Web-CLI 權杖：
++
+.. 登入維護主控台。
+.. 選擇選項 *1* 設備組態。
+.. 選取選項 *12* 產生 Web-CLI 驗證權杖。
+
+
+* 從 vCenter 或 Web-CLI 取得容器名稱和 FlexVol Volume 名稱。
+若要取得附加至容器的 FlexVol Volume 清單、請從 Web-CLI 執行命令 _container list_ 。您可以在 Web-CLI 頁面上找到 Container rebalance 命令的詳細資料。
+
+
+
+NOTE: 您必須提供容器名稱、才能在附加至該容器的所有 FlexVol 磁碟區之間執行重新平衡。不過、如果提供 FlexVol Volume 參數、則只會在提供的 FlexVol Volume 中執行重新平衡。
+
+.*步驟*
+. 使用 URL 從 Web-CLI 登入 `\https://<OTV-IP>:9083/`
+. 執行命令： _container rebalance -container 名稱 = <container-name>
+

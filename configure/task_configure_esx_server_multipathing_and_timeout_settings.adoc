@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: VMware vSphere的VMware®工具可檢查及設定ESXi主機多重路徑設定、以及最適合搭配NetApp儲存系統使用的HBA逾時設定。ONTAP 
 ---
-= 設定ESXi伺服器多重路徑和逾時設定
+= 設定 ESXi 主機伺服器多重路徑和逾時設定
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

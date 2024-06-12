@@ -2,7 +2,7 @@
 permalink: deploy/task_deploy_ontap_tools.html 
 sidebar: sidebar 
 keywords:  
-summary: 您應該在ONTAP 環境中部署VMware Tools、並指定必要的參數、才能使用應用裝置。 
+summary: 若要使用適用於 VMware vSphere 應用程式的 ONTAP 工具、請在您的環境中部署適用於 VMware vSphere 的 ONTAP 工具、並指定所需的參數。 
 ---
 = 如何部署ONTAP 資訊工具
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: 您應該在ONTAP 環境中部署VMware Tools、並指定必要的參�
 
 
 [role="lead"]
-您應該在ONTAP 環境中部署VMware Tools、並指定必要的參數、才能使用應用裝置。
+若要使用適用於 VMware vSphere 應用程式的 ONTAP 工具、請在您的環境中部署適用於 VMware vSphere 的 ONTAP 工具、並指定所需的參數。
 
 *您需要的是什麼*
 
-* 您必須執行支援的vCenter Server版本。
+* 您必須擁有支援的 vCenter Server 版本。
 +
 
-NOTE: 可透過Windows部署vCenter Server或VMware vCenter Server虛擬應用裝置（vCSA）部署來登錄這些工具。ONTAP
+NOTE: 您可以在 Windows 部署 vCenter Server 或 VMware vCenter Server 虛擬應用裝置（ vCSA ）部署中、註冊適用於 VMware vSphere 的 ONTAP 工具。
 
 +
 https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["互通性對照表工具"^]
@@ -30,13 +30,13 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 * 您應該已登出並關閉vSphere Client的所有瀏覽器工作階段、並刪除瀏覽器快取、以避免在ONTAP 部署完各種VMware應用程式時發生任何瀏覽器快取問題。
 * 您必須已啟用網際網路控制訊息傳輸協定（ ICMP ）。
 +
-如果停用 ICMP 、則 ONTAP 工具的初始組態將會失敗、而 ONTAP 工具在部署後無法啟動 ONTAP 工具和 VASA 提供者服務。您必須在部署後手動啟用 ONTAP 工具和 VASA Provider 服務。
+如果停用 ICMP 、則用於 VMware vSphere 的 ONTAP 工具初始組態將會失敗。部署後、您必須手動啟用 VMware vSphere 和 VASA Provider 服務的 ONTAP 工具。
 
 
 
 *關於此工作*
 
-如果您正在部署ONTAP 全新安裝的支援工具、則預設會啟用VASA Provider。但ONTAP 如果從舊版的VMware工具升級、VASA Provider的狀態將會保留、您可能需要手動啟用VASA Provider。
+根據預設、 VASA Provider 會啟用、以便全新安裝適用於 VMware vSphere 的 ONTAP 工具。但如果是從舊版升級、則會保留 VASA Provider 的狀態、您可能需要手動啟用 VASA Provider 。
 
 link:../deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html["啟用VASA Provider以設定虛擬資料存放區"]
 
@@ -45,6 +45,10 @@ link:../deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html
 . 登入vSphere Client。
 . 選取 * 首頁 * > * 主機與叢集 * 。
 . 以滑鼠右鍵按一下所需的資料中心、然後按一下 * 部署 OVF 範本 ... * 。
++
+
+NOTE: 請勿將 ONTAP 工具 VMware vSphere 虛擬機器部署在其管理的 VVols 資料存放區上。
+
 . 選取適當的方法、提供ONTAP 適用於VMware的部署檔案以供使用、然後按一下*下一步*。
 +
 |===
@@ -82,10 +86,6 @@ URL
 當您等待部署完成時、可以從「工作」索引標籤檢視部署進度。
 
 . 開啟ONTAP VMware Tools虛擬機器的電源、然後開啟執行ONTAP VMware Tools的虛擬機器主控台。
-+
-
-NOTE: 請勿將 ONTAP 工具虛擬機器儲存在其管理的 vVol 資料存放區上。
-
 . 驗證ONTAP 部署完成後、是否執行了一些功能不完整的工具。
 . 如果 ONTAP 工具未在任何 vCenter Server 上登錄、請使用 `\https://appliance_ip:8143/Register.html` 登錄 ONTAP 工具執行個體。Register.html 會將您重新導向至「瀏覽器」頁面。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。
 +

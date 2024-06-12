@@ -2,7 +2,7 @@
 permalink: configure/task_configure_user_role_and_privileges.html 
 sidebar: sidebar 
 keywords: user roles 
-summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式》來設定新的使用者角色、以管理儲存系統。 
+summary: 您可以使用適用於 VMware vSphere 和 ONTAP System Manager 的 ONTAP 工具隨附的 JSON 檔案、設定新的使用者角色來管理儲存系統。 
 ---
 = 設定使用者角色和權限
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式�
 
 
 [role="lead"]
-您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式》來設定新的使用者角色、以管理儲存系統。
+您可以使用適用於 VMware vSphere 和 ONTAP System Manager 的 ONTAP 工具隨附的 JSON 檔案、設定新的使用者角色來管理儲存系統。
 
 *您需要的是什麼*
 
@@ -22,7 +22,7 @@ summary: 您可以使用ONTAP 隨附的Json檔案及ONTAP 《系統管理程式�
 ** 解壓縮下載的 VSC_ONTAP_User_Privileges.zip 檔案
 ** 存取系統管理員
 +
-請參閱知識庫文章 - https://kb.netapp.com/mgmt/OTV/Virtual_Storage_Console/Virtual_Storage_Console%3A_How_to_retrieve_the_JSON_file_to_configure_user_roles_and_privileges["虛擬儲存主控台：如何擷取 JSON 檔案以設定使用者角色和權限"] 如需如何從 WebCLI 下載 ONTAP 權限檔案的說明。
+請參閱知識庫文章 - https://kb.netapp.com/mgmt/OTV/Virtual_Storage_Console/Virtual_Storage_Console%3A_How_to_retrieve_the_JSON_file_to_configure_user_roles_and_privileges["虛擬儲存主控台：如何擷取 JSON 檔案以設定使用者角色和權限"] 如需如何從網路 CLI 下載 ONTAP 權限檔案的說明。
 
 
 

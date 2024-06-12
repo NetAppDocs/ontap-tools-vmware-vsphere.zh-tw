@@ -476,7 +476,7 @@ AFF_Encrypted_Min50_Asa_C
 
 `\https://<machine_IP>/api/storage/volumes/{uuid}`
 
-利用VCF部署ONTAP 的支援功能、只能建立容器工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應使用「伺服器」頁面向 vCenter Server 註冊 ONTAP 工具。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。在 VCF 模式中、 ONTAP 工具的限制是、您必須先登錄外掛程式、才能設定用於災難恢復的。當您在不使用 VCF 模式的情況下部署 ONTAP 工具時、系統會自動進行登錄。
+適用於 VMware vSphere 的 ONTAP 工具 VCF 部署僅允許容器建立工作流程。如果您想要使用其他工作流程、例如資源配置資料存放區、建立儲存功能設定檔或災難恢復、則應使用「伺服器」頁面向 vCenter Server 註冊 ONTAP 工具。從 ONTAP 工具 9.12 開始、 ONTAP 工具與 vCenter 的登錄會從瀏覽器頁面開始。在 VCF 模式中、 ONTAP 工具的限制是、您必須先登錄外掛程式、才能設定用於災難恢復的。當您在不使用 VCF 模式的情況下部署 ONTAP 工具時、系統會自動進行登錄。
 
 
 NOTE: Register.html 將在即將推出的 ONTAP 工具版本中移除。

@@ -35,7 +35,7 @@ summary: 您可以設定ONTAP 支援診斷使用者SSH存取的支援工具。
 
 *步驟*
 
-. 從 vCenter Server 開啟 ONTAP 工具應用裝置虛擬機器的主控台。
+. 從 vCenter Server 開啟適用於 VMware vSphere 應用程式虛擬機器的 ONTAP 工具主控台。
 . 以維護使用者身分登入。
 . 輸入「4」以選取「Support and Diagnostics（支援與診斷）」。
 . 輸入「3」以選取「啟用遠端診斷存取」。

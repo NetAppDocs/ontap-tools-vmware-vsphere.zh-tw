@@ -24,7 +24,7 @@ summary: 9.x版ONTAP VMware vSphere支援的VMware vSphere支援將就地升級�
 
 link:../configure/reference_set_ipv4_or_ipv6.html["使用喜好設定檔設定IPV4或IPV6"]
 
-在許多情況下、您可能不需要移轉組態資料。不過、如果您先前已自訂偏好設定檔案、您可能會想要檢閱這些檔案、並對新部署ONTAP 的VMware Tools進行類似變更。您可以將儲存系統新增ONTAP 至新部署的功能區工具、並在新增時指定認證資料。
+在許多情況下、您可能不需要移轉組態資料。不過、如果您先前已自訂偏好設定檔案、您可能會想要檢閱這些檔案、並對新部署ONTAP 的VMware Tools進行類似變更。您可以將儲存系統新增至新部署的 VMware vSphere ONTAP 工具、並在新增時指定認證。
 
 如果您要從VASA Provider 6.X升級、則應在升級之前先取消登錄VASA Provider。如需詳細資料、請參閱目前版本的文件。
 

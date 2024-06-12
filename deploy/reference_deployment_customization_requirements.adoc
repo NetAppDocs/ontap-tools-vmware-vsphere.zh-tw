@@ -39,11 +39,11 @@ summary: 您必須考量幾點限制、才能自訂部署ONTAP 功能。
 
 * 您應該提供vCenter Server執行個體的IP位址（IPV4或IPV6）、以便登錄ONTAP 使用各種工具。
 +
-產生的 ONTAP 工具和 VASA 憑證類型取決於您在部署期間提供的 IP 位址（ IPv4 或 IPv6 ）。部署ONTAP 支援功能時、如果您尚未輸入任何靜態IP詳細資料、而且您的DHCP、則網路會同時提供IPv6位址。
+針對 VMware vSphere 和 VASA 憑證所產生的 ONTAP 工具類型、取決於您在部署期間所提供的 IP 位址（ IPv4 或 IPv6 ）。部署ONTAP 支援功能時、如果您尚未輸入任何靜態IP詳細資料、而且您的DHCP、則網路會同時提供IPv6位址。
 
 * 用來向vCenter Server註冊的VMware vCenter IP位址取決於在部署精靈中輸入的vCenter Server IP位址類型（IPv4或IPv6）ONTAP 。
 +
-ONTAP 工具和 VASA 憑證都會使用 vCenter Server 登錄期間使用的相同 IP 位址類型產生。
+VMware vSphere 和 VASA 憑證的 ONTAP 工具都會使用 vCenter Server 登錄期間使用的相同 IP 位址類型產生。
 
 +
 
@@ -55,4 +55,4 @@ NOTE: ：僅vCenter Server 6.7及更新版本才支援IPv6。
 
 == 應用裝置網路內容
 
-如果您不使用DHCP、請指定有效的DNS主機名稱（非合格）、ONTAP 以及靜態IP位址、以供使用VMware Tools和其他網路參數。所有這些參數都是正確安裝和操作所需的參數。
+如果您未使用 DHCP 、請指定有效的 DNS 主機名稱（不合格）、以及 VMware vSphere ONTAP 工具的靜態 IP 位址和其他網路參數。所有這些參數都是正確安裝和操作所需的參數。

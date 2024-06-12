@@ -13,6 +13,6 @@ summary: 適用於 VMware vSphere 的 ONTAP 工具支援 VMware SRM 共享還原
 [role="lead"]
 適用於 VMware vSphere 的 ONTAP 工具支援 VMware 的 SRM 共享還原網站組態。如需詳細資訊、請參閱： https://docs.vmware.com/en/Site-Recovery-Manager/8.6/com.vmware.srm.install_config.doc/GUID-EBF84252-DF37-43CD-ADC8-E90F5254F315.html["共享恢復站點配置中的 Site Recovery Manager"]。恢復站台上的 Site Recovery Manager Server 執行個體會連線至相同的 vCenter Server 執行個體。
 
-在 SRM 共享恢復站點配置中，每個 SRM 服務器都需要有一個專用的 SRA 實例（ SRM 和 SRA 之間的 1:1 關係）。在 VCF 模式中設定 OTV 、以做為每個 SRM 伺服器的專用 SRA 執行個體。您也可以部署啟用非的工具應用裝置、並向 vCenter 註冊、用於非 ONTAP 工作、例如資料存放區資源配置。
+在 SRM 共享恢復站點配置中，每個 SRM 服務器都需要有一個專用的 SRA 實例（ SRM 和 SRA 之間的 1:1 關係）。在 VCF 模式中設定 OTV 、以做為每個 SRM 伺服器的專用 SRA 執行個體。您也可以針對 VMware vSphere 應用程式部署啟用非的 ONTAP 工具、並向 vCenter 註冊、以用於非 SRA 工作、例如資料存放區資源配置。
 
 。 https://kb.netapp.com/mgmt/OTV/SRA/Storage_Replication_Adapter%3A_How_to_configure_SRA_in_a_SRM_Shared_Recovery_Site["如何在 SRM 共享恢復站點中配置 SRA"] 知識庫文章詳細說明設定支援 SRM 共用修復網站組態的 SRA 的程序。

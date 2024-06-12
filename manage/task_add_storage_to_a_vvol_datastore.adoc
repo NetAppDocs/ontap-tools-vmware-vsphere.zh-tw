@@ -80,4 +80,4 @@ summary: 您可以使用「新增儲存設備」精靈、將FlexVol VMware虛擬
 精靈會將您指定的儲存設備新增至vVols資料存放區。它會在完成時顯示成功訊息。
 
 
-NOTE: 「Expand Storage of vVols Datastore」精靈會自動處理任何ESXi儲存資源重新掃描或任何其他必要的重要作業。由於vVols資料存放區是由VASA Provider控制的邏輯實體、因此新增FlexVol 此功能是您唯一需要做的事、以擴大儲存容器的容量。
+NOTE: 「擴充 vVols 資料存放區儲存空間」精靈會自動處理任何 ESXi 主機儲存重新掃描或任何其他必要的重要作業。由於vVols資料存放區是由VASA Provider控制的邏輯實體、因此新增FlexVol 此功能是您唯一需要做的事、以擴大儲存容器的容量。

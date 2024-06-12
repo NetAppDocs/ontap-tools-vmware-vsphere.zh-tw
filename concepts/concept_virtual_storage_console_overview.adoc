@@ -17,7 +17,7 @@ VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的
 
 每個ONTAP 元件均提供功能、協助您更有效率地管理儲存設備。
 
-VMware vSphere Client 遠端外掛程式工具的設計是將外掛程式功能整合至 vSphere Client 、而無需在 vCenter Server 中執行。這可提供外掛程式隔離功能、並可在大型 vSphere 環境中運作的外掛程式橫向擴充。
+VMware vSphere Client 外掛程式工具的設計是將外掛程式功能整合至 vSphere Client 、而無需在 vCenter Server 中執行。這可提供外掛程式隔離功能、並可在大型 vSphere 環境中運作的外掛程式橫向擴充。
 
 
 

@@ -15,7 +15,7 @@ summary: 如果您使用Windows型Site Recovery Manager（SRM）進行災難恢�
 
 移轉災難恢復所需的步驟如下：
 
-. 將現有的 ONTAP 工具設備升級至最新版本。
+. 將您現有的 VMware vSphere 應用程式 ONTAP 工具升級至最新版本。
 +
 link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升級至ONTAP 最新版的VMware工具"]
 

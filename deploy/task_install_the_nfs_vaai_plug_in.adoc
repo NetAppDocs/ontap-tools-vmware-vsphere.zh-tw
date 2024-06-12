@@ -41,6 +41,6 @@ summary: 您可以使用ONTAP VMware vSphere的GUI of支援VMware vSphere的VMwa
 
 . 安裝完成後、重新啟動ESXi主機。
 +
-當您重新啟動 ESXi 主機時、 ONTAP 工具會自動偵測 NFS VAAI 外掛程式。您不需要執行其他步驟來啟用外掛程式。
+當您重新啟動 ESXi 主機時、適用於 VMware vSphere 的 ONTAP 工具會自動偵測 NFS VAAI 外掛程式。您不需要執行其他步驟來啟用外掛程式。
 
 

@@ -31,7 +31,7 @@ VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以
 . 按一下「管理設定」索引標籤中的「*管理功能*」。
 . 在「管理功能」對話方塊中、選取要啟用的VASA Provider副檔名。
 . 如果您要使用vVols資料存放區的複寫功能、請使用*啟用vVols複寫*切換按鈕。
-. 輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。
+. 輸入 VMware vSphere ONTAP 工具的 IP 位址和管理員密碼、然後按一下 * 套用 * 。
 +
 
 NOTE: 如果VASA Provider狀態在啟用VASA Provider副檔名後仍顯示為「離線」、請檢查「/var/log/VMware/VMware-sps/sps.log」檔案、查看VASA Provider是否有任何連線錯誤、或重新啟動「VMware-sps」服務。

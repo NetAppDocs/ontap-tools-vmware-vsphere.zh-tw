@@ -2,7 +2,7 @@
 permalink: concepts/concept_privileges_required_for_vsc_tasks.html 
 sidebar: sidebar 
 keywords:  
-summary: 針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限組合、這些權限是專屬於 ONTAP 工具和原生 vCenter Server 權限的。 
+summary: 針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限組合、這些權限是專為 VMware vSphere 的 ONTAP 工具和原生 vCenter Server 權限而設計。 
 ---
 = ONTAP 工具工作所需的權限
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限
 
 
 [role="lead"]
-針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限組合、這些權限是專屬於 ONTAP 工具和原生 vCenter Server 權限的。
+針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限組合、這些權限是專為 VMware vSphere 的 ONTAP 工具和原生 vCenter Server 權限而設計。
 
 有關 ONTAP 工具工作所需權限的資訊、請參閱 NetApp 知識庫文章 1032542 。
 

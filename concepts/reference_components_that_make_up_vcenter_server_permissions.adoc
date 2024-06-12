@@ -73,7 +73,7 @@ NetApp ONTAP 解決方案工具主控台>檢視
 * VSC唯讀
 
  a| 
-所有 ONTAP 工具和 VASA Provider 的特定工作都需要檢視權限。
+所有適用於 VMware vSphere 和 VASA Provider 的 ONTAP 工具都需要檢視權限。
 
 
 
@@ -82,7 +82,7 @@ NetApp虛擬儲存主控台>原則型管理>管理或privilege.nvpfVSC.VASAGroup
  a| 
 VSC管理員
  a| 
-與儲存功能設定檔和臨界值設定相關的 ONTAP 工具和 VASA Provider 工作。
+適用於 VMware vSphere 和 VASA Provider 工作的 ONTAP 工具、與儲存功能設定檔和臨界值設定相關。
 
 |===
 
@@ -98,6 +98,6 @@ VSC管理員
 您可以使用Active Directory（或本機vCenter Server機器）來設定使用者和使用者群組。接著您可以使用 vCenter Server 權限、將存取權授予這些使用者或群組、讓他們能夠執行特定的 ONTAP 工具工作。
 
 
-NOTE: 這些 vCenter Server 權限適用於 ONTAP 工具 vCenter 使用者、而非 ONTAP 工具管理員。根據預設、 ONTAP 工具管理員擁有產品的完整存取權、不需要指派權限給他們。
+NOTE: 這些 vCenter Server 權限適用於 ONTAP 工具 vCenter 使用者、而非適用於 VMware vSphere 管理員的 ONTAP 工具。根據預設、適用於 VMware vSphere 管理員的 ONTAP 工具具有產品的完整存取權、不需要指派權限給他們。
 
 使用者和群組並未指派角色給他們。他們可透過vCenter Server權限的一部分來存取角色。

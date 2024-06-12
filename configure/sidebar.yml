@@ -4,9 +4,9 @@ title: 設定ONTAP VMware工具
 entries:
 - title: 設定ONTAP 功能的工作流程
   url: "/configure/concept_workflow_for_configuring_the_unified_appliance.html"
-- title: 設定ESXi設定
+- title: 設定 ESXi 主機設定
   entries:
-  - title: 設定ESXi伺服器多重路徑和逾時設定
+  - title: 設定 ESXi 主機伺服器多重路徑和逾時設定
     url: "/configure/task_configure_esx_server_multipathing_and_timeout_settings.html"
   - title: ESXi主機值是使用ONTAP 各種功能介紹工具設定的
     url: "/configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html"

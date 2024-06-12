@@ -18,10 +18,10 @@ NOTE: 如果 ONTAP 叢集已啟用 SAML 、則會以基本驗證方式與 ONTAP 
 
 *關於此工作*
 
-每當您啟動 ONTAP 工具或選取 * 重新探索 All （全部） * 選項時、 ONTAP 工具都會自動探索可用的儲存系統。
+每次啟動 ONTAP 工具或選取 * 重新探索 All （全部） * 選項時、適用於 VMware vSphere 的 ONTAP 工具都會自動探索可用的儲存系統。
 
 
-NOTE: 直接 SVM 不支援 VVOL 資料存放區。
+NOTE: SVM 使用者不支援 VVOL 資料存放區。
 
 *步驟*
 

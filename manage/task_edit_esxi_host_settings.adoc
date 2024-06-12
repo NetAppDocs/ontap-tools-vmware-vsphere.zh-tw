@@ -52,7 +52,7 @@ vSphere Client首頁
 
 
  a| 
-ESXi主機系統入口小程式
+ESXi 主機系統 Portlet
  a| 
 .. 按一下 ONTAP 工具「總覽」區段中的 * 傳統儀表板 * 索引標籤。
 .. 按一下*編輯ESXi主機設定*。

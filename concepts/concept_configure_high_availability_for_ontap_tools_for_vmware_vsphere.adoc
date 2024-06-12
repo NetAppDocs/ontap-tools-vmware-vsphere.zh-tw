@@ -23,7 +23,7 @@ summary: 支援高可用度（HA）組態的支援功能、有助於在故障時
 
 不需要額外的組態ONTAP 設定即可提供高可用度的VMware Tools。只有vCenter Server和ESXi主機必須根據需求、設定VMware vSphere HA功能或vSphere FT功能。HA和FT都需要叢集式主機搭配共用儲存設備。FT有額外的要求和限制。
 
-除了VMware vSphere HA解決方案和vSphere FT解決方案之外、ONTAP VMware®工具也能協助ONTAP 確保各項VMware工具服務隨時都能正常運作。此功能可定期監控這三項服務、並在偵測到任何故障時自動重新啟動。ONTAP這有助於預防應用程式故障。
+除了 VMware vSphere HA 解決方案和 vSphere FT 解決方案之外、適用於 VMware vSphere 的 ONTAP 工具也有助於讓 ONTAP 工具服務隨時保持運作。此功能可定期監控這三項服務、並在偵測到任何故障時自動重新啟動。ONTAP這有助於預防應用程式故障。
 
 
 NOTE: vCenter HA不受ONTAP 支援。

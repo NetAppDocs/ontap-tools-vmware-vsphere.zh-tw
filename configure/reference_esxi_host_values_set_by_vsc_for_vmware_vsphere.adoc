@@ -17,7 +17,7 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 
 
 
-== ESXi進階組態
+== ESXi 主機進階組態
 
 * *《硬體加速器鎖定》*
 +
