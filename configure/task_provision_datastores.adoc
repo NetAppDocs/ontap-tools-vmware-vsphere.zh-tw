@@ -46,7 +46,7 @@ ONTAP 工具可以在 NFS 磁碟區或 LUN 上建立資料存放區：
 
 [NOTE]
 ====
-* 搭配執行VMware 9.8及更新版本的經核准的VMware、支援配置VMFS5和VMFS6資料存放區、最多可配置VMFS LUN和64TB的Volume大小。ONTAP ASA AFF ONTAP
+* ONTAP 工具可在所有執行 ONTAP 9.8 或更新版本的 ASA 系統、以及執行 ONTAP 9.12.1P2 或更新版本的所有其他系統上、支援最多配置 VMFS LUN 和磁碟區大小 64TB 的 VMFS6 資料存放區。
 +
 在其他平台上、支援的最大LUN大小為16TB。
 

@@ -185,13 +185,11 @@
   <block id="7ceb96cf2f53ab82cf68115087e42798" category="inline-link">VMware vSphere文件：變更儲存供應商設定</block>
   <block id="6b9647887381f9ce12a57a287e1bafbd" category="paragraph"><block ref="6b9647887381f9ce12a57a287e1bafbd" category="inline-link-rx"></block></block>
   <block id="6deaa5e1cafca832bac1b468485b9454" category="section-title">儲存設定</block>
-  <block id="686f64fc789747485a424cbfcfd51b54" category="paragraph">對於高度擴充的環境、您必須將「shtorage.commandTimeout`」和「shorage.maxtentCommandCnt'逾時時間間隔」的值設為99999秒。</block>
   <block id="00a510939945fb6eb144a70baf6f9fd4" category="admonition">指定的逾時時間間隔為最大值。您不需要等待達到最大逾時時間。大多數命令都會在設定的最大逾時時間間隔內完成。</block>
   <block id="e8e75924ea6b1743aedaf9cdc60f2811" category="paragraph">您也應該設定SRA在vvol.properties檔案：offtap.operation.timeout.period.seconds=86400中執行單一作業的最長時間。</block>
   <block id="0a757269d3671e08f4647a4a3f39c7af" category="inline-link">NetApp知識庫答案100111111：《ONTAP NetApp儲存複寫介面卡4.0/7.X for VMware Sizing Guide》</block>
   <block id="b2dacb077897e6e20eab5019528b0b4d" category="paragraph">有關修改SAN Provider設定的VMware文件有更多資訊。</block>
   <block id="c106a2cd545fb9665a990784905584ee" category="inline-link">VMware Site Recovery Manager文件：變更儲存設定</block>
-  <block id="5ae0fbc5a94ef2dc0c2a09ad3529481f" category="paragraph"><block ref="5ae0fbc5a94ef2dc0c2a09ad3529481f" category="inline-link-rx"></block></block>
   <block id="6c93835e51138abf4a711b91e97cac0b" category="summary">您必須配對使用vSphere Client建立的受保護和恢復站台、才能啟用儲存複寫介面卡（SRA）來探索儲存系統。</block>
   <block id="31f39e1dd44660cbf064de93a5ac5fe9" category="doc">配對受保護和恢復站台</block>
   <block id="4ce79230c72f0359b458399d56031022" category="paragraph">您必須配對使用vSphere Client建立的受保護和恢復站台、才能啟用儲存複寫介面卡（SRA）來探索儲存系統。</block>
@@ -710,7 +708,6 @@
   <block id="64e03b083d70c2d810f723dad414a6b6" category="paragraph">「*資源配置資料庫*」選項可讓您指定資料存放區的儲存功能設定檔。儲存功能設定檔有助於指定一致的服務層級目標（SLO）、並簡化資源配置程序。只有啟用VASA Provider、才能指定儲存功能設定檔。VMware vSphere的支援下列通訊協定的支援功能：ONTAP</block>
   <block id="d381d999826d4e61587a2570d1e51324" category="list-text">NFSv3和NFSv4.1</block>
   <block id="c95106f0432e13b79e1223e1c8f1ab3b" category="list-text">VMFS5和VMFS6</block>
-  <block id="ec2fa05ad1e1cd992e000b32058b54e0" category="list-text">搭配執行VMware 9.8及更新版本的經核准的VMware、支援配置VMFS5和VMFS6資料存放區、最多可配置VMFS LUN和64TB的Volume大小。ONTAP ASA AFF ONTAP</block>
   <block id="e5c5d2c6aa619e098374e32171e7bd4a" category="paragraph">在其他平台上、支援的最大LUN大小為16TB。</block>
   <block id="5164789a1859f790f66a6451331546d0" category="list-text">VMware不支援使用資料存放區叢集的NFSv4.1。</block>
   <block id="4598ea33fc82d98816ac9a9702cf8b9b" category="list-text">您可以使用下列其中一項來存取資料存放區資源配置精靈：</block>
@@ -1318,14 +1315,6 @@
   <block id="dc6f079855bc9a7477861302bbb0343f" category="image-alt">VMware Cloud Foundation部署工作流程</block>
   <block id="988a8cbd50f072106aa0cc7589031a95" category="inline-link-macro">如何部署ONTAP 資訊工具</block>
   <block id="6e87afa480416c8595b0460888551386" category="paragraph"><block ref="6e87afa480416c8595b0460888551386" category="inline-link-macro-rx"></block></block>
-  <block id="fe4c6a5e7bd6793b37370e4e46daf998" category="cell">進階設定</block>
-  <block id="2d454f7be17f2289142fb73539ba0c06" category="cell">逾時值</block>
-  <block id="cfb1af8547e34b1470b19edbde9418b8" category="paragraph">StorageProvider.重新 簽名逾時</block>
-  <block id="084a7cbae7a12c6ad6f1f66a39e88f9b" category="paragraph">storageProvider.hostRescanDelaySec</block>
-  <block id="aa18dc2961636b24cb5d5f9e925404a9" category="paragraph">storageProvider.hostRescanRepeatCnt</block>
-  <block id="c1533677fede32792c4b54cf81865145" category="paragraph">storageProvider.hostRescanTimoutSec</block>
-  <block id="3868919c1577c6c9fcb90f12ff7241a9" category="paragraph">您也應該啟用StorageProvider.autoResignatureMode選項。</block>
-  <block id="202667bd06a4b1c9918ebf1e566e60f2" category="paragraph">您必須將高度擴充環境的storage.commandTimeout和storage值。最大目前CommandCnt.timeout時間間隔設為99999秒。</block>
   <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link">互通性對照表工具</block>
   <block id="0efacb73c35dfad8adbb34de54b95af2" category="list-text">您必須已設定及設定vCenter Server環境。</block>
   <block id="ba4e8017753da6e2cad1d40cac107160" category="list-text">您必須為虛擬機器設定ESXi主機。</block>
@@ -1743,7 +1732,6 @@
   <block id="5547d8d27b62c49e4555e1f79122a342" category="paragraph"><block ref="9e427bf42ac054021120757914ef1809" prefix="" category="inline-code"></block></block>
   <block id="b8ace162f3094fd5ac1138ced112d7a7" category="list-text">啟動 VMware vSphere Client 服務：<block ref="bfbe7f4b006f6fcfc7bb66e075309067" prefix=" " category="inline-code"></block></block>
   <block id="02026f27af003e00469addac855d370b" category="paragraph">如果您要部署最新版的 ONTAP 工具、您必須參閱主題 <block ref="44969696c082c6abaae247e8c1723287" category="inline-link-macro-rx"></block>。主題 <block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block> 具有執行就地升級的相關資訊。</block>
-  <block id="36716d5924fd9465137a810fd76c2f48" category="paragraph">啟用時、VASA Provider和Storage Replication Adapter（SRA）都會使用此連接埠與vCenter Server通訊。取得TCP/IP設定也需要此連接埠。此連接埠可用於下載 VP 支援套件、存取 Web-CLI 使用者介面、以及控制 VMware 與 VP 之間的路徑通訊。</block>
   <block id="71a6973fa992a434c0d25fb07bd6f07d" category="paragraph">根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。安全連線預設會啟用 443 連接埠。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。</block>
   <block id="94694a876801fa4851e5478564de6f4a" category="paragraph">ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用。您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。</block>
   <block id="9abf7c4d6f8e5b536137c70ad41a5f3b" category="paragraph"><block ref="9abf7c4d6f8e5b536137c70ad41a5f3b" category="inline-link-rx"></block></block>
@@ -2162,4 +2150,6 @@
   <block id="c4d7bfe92b4693a00e8289e45547ab0d" category="paragraph">在 SRM 共享恢復站點配置中，每個 SRM 服務器都需要有一個專用的 SRA 實例（ SRM 和 SRA 之間的 1:1 關係）。在 VCF 模式中設定 OTV 、以做為每個 SRM 伺服器的專用 SRA 執行個體。您也可以針對 VMware vSphere 應用程式部署啟用非的 ONTAP 工具、並向 vCenter 註冊、以用於非 SRA 工作、例如資料存放區資源配置。</block>
   <block id="ffb65cab8d95fee8d80abc7ceaa0a0ec" category="list-text">如果在重新保護作業之後、 ONTAP 工具 for VMware vSphere 中未出現資料存放區、則應執行儲存系統探索、或等待下次排程的探索作業。</block>
   <block id="1030a4736944c363305ecfdc816d75b0" category="sidebar">設定 ESXi 主機設定</block>
+  <block id="5f479a62f2104046972d10f2cbf88255" category="paragraph">當您達到逾時時時、請增加的值<block ref="e7a7316b2dab3875c5aa0977c256ae38" prefix=" " category="inline-code"></block> 和<block ref="b6c033f4806640a2a2858512cf9f8c1b" prefix=" " category="inline-code"></block> 更高的價值。</block>
+  <block id="7e2e86e08ed241dcd1c4a60663089958" category="list-text">ONTAP 工具可在所有執行 ONTAP 9.8 或更新版本的 ASA 系統、以及執行 ONTAP 9.12.1P2 或更新版本的所有其他系統上、支援最多配置 VMFS LUN 和磁碟區大小 64TB 的 VMFS6 資料存放區。</block>
 </blocks>

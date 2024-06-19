@@ -62,7 +62,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GU
 
 == 儲存設定
 
-對於高度擴充的環境、您必須將「shtorage.commandTimeout`」和「shorage.maxtentCommandCnt'逾時時間間隔」的值設為99999秒。
+當您達到逾時時時、請增加的值 `storage.commandTimeout` 和 `storage.maxConcurrentCommandCnt` 更高的價值。
 
 
 NOTE: 指定的逾時時間間隔為最大值。您不需要等待達到最大逾時時間。大多數命令都會在設定的最大逾時時間間隔內完成。
