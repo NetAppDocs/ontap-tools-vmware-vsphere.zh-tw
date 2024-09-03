@@ -2152,4 +2152,7 @@
   <block id="1030a4736944c363305ecfdc816d75b0" category="sidebar">設定 ESXi 主機設定</block>
   <block id="5f479a62f2104046972d10f2cbf88255" category="paragraph">當您達到逾時時時、請增加的值<block ref="e7a7316b2dab3875c5aa0977c256ae38" prefix=" " category="inline-code"></block> 和<block ref="b6c033f4806640a2a2858512cf9f8c1b" prefix=" " category="inline-code"></block> 更高的價值。</block>
   <block id="7e2e86e08ed241dcd1c4a60663089958" category="list-text">ONTAP 工具可在所有執行 ONTAP 9.8 或更新版本的 ASA 系統、以及執行 ONTAP 9.12.1P2 或更新版本的所有其他系統上、支援最多配置 VMFS LUN 和磁碟區大小 64TB 的 VMFS6 資料存放區。</block>
+  <block id="df5910bf5ed161a784cc7b4fb3fc0a84" category="list-text">* 社譯 PC 。 MaxConnPerIP*</block>
+  <block id="4a8c1c4202dd77901215a87452e10629" category="paragraph">如果您使用的是 vSphere 7.0 或更新版本、則應將此值設為 128 。</block>
+  <block id="34881aef32159ff28f8619a31ff308a3" category="paragraph">互通性對照表工具IMT （英文）包含ONTAP 有關支援版本的最新資訊、包括支援版本的VMware、vCenter Server、ESXi主機、外掛應用程式和Site Recovery Manager（SRM）。<block ref="c4e3c5dd56e9c0925a46d52133eef091" category="inline-link-rx"></block>如需所有支援的升級路徑資訊、請參閱。</block>
 </blocks>

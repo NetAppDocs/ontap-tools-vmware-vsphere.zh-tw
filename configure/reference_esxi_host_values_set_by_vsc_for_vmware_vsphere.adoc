@@ -65,6 +65,10 @@ summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在
 +
 針對所有 NFS 組態、將此值設為 5 。
 
+* * 社譯 PC 。 MaxConnPerIP*
++
+如果您使用的是 vSphere 7.0 或更新版本、則應將此值設為 128 。
+
 
 
 

@@ -15,6 +15,8 @@ summary: 您可以依照此處提供的指示、從現有的 9.10 或更新版�
 
 *您需要的是什麼*
 
+互通性對照表工具IMT （英文）包含ONTAP 有關支援版本的最新資訊、包括支援版本的VMware、vCenter Server、ESXi主機、外掛應用程式和Site Recovery Manager（SRM）。 https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["互通性對照表工具"^]如需所有支援的升級路徑資訊、請參閱。
+
 * 您必須下載_.iso_檔案、才能取得ONTAP 最新版的版的VMware®工具。
 * 您必須保留至少12 GB的RAM、ONTAP 才能讓升級後的VMware Tools發揮最佳效能。
 * 您必須清除vSphere Client瀏覽器快取。
