@@ -2,7 +2,7 @@
 permalink: deploy/concept_installation_workflow_for_new_users.html 
 sidebar: sidebar 
 keywords:  
-summary: 如果您是VMware的新客戶、而且從未使用過NetApp ONTAP 支援工具產品、則必須先設定vCenter Server並設定ESXi主機、然後再部署及設定ONTAP 支援功能。 
+summary: 如果您是 VMware 新手，而且從未使用過 NetApp ONTAP 工具產品，則在部署和設定 ONTAP 工具之前，您必須先設定 vCenter Server 並設定 ESXi 主機。 
 ---
 = VMware ONTAP vSphere的VMware vSphere更新工具使用者部署工作流程
 :allow-uri-read: 
@@ -11,6 +11,6 @@ summary: 如果您是VMware的新客戶、而且從未使用過NetApp ONTAP 支�
 
 
 [role="lead"]
-如果您是VMware的新客戶、而且從未使用過NetApp ONTAP 支援工具產品、則必須先設定vCenter Server並設定ESXi主機、然後再部署及設定ONTAP 支援功能。
+如果您是 VMware 新手，而且從未使用過 NetApp ONTAP 工具產品，則在部署和設定 ONTAP 工具之前，您必須先設定 vCenter Server 並設定 ESXi 主機。
 
 image::../media/new_user_deployment_workflow_ontap_tools.png[新使用者部署]

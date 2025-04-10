@@ -15,7 +15,7 @@ summary: 針對 VMware vSphere 工作的不同 ONTAP 工具需要不同的權限
 
 有關 ONTAP 工具工作所需權限的資訊、請參閱 NetApp 知識庫文章 1032542 。
 
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Virtual_Storage_Console_for_VMware_vSphere/How_to_configure_RBAC_for_Virtual_Storage_Console["如何為虛擬儲存主控台設定RBAC"]
+https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/VSC_VASA_and_SRA_ONTAP_RBAC_Configuration["適用於 VMware vSphere 的 ONTAP 工具： RBAC 組態"]
 
 
 

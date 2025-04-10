@@ -2,16 +2,16 @@
 permalink: concepts/concept_virtual_storage_console_overview.html 
 sidebar: sidebar 
 keywords:  
-summary: VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。 
+summary: 適用於 VMware vSphere 的 ONTAP 工具可為使用 NetApp 儲存系統的 VMware 環境中的虛擬機器提供端點對端點生命週期管理。它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。 
 ---
-= VMware工具總覽ONTAP
+= ONTAP 工具總覽
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-VMware vSphere的支援功能可為使用NetApp儲存系統的VMware環境中的虛擬機器提供端點對端點生命週期管理。ONTAP它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。
+適用於 VMware vSphere 的 ONTAP 工具可為使用 NetApp 儲存系統的 VMware 環境中的虛擬機器提供端點對端點生命週期管理。它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。
 
 此功能可與vSphere Client整合、讓您使用單一登入（SSO）服務。ONTAP在具有多個 vCenter Server 執行個體的環境中、您要管理的每個 vCenter Server 執行個體都必須擁有自己的 ONTAP 工具登錄執行個體。
 
