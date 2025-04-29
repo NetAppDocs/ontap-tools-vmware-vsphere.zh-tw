@@ -181,23 +181,16 @@
   <block id="d9ad1cd9ed6154c08811ffdbeec40f42" category="paragraph">"torageProvider.hostRescanTimoutSec"</block>
   <block id="9df3b59d2f557fab39346b37532a0832" category="paragraph">設定高值（例如：99999）</block>
   <block id="c30b7c029fe2d9044307db1e0f6ea417" category="paragraph">您也應該啟用「torageProvider.autoResignatureMode`」選項。</block>
-  <block id="7ab0999b0811be49a9148b1092cf0095" category="paragraph">如需修改儲存供應商設定的詳細資訊、請參閱VMware文件。</block>
-  <block id="7ceb96cf2f53ab82cf68115087e42798" category="inline-link">VMware vSphere文件：變更儲存供應商設定</block>
-  <block id="6b9647887381f9ce12a57a287e1bafbd" category="paragraph"><block ref="6b9647887381f9ce12a57a287e1bafbd" category="inline-link-rx"></block></block>
   <block id="6deaa5e1cafca832bac1b468485b9454" category="section-title">儲存設定</block>
   <block id="00a510939945fb6eb144a70baf6f9fd4" category="admonition">指定的逾時時間間隔為最大值。您不需要等待達到最大逾時時間。大多數命令都會在設定的最大逾時時間間隔內完成。</block>
   <block id="e8e75924ea6b1743aedaf9cdc60f2811" category="paragraph">您也應該設定SRA在vvol.properties檔案：offtap.operation.timeout.period.seconds=86400中執行單一作業的最長時間。</block>
   <block id="0a757269d3671e08f4647a4a3f39c7af" category="inline-link">NetApp知識庫答案100111111：《ONTAP NetApp儲存複寫介面卡4.0/7.X for VMware Sizing Guide》</block>
-  <block id="b2dacb077897e6e20eab5019528b0b4d" category="paragraph">有關修改SAN Provider設定的VMware文件有更多資訊。</block>
-  <block id="c106a2cd545fb9665a990784905584ee" category="inline-link">VMware Site Recovery Manager文件：變更儲存設定</block>
   <block id="6c93835e51138abf4a711b91e97cac0b" category="summary">您必須配對使用vSphere Client建立的受保護和恢復站台、才能啟用儲存複寫介面卡（SRA）來探索儲存系統。</block>
   <block id="31f39e1dd44660cbf064de93a5ac5fe9" category="doc">配對受保護和恢復站台</block>
   <block id="4ce79230c72f0359b458399d56031022" category="paragraph">您必須配對使用vSphere Client建立的受保護和恢復站台、才能啟用儲存複寫介面卡（SRA）來探索儲存系統。</block>
   <block id="ebde4da5602c98263fc58710c4b589e0" category="list-text">您必須在受保護和恢復站台上安裝Site Recovery Manager（SRM）。</block>
   <block id="b5fb2ba5a0a01abb440ea27ebd61c5f1" category="list-text">您必須在受保護和恢復站台上安裝SRA。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此工作*</block>
-  <block id="0fefea8dcd9753fb17e8b5ff6b39df51" category="paragraph">SnapMirror連出組態是指將來源磁碟區複寫到兩個不同目的地的組態。當SRM需要從目的地恢復虛擬機器時、這些問題會在恢復期間造成問題。</block>
-  <block id="5f8d93450cd44e3871d6c107dd6e8857" category="admonition">儲存複寫介面卡（SRA）不支援連出SnapMirror組態。</block>
   <block id="00e7213846eef210f46aa733cb151439" category="list-text">按兩下vSphere Client首頁上的*站台恢復*、然後按一下*站台*。</block>
   <block id="0cb204757fc030d9ca635551827fb5fc" category="list-text">按一下*物件*&gt;*動作*&gt;*配對站台*。</block>
   <block id="175196fb642ea5ad4b3eb3694afac00f" category="list-text">在「配對站台恢復管理員伺服器」對話方塊中、輸入受保護站台平台服務控制器的位址、然後按一下*下一步*。</block>
@@ -271,8 +264,6 @@
   <block id="fa7482ecdf6cd8902f31cda90682fe24" category="paragraph">移轉災難恢復所需的步驟如下：</block>
   <block id="39f29a6c7f811815442f4a6e6bc0945c" category="inline-link-macro">升級至ONTAP 最新版的VMware工具</block>
   <block id="6db555bae030dd891aa85762ae9d5b14" category="paragraph"><block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block></block>
-  <block id="3061b3ff6d3a7fe53051f50f814b02de" category="inline-link">從Site Recovery Manager for Windows移轉至Site Recovery Manager Virtual Appliance</block>
-  <block id="e98071b2fdde8378fcd32e609913ab66" category="paragraph">請參閱<block ref="7cf7ce0cd4f57deb650bf40ef131cabd" category="inline-link-rx"></block> 以取得詳細步驟</block>
   <block id="e57ab3165732742ce0656b61518a9477" category="summary">您必須建立保護群組、以保護受保護站台上的一組虛擬機器。</block>
   <block id="3ef7adcba4fd1c35e2debd8e209d9c47" category="doc">設定保護群組</block>
   <block id="2d1feca885442920df4a76e66f4b88de" category="paragraph">您應確保來源站台和目標站台均設定為下列項目：</block>
@@ -333,8 +324,6 @@
   <block id="22bf2e5e3e861785a0e8f1eb7bd7492e" category="doc">啟用SRA來保護資料存放區</block>
   <block id="6c30c841c259a71ece5b7b12f3e135af" category="list-text">您必須設定vCenter Server執行個體並設定ESXi。</block>
   <block id="84bd345b022206ae6f8ba4389abae9b4" category="list-text">您必須已部署ONTAP 完各種功能不實的工具。</block>
-  <block id="ca11a9887f9c1b0920793fa77409fe5e" category="inline-link">Site Recovery Manager安裝與組態Site Recovery Manager 8.2</block>
-  <block id="21413bf2dcddaddb1f8a1454ec4abc3b" category="paragraph"><block ref="e42f99038872ff68e0cbb992333123a1" category="inline-link-rx"></block> 有更多資訊。</block>
   <block id="2e325540aabc952fa9cfee2e2d552f85" category="paragraph">啟用VASA Provider和SRA功能的靈活度、可讓您只執行企業所需的工作流程。</block>
   <block id="8707a4c63d8b9b611c8b800afef142a9" category="list-text">登入VMware vSphere的網路使用者介面。</block>
   <block id="bdcd619e6df173b859ed2a1a86e17328" category="list-text">按一下 * 設定 * 。</block>
@@ -385,7 +374,6 @@
   <block id="520eedfc708c9b9e975734575ce13112" category="paragraph">在NFS實作中、這是虛擬記憶體大小的檔案。</block>
   <block id="d061debbb69f1badde16263f7edd67dc" category="list-text">*記憶體*</block>
   <block id="3704cccc9d328731555a0894fdde61bc" category="paragraph">如果在建立VM快照時選取記憶體快照選項、就會建立此vVols。</block>
-  <block id="539018505dde88069c03ead0e16d021b" category="doc">VMware工具總覽ONTAP</block>
   <block id="088edf0a41c67ef0d8cab2de751c7631" category="paragraph">每個ONTAP 元件均提供功能、協助您更有效率地管理儲存設備。</block>
   <block id="527b7aa10737dcb10d3d402f476806ea" category="section-title">虛擬儲存主控台（VSC）</block>
   <block id="cd4b13dbc29722160a07355d3fdfd2a7" category="paragraph">VSC可讓您執行下列工作：</block>
@@ -414,8 +402,6 @@
   <block id="75e793d9133889f56a982d718f5f5c1f" category="paragraph">您可以設定vSphere環境、以便ONTAP 部署VMware vSphere的VMware vSphere for VMware vSphere for High Availability（HA）。VMware HA功能可提供容錯移轉保護、避免虛擬環境中的硬體故障和作業系統故障。</block>
   <block id="193f5724aa76560510625d6930654372" category="paragraph">VMware HA功能可監控虛擬機器、以偵測作業系統故障和硬體故障。偵測到故障時、VMware HA功能會在資源池中的其他實體伺服器上重新啟動虛擬機器。偵測到伺服器故障時、不需要手動介入。</block>
   <block id="fddbfde8381a8cd2ead18c94350d2a14" category="paragraph">設定VMware HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定VMware HA的步驟。</block>
-  <block id="1d5795cd94cc0753911dd6bc7e4121e0" category="inline-link">VMware vSphere文件：建立及使用vSphere HA叢集</block>
-  <block id="57913afe7758e6ac629330a6211986c2" category="paragraph"><block ref="57913afe7758e6ac629330a6211986c2" category="inline-link-rx"></block></block>
   <block id="6f34d21822642a48589bd338b41f0924" category="summary">VMware vSphere容錯能力（FT）功能可在更高層級提供高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。</block>
   <block id="cdfc5a777443e1d48691c26fa9cae9e1" category="doc">VMware vSphere容錯能力</block>
   <block id="bd13f0208899c7acaf359a3a498b1a16" category="paragraph">VMware vSphere容錯（FT）功能可提供更高層級的高可用度（HA）、讓您保護虛擬機器、而不會遺失任何資料或連線。您必須從ONTAP vCenter Server啟用或停用vSphere FT for VMware Tools。</block>
@@ -424,8 +410,6 @@
   <block id="b9284b1fbd19aed3679134bfb4eb640c" category="paragraph">當發生硬體故障導致主要虛擬機器故障時、次要虛擬機器會立即接收主要虛擬機器停止的位置。次要虛擬機器會繼續執行、不會遺失任何網路連線、交易或資料。</block>
   <block id="95954e13c3fd02d60d2176c6788c994a" category="paragraph">您的系統必須符合CPU需求、虛擬機器限制需求、以及設定vCenter Server執行個體vSphere FT的授權需求。</block>
   <block id="66c5b34575bb610e09f6281aecda93e6" category="paragraph">設定HA的程序取決於vCenter Server的版本。例如、您可以使用下列參考連結並選取所需的vCenter Server版本、以檢視設定HA的步驟。</block>
-  <block id="9c506678975809e892cfdd7c14758cae" category="inline-link">VMware vSphere文件：容錯要求、限制及授權</block>
-  <block id="20422418e9f27ff480459f880734075a" category="paragraph"><block ref="20422418e9f27ff480459f880734075a" category="inline-link-rx"></block></block>
   <block id="3413a918b6452d3e60e37eb18410f94c" category="summary">使用vCenter Server權限時、請謹記幾個重點。VMware vSphere工作的VMware選用功能是否成功、取決於您指派權限的位置、或使用者在修改權限後採取的行動。ONTAP</block>
   <block id="74357ddc4a8bb94a1e387cdc464d35b9" category="doc">指派和修改vCenter Server權限的重點</block>
   <block id="c8ae2664c1636dc82742c9e4a7d61618" category="section-title">指派權限</block>
@@ -1163,8 +1147,6 @@
   <block id="96175e97c8c13423e6a60249fa770130" category="summary">您可以使用ONTAP 傳統的VMware工具儀表板來監控傳統的資料存放區和虛擬機器。儀表板資料可讓您分析資料存放區使用量、並採取修正行動、防止虛擬機器在空間相關限制條件下執行。</block>
   <block id="211c9db57cb6ce5c2e16c1ff37eaa820" category="doc">使用傳統儀表板分析效能資料</block>
   <block id="096926a9260db65d51c453dd6fe63a06" category="paragraph">您應該在「設定儲存I/O控制」對話方塊中選取「啟用儲存I/O控制與統計資料收集*」或「停用儲存I/O控制但啟用統計資料收集*」選項。只有在擁有VMware的Enterprise Plus授權時、才能啟用「儲存I/O控制」。</block>
-  <block id="5900a4191170b6191797e473524d5bfd" category="inline-link">VMware vSphere文件：啟用儲存I/O控制</block>
-  <block id="b7a328ea0603bc67c4f6c59226da970a" category="paragraph"><block ref="b7a328ea0603bc67c4f6c59226da970a" category="inline-link-rx"></block></block>
   <block id="4a7619cde2c717f99a4aa51b8332f2e5" category="paragraph">傳統儀表板會顯示從vCenter Server取得的IOPS、空間使用量、延遲和已認可容量度量。可將節省空間的集合體數據提供給傳統儀表板。ONTAP您可以檢視特定Aggregate的空間節約效益。這些效能參數可讓您識別虛擬環境中的效能瓶頸、並採取修正行動來解決問題。</block>
   <block id="77fc87b2d4510a0bda82e14b45856ab6" category="paragraph">利用傳統的「支援資訊」工具儀表板ONTAP 、您可以檢視NFS資料存放區或VMFS資料存放區。您可以按一下資料存放區、導覽至vCenter Server執行個體提供的資料存放區詳細資料檢視、以檢視及修正vCenter Server中資料存放區的任何問題。</block>
   <block id="63a1762e79217ec6ff7ab30bd38f5de9" category="list-text">在vSphere Client首頁中、按一下* ONTAP 《VMware vSpher*適用的*功能性工具》。</block>
@@ -1382,8 +1364,6 @@
   <block id="a919e368cdc2a31db9bf251c27d9df05" category="paragraph">若要檢視資料存放區的IOPS、您必須啟用儲存I/O控制、或取消核取儲存I/O控制組態中的停用儲存I/O統計資料收集核取方塊。只有在擁有VMware的Enterprise Plus授權時、才能啟用儲存I/O控制。</block>
   <block id="334d1eb45fc0c2dc8df94b8b513b8df4" category="inline-link">儲存I/O控制疑難排解</block>
   <block id="1a5f6041f129f43810f85de306ad33b2" category="list-text"><block ref="1a5f6041f129f43810f85de306ad33b2" category="inline-link-rx"></block></block>
-  <block id="6cb4e4fceb86a9c3efe7f9d4e5d29473" category="inline-link">儲存I/O控制需求</block>
-  <block id="fcafb33f3f1e5ad308452fccb673af13" category="list-text"><block ref="fcafb33f3f1e5ad308452fccb673af13" category="inline-link-rx"></block></block>
   <block id="bcbd9f9d2ccf0cb7b5832aca2ca7d2b1" category="summary">您必須考量幾點限制、才能自訂部署ONTAP 功能。</block>
   <block id="936fb671452b1fa70f30a482a2adf742" category="section-title">應用裝置管理員使用者密碼</block>
   <block id="8d8b5664d88102f63bdc8eb0650ec133" category="paragraph">您不得在系統管理員密碼中使用任何空格。</block>
@@ -1489,8 +1469,6 @@
   <block id="7fe6d5584982526cfe5bb1b708c9e10f" category="paragraph"><block ref="7fe6d5584982526cfe5bb1b708c9e10f" category="inline-link-rx"></block></block>
   <block id="1a69d38f7b46901c58e85d024e87b034" category="inline-link">在資料LIF上啟用Kerberos</block>
   <block id="bcafb10f2c5e3e1c946d39793d902146" category="paragraph"><block ref="bcafb10f2c5e3e1c946d39793d902146" category="inline-link-rx"></block></block>
-  <block id="b292d4b33c15cd5429a4aec0164b62f4" category="inline-link">設定ESXi主機進行Kerberos驗證</block>
-  <block id="2775eee214a07dd3ad16007a75341d1d" category="paragraph"><block ref="2775eee214a07dd3ad16007a75341d1d" category="inline-link-rx"></block></block>
   <block id="f05d67a2632f89a349f888bc1abd2314" category="paragraph">vVols資料存放區的重新平衡是由LUN移動或檔案移動所執行。vVols重新平衡期間考量的條件如下：</block>
   <block id="4240120fee603161e3f32fa6a4127dc3" category="list-text">不支援NFS vVol資料存放區</block>
   <block id="d9feb2b730ded2731ab499f4b64cca33" category="paragraph"><block ref="ccafd2400edf7c1aa273a76ad605940f" category="inline-link-rx"></block></block>
@@ -1651,7 +1629,6 @@
   <block id="b0fc0bed1deb4cd0ac1733c83406a338" category="list-text">使用 ONTAP System Manager 9.8P1 或更新版本建立叢集管理員或 SVM 管理員角色。請參閱 <block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="36a3e078a9ae64bd58305972fd6b6a14" category="paragraph">若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以使用 ONTAP 系統管理員 9.8P1 或更新版本來建立 ONTAP 角色。請參閱 <block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="057bdc0890b14e869dc32365d6dbda14" category="paragraph">若要建立新的使用者角色、您必須以系統管理員身分登入執行ONTAP 效益分析的儲存系統。您可以使用 ONTAP 系統管理員 9.8P1 或更新版本來建立 ONTAP 角色。請參閱<block ref="b36e85751d57920856a667a70fbd44c3" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="f1ca65352f21d33a199ffdf014a20d67" category="paragraph"><block ref="f1ca65352f21d33a199ffdf014a20d67" category="inline-link-rx"></block></block>
   <block id="1466c5e3d8ac799469615631f5db8a88" category="paragraph">VVols 資料存放區是由儲存容器內的一或多個 FlexVol 磁碟區（也稱為備份儲存）所組成。虛擬機器可分散在一個vVols資料存放區或多個vVols資料存放區。</block>
   <block id="367487e8977d682a06a2d074eae19af2" category="paragraph">雖然您可以建立具有多個 FlexVol 磁碟區的 VVols 資料存放區、但儲存容器內的所有 FlexVol 磁碟區都必須使用相同的傳輸協定（ NFS 、 iSCSI 、 FCP 或 NVMe / FC ）、以及相同的儲存虛擬機器（ SVM ）。</block>
   <block id="334fd1b4d225ec3c1fa03aefe5252275" category="summary">Syslog 用於將系統記錄傳送至集中式記錄伺服器。</block>
@@ -1730,7 +1707,6 @@
   <block id="02026f27af003e00469addac855d370b" category="paragraph">如果您要部署最新版的 ONTAP 工具、您必須參閱主題 <block ref="44969696c082c6abaae247e8c1723287" category="inline-link-macro-rx"></block>。主題 <block ref="6db555bae030dd891aa85762ae9d5b14" category="inline-link-macro-rx"></block> 具有執行就地升級的相關資訊。</block>
   <block id="71a6973fa992a434c0d25fb07bd6f07d" category="paragraph">根據您設定認證的方式、VMware vCenter Server和儲存系統會偵聽此連接埠上的安全通訊。連接埠用於用戶端 - 伺服器通訊架構。安全連線預設會啟用 443 連接埠。用戶端可以是任何使用 REST API 的自動化用戶端、會啟動與伺服器的連線、而端點則會交換資料。</block>
   <block id="94694a876801fa4851e5478564de6f4a" category="paragraph">ONTAP 工具可搭配 VMware vCenter Server 虛擬應用裝置（ vCSA ）使用。您必須在ONTAP 支援的vSphere（包括ESXi系統）上部署這些功能完善的工具。</block>
-  <block id="9abf7c4d6f8e5b536137c70ad41a5f3b" category="paragraph"><block ref="9abf7c4d6f8e5b536137c70ad41a5f3b" category="inline-link-rx"></block></block>
   <block id="b90d3b6f6e5b0c0e2c25f2558f90408c" category="paragraph">當資料存放區資源配置失敗時、適用於 VMware vSphere 的 ONTAP 工具會記錄下列錯誤訊息：</block>
   <block id="0d488d3f24d754594c736226d7e87fa7" category="image-alt">設定建議值畫面</block>
   <block id="7dcb0e2e13022cf76e7deec88d9063e3" category="list-text">從 vSphere Client 中、選取 * 功能表 * &gt; * NetApp ONTAP tools* 。</block>
@@ -1984,7 +1960,6 @@
   <block id="ccfe3ded2b336756061426e3beb4ea84" category="paragraph">如需詳細資訊、請參閱<block ref="217abffc61852464bf1ed6a3818c434b" category="inline-link-rx"></block>。</block>
   <block id="6b755c3a1874f7019319a35d01e96329" category="summary">適用於 VMware vSphere 的 ONTAP 工具支援 VMware SRM 共享還原網站組態。</block>
   <block id="5cb1b5d35d8f16f8985026d5b5525e36" category="doc">在共享恢復站點配置中使用 SRM 配置 SRA</block>
-  <block id="d2762e1fc358c658239fdcddc79a0a08" category="paragraph">適用於 VMware vSphere 的 ONTAP 工具支援 VMware 的 SRM 共享還原網站組態。如需詳細資訊、請參閱：<block ref="0ffb02f2a9ebd31e751e8881460965d1" category="inline-link-rx"></block>。恢復站台上的 Site Recovery Manager Server 執行個體會連線至相同的 vCenter Server 執行個體。</block>
   <block id="a33b1ca1347bc4bdbea174ce943f9442" category="list-text">按一下 <block ref="3f896c9984ff9d00635de374ef7890db" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的資源對應。</block>
   <block id="b1caae1e6a180ff384d708f6f5f51304" category="admonition">在工具維護主控台中變更管理員密碼後、如果 ONTAP 工具上已啟用並設定了、請執行中提供的 * 更新 ONTAP 認證 * 程序 <block ref="1e7a640d1bcd6b5c87262f4ec3ea69d7" category="inline-link-macro-rx"></block> 區段。如果未能遵循這些指示、將會導致 SRM 報告錯誤。</block>
   <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">在資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* &gt; * Resize non-vVols datastore* 。</block>
@@ -2156,4 +2131,26 @@
   <block id="7230ef1fabe08177b3b9d5485ebc25c0" category="summary">適用於 VMware vSphere 的 ONTAP 工具可為使用 NetApp 儲存系統的 VMware 環境中的虛擬機器提供端點對端點生命週期管理。它可讓系統管理員直接管理 vCenter Server 中的儲存設備、進而簡化 VMware 環境的儲存與資料管理。</block>
   <block id="47635be81cb27fe24be3c1541e49e8c2" category="doc">ONTAP 工具總覽</block>
   <block id="693059892f5ca1ab1683c98e037ee404" category="summary">如果您是 VMware 新手，而且從未使用過 NetApp ONTAP 工具產品，則在部署和設定 ONTAP 工具之前，您必須先設定 vCenter Server 並設定 ESXi 主機。</block>
+  <block id="65448065a2f2f124958039e28edbabea" category="inline-link">vSphere 可用度</block>
+  <block id="fbb57199ec923b67225d34045004bf6b" category="paragraph"><block ref="fbb57199ec923b67225d34045004bf6b" category="inline-link-rx"></block></block>
+  <block id="b43fbfd98dfaf4b96f25257f3e9b2fb2" category="inline-link">容錯要求，限制和授權</block>
+  <block id="a64b4ff92d509abdca37912d111d8b75" category="paragraph"><block ref="a64b4ff92d509abdca37912d111d8b75" category="inline-link-rx"></block></block>
+  <block id="9eb2bd2480a35c698be7fc3c56207ade" category="inline-link">建立及使用vSphere HA叢集</block>
+  <block id="8ba8db309cceba7f21a793574c1afe8d" category="paragraph"><block ref="8ba8db309cceba7f21a793574c1afe8d" category="inline-link-rx"></block></block>
+  <block id="d5a602ee44affae0e4490dbbdbaa5f11" category="inline-link">vSphere 儲存設備</block>
+  <block id="d8c3126ce2b45ce0418b727a648690c0" category="paragraph"><block ref="d8c3126ce2b45ce0418b727a648690c0" category="inline-link-rx"></block></block>
+  <block id="98ce2155c1121498c5a221338cbeabba" category="inline-link">vSphere 資源管理</block>
+  <block id="39fb4c28a1b3e9f759d4f64e35c4a186" category="list-text"><block ref="39fb4c28a1b3e9f759d4f64e35c4a186" category="inline-link-rx"></block></block>
+  <block id="ea27a0fe6615456106a8a8e14128e542" category="inline-link">Site Recovery Manager 安裝與組態</block>
+  <block id="c54cdda5633175090273d24b51dc5af3" category="paragraph">如需詳細步驟，請參閱<block ref="6cc195dce48bd2dd3ffe672df568b352" category="inline-link-rx"></block></block>
+  <block id="fe59e60e6aae6c7bf8042ac60c40cebe" category="paragraph">適用於 VMware vSphere 的 ONTAP 工具支援 VMware 的 SRM 共享還原網站組態。如需詳細資訊，請參閱<block ref="75e1fea3675e833813f99378d6c8fa43" category="inline-link-rx"></block>：。恢復站台上的 Site Recovery Manager Server 執行個體會連線至相同的 vCenter Server 執行個體。</block>
+  <block id="06c1fc03fbada06f75d3f177d952839e" category="paragraph">如需修改 Storage Provider 設定的詳細資訊，請參閱 Broadcom 說明文件。</block>
+  <block id="1766c36b7d852fbd898c8f3e8757adf1" category="inline-link">變更儲存供應商設定</block>
+  <block id="41b16f1277747476a53e60ae7f8ab4f1" category="paragraph"><block ref="41b16f1277747476a53e60ae7f8ab4f1" category="inline-link-rx"></block></block>
+  <block id="8238925ee972c823b0ce36f54dc053b2" category="paragraph">有關修改 SAN Provider 設定的 Broadcom 文件包含更多資訊。</block>
+  <block id="09662246d40be3f3890675feb3a8d887" category="inline-link">變更儲存設定</block>
+  <block id="0d951b75f45de16bce85b82098223cfd" category="paragraph"><block ref="0d951b75f45de16bce85b82098223cfd" category="inline-link-rx"></block></block>
+  <block id="d2a8cc12733d837b21d04e966da18849" category="inline-link">Site Recovery Manager 安裝與組態 Site Recovery Manager</block>
+  <block id="aa7e72b3419247f39d0e6b1a10ecde90" category="paragraph"><block ref="e8cde9e1b38fd82f2c0a7be37ca3e90f" category="inline-link-rx"></block>擁有更多資訊。</block>
+  <block id="1131b5ba310f0132fa89f2e2bc52cb0c" category="paragraph">SnapMirror連出組態是指將來源磁碟區複寫到兩個不同目的地的組態。當SRM需要從目的地恢復虛擬機器時、這些問題會在恢復期間造成問題。*步驟*</block>
 </blocks>

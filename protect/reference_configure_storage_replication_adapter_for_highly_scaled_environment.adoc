@@ -54,9 +54,9 @@ summary: 您必須根據儲存複寫介面卡（SRA）的建議設定來設定�
 |===
 您也應該啟用「torageProvider.autoResignatureMode`」選項。
 
-如需修改儲存供應商設定的詳細資訊、請參閱VMware文件。
+如需修改 Storage Provider 設定的詳細資訊，請參閱 Broadcom 說明文件。
 
-https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.admin.doc/GUID-E4060824-E3C2-4869-BC39-76E88E2FF9A0.html["VMware vSphere文件：變更儲存供應商設定"]
+https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/site-recovery-manager/8-8/site-recovery-manager-administration-8-8/advanced-srm-configuration/reconfigure-srm-settings/change-storage-provider-settings.html["變更儲存供應商設定"]
 
 
 
@@ -71,6 +71,6 @@ NOTE: 指定的逾時時間間隔為最大值。您不需要等待達到最大�
 
 https://kb.netapp.com/mgmt/OTV/SRA/NetApp_Storage_Replication_Adapter_4.0%2F%2F7.X_for_ONTAP_Sizing_Guide["NetApp知識庫答案100111111：《ONTAP NetApp儲存複寫介面卡4.0/7.X for VMware Sizing Guide》"]
 
-有關修改SAN Provider設定的VMware文件有更多資訊。
+有關修改 SAN Provider 設定的 Broadcom 文件包含更多資訊。
 
-https://docs.vmware.com/en/Site-Recovery-Manager/index.html?hWord=N4IghgNiBcIGoFkDuYBOBTABAZQJYBcsAldAYwHsA3dVAT0wTADswBzGzAEXNIFcBbdE3xh8uckxABfIA["VMware Site Recovery Manager文件：變更儲存設定"]
+https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/site-recovery-manager/8-8/site-recovery-manager-administration-8-8/advanced-srm-configuration/reconfigure-srm-settings/change-storage-settings.html["變更儲存設定"]

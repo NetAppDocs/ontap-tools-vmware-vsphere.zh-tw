@@ -19,7 +19,7 @@ VMware vSphere 的 ONTAP 工具可讓您選擇搭配 ONTAP 工具使用 SRA 功�
 * 您必須已部署ONTAP 完各種功能不實的工具。
 * 您必須已下載 `.tar.gz` 只有當您想要設定 Site Recovery Manager （ SRM ）災難恢復解決方案時、才需要 SRM 應用程式的檔案。
 +
-https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-B3A49FFF-E3B9-45E3-AD35-093D896596A0.html["Site Recovery Manager安裝與組態Site Recovery Manager 8.2"] 有更多資訊。
+https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/site-recovery-manager/8-8/site-recovery-manager-installation-and-configuration-8-8.html["Site Recovery Manager 安裝與組態 Site Recovery Manager"]擁有更多資訊。
 
 
 

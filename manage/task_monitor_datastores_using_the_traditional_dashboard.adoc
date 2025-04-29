@@ -17,7 +17,7 @@ summary: 您可以使用ONTAP 傳統的VMware工具儀表板來監控傳統的�
 
 您應該在「設定儲存I/O控制」對話方塊中選取「啟用儲存I/O控制與統計資料收集*」或「停用儲存I/O控制但啟用統計資料收集*」選項。只有在擁有VMware的Enterprise Plus授權時、才能啟用「儲存I/O控制」。
 
-https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-BB5D9BAB-9E0E-4204-A76A-54634CD8AD51.html["VMware vSphere文件：啟用儲存I/O控制"]
+https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/6-5/vsphere-resource-management-6-5.html["vSphere 資源管理"]
 
 傳統儀表板會顯示從vCenter Server取得的IOPS、空間使用量、延遲和已認可容量度量。可將節省空間的集合體數據提供給傳統儀表板。ONTAP您可以檢視特定Aggregate的空間節約效益。這些效能參數可讓您識別虛擬環境中的效能瓶頸、並採取修正行動來解決問題。
 

@@ -23,4 +23,4 @@ link:../deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html["升�
 . 將 Windows SRM 資料移轉至 SRM Appliance 。
 
 
-請參閱 https://docs.vmware.com/en/Site-Recovery-Manager/8.2/com.vmware.srm.install_config.doc/GUID-F39A84D3-2E3D-4018-97DD-5D7F7E041B43.html["從Site Recovery Manager for Windows移轉至Site Recovery Manager Virtual Appliance"] 以取得詳細步驟
+如需詳細步驟，請參閱 https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/site-recovery-manager/8-8/site-recovery-manager-installation-and-configuration-8-8.html["Site Recovery Manager 安裝與組態"]

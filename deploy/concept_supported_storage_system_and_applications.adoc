@@ -34,5 +34,5 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 若要檢視資料存放區的IOPS、您必須啟用儲存I/O控制、或取消核取儲存I/O控制組態中的停用儲存I/O統計資料收集核取方塊。只有在擁有VMware的Enterprise Plus授權時、才能啟用儲存I/O控制。
 
 * https://kb.vmware.com/s/article/1022091["儲存I/O控制疑難排解"]
-* https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-37CC0E44-7BC7-479C-81DC-FFFC21C1C4E3.html["儲存I/O控制需求"]
+* https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/6-5/vsphere-resource-management-6-5.html["vSphere 資源管理"]
 

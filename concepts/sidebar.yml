@@ -2,7 +2,7 @@
 section: concepts
 title: 概念
 entries:
-- title: VMware工具總覽ONTAP
+- title: ONTAP 工具總覽
   url: "/concepts/concept_virtual_storage_console_overview.html"
 - title: VVVols的VASA Provider組態
   url: "/concepts/concept_configure_vvols_datastores.html"
